@@ -1,0 +1,18 @@
+table:
+  name: boards
+  schema: public
+object_relationships:
+  - name: circle
+    using:
+      foreign_key_constraint_on: circle_uuid
+  - name: user
+    using:
+      foreign_key_constraint_on: owner_id
+array_relationships:
+  - name: posts
+    using:
+      foreign_key_constraint_on:
+        column: board_uuid
+        table:
+          name: posts
+          schema: public

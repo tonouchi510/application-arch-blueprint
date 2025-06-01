@@ -1,32 +1,29 @@
 table:
-  name: users
+  name: circles
   schema: public
+object_relationships:
+  - name: user
+    using:
+      foreign_key_constraint_on: owner_id
 array_relationships:
   - name: boards
     using:
       foreign_key_constraint_on:
-        column: owner_id
+        column: circle_uuid
         table:
           name: boards
           schema: public
   - name: circle_members
     using:
       foreign_key_constraint_on:
-        column: user_id
+        column: circle_uuid
         table:
           name: circle_members
           schema: public
-  - name: circles
+  - name: circle_permissions
     using:
       foreign_key_constraint_on:
-        column: owner_id
+        column: circle_uuid
         table:
-          name: circles
-          schema: public
-  - name: posts
-    using:
-      foreign_key_constraint_on:
-        column: user_id
-        table:
-          name: posts
+          name: circle_permissions
           schema: public
