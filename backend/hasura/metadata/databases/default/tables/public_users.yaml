@@ -30,3 +30,32 @@ array_relationships:
         table:
           name: posts
           schema: public
+select_permissions:
+  - role: freemium
+    permission:
+      columns:
+        - email_verified
+        - id
+        - email
+        - name
+        - phone_number
+        - photo_url
+        - created_at
+        - deleted_at
+        - updated_at
+      filter: {}
+    comment: ""
+  - role: premium
+    permission:
+      columns:
+        - email_verified
+        - id
+        - email
+        - name
+        - phone_number
+        - photo_url
+        - created_at
+        - deleted_at
+        - updated_at
+      filter: {}
+    comment: ""
