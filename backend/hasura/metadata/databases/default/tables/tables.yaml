@@ -1,0 +1,6 @@
+- "!include public_boards.yaml"
+- "!include public_circle_members.yaml"
+- "!include public_circle_permissions.yaml"
+- "!include public_circles.yaml"
+- "!include public_posts.yaml"
+- "!include public_users.yaml"

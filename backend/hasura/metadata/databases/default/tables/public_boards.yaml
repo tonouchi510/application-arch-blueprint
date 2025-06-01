@@ -1,0 +1,59 @@
+table:
+  name: boards
+  schema: public
+object_relationships:
+  - name: circle
+    using:
+      foreign_key_constraint_on: circle_uuid
+  - name: user
+    using:
+      foreign_key_constraint_on: owner_id
+array_relationships:
+  - name: posts
+    using:
+      foreign_key_constraint_on:
+        column: board_uuid
+        table:
+          name: posts
+          schema: public
+select_permissions:
+  - role: freemium
+    permission:
+      columns:
+        - owner_id
+        - status
+        - topic
+        - created_at
+        - updated_at
+        - circle_uuid
+        - uuid
+      filter:
+        _or:
+          - circle:
+              owner_id:
+                _eq: X-Hasura-User-Id
+          - circle:
+              circle_members:
+                user_id:
+                  _eq: X-Hasura-User-Id
+    comment: ""
+  - role: premium
+    permission:
+      columns:
+        - owner_id
+        - status
+        - topic
+        - created_at
+        - updated_at
+        - circle_uuid
+        - uuid
+      filter:
+        _or:
+          - circle:
+              owner_id:
+                _eq: X-Hasura-User-Id
+          - circle:
+              circle_members:
+                user_id:
+                  _eq: X-Hasura-User-Id
+    comment: ""

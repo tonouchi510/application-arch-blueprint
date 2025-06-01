@@ -1,0 +1,61 @@
+table:
+  name: users
+  schema: public
+array_relationships:
+  - name: boards
+    using:
+      foreign_key_constraint_on:
+        column: owner_id
+        table:
+          name: boards
+          schema: public
+  - name: circle_members
+    using:
+      foreign_key_constraint_on:
+        column: user_id
+        table:
+          name: circle_members
+          schema: public
+  - name: circles
+    using:
+      foreign_key_constraint_on:
+        column: owner_id
+        table:
+          name: circles
+          schema: public
+  - name: posts
+    using:
+      foreign_key_constraint_on:
+        column: user_id
+        table:
+          name: posts
+          schema: public
+select_permissions:
+  - role: freemium
+    permission:
+      columns:
+        - email_verified
+        - id
+        - email
+        - name
+        - phone_number
+        - photo_url
+        - created_at
+        - deleted_at
+        - updated_at
+      filter: {}
+    comment: ""
+  - role: premium
+    permission:
+      columns:
+        - email_verified
+        - id
+        - email
+        - name
+        - phone_number
+        - photo_url
+        - created_at
+        - deleted_at
+        - updated_at
+      filter: {}
+    comment: ""
