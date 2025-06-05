@@ -1,6 +1,6 @@
 package users
 
-// User Firebase Authenticationのユーザ情報を表すモデル
+// User Entity for explaining Firebase Authentication user
 type User struct {
 	Id            UserId
 	name          UserName
@@ -29,7 +29,7 @@ func (u *User) ChangeName(name UserName) error {
 
 func (u *User) ChangeEmail(email Email) {
 	u.email = email
-	u.emailVerified = false // メールアドレスを変更した場合、メール認証は未完了とする
+	u.emailVerified = false // If you change your email address, email will not be verified.
 }
 
 func (u User) Equals(other User) bool {

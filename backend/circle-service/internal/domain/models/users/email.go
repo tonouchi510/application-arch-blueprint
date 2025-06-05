@@ -10,17 +10,17 @@ import (
 
 type Email string
 
-func NewEmail(value string) (Email, error) {
+func NewEmail(value string) (*Email, error) {
 	addr, err := mail.ParseAddress(value)
 	if err != nil {
-		return "", errors.Errorf(codes.InvalidArgument, "メールアドレスの形式が正しくありません。")
+		return nil, errors.Errorf(codes.InvalidArgument, "メールアドレスの形式が正しくありません。")
 	}
 	email := Email(addr.Address)
-	return email, nil
+	return &email, nil
 }
 
 func (e Email) Equals(other Email) bool {
-	// 大文字小文字を区別しないで比較する
+	// Case-insensitive comparison
 	if strings.EqualFold(string(e), string(other)) {
 		return true
 	}

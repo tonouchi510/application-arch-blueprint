@@ -9,11 +9,11 @@ import (
 
 type PhoneNumber string
 
-func NewPhoneNumber(value string) (PhoneNumber, error) {
+func NewPhoneNumber(value string) (*PhoneNumber, error) {
 	_, err := regexp.MatchString(`^\+[1-9]\d{1,14}$`, value)
 	if err != nil {
-		return "", errors.Errorf(codes.InvalidArgument, "電話番号の形式が正しくありません。E.164形式に準拠してください。")
+		return nil, errors.Errorf(codes.InvalidArgument, "電話番号の形式が正しくありません。E.164形式に準拠してください。")
 	}
 	phoneNumber := PhoneNumber(value)
-	return phoneNumber, nil
+	return &phoneNumber, nil
 }

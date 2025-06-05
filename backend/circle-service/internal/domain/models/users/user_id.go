@@ -5,7 +5,7 @@ import (
 	"github.com/tonouchi510/application-arch-blueprint/circle-service/internal/shared/errors"
 )
 
-type UserId string // Firebase AuthenticationのUIDを使用
+type UserId string // Use Firebase Authentication UID
 
 func NewUserId(value string) (UserId, error) {
 	if value == "" {

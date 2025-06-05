@@ -9,11 +9,11 @@ import (
 
 type PhotoUrl string
 
-func NewPhotoUrl(value string) (PhotoUrl, error) {
+func NewPhotoUrl(value string) (*PhotoUrl, error) {
 	_, err := regexp.MatchString(`(https?)(:\/\/[-_.!~*\'()a-zA-Z0-9;\/?:\@&=+\$,%#]+)\.(jpg|jpeg|png)`, value)
 	if err != nil {
-		return "", errors.Errorf(codes.InvalidArgument, "無効なURLです。")
+		return nil, errors.Errorf(codes.InvalidArgument, "無効なURLです。")
 	}
 	photoUrl := PhotoUrl(value)
-	return photoUrl, nil
+	return &photoUrl, nil
 }
