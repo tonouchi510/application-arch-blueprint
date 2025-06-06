@@ -7,12 +7,12 @@ import (
 
 type UserId string // Use Firebase Authentication UID
 
-func NewUserId(value string) (UserId, error) {
+func NewUserId(value string) (*UserId, error) {
 	if value == "" {
-		return "", errors.Errorf(codes.InvalidArgument, "UserIdが空です。")
+		return nil, errors.Errorf(codes.InvalidArgument, "UserIdが空です。")
 	} else if len(value) != 28 {
-		return "", errors.Errorf(codes.InvalidArgument, "UserIdが不正です。")
+		return nil, errors.Errorf(codes.InvalidArgument, "UserIdが不正です。")
 	}
 	id := UserId(value)
-	return id, nil
+	return &id, nil
 }

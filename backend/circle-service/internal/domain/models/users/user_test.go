@@ -37,8 +37,7 @@ func (s *UserTestSuite) TestChangeName() {
 	t := s.T()
 	t.Run("Success", func(t *testing.T) {
 		newName := users.UserName("new-name")
-		err := s.user.ChangeName(newName)
-		require.NoError(t, err)
+		s.user.ChangeName(newName)
 
 		note := &TestUserNotification{}
 		s.user.Notify(note)

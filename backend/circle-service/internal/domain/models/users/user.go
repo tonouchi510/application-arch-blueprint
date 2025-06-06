@@ -22,14 +22,21 @@ func NewUser(id UserId, name UserName, email Email, emailVerified bool, photoUrl
 	return &newUser
 }
 
-func (u *User) ChangeName(name UserName) error {
+func (u *User) ChangeName(name UserName) {
 	u.name = name
-	return nil
 }
 
 func (u *User) ChangeEmail(email Email) {
 	u.email = email
 	u.emailVerified = false // If you change your email address, email will not be verified.
+}
+
+func (u *User) ChangePhotoUrl(photoUrl *PhotoUrl) {
+	u.photoUrl = photoUrl
+}
+
+func (u *User) ChangePhoneNumber(phoneNumber *PhoneNumber) {
+	u.phoneNumber = phoneNumber
 }
 
 func (u User) Equals(other User) bool {
