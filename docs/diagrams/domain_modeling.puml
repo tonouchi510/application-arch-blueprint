@@ -1,0 +1,86 @@
+@startuml domain_modeling
+package UserAggregate {
+    class User << (R,red) RootEntity >> {
+        Id: ユーザID
+        userName: ユーザ名
+        email: メールアドレス
+        emailVerified: bool
+        phoneNumber: 電話番号
+        photoUrl: 画像URL
+        --
+        各種属性の変更
+        メールアドレスの確認
+    }
+}
+
+package CircleAggregate {
+    class Circle << (R,red) RootEntity >> {
+        Uuid: サークルUUID
+        ownerId: ユーザID
+        name: サークル名
+        description: string
+        members: List[ユーザID]
+        --
+        名前・説明の変更
+        メンバーの追加
+        メンバーの削除
+        オーナー権限の委譲
+    }
+
+    note bottom of Circle
+        サークル作成者が自動的にオーナーとなる
+        メンバー数は最大で30人まで
+    end note
+}
+
+package CirclePermissionAggregate {
+    class CirclePermission << (R,red) RootEntity >> {
+        Uuid: サークルUUID
+        permissionBoardCreation: bool
+        permissionSelfJoin: bool
+        --
+        各権限の変更
+    }
+
+    note bottom of CirclePermission
+        権限の変更はオーナーのみ可能
+    end note
+}
+
+package BoardAggregate {
+    class Board << (R,red) RootEntity >> {
+        Uuid: 掲示板UUID
+        circleUuid: サークルUUID
+        ownerId: ユーザID
+        topic: string
+        status: 掲示板ステータス
+        posts: List[Post]
+        --
+        トピックの編集
+        ステータスの変更
+        投稿の追加
+        投稿の削除
+        投稿の編集
+    }
+
+    class Post << (E,green) Entity >> {
+        Uuid: 投稿UUID
+        userId: ユーザID
+        content: string
+    }
+
+    note bottom of Board
+        オーナー、もしくは権限付与された
+        サークルのメンバーのみ作成可能
+    end note
+
+    note bottom of Post
+        投稿は掲示板ごとに最大100件まで
+    end note
+}
+
+
+User --* Circle : owns or belongs to >
+User --* Board
+Circle "1" -- "1" CirclePermission : has >
+Board -right-* Post
