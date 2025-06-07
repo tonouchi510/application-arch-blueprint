@@ -65,7 +65,9 @@ entity posts as "posts\n投稿" {
 
 users ||--o{ circles : "owns or belongs to"
 users ||--o{ posts : "writes"
-circles ||--o{ circle_members : contains
-circles ||--o{ boards : contains
+circles ||--o{ circle_members : "contains"
+circles ||--o{ boards : "contains"
 circles ||--|| circle_permissions : "has"
-boards ||--o{ posts : contains
+boards ||--o{ posts : "contains"
+
+@enduml

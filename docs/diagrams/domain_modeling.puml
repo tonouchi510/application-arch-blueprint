@@ -1,4 +1,5 @@
 @startuml domain_modeling
+
 package UserAggregate {
     class User << (R,red) RootEntity >> {
         Id: ユーザID
@@ -84,3 +85,5 @@ User --* Circle : owns or belongs to >
 User --* Board
 Circle "1" -- "1" CirclePermission : has >
 Board -right-* Post
+
+@enduml

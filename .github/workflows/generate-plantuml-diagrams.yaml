@@ -3,6 +3,7 @@ name: generate-plantuml-diagrams
 on:
   push:
     paths:
+      - 'docs/diagrams/*.puml'
       - 'docs/diagrams/**/*.puml'
       - '.github/workflows/generate-plantuml-diagrams.yaml'
     branches:
@@ -17,7 +18,7 @@ jobs:
 
     steps:
       - name: Checkout Source
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
