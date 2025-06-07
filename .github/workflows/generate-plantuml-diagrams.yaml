@@ -1,0 +1,45 @@
+name: generate-plantuml-diagrams
+
+on:
+  push:
+    paths:
+      - 'docs/diagrams/**/*.puml'
+      - '.github/workflows/generate-plantuml-diagrams.yaml'
+    branches:
+      - main
+
+jobs:
+
+  generate:
+    runs-on: ubuntu-latest
+    env:
+        UML_FILES: ".puml"
+
+    steps:
+      - name: Checkout Source
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Get changed UML files
+        id: getfile
+        run: |
+          echo "::set-output name=files::$(git diff --name-only HEAD^ HEAD | grep .puml | xargs)"
+
+      - name: UML files considered echo output
+        run: |
+          echo ${{ steps.getfile.outputs.files }}
+
+      - name: Generate PNG Diagrams
+        uses: Timmy/plantuml-action@v1
+        with:
+            args: -tpng ${{ steps.getfile.outputs.files }}
+
+      - name: Push Local Changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_user_name: "ci bot by tonouchi27"
+          commit_user_email: "tonouchi27@gmail.com"
+          commit_author: "ci bot by tonouchi27 <tonouchi27@gmail.com>"
+          commit_message: "Generate PNG images for PlantUML diagrams"
+          branch: ${{ github.head_ref }}

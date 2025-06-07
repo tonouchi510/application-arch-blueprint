@@ -1,0 +1,71 @@
+@startuml er
+
+entity users as "users\nユーザー" {
+    *id [character(28)]
+    --
+    *user_name [text]
+    *email [text]
+    *email_verified [bool]
+    phone_number [text]
+    photo_url [text]
+    *created_at [timestamp]
+    *updated_at [timestamp]
+    deleted_at [timestamp]
+}
+
+entity circles as "circles\nサークル" {
+    *uuid [character(36)]
+    --
+    *owner_id [character(28)]
+    *name [text]
+    *description [text]
+    *created_at [timestamp]
+    *updated_at [timestamp]
+}
+
+entity circle_members as "circle_members\nサークルメンバー" {
+    *uuid [character(36)]
+    --
+    *circle_uuid [character(36)]
+    *user_id [character(28)]
+    *joined_date [timestamp]
+    *created_at [timestamp]
+    *updated_at [timestamp]
+}
+
+entity circle_permissions as "circle_permissions\nサークル権限" {
+    *circle_uuid [character(36)]
+    --
+    *permission_board_creation [bool]
+    *permission_self_join [bool]
+    *created_at [timestamp]
+    *updated_at [timestamp]
+}
+
+entity boards as "boards\n掲示板" {
+    *uuid [character(36)]
+    --
+    *circle_uuid [character(36)]
+    *owner_id [character(28)]
+    *topic [text]
+    *status [smallint]
+    *created_at [timestamp]
+    *updated_at [timestamp]
+}
+
+entity posts as "posts\n投稿" {
+    *uuid [character(36)]
+    --
+    *board_uuid [character(36)]
+    *user_id [character(28)]
+    *content [text]
+    *created_at [timestamp]
+    *updated_at [timestamp]
+}
+
+users ||--o{ circles : "owns or belongs to"
+users ||--o{ posts : "writes"
+circles ||--o{ circle_members : contains
+circles ||--o{ boards : contains
+circles ||--|| circle_permissions : "has"
+boards ||--o{ posts : contains
