@@ -4,13 +4,13 @@
 
 ## アーキテクチャ図
 
-![image](../diagrams/architecture.png)
+![image](diagrams/architecture.png)
 
 ## ドメインモデル図
 
 `circle-service`のドメインモデリングを行った結果。
 
-![image](../diagrams/domain_modeling.png)
+![image](diagrams/domain_modeling.png)
 
 個別のドメインの実装詳細は以下を参照してください。
 
@@ -21,4 +21,4 @@
 
 `circle-service`のDBのER図は以下の通り。
 
-![image](../diagrams/er.png)
+![image](diagrams/er.png)
