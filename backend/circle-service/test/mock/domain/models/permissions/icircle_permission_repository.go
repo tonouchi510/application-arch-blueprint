@@ -53,7 +53,7 @@ func (mr *MockICirclePermissionRepositoryMockRecorder) Find(ctx, circleId, execu
 }
 
 // Save mocks base method.
-func (m *MockICirclePermissionRepository) Save(ctx context.Context, permission *permissions.CirclePermission, executor db.DbExecutor) error {
+func (m *MockICirclePermissionRepository) Save(ctx context.Context, permission permissions.CirclePermission, executor db.DbExecutor) error {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "Save", ctx, permission, executor)
 	ret0, _ := ret[0].(error)

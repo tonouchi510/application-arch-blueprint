@@ -37,6 +37,20 @@ func (m *MockIBoardRepository) EXPECT() *MockIBoardRepositoryMockRecorder {
 	return m.recorder
 }
 
+// AddPost mocks base method.
+func (m *MockIBoardRepository) AddPost(ctx context.Context, boardUuid uuid.UUID, post boards.Post, executor db.DbExecutor) error {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "AddPost", ctx, boardUuid, post, executor)
+	ret0, _ := ret[0].(error)
+	return ret0
+}
+
+// AddPost indicates an expected call of AddPost.
+func (mr *MockIBoardRepositoryMockRecorder) AddPost(ctx, boardUuid, post, executor interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "AddPost", reflect.TypeOf((*MockIBoardRepository)(nil).AddPost), ctx, boardUuid, post, executor)
+}
+
 // Delete mocks base method.
 func (m *MockIBoardRepository) Delete(ctx context.Context, boardUuid uuid.UUID, executor db.DbExecutor) error {
 	m.ctrl.T.Helper()
@@ -67,7 +81,7 @@ func (mr *MockIBoardRepositoryMockRecorder) Find(ctx, boardUuid, executor interf
 }
 
 // Save mocks base method.
-func (m *MockIBoardRepository) Save(ctx context.Context, board *boards.Board, executor db.DbExecutor) error {
+func (m *MockIBoardRepository) Save(ctx context.Context, board boards.Board, executor db.DbExecutor) error {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "Save", ctx, board, executor)
 	ret0, _ := ret[0].(error)
