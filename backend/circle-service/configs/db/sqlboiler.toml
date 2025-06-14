@@ -1,0 +1,17 @@
+pkgname="models"
+output="internal/infrastructure/sqlboiler/models"
+wipe=true
+add-global-variants=true
+add-soft-deletes=true
+no-tests=true
+
+[inflections.Irregular]
+cache = "caches"
+
+[psql]
+  dbname  = "main"
+  host    = "localhost"
+  port    = 5432
+  user    = "postgres"
+  pass    = "password"
+  sslmode = "disable"
