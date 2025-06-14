@@ -12,4 +12,5 @@ import (
 type ICirclePermissionRepository interface {
 	Find(ctx context.Context, circleId uuid.UUID, executor db.DbExecutor) (*CirclePermission, error)
 	Save(ctx context.Context, permission CirclePermission, executor db.DbExecutor) error
+	Delete(ctx context.Context, circleId uuid.UUID, executor db.DbExecutor) error
 }

@@ -37,6 +37,20 @@ func (m *MockICirclePermissionRepository) EXPECT() *MockICirclePermissionReposit
 	return m.recorder
 }
 
+// Delete mocks base method.
+func (m *MockICirclePermissionRepository) Delete(ctx context.Context, circleId uuid.UUID, executor db.DbExecutor) error {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "Delete", ctx, circleId, executor)
+	ret0, _ := ret[0].(error)
+	return ret0
+}
+
+// Delete indicates an expected call of Delete.
+func (mr *MockICirclePermissionRepositoryMockRecorder) Delete(ctx, circleId, executor interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Delete", reflect.TypeOf((*MockICirclePermissionRepository)(nil).Delete), ctx, circleId, executor)
+}
+
 // Find mocks base method.
 func (m *MockICirclePermissionRepository) Find(ctx context.Context, circleId uuid.UUID, executor db.DbExecutor) (*permissions.CirclePermission, error) {
 	m.ctrl.T.Helper()

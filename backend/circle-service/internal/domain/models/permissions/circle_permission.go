@@ -15,6 +15,13 @@ func NewCirclePermission(circleId uuid.UUID, boardCreation bool) *CirclePermissi
 	}
 }
 
+func NewDefaultCirclePermission(circleId uuid.UUID) *CirclePermission {
+	return &CirclePermission{
+		CircleId:      circleId,
+		BoardCreation: false,
+	}
+}
+
 func (p *CirclePermission) ChangeBoardCreationPermission(allowed bool) {
 	p.BoardCreation = allowed
 }

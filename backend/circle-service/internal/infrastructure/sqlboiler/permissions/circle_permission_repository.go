@@ -41,6 +41,18 @@ func (r circlePermissionRepository) Save(ctx context.Context, permission domainM
 	return err
 }
 
+func (r circlePermissionRepository) Delete(ctx context.Context, circleId uuid.UUID, executor db.DbExecutor) error {
+	permissionData, err := models.FindCirclePermission(ctx, executor, circleId.String())
+	if err != nil {
+		if err.Error() == "sql: no rows in result set" {
+			return errors.Errorf(codes.NotFound, "circle permission not found: %s", circleId.String())
+		}
+		return err
+	}
+	_, err = permissionData.Delete(ctx, executor)
+	return err
+}
+
 func toModel(from models.CirclePermission) *domainModel.CirclePermission {
 	circleUuid, _ := uuid.Parse(from.CircleUUID)
 
