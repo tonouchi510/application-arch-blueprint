@@ -6,6 +6,7 @@ import (
 	"github.com/google/uuid"
 	"github.com/tonouchi510/application-arch-blueprint/circle-service/internal/application/rbac"
 	domainModel "github.com/tonouchi510/application-arch-blueprint/circle-service/internal/domain/models/circles"
+	"github.com/tonouchi510/application-arch-blueprint/circle-service/internal/domain/models/permissions"
 	"github.com/tonouchi510/application-arch-blueprint/circle-service/internal/domain/shared"
 	"github.com/tonouchi510/application-arch-blueprint/circle-service/internal/shared/codes"
 	"github.com/tonouchi510/application-arch-blueprint/circle-service/internal/shared/errors"
@@ -22,20 +23,23 @@ type ICircleApplicationService interface {
 }
 
 type circleApplicationService struct {
-	ctx           context.Context
-	domainService domainModel.ICircleService
-	repository    domainModel.ICircleRepository
+	ctx            context.Context
+	domainService  domainModel.ICircleService
+	repository     domainModel.ICircleRepository
+	permissionRepo permissions.ICirclePermissionRepository
 }
 
 func NewCircleApplicationService(
 	ctx context.Context,
 	service domainModel.ICircleService,
 	repository domainModel.ICircleRepository,
+	permissionRepo permissions.ICirclePermissionRepository,
 ) ICircleApplicationService {
 	return circleApplicationService{
-		ctx:           ctx,
-		domainService: service,
-		repository:    repository,
+		ctx:            ctx,
+		domainService:  service,
+		repository:     repository,
+		permissionRepo: permissionRepo,
 	}
 }
 
@@ -85,6 +89,11 @@ func (s circleApplicationService) Create(ctx context.Context, command CircleCrea
 
 	if err = s.repository.Save(ctx, *circle, tx); err != nil {
 		return nil, err
+	}
+
+	p := permissions.NewDefaultCirclePermission(circleId)
+	if err = s.permissionRepo.Save(ctx, *p, tx); err != nil {
+		return nil, errors.Errorf(codes.Internal, "サークルの権限設定の保存に失敗しました: %v", err)
 	}
 
 	dataBuilder := &CircleDataBuilder{}
@@ -325,6 +334,10 @@ func (s circleApplicationService) Delete(ctx context.Context, command CircleDele
 
 	if !circle.IsOwner(*userId) {
 		return errors.Errorf(codes.PermissionDenied, "サークルのオーナーのみがサークルを削除できます。")
+	}
+
+	if err = s.permissionRepo.Delete(ctx, circleUuid, tx); err != nil {
+		return errors.Errorf(codes.Internal, "サークルの権限設定の削除に失敗しました: %v", err)
 	}
 
 	if err = s.repository.Delete(ctx, *circle, tx); err != nil {
