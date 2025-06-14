@@ -1,6 +1,8 @@
 package circles
 
 import (
+	"slices"
+
 	"github.com/google/uuid"
 	"github.com/tonouchi510/application-arch-blueprint/circle-service/internal/domain/shared"
 	"github.com/tonouchi510/application-arch-blueprint/circle-service/internal/shared/codes"
@@ -51,6 +53,13 @@ func (c Circle) CountMembers() int {
 
 func (c Circle) IsOwner(userId shared.UserId) bool {
 	return c.ownerId == userId
+}
+
+func (c Circle) IsMember(userId shared.UserId) bool {
+	if slices.Contains(c.memberIds, userId) || c.IsOwner(userId) {
+		return true
+	}
+	return false
 }
 
 func (c Circle) Notify(note ICircleNotification) {

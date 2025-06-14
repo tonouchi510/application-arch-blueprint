@@ -30,6 +30,10 @@ func (b *Board) ChangeStatus(newStatus Status) {
 	b.status = newStatus
 }
 
+func (b Board) IsPostLimitReached() bool {
+	return len(b.posts) >= 100
+}
+
 func (b Board) Notify(note IBoardNotification) {
 	note.SetId(b.Id)
 	note.SetCircleUuid(b.circleUuid)

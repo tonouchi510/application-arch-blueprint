@@ -10,6 +10,7 @@ import (
 
 	gomock "github.com/golang/mock/gomock"
 	boards "github.com/tonouchi510/application-arch-blueprint/circle-service/internal/domain/models/boards"
+	circles "github.com/tonouchi510/application-arch-blueprint/circle-service/internal/domain/models/circles"
 	db "github.com/tonouchi510/application-arch-blueprint/circle-service/internal/shared/db"
 )
 
@@ -37,15 +38,15 @@ func (m *MockIBoardDomainService) EXPECT() *MockIBoardDomainServiceMockRecorder 
 }
 
 // AddPost mocks base method.
-func (m *MockIBoardDomainService) AddPost(ctx context.Context, board *boards.Board, post boards.Post, executor db.DbExecutor) error {
+func (m *MockIBoardDomainService) AddPost(ctx context.Context, board *boards.Board, post boards.Post, circle circles.Circle, executor db.DbExecutor) error {
 	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "AddPost", ctx, board, post, executor)
+	ret := m.ctrl.Call(m, "AddPost", ctx, board, post, circle, executor)
 	ret0, _ := ret[0].(error)
 	return ret0
 }
 
 // AddPost indicates an expected call of AddPost.
-func (mr *MockIBoardDomainServiceMockRecorder) AddPost(ctx, board, post, executor interface{}) *gomock.Call {
+func (mr *MockIBoardDomainServiceMockRecorder) AddPost(ctx, board, post, circle, executor interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "AddPost", reflect.TypeOf((*MockIBoardDomainService)(nil).AddPost), ctx, board, post, executor)
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "AddPost", reflect.TypeOf((*MockIBoardDomainService)(nil).AddPost), ctx, board, post, circle, executor)
 }

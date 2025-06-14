@@ -113,9 +113,39 @@ func (s *CircleTestSuite) TestIsOwner() {
 		require.True(t, result)
 	})
 
+	t.Run("Success/メンバーIDが一致する場合、trueを返す", func(t *testing.T) {
+		testMemberId := shared.UserId("cccccccccccccccccccccccccccc")
+		memberIds := []shared.UserId{testMemberId}
+		testCircle, err := circles.NewCircle(
+			s.circleId,
+			s.circleName,
+			s.description,
+			s.ownerId,
+			memberIds,
+		)
+		require.NoError(t, err)
+		result := testCircle.IsMember(testMemberId)
+		require.True(t, result)
+	})
+
 	t.Run("Success/オーナーIDが一致しない場合、falseを返す", func(t *testing.T) {
 		otherUserId := shared.UserId("bbbbbbbbbbbbbbbbbbbbbbbbbbbb")
 		result := s.circle.IsOwner(otherUserId)
+		require.False(t, result)
+	})
+}
+
+func (s *CircleTestSuite) TestIsMember() {
+	t := s.T()
+
+	t.Run("Success/Ownerの場合、trueを返す", func(t *testing.T) {
+		result := s.circle.IsMember(s.ownerId)
+		require.True(t, result)
+	})
+
+	t.Run("Success/オーナーでもメンバーでもない場合、falseを返す", func(t *testing.T) {
+		otherUserId := shared.UserId("bbbbbbbbbbbbbbbbbbbbbbbbbbbb")
+		result := s.circle.IsMember(otherUserId)
 		require.False(t, result)
 	})
 }
