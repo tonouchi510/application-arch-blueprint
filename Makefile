@@ -29,24 +29,31 @@ hasura-seed-apply:
 	@cd backend/hasura && hasura seed apply --database-name default
 
 # backend(go)
-.PHONY: run
-run:
+.PHONY: go-setup
+go-setup:
+	@cd backend/${BACKEND_SERVICE_NAME} && go install github.com/golang/mock/mockgen@latest
+	@cd backend/${BACKEND_SERVICE_NAME} && go install github.com/volatiletech/sqlboiler/v4@latest
+	@cd backend/${BACKEND_SERVICE_NAME} && go install github.com/volatiletech/sqlboiler/v4/drivers/sqlboiler-psql@latest
+	@cd backend/${BACKEND_SERVICE_NAME} && go install github.com/99designs/gqlgen@latest
+
+.PHONY: go-run
+go-run:
 	cd backend/${BACKEND_SERVICE_NAME} && go run server.go
 
-.PHONY: build
-build:
+.PHONY: go-build
+go-build:
 	cd backend/${BACKEND_SERVICE_NAME} && go build -o backend_service
 
-.PHONY: clean
-clean:
+.PHONY: go-clean
+go-clean:
 	@rm backend_service
 
 .PHONY: test
 test:
 	cd backend/${BACKEND_SERVICE_NAME} && go test -v -cover -covermode=atomic ./internal/...
 
-.PHONY: code-check
-code-check:
+.PHONY: go-code-check
+go-code-check:
 	cd backend/${BACKEND_SERVICE_NAME} && go fmt ./...
 	@cd backend/${BACKEND_SERVICE_NAME} && go vet ./...
 
