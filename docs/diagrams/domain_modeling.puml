@@ -52,7 +52,6 @@ package BoardAggregate {
     class Board << (R,red) RootEntity >> {
         Uuid: 掲示板UUID
         circleUuid: サークルUUID
-        ownerId: ユーザID
         topic: string
         status: 掲示板ステータス
         posts: List[Post]
