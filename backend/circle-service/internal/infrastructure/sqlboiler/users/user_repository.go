@@ -23,7 +23,7 @@ func (r userRepository) Find(ctx context.Context, id domainModel.UserId, executo
 		// If the user does not exist, an error is returned.
 		return nil, err
 	}
-	user, err := ToModel(*userData)
+	user, err := toModel(*userData)
 	if err != nil {
 		return nil, err
 	}
@@ -35,7 +35,7 @@ func (r userRepository) FindByName(ctx context.Context, name domainModel.UserNam
 	if err != nil {
 		return nil, err
 	}
-	user, err := ToModel(*userData)
+	user, err := toModel(*userData)
 	if err != nil {
 		return nil, err
 	}
@@ -43,7 +43,7 @@ func (r userRepository) FindByName(ctx context.Context, name domainModel.UserNam
 }
 
 func (r userRepository) Save(ctx context.Context, user domainModel.User, executor db.DbExecutor) error {
-	userDataModelBuilder := &UserDataModelBuilder{}
+	userDataModelBuilder := &userDataModelBuilder{}
 	user.Notify(userDataModelBuilder)
 	userData := userDataModelBuilder.Build()
 
@@ -65,7 +65,7 @@ func (r userRepository) Delete(ctx context.Context, userId domainModel.UserId, e
 	return nil
 }
 
-func ToModel(from models.User) (*domainModel.User, error) {
+func toModel(from models.User) (*domainModel.User, error) {
 	userId, err := domainModel.NewUserId(from.ID)
 	if err != nil {
 		return nil, err

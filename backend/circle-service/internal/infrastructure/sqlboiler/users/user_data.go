@@ -6,7 +6,7 @@ import (
 	"github.com/volatiletech/null/v8"
 )
 
-type UserDataModelBuilder struct {
+type userDataModelBuilder struct {
 	id            domainModel.UserId
 	name          domainModel.UserName
 	email         domainModel.Email
@@ -15,31 +15,31 @@ type UserDataModelBuilder struct {
 	phoneNumber   *domainModel.PhoneNumber
 }
 
-func (b *UserDataModelBuilder) SetId(id domainModel.UserId) {
+func (b *userDataModelBuilder) SetId(id domainModel.UserId) {
 	b.id = id
 }
 
-func (b *UserDataModelBuilder) SetName(name domainModel.UserName) {
+func (b *userDataModelBuilder) SetName(name domainModel.UserName) {
 	b.name = name
 }
 
-func (b *UserDataModelBuilder) SetEmail(email domainModel.Email) {
+func (b *userDataModelBuilder) SetEmail(email domainModel.Email) {
 	b.email = email
 }
 
-func (b *UserDataModelBuilder) SetEmailVerified(emailVerified bool) {
+func (b *userDataModelBuilder) SetEmailVerified(emailVerified bool) {
 	b.emailVerified = emailVerified
 }
 
-func (b *UserDataModelBuilder) SetPhotoUrl(photoUrl *domainModel.PhotoUrl) {
+func (b *userDataModelBuilder) SetPhotoUrl(photoUrl *domainModel.PhotoUrl) {
 	b.photoUrl = photoUrl
 }
 
-func (b *UserDataModelBuilder) SetPhoneNumber(phoneNumber *domainModel.PhoneNumber) {
+func (b *userDataModelBuilder) SetPhoneNumber(phoneNumber *domainModel.PhoneNumber) {
 	b.phoneNumber = phoneNumber
 }
 
-func (b UserDataModelBuilder) Build() models.User {
+func (b userDataModelBuilder) Build() models.User {
 	return models.User{
 		ID:            string(b.id),
 		Name:          string(b.name),
