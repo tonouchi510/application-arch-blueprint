@@ -25,7 +25,7 @@ clean:
 
 .PHONY: test
 test:
-	go test -v -cover -covermode=atomic ./internal/...
+	go test -v -cover -covermode=atomic ./test/...
 
 .PHONY: code-check
 code-check:

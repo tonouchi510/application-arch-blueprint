@@ -1,4 +1,4 @@
-package users
+package users_test
 
 import (
 	"context"
@@ -10,6 +10,7 @@ import (
 	"github.com/stretchr/testify/require"
 	"github.com/stretchr/testify/suite"
 	domainModel "github.com/tonouchi510/application-arch-blueprint/circle-service/internal/domain/models/users"
+	repoImpl "github.com/tonouchi510/application-arch-blueprint/circle-service/internal/infrastructure/sqlboiler/users"
 	"github.com/tonouchi510/application-arch-blueprint/circle-service/internal/infrastructure/sqlboiler/models"
 	"github.com/tonouchi510/application-arch-blueprint/circle-service/internal/shared/codes"
 	"github.com/tonouchi510/application-arch-blueprint/circle-service/internal/shared/errors"
@@ -66,7 +67,7 @@ func (s *UserRepositoryTestSuite) SetupSuite() {
 	s.testNewUserId = domainModel.UserId("aaaaaaaaaaaaaaaaaaaaaaaaaaaa")
 	s.testNewUser = createTestUser(s.testNewUserId)
 
-	s.repo = NewUserRepository()
+	s.repo = repoImpl.NewUserRepository()
 
 	// Added test user data
 	user := models.User{
