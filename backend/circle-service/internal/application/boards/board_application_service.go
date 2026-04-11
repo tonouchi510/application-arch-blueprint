@@ -46,7 +46,7 @@ func NewBoardApplicationService(
 func (s boardApplicationService) Create(ctx context.Context, command BoardCreateCommand) (*BoardData, error) {
 	tx, err := boil.BeginTx(ctx, nil)
 	if err != nil {
-		return nil, errors.Errorf(codes.Database, err.Error())
+		return nil, errors.Errorf(codes.Database, "%s", err.Error())
 	}
 	defer func() {
 		if err != nil {
@@ -93,7 +93,7 @@ func (s boardApplicationService) Create(ctx context.Context, command BoardCreate
 func (s boardApplicationService) ChangeTopic(ctx context.Context, command BoardChangeTopicCommand) (*BoardData, error) {
 	tx, err := boil.BeginTx(ctx, nil)
 	if err != nil {
-		return nil, errors.Errorf(codes.Database, err.Error())
+		return nil, errors.Errorf(codes.Database, "%s", err.Error())
 	}
 	defer func() {
 		if err != nil {
@@ -147,7 +147,7 @@ func (s boardApplicationService) ChangeTopic(ctx context.Context, command BoardC
 func (s boardApplicationService) ChangeStatus(ctx context.Context, command BoardChangeStatusCommand) (*BoardData, error) {
 	tx, err := boil.BeginTx(ctx, nil)
 	if err != nil {
-		return nil, errors.Errorf(codes.Database, err.Error())
+		return nil, errors.Errorf(codes.Database, "%s", err.Error())
 	}
 	defer func() {
 		if err != nil {
@@ -209,7 +209,7 @@ func (s boardApplicationService) ChangeStatus(ctx context.Context, command Board
 func (s boardApplicationService) AddNewPost(ctx context.Context, command BoardAddPostCommand) (*BoardData, error) {
 	tx, err := boil.BeginTx(ctx, nil)
 	if err != nil {
-		return nil, errors.Errorf(codes.Database, err.Error())
+		return nil, errors.Errorf(codes.Database, "%s", err.Error())
 	}
 	defer func() {
 		if err != nil {
@@ -274,7 +274,7 @@ func (s boardApplicationService) AddNewPost(ctx context.Context, command BoardAd
 func (s boardApplicationService) Delete(ctx context.Context, command BoardDeleteCommand) error {
 	tx, err := boil.BeginTx(ctx, nil)
 	if err != nil {
-		return errors.Errorf(codes.Database, err.Error())
+		return errors.Errorf(codes.Database, "%s", err.Error())
 	}
 	defer func() {
 		if err != nil {

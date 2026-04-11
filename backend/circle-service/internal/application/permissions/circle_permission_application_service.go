@@ -32,7 +32,7 @@ func NewCirclePermissionApplicationService(repository domainModel.ICirclePermiss
 func (s CirclePermissionApplicationService) ChangeBoardCreationPermission(ctx context.Context, command ChangeBoardCreationPermissionCommand) error {
 	tx, err := boil.BeginTx(ctx, nil)
 	if err != nil {
-		return errors.Errorf(codes.Database, err.Error())
+		return errors.Errorf(codes.Database, "%s", err.Error())
 	}
 	defer func() {
 		if err != nil {
