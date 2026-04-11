@@ -3,11 +3,11 @@ package users
 import (
 	"context"
 
+	"github.com/aarondl/sqlboiler/v4/boil"
 	"github.com/tonouchi510/application-arch-blueprint/circle-service/internal/application/rbac"
 	"github.com/tonouchi510/application-arch-blueprint/circle-service/internal/domain/models/users"
 	"github.com/tonouchi510/application-arch-blueprint/circle-service/internal/shared/codes"
 	"github.com/tonouchi510/application-arch-blueprint/circle-service/internal/shared/errors"
-	"github.com/volatiletech/sqlboiler/v4/boil"
 )
 
 type IUserApplicationService interface {
@@ -32,7 +32,7 @@ func NewUserApplicationService(repo users.IUserRepository, service users.IUserSe
 func (s userApplicationService) RegistorUserFromFirebaseAuth(ctx context.Context, command RegistorUserFromFirebaseAuthCommand) (*UserData, error) {
 	tx, err := boil.BeginTx(ctx, nil)
 	if err != nil {
-		return nil, errors.Errorf(codes.Database, err.Error())
+		return nil, errors.Errorf(codes.Database, "%s", err.Error())
 	}
 	defer func() {
 		if err != nil {

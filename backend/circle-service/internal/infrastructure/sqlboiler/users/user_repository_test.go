@@ -13,7 +13,7 @@ import (
 	"github.com/tonouchi510/application-arch-blueprint/circle-service/internal/shared/codes"
 	"github.com/tonouchi510/application-arch-blueprint/circle-service/internal/shared/errors"
 	testtools "github.com/tonouchi510/application-arch-blueprint/circle-service/internal/shared/test-tools"
-	"github.com/volatiletech/sqlboiler/v4/boil"
+	"github.com/aarondl/sqlboiler/v4/boil"
 )
 
 type UserRepositoryTestSuite struct {

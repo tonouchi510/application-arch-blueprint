@@ -5,13 +5,13 @@ import (
 	"testing"
 
 	"github.com/DATA-DOG/go-sqlmock"
-	"github.com/golang/mock/gomock"
+	"github.com/aarondl/sqlboiler/v4/boil"
 	"github.com/stretchr/testify/require"
 	"github.com/stretchr/testify/suite"
 	"github.com/tonouchi510/application-arch-blueprint/circle-service/internal/application/users"
 	domainModel "github.com/tonouchi510/application-arch-blueprint/circle-service/internal/domain/models/users"
 	mock_users "github.com/tonouchi510/application-arch-blueprint/circle-service/test/mock/domain/models/users"
-	"github.com/volatiletech/sqlboiler/v4/boil"
+	"go.uber.org/mock/gomock"
 )
 
 type UserApplicationServiceTestSuite struct {

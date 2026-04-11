@@ -4,7 +4,6 @@ import (
 	"context"
 	"testing"
 
-	"github.com/golang/mock/gomock"
 	"github.com/stretchr/testify/require"
 	"github.com/stretchr/testify/suite"
 	"github.com/tonouchi510/application-arch-blueprint/circle-service/internal/domain/models/users"
@@ -12,6 +11,7 @@ import (
 	"github.com/tonouchi510/application-arch-blueprint/circle-service/internal/shared/errors"
 	mock_users "github.com/tonouchi510/application-arch-blueprint/circle-service/test/mock/domain/models/users"
 	mock_db "github.com/tonouchi510/application-arch-blueprint/circle-service/test/mock/shared/db"
+	"go.uber.org/mock/gomock"
 )
 
 type UserServiceTestSuite struct {

@@ -11,7 +11,7 @@ import (
 	"github.com/tonouchi510/application-arch-blueprint/circle-service/internal/domain/shared"
 	"github.com/tonouchi510/application-arch-blueprint/circle-service/internal/shared/codes"
 	"github.com/tonouchi510/application-arch-blueprint/circle-service/internal/shared/errors"
-	"github.com/volatiletech/sqlboiler/v4/boil"
+	"github.com/aarondl/sqlboiler/v4/boil"
 )
 
 type IBoardApplicationService interface {
