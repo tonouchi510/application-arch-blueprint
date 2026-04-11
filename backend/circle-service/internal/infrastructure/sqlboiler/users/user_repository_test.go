@@ -5,6 +5,7 @@ import (
 	"database/sql"
 	"testing"
 
+	"github.com/aarondl/sqlboiler/v4/boil"
 	"github.com/ory/dockertest/v3"
 	"github.com/stretchr/testify/require"
 	"github.com/stretchr/testify/suite"
@@ -13,7 +14,6 @@ import (
 	"github.com/tonouchi510/application-arch-blueprint/circle-service/internal/shared/codes"
 	"github.com/tonouchi510/application-arch-blueprint/circle-service/internal/shared/errors"
 	testtools "github.com/tonouchi510/application-arch-blueprint/circle-service/internal/shared/test-tools"
-	"github.com/aarondl/sqlboiler/v4/boil"
 )
 
 type UserRepositoryTestSuite struct {
@@ -130,6 +130,6 @@ func (s *UserRepositoryTestSuite) TestXDelete() {
 
 		user, err := s.repo.Find(s.ctx, s.testNewUserId, s.tx)
 		require.Error(t, err)
-		require.Equal(t, nil, user)
+		require.Nil(t, user)
 	})
 }

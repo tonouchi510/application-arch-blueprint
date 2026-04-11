@@ -84,9 +84,9 @@ func (s *CircleTestSuite) TestIsFull() {
 	})
 
 	t.Run("Success/メンバー数が上限の場合、trueを返す", func(t *testing.T) {
-		// メンバーを30人に設定する
+		// オーナーを含めて30人になるよう、メンバーは29人設定する
 		memberIds := []shared.UserId{}
-		for i := 0; i < 30; i++ {
+		for i := 0; i < 29; i++ {
 			memberIds = append(memberIds, shared.UserId(uuid.New().String()))
 		}
 
