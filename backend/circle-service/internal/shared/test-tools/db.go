@@ -29,7 +29,7 @@ func NewDBContainer() (*DBContainer, error) {
 		Repository: "postgres",
 		Tag:        "15.1",
 		Env:        []string{"POSTGRES_USER=postgres", "POSTGRES_PASSWORD=secret"},
-		Mounts:     []string{pwd + "/../../../../configs/db/init/ddl.sql:/docker-entrypoint-initdb.d/ddl.sql"}, // test-tools/ddl.sql は hasura/migrationsの最新版に追従してください。
+		Mounts:     []string{pwd + "/../../../../configs/db/test-init/ddl.sql:/docker-entrypoint-initdb.d/ddl.sql"}, // test-tools/ddl.sql は hasura/migrationsの最新版に追従してください。
 	})
 	if err != nil {
 		return nil, err
