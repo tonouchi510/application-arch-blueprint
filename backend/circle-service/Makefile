@@ -36,6 +36,7 @@ code-check:
 .PHONY: gen
 gen: sqlboiler gqlgen
 	go generate ./...
+	wire ./internal/shared/di/...
 
 ### 事前にdocker-compose up -dでDBを起動しておく必要がある
 .PHONY: sqlboiler
