@@ -5,6 +5,7 @@ DATABASE_URL := postgres://postgres:password@postgres:5432/main
 .PHONY: setup
 setup:
 	@npm install -g @mermaid-js/mermaid-cli
+	@npm i -g create-next-app
 	@brew install hasura-cli
 	@cd backend/circle-service && make setup
 
@@ -15,6 +16,14 @@ docker-compose-build:
 .PHONY: docker-compose-up
 docker-compose-up:
 	FIREBASE_PROJECT_ID=$(FIREBASE_PROJECT_ID) DATABASE_URL=$(DATABASE_URL) docker compose up -d
+
+# App
+.PHONY: run-local
+run-local:
+	cd frontend/app && flutter run --flavor local --dart-define=FLAVOR=local -d chrome --web-port 8888
+
+
+# WebSite
 
 # hasura
 hasura-console:
