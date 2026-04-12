@@ -10,6 +10,7 @@ setup:
 	go install github.com/aarondl/sqlboiler/v4@latest
 	go install github.com/aarondl/sqlboiler/v4/drivers/sqlboiler-psql@latest
 	go install github.com/99designs/gqlgen@latest
+	go install github.com/google/wire/cmd/wire@latest
 
 .PHONY: run
 run:
@@ -33,7 +34,7 @@ code-check:
 	go vet ./...
 
 .PHONY: gen
-gen: sqlboiler
+gen: sqlboiler gqlgen
 	go generate ./...
 
 ### 事前にdocker-compose up -dでDBを起動しておく必要がある
