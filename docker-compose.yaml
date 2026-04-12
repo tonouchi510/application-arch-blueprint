@@ -51,3 +51,5 @@ services:
       HASURA_GRAPHQL_JWT_SECRET: '{"type":"RS256","jwk_url": "https://www.googleapis.com/service_accounts/v1/jwk/securetoken@system.gserviceaccount.com", "audience": "${FIREBASE_PROJECT_ID}", "issuer": "https://securetoken.google.com/${FIREBASE_PROJECT_ID}"}'
       # remote schema
       HASURA_GRAPHQL_ENABLE_REMOTE_SCHEMA_PERMISSIONS: "true"
+      CIRCLE_SERVICE_GRAPHQL_ENDPOINT: http://circle-service:5001/query
+      CIRCLE_SERVICE_GRAPHQL_ENDPOINT_SECRET: secret
