@@ -1,0 +1,64 @@
+classDiagram
+direction LR
+
+namespace UserAggregate {
+  class User {
+    Id : ユーザID
+    userName : ユーザ名
+    email : メールアドレス
+    emailVerified : bool
+    phoneNumber : 電話番号
+    photoUrl : 画像URL
+    各種属性の変更()
+    メールアドレスの確認()
+  }
+}
+
+namespace CircleAggregate {
+  class Circle {
+    Uuid : サークルUUID
+    ownerId : ユーザID
+    name : サークル名
+    description : string
+    members : List[ユーザID]
+    名前・説明の変更()
+    メンバーの追加()
+    メンバーの削除()
+    オーナー権限の委譲()
+  }
+}
+
+namespace CirclePermissionAggregate {
+  class CirclePermission {
+    Uuid : サークルUUID
+    permissionBoardCreation : bool
+    permissionSelfJoin : bool
+    各権限の変更()
+  }
+}
+
+namespace BoardAggregate {
+  class Board {
+    Uuid : 掲示板UUID
+    circleUuid : サークルUUID
+    topic : string
+    status : 掲示板ステータス
+    posts : List[Post]
+    トピックの編集()
+    ステータスの変更()
+    投稿の追加()
+    投稿の削除()
+    投稿の編集()
+  }
+
+  class Post {
+    Uuid : 投稿UUID
+    userId : ユーザID
+    content : string
+  }
+}
+
+User o-- Circle : owns_or_belongs_to
+User o-- Board : acts_on
+Circle "1" --> "1" CirclePermission : has
+Board *-- Post : contains
