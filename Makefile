@@ -1,8 +1,12 @@
 # variables
-FIREBASE_PROJECT_ID := shogi-lab
-#FIREBASE_PROJECT_ID := "YOUR_PROJECT_ID"
+FIREBASE_PROJECT_ID := "YOUR_PROJECT_ID"
 DATABASE_URL := postgres://postgres:password@postgres:5432/main
 
+.PHONY: setup
+setup:
+	@npm install -g @mermaid-js/mermaid-cli
+	@brew install hasura-cli
+	@cd backend/circle-service && make setup
 
 # docker compose
 docker-compose-build:

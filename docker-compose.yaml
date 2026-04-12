@@ -23,9 +23,9 @@ services:
     restart: always
     environment:
       ## postgres database to store Hasura metadata
-      HASURA_GRAPHQL_DATABASE_URL: postgres://postgres:password@postgres:5432/postgres
+      HASURA_GRAPHQL_DATABASE_URL: postgres://postgres:password@postgres:5432/main
       ## this env var can be used to add the above postgres database to Hasura as a data source. this can be removed/updated based on your needs
-      BACKEND_SERVICE_DB_URL: $DATABASE_URL
+      BACKEND_SERVICE_DB_URL: postgres://postgres:password@postgres:5432/main
       ## enable the console served by server
       HASURA_GRAPHQL_ENABLE_CONSOLE: "false" # set to "false" to disable console
       ## enable debugging mode. It is recommended to disable this in production
