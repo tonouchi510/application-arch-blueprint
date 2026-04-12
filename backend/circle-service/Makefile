@@ -43,3 +43,7 @@ sqlboiler:
 	--templates ${PATH_TO_SQL_BOILER}/templates/main \
 	--templates ${PATH_TO_SQL_BOILER}/templates/test \
 	--templates configs/db/sqlboiler_templates
+
+.PHONY: gqlgen
+gqlgen:
+	go run github.com/99designs/gqlgen generate --config configs/graphql/gqlgen.yml
