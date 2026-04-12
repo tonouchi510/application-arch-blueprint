@@ -3,7 +3,7 @@ package users
 import (
 	domainModel "github.com/tonouchi510/application-arch-blueprint/circle-service/internal/domain/models/users"
 	"github.com/tonouchi510/application-arch-blueprint/circle-service/internal/infrastructure/sqlboiler/models"
-	"github.com/volatiletech/null/v8"
+	"github.com/aarondl/null/v8"
 )
 
 type userDataModelBuilder struct {

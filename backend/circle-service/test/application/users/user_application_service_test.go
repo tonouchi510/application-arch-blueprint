@@ -5,13 +5,16 @@ import (
 	"testing"
 
 	"github.com/DATA-DOG/go-sqlmock"
-	"github.com/golang/mock/gomock"
+	"github.com/aarondl/sqlboiler/v4/boil"
+	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"github.com/stretchr/testify/suite"
+	"github.com/tonouchi510/application-arch-blueprint/circle-service/internal/application/rbac"
 	"github.com/tonouchi510/application-arch-blueprint/circle-service/internal/application/users"
 	domainModel "github.com/tonouchi510/application-arch-blueprint/circle-service/internal/domain/models/users"
+	sharedDb "github.com/tonouchi510/application-arch-blueprint/circle-service/internal/shared/db"
 	mock_users "github.com/tonouchi510/application-arch-blueprint/circle-service/test/mock/domain/models/users"
-	"github.com/volatiletech/sqlboiler/v4/boil"
+	"go.uber.org/mock/gomock"
 )
 
 type UserApplicationServiceTestSuite struct {
@@ -33,8 +36,11 @@ func TestUserApplicationService(t *testing.T) {
 }
 
 func (s *UserApplicationServiceTestSuite) SetupSuite() {
-	s.ctx = context.Background()
 	s.user = createTestUser(domainModel.UserId("aaaaaaaaaaaaaaaaaaaaaaaaaaaa"))
+	s.ctx = context.WithValue(context.Background(), "user", &rbac.AuthUser{
+		UID:  string(s.user.Id),
+		Role: rbac.Premium,
+	})
 }
 
 func (s *UserApplicationServiceTestSuite) TearDownSuite() {
@@ -102,6 +108,7 @@ func (s *UserApplicationServiceTestSuite) TestUpdate() {
 
 	t.Run("Success", func(t *testing.T) {
 		repo.EXPECT().Find(s.ctx, s.user.Id, gomock.Any()).Return(&s.user, nil)
+		service.EXPECT().ExistsByName(s.ctx, gomock.Any(), gomock.Any()).Return(false, nil)
 		repo.EXPECT().Save(s.ctx, gomock.Any(), gomock.Any()).Return(nil)
 		mock.ExpectBegin()
 		mock.ExpectCommit()
@@ -137,7 +144,12 @@ func (s *UserApplicationServiceTestSuite) TestDelete() {
 		mock.ExpectBegin()
 		mock.ExpectCommit()
 
-		repo.EXPECT().Delete(s.ctx, s.user, gomock.Any()).Return(nil)
+		repo.EXPECT().Delete(s.ctx, gomock.Any(), gomock.Any()).DoAndReturn(
+			func(_ context.Context, userID domainModel.UserId, _ sharedDb.DbExecutor) error {
+				assert.Equal(t, s.user.Id, userID)
+				return nil
+			},
+		)
 
 		c := users.DeleteUserCommand{Uid: string(s.user.Id)}
 		err = appService.Delete(s.ctx, c)

@@ -7,7 +7,7 @@ GraphQLのエンドポイントとして、HASURAの責務外のCommand（更新
 ## 環境構築
 
 ```
-$ make go-setup
+$ make setup
 ```
 
 ## 開発
@@ -17,21 +17,25 @@ $ make go-setup
 ```
 .
 ├── configs               # 各種設定ファイル置き場
-├── graph                 # 外部に公開するAPI（GraphQL）
-└── internal              # 内部実装（オニオンアーキテクチャ）
-    ├── application       # ユースケースを実装。RBACによるアクセス制御もここで。
-    ├── domain            # ドメイン層。ビジネスロジックはできるだけここに集約。
-    │   ├── models        # 集約ごとにドメインオブジェクトを実装
-    │   ├── services      # 集約をまたがるドメインサービスの実装
-    │   └── shared        # 共有するドメインオブジェクト置き場
-    ├── infrastructure    # DB等、外部システムとの通信
-    └── shared            # 共有ライブラリ
+├── docs                  # ドキュメント置き場
+├── internal              # 内部実装（オニオンアーキテクチャ）
+│   ├── application       # ユースケースを実装。RBACによるアクセス制御もここで。
+│   ├── domain            # ドメイン層。ビジネスロジックはできるだけここに集約。
+│   │   ├── models        # 集約ごとにドメインオブジェクトを実装
+│   │   ├── services      # 集約をまたがるドメインサービスの実装
+│   │   └── shared        # 共有するドメインオブジェクト置き場
+│   ├── infrastructure    # DB等、外部システムとの通信
+│   │   └── sqlboiler       - ここでは RDB（ORM: sqlboiler）のみ
+│   ├── interface         # 外部に公開するAPI
+│   │   └── graph           - ここでは GraphQL
+│   └── shared            # 共有ライブラリ
+└── test                  # テストコード置き場
 ```
 
 ### 自動生成コードの再生成
 
 ```
-$ make go-gen
+$ make gen
 ```
 
 ### DBスキーマ更新時
@@ -71,7 +75,7 @@ goのバックエンド単体で動作確認する場合は、`GraphQL Playgroun
 1. サーバーを起動
 
 ```
-$ make go-run
+$ make run
 2022/12/24 15:24:19 connect to http://localhost:5000/ for GraphQL playground
 ```
 

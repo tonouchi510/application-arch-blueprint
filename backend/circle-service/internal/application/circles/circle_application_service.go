@@ -10,7 +10,7 @@ import (
 	"github.com/tonouchi510/application-arch-blueprint/circle-service/internal/domain/shared"
 	"github.com/tonouchi510/application-arch-blueprint/circle-service/internal/shared/codes"
 	"github.com/tonouchi510/application-arch-blueprint/circle-service/internal/shared/errors"
-	"github.com/volatiletech/sqlboiler/v4/boil"
+	"github.com/aarondl/sqlboiler/v4/boil"
 )
 
 type ICircleApplicationService interface {
@@ -46,7 +46,7 @@ func NewCircleApplicationService(
 func (s circleApplicationService) Create(ctx context.Context, command CircleCreateCommand) (*CircleData, error) {
 	tx, err := boil.BeginTx(ctx, nil)
 	if err != nil {
-		return nil, errors.Errorf(codes.Database, err.Error())
+		return nil, errors.Errorf(codes.Database, "%s", err.Error())
 	}
 	defer func() {
 		if err != nil {
@@ -105,7 +105,7 @@ func (s circleApplicationService) Create(ctx context.Context, command CircleCrea
 func (s circleApplicationService) AddMember(ctx context.Context, command CircleAddMemberCommand) error {
 	tx, err := boil.BeginTx(ctx, nil)
 	if err != nil {
-		return errors.Errorf(codes.Database, err.Error())
+		return errors.Errorf(codes.Database, "%s", err.Error())
 	}
 	defer func() {
 		if err != nil {
@@ -152,7 +152,7 @@ func (s circleApplicationService) AddMember(ctx context.Context, command CircleA
 func (s circleApplicationService) ChangeName(ctx context.Context, command CircleChangeNameCommand) (*CircleData, error) {
 	tx, err := boil.BeginTx(ctx, nil)
 	if err != nil {
-		return nil, errors.Errorf(codes.Database, err.Error())
+		return nil, errors.Errorf(codes.Database, "%s", err.Error())
 	}
 	defer func() {
 		if err != nil {
@@ -203,7 +203,7 @@ func (s circleApplicationService) ChangeName(ctx context.Context, command Circle
 func (s circleApplicationService) ChangeDescription(ctx context.Context, command CircleChangeDescriptionCommand) (*CircleData, error) {
 	tx, err := boil.BeginTx(ctx, nil)
 	if err != nil {
-		return nil, errors.Errorf(codes.Database, err.Error())
+		return nil, errors.Errorf(codes.Database, "%s", err.Error())
 	}
 	defer func() {
 		if err != nil {
@@ -249,7 +249,7 @@ func (s circleApplicationService) ChangeDescription(ctx context.Context, command
 func (s circleApplicationService) DelegateOwner(ctx context.Context, command CircleDelegateOwnerCommand) (*CircleData, error) {
 	tx, err := boil.BeginTx(ctx, nil)
 	if err != nil {
-		return nil, errors.Errorf(codes.Database, err.Error())
+		return nil, errors.Errorf(codes.Database, "%s", err.Error())
 	}
 	defer func() {
 		if err != nil {
@@ -304,7 +304,7 @@ func (s circleApplicationService) DelegateOwner(ctx context.Context, command Cir
 func (s circleApplicationService) Delete(ctx context.Context, command CircleDeleteCommand) error {
 	tx, err := boil.BeginTx(ctx, nil)
 	if err != nil {
-		return errors.Errorf(codes.Database, err.Error())
+		return errors.Errorf(codes.Database, "%s", err.Error())
 	}
 	defer func() {
 		if err != nil {

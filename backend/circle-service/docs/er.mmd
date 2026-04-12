@@ -1,0 +1,64 @@
+erDiagram
+  USERS {
+    character_28 id PK
+    text user_name
+    text email
+    bool email_verified
+    text phone_number
+    text photo_url
+    timestamp created_at
+    timestamp updated_at
+    timestamp deleted_at
+  }
+
+  CIRCLES {
+    character_36 uuid PK
+    character_28 owner_id FK
+    text name
+    text description
+    timestamp created_at
+    timestamp updated_at
+  }
+
+  CIRCLE_MEMBERS {
+    character_36 uuid PK
+    character_36 circle_uuid FK
+    character_28 user_id FK
+    timestamp joined_date
+    timestamp created_at
+    timestamp updated_at
+  }
+
+  CIRCLE_PERMISSIONS {
+    character_36 circle_uuid PK
+    bool permission_board_creation
+    bool permission_self_join
+    timestamp created_at
+    timestamp updated_at
+  }
+
+  BOARDS {
+    character_36 uuid PK
+    character_36 circle_uuid FK
+    character_28 owner_id FK
+    text topic
+    smallint status
+    timestamp created_at
+    timestamp updated_at
+  }
+
+  POSTS {
+    character_36 uuid PK
+    character_36 board_uuid FK
+    character_28 user_id FK
+    text content
+    timestamp created_at
+    timestamp updated_at
+  }
+
+  USERS ||--o{ CIRCLES : owns_or_belongs_to
+  USERS ||--o{ POSTS : writes
+  CIRCLES ||--o{ CIRCLE_MEMBERS : contains
+  CIRCLES ||--o{ BOARDS : contains
+  CIRCLES ||--|| CIRCLE_PERMISSIONS : has
+  BOARDS ||--o{ POSTS : contains

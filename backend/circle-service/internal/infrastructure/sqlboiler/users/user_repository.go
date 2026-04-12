@@ -3,12 +3,12 @@ package users
 import (
 	"context"
 
+	"github.com/aarondl/sqlboiler/v4/boil"
 	domainModel "github.com/tonouchi510/application-arch-blueprint/circle-service/internal/domain/models/users"
 	"github.com/tonouchi510/application-arch-blueprint/circle-service/internal/infrastructure/sqlboiler/models"
 	"github.com/tonouchi510/application-arch-blueprint/circle-service/internal/shared/codes"
 	"github.com/tonouchi510/application-arch-blueprint/circle-service/internal/shared/db"
 	"github.com/tonouchi510/application-arch-blueprint/circle-service/internal/shared/errors"
-	"github.com/volatiletech/sqlboiler/v4/boil"
 )
 
 type userRepository struct{}
@@ -20,7 +20,9 @@ func NewUserRepository() domainModel.IUserRepository {
 func (r userRepository) Find(ctx context.Context, id domainModel.UserId, executor db.DbExecutor) (*domainModel.User, error) {
 	userData, err := models.FindUser(ctx, executor, string(id))
 	if err != nil {
-		// If the user does not exist, an error is returned.
+		if err.Error() == "sql: no rows in result set" {
+			return nil, errors.Errorf(codes.NotFound, "user not found: %s", id)
+		}
 		return nil, err
 	}
 	user, err := toModel(*userData)
@@ -33,6 +35,9 @@ func (r userRepository) Find(ctx context.Context, id domainModel.UserId, executo
 func (r userRepository) FindByName(ctx context.Context, name domainModel.UserName, executor db.DbExecutor) (*domainModel.User, error) {
 	userData, err := models.Users(models.UserWhere.Name.EQ(string(name))).One(ctx, executor)
 	if err != nil {
+		if err.Error() == "sql: no rows in result set" {
+			return nil, errors.Errorf(codes.NotFound, "user not found: %s", name)
+		}
 		return nil, err
 	}
 	user, err := toModel(*userData)

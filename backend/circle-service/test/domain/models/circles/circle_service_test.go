@@ -2,9 +2,9 @@ package circles_test
 
 import (
 	"context"
+	stderrors "errors"
 	"testing"
 
-	"github.com/golang/mock/gomock"
 	"github.com/google/uuid"
 	"github.com/stretchr/testify/require"
 	"github.com/stretchr/testify/suite"
@@ -14,6 +14,7 @@ import (
 	"github.com/tonouchi510/application-arch-blueprint/circle-service/internal/shared/errors"
 	mock_circles "github.com/tonouchi510/application-arch-blueprint/circle-service/test/mock/domain/models/circles"
 	mock_db "github.com/tonouchi510/application-arch-blueprint/circle-service/test/mock/shared/db"
+	"go.uber.org/mock/gomock"
 )
 
 type CircleServiceTestSuite struct {
@@ -64,7 +65,7 @@ func (s *CircleServiceTestSuite) TestExists() {
 	})
 
 	t.Run("Success/同じ名前のサークルが存在しない場合、falseを返す", func(t *testing.T) {
-		repo.EXPECT().FindByName(s.ctx, s.circleName, gomock.Any()).Return(nil, errors.Errorf(codes.NotFound, ""))
+		repo.EXPECT().FindByName(s.ctx, s.circleName, gomock.Any()).Return(nil, nil)
 		exist, err := domainService.Exists(s.ctx, s.circle, mockDb)
 		require.NoError(t, err)
 		require.False(t, exist)
@@ -102,7 +103,7 @@ func (s *CircleServiceTestSuite) TestAddNewCircleMember() {
 	t.Run("Error/サークルのメンバー数が上限に達している場合、エラーを返す", func(t *testing.T) {
 		// メンバー数上限のサークルを作成
 		memberIds := []shared.UserId{}
-		for i := 0; i < 30; i++ {
+		for i := 0; i < 29; i++ {
 			memberIds = append(memberIds, shared.UserId(uuid.New().String()))
 		}
 		fullCircle, err := circles.NewCircle(
@@ -112,6 +113,7 @@ func (s *CircleServiceTestSuite) TestAddNewCircleMember() {
 			s.ownerId,
 			memberIds,
 		)
+		require.NoError(t, err)
 
 		// テスト対象メソッド実行
 		err = domainService.AddNewCircleMember(s.ctx, fullCircle, s.memberId, mockDb)
@@ -154,7 +156,7 @@ func (s *CircleServiceTestSuite) TestLeaveCircleMember() {
 		require.NoError(t, err)
 
 		// リポジトリのモック設定
-		repo.EXPECT().RemoveCircleMember(s.ctx, circle, s.memberId, mockDb).Return(nil)
+		repo.EXPECT().RemoveCircleMember(s.ctx, *circle, s.memberId, mockDb).Return(nil)
 
 		// テスト対象メソッド実行
 		err = domainService.LeaveCircleMember(s.ctx, circle, s.memberId, mockDb)
@@ -169,7 +171,7 @@ func (s *CircleServiceTestSuite) TestLeaveCircleMember() {
 
 		// リポジトリのモック設定
 		repo.EXPECT().RemoveCircleMember(s.ctx, s.circle, nonExistMemberId, mockDb).
-			Return(errors.Errorf(codes.NotFound, "sql: no rows in result set"))
+			Return(stderrors.New("sql: no rows in result set"))
 
 		// テスト対象メソッド実行
 		err := domainService.LeaveCircleMember(s.ctx, &s.circle, nonExistMemberId, mockDb)

@@ -1,19 +1,20 @@
-package users
+package users_test
 
 import (
 	"context"
 	"database/sql"
 	"testing"
 
+	"github.com/aarondl/sqlboiler/v4/boil"
 	"github.com/ory/dockertest/v3"
 	"github.com/stretchr/testify/require"
 	"github.com/stretchr/testify/suite"
 	domainModel "github.com/tonouchi510/application-arch-blueprint/circle-service/internal/domain/models/users"
+	repoImpl "github.com/tonouchi510/application-arch-blueprint/circle-service/internal/infrastructure/sqlboiler/users"
 	"github.com/tonouchi510/application-arch-blueprint/circle-service/internal/infrastructure/sqlboiler/models"
 	"github.com/tonouchi510/application-arch-blueprint/circle-service/internal/shared/codes"
 	"github.com/tonouchi510/application-arch-blueprint/circle-service/internal/shared/errors"
 	testtools "github.com/tonouchi510/application-arch-blueprint/circle-service/internal/shared/test-tools"
-	"github.com/volatiletech/sqlboiler/v4/boil"
 )
 
 type UserRepositoryTestSuite struct {
@@ -66,7 +67,7 @@ func (s *UserRepositoryTestSuite) SetupSuite() {
 	s.testNewUserId = domainModel.UserId("aaaaaaaaaaaaaaaaaaaaaaaaaaaa")
 	s.testNewUser = createTestUser(s.testNewUserId)
 
-	s.repo = NewUserRepository()
+	s.repo = repoImpl.NewUserRepository()
 
 	// Added test user data
 	user := models.User{
@@ -130,6 +131,6 @@ func (s *UserRepositoryTestSuite) TestXDelete() {
 
 		user, err := s.repo.Find(s.ctx, s.testNewUserId, s.tx)
 		require.Error(t, err)
-		require.Equal(t, nil, user)
+		require.Nil(t, user)
 	})
 }
