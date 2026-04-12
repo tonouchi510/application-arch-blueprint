@@ -3,6 +3,7 @@ package permissions
 import (
 	"context"
 
+	"github.com/aarondl/sqlboiler/v4/boil"
 	"github.com/google/uuid"
 	"github.com/tonouchi510/application-arch-blueprint/circle-service/internal/application/rbac"
 	"github.com/tonouchi510/application-arch-blueprint/circle-service/internal/domain/models/circles"
@@ -10,26 +11,25 @@ import (
 	"github.com/tonouchi510/application-arch-blueprint/circle-service/internal/domain/shared"
 	"github.com/tonouchi510/application-arch-blueprint/circle-service/internal/shared/codes"
 	"github.com/tonouchi510/application-arch-blueprint/circle-service/internal/shared/errors"
-	"github.com/aarondl/sqlboiler/v4/boil"
 )
 
 type ICirclePermissionApplicationService interface {
 	ChangeBoardCreationPermission(ctx context.Context, command ChangeBoardCreationPermissionCommand) error
 }
 
-type CirclePermissionApplicationService struct {
+type circlePermissionApplicationService struct {
 	repository       domainModel.ICirclePermissionRepository
 	circleRepository circles.ICircleRepository
 }
 
-func NewCirclePermissionApplicationService(repository domainModel.ICirclePermissionRepository, circleRepository circles.ICircleRepository) *CirclePermissionApplicationService {
-	return &CirclePermissionApplicationService{
+func NewCirclePermissionApplicationService(repository domainModel.ICirclePermissionRepository, circleRepository circles.ICircleRepository) ICirclePermissionApplicationService {
+	return circlePermissionApplicationService{
 		repository:       repository,
 		circleRepository: circleRepository,
 	}
 }
 
-func (s CirclePermissionApplicationService) ChangeBoardCreationPermission(ctx context.Context, command ChangeBoardCreationPermissionCommand) error {
+func (s circlePermissionApplicationService) ChangeBoardCreationPermission(ctx context.Context, command ChangeBoardCreationPermissionCommand) error {
 	tx, err := boil.BeginTx(ctx, nil)
 	if err != nil {
 		return errors.Errorf(codes.Database, "%s", err.Error())
