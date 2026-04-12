@@ -11,6 +11,21 @@ services:
       - POSTGRES_PASSWORD=password
       - TZ=TZ
 
+  circle-service:
+    build: ./backend/circle-service
+    ports:
+      - "5001:5001"
+    depends_on:
+      - "postgres"
+    restart: always
+    environment:
+      - ENV=local
+      - PORT=5001
+      - TZ=Asia/Tokyo
+      - DATABASE_URL=postgres://postgres:password@postgres:5432/main
+      - FIREBASE_PROJECT_ID=${FIREBASE_PROJECT_ID}
+      - HASURA_REGISTER_SECRET=secret
+
   hasura-gateway:
     image: hasura/graphql-engine:latest.cli-migrations-v3
     ports:
