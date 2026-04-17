@@ -1,0 +1,43 @@
+mutation CreateCircle($input: CreateCircleInput!) {
+  create_circle(input: $input) {
+    id
+    name
+    description
+    owner_id
+  }
+}
+
+mutation AddCircleMember($input: AddCircleMemberInput!) {
+  add_circle_member(input: $input)
+}
+
+mutation ChangeCircleName($input: ChangeCircleNameInput!) {
+  change_circle_name(input: $input) {
+    id
+    name
+    description
+    owner_id
+  }
+}
+
+mutation ChangeCircleDescription($input: ChangeCircleDescriptionInput!) {
+  change_circle_description(input: $input) {
+    id
+    name
+    description
+    owner_id
+  }
+}
+
+mutation DelegateCircleOwner($input: DelegateCircleOwnerInput!) {
+  delegate_circle_owner(input: $input) {
+    id
+    name
+    description
+    owner_id
+  }
+}
+
+mutation DeleteCircle($input: DeleteCircleInput!) {
+  delete_circle(input: $input)
+}

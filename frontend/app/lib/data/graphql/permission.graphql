@@ -1,0 +1,3 @@
+mutation ChangeBoardCreationPermission($input: ChangeBoardCreationPermissionInput!) {
+  change_board_creation_permission(input: $input)
+}
