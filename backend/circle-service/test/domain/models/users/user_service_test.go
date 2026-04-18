@@ -70,3 +70,35 @@ func (s *UserServiceTestSuite) TestExists() {
 		require.False(t, exist)
 	})
 }
+
+func (s *UserServiceTestSuite) TestExistsByName() {
+	t := s.T()
+
+	ctrl := gomock.NewController(t)
+	defer ctrl.Finish()
+
+	mockDb := mock_db.NewMockDbExecutor(ctrl)
+	repo := mock_users.NewMockIUserRepository(ctrl)
+	domainService := users.NewUserService(repo)
+
+	t.Run("Success/同じ名前のユーザが存在する場合、trueを返す", func(t *testing.T) {
+		repo.EXPECT().FindByName(s.ctx, s.userName, gomock.Any()).Return(&s.user, nil)
+		exist, err := domainService.ExistsByName(s.ctx, s.user, mockDb)
+		require.NoError(t, err)
+		require.True(t, exist)
+	})
+
+	t.Run("Success/同じ名前のユーザが存在しない場合、falseを返す", func(t *testing.T) {
+		repo.EXPECT().FindByName(s.ctx, s.userName, gomock.Any()).Return(nil, stderrors.New("sql: no rows in result set"))
+		exist, err := domainService.ExistsByName(s.ctx, s.user, mockDb)
+		require.NoError(t, err)
+		require.False(t, exist)
+	})
+
+	t.Run("Error/FindByNameでエラーが発生した場合、エラーを返す", func(t *testing.T) {
+		repo.EXPECT().FindByName(s.ctx, s.userName, gomock.Any()).Return(nil, errors.Errorf(codes.Internal, "db error"))
+		exist, err := domainService.ExistsByName(s.ctx, s.user, mockDb)
+		require.Error(t, err)
+		require.False(t, exist)
+	})
+}
