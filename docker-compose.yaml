@@ -11,6 +11,21 @@ services:
       - POSTGRES_PASSWORD=password
       - TZ=TZ
 
+  circle-service:
+    build: ./backend/circle-service
+    ports:
+      - "5001:5001"
+    depends_on:
+      - "postgres"
+    restart: always
+    environment:
+      - ENV=local
+      - PORT=5001
+      - TZ=Asia/Tokyo
+      - DATABASE_URL=postgres://postgres:password@postgres:5432/main
+      - FIREBASE_PROJECT_ID=${FIREBASE_PROJECT_ID}
+      - HASURA_REGISTER_SECRET=secret
+
   hasura-gateway:
     image: hasura/graphql-engine:latest.cli-migrations-v3
     ports:
@@ -36,3 +51,5 @@ services:
       HASURA_GRAPHQL_JWT_SECRET: '{"type":"RS256","jwk_url": "https://www.googleapis.com/service_accounts/v1/jwk/securetoken@system.gserviceaccount.com", "audience": "${FIREBASE_PROJECT_ID}", "issuer": "https://securetoken.google.com/${FIREBASE_PROJECT_ID}"}'
       # remote schema
       HASURA_GRAPHQL_ENABLE_REMOTE_SCHEMA_PERMISSIONS: "true"
+      CIRCLE_SERVICE_GRAPHQL_ENDPOINT: http://circle-service:5001/query
+      CIRCLE_SERVICE_GRAPHQL_ENDPOINT_SECRET: secret

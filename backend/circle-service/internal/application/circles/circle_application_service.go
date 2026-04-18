@@ -3,6 +3,7 @@ package circles
 import (
 	"context"
 
+	"github.com/aarondl/sqlboiler/v4/boil"
 	"github.com/google/uuid"
 	"github.com/tonouchi510/application-arch-blueprint/circle-service/internal/application/rbac"
 	domainModel "github.com/tonouchi510/application-arch-blueprint/circle-service/internal/domain/models/circles"
@@ -10,7 +11,6 @@ import (
 	"github.com/tonouchi510/application-arch-blueprint/circle-service/internal/domain/shared"
 	"github.com/tonouchi510/application-arch-blueprint/circle-service/internal/shared/codes"
 	"github.com/tonouchi510/application-arch-blueprint/circle-service/internal/shared/errors"
-	"github.com/aarondl/sqlboiler/v4/boil"
 )
 
 type ICircleApplicationService interface {
@@ -23,20 +23,17 @@ type ICircleApplicationService interface {
 }
 
 type circleApplicationService struct {
-	ctx            context.Context
 	domainService  domainModel.ICircleService
 	repository     domainModel.ICircleRepository
 	permissionRepo permissions.ICirclePermissionRepository
 }
 
 func NewCircleApplicationService(
-	ctx context.Context,
 	service domainModel.ICircleService,
 	repository domainModel.ICircleRepository,
 	permissionRepo permissions.ICirclePermissionRepository,
 ) ICircleApplicationService {
 	return circleApplicationService{
-		ctx:            ctx,
 		domainService:  service,
 		repository:     repository,
 		permissionRepo: permissionRepo,

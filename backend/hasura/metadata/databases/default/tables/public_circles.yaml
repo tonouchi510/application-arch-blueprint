@@ -37,13 +37,7 @@ select_permissions:
         - created_at
         - updated_at
         - uuid
-      filter:
-        _or:
-          - owner_id:
-              _eq: X-Hasura-User-Id
-          - circle_members:
-              user_id:
-                _eq: X-Hasura-User-Id
+      filter: {}
     comment: ""
   - role: premium
     permission:
@@ -54,11 +48,5 @@ select_permissions:
         - created_at
         - updated_at
         - uuid
-      filter:
-        _or:
-          - owner_id:
-              _eq: X-Hasura-User-Id
-          - circle_members:
-              user_id:
-                _eq: X-Hasura-User-Id
+      filter: {}
     comment: ""

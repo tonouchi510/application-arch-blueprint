@@ -23,7 +23,7 @@ type boardCreationService struct {
 	circlePermissionRepo permissions.ICirclePermissionRepository
 }
 
-func NewBoardCreationService(circlePermissionRepo permissions.ICirclePermissionRepository) boardCreationService {
+func NewBoardCreationService(circlePermissionRepo permissions.ICirclePermissionRepository) IBoardCreationService {
 	return boardCreationService{
 		circlePermissionRepo: circlePermissionRepo,
 	}

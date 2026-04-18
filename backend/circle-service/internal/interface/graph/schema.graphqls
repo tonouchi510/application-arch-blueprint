@@ -1,0 +1,133 @@
+# general
+scalar Time
+scalar UUID
+scalar Int64
+
+type Query {
+    healthz: String!
+}
+
+type Mutation {
+    # user
+    update_user_attributes(input: UpdateUserAttributesInput!): UserModel!
+    delete_user(input: DeleteUserInput!): Boolean!
+
+    # circle
+    create_circle(input: CreateCircleInput!): CircleModel!
+    add_circle_member(input: AddCircleMemberInput!): Boolean!
+    change_circle_name(input: ChangeCircleNameInput!): CircleModel!
+    change_circle_description(input: ChangeCircleDescriptionInput!): CircleModel!
+    delegate_circle_owner(input: DelegateCircleOwnerInput!): CircleModel!
+    delete_circle(input: DeleteCircleInput!): Boolean!
+
+    # board
+    create_board(input: CreateBoardInput!): BoardModel!
+    change_board_topic(input: ChangeBoardTopicInput!): BoardModel!
+    change_board_status(input: ChangeBoardStatusInput!): BoardModel!
+    add_board_post(input: AddBoardPostInput!): BoardModel!
+    delete_board(input: DeleteBoardInput!): Boolean!
+
+    # permission
+    change_board_creation_permission(input: ChangeBoardCreationPermissionInput!): Boolean!
+}
+
+# ==================== user ====================
+type UserModel {
+    id: ID!
+    name: String!
+    email: String!
+    email_verified: Boolean!
+    phone_number: String
+    photo_url: String
+}
+
+input UpdateUserAttributesInput {
+    name: String
+    email: String
+    phone_number: String
+    photo_url: String
+}
+
+input DeleteUserInput {
+    uid: ID!
+}
+
+# ==================== circle ====================
+type CircleModel {
+    id: UUID!
+    name: String!
+    description: String!
+    owner_id: ID!
+}
+
+input CreateCircleInput {
+    name: String!
+    description: String!
+}
+
+input AddCircleMemberInput {
+    circle_id: UUID!
+    new_member_id: ID!
+}
+
+input ChangeCircleNameInput {
+    circle_id: UUID!
+    new_name: String!
+}
+
+input ChangeCircleDescriptionInput {
+    circle_id: UUID!
+    new_description: String!
+}
+
+input DelegateCircleOwnerInput {
+    circle_id: UUID!
+    new_owner_id: ID!
+}
+
+input DeleteCircleInput {
+    circle_id: UUID!
+}
+
+# ==================== board ====================
+type BoardModel {
+    id: UUID!
+    circle_uuid: UUID!
+    topic: String!
+    status: String!
+}
+
+input CreateBoardInput {
+    circle_id: UUID!
+    topic: String!
+}
+
+input ChangeBoardTopicInput {
+    board_id: UUID!
+    circle_id: UUID!
+    new_topic: String!
+}
+
+input ChangeBoardStatusInput {
+    board_id: UUID!
+    circle_id: UUID!
+    new_status: Int!
+}
+
+input AddBoardPostInput {
+    board_id: UUID!
+    circle_id: UUID!
+    user_id: ID!
+    content: String!
+}
+
+input DeleteBoardInput {
+    board_id: UUID!
+    circle_id: UUID!
+}
+
+# ==================== permission ====================
+input ChangeBoardCreationPermissionInput {
+    circle_id: UUID!
+    allowed: Boolean!
+}
