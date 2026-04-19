@@ -125,13 +125,6 @@ func (s userApplicationService) UpdateAttributes(ctx context.Context, command Up
 			return nil, err
 		}
 		user.ChangeName(*newUserName)
-		exist, err := s.domainService.ExistsByName(ctx, *user, tx)
-		if err != nil {
-			return nil, err
-		}
-		if exist {
-			return nil, errors.Errorf(codes.AlreadyExists, "ユーザ名='%s'はすでに存在しています。", *command.Name)
-		}
 	}
 	if command.Email != nil {
 		newEmail, err := users.NewEmail(*command.Email)
@@ -139,6 +132,14 @@ func (s userApplicationService) UpdateAttributes(ctx context.Context, command Up
 			return nil, err
 		}
 		user.ChangeEmail(*newEmail)
+
+		exist, err := s.domainService.ExistsByEmail(ctx, *user, tx)
+		if err != nil {
+			return nil, err
+		}
+		if exist {
+			return nil, errors.Errorf(codes.AlreadyExists, "メールアドレス='%s'はすでに存在しています。", *command.Name)
+		}
 	}
 	if command.PhotoUrl != nil {
 		newPhotoUrl, err := users.NewPhotoUrl(*command.PhotoUrl)

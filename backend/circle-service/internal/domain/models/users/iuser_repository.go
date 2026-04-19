@@ -10,7 +10,7 @@ import (
 
 type IUserRepository interface {
 	Find(ctx context.Context, id UserId, executor db.DbExecutor) (*User, error)
-	FindByName(ctx context.Context, name UserName, executor db.DbExecutor) (*User, error)
+	FindByEmail(ctx context.Context, email Email, executor db.DbExecutor) (*User, error)
 	Save(ctx context.Context, user User, executor db.DbExecutor) error
 	Delete(ctx context.Context, userId UserId, executor db.DbExecutor) error
 }
