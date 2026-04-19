@@ -2,7 +2,6 @@ package users_test
 
 import (
 	"context"
-	stderrors "errors"
 	"testing"
 
 	"github.com/stretchr/testify/require"
@@ -18,10 +17,9 @@ import (
 type UserServiceTestSuite struct {
 	suite.Suite
 
-	ctx context.Context
-
-	user     users.User
-	userName users.UserName
+	ctx       context.Context
+	user      users.User
+	userEmail users.Email
 }
 
 func TestUserService(t *testing.T) {
@@ -30,10 +28,10 @@ func TestUserService(t *testing.T) {
 
 func (s *UserServiceTestSuite) SetupSuite() {
 	s.ctx = context.Background()
-	s.userName = users.UserName("test")
+	s.userEmail = users.Email("test@test.com")
 	s.user = *users.NewUser(
 		users.UserId("aaaaaaaaaaaaaaaaaaaaaaaaaaaa"),
-		s.userName, users.Email("test@test.com"), false, nil, nil,
+		users.UserName("test"), s.userEmail, false, nil, nil,
 	)
 }
 
@@ -57,7 +55,7 @@ func (s *UserServiceTestSuite) TestExists() {
 	})
 
 	t.Run("Success/同じ名前のユーザが存在しない場合、falseを返す", func(t *testing.T) {
-		repo.EXPECT().Find(s.ctx, s.user.Id, gomock.Any()).Return(nil, stderrors.New("sql: no rows in result set"))
+		repo.EXPECT().Find(s.ctx, s.user.Id, gomock.Any()).Return(nil, errors.Errorf(codes.NotFound, "user not found"))
 		exist, err := domainService.Exists(s.ctx, s.user, mockDb)
 		require.NoError(t, err)
 		require.False(t, exist)
@@ -71,7 +69,7 @@ func (s *UserServiceTestSuite) TestExists() {
 	})
 }
 
-func (s *UserServiceTestSuite) TestExistsByName() {
+func (s *UserServiceTestSuite) TestExistsByEmail() {
 	t := s.T()
 
 	ctrl := gomock.NewController(t)
@@ -81,23 +79,23 @@ func (s *UserServiceTestSuite) TestExistsByName() {
 	repo := mock_users.NewMockIUserRepository(ctrl)
 	domainService := users.NewUserService(repo)
 
-	t.Run("Success/同じ名前のユーザが存在する場合、trueを返す", func(t *testing.T) {
-		repo.EXPECT().FindByName(s.ctx, s.userName, gomock.Any()).Return(&s.user, nil)
-		exist, err := domainService.ExistsByName(s.ctx, s.user, mockDb)
+	t.Run("Success/同じメールアドレスのユーザが存在する場合、trueを返す", func(t *testing.T) {
+		repo.EXPECT().FindByEmail(s.ctx, s.userEmail, gomock.Any()).Return(&s.user, nil)
+		exist, err := domainService.ExistsByEmail(s.ctx, s.user, mockDb)
 		require.NoError(t, err)
 		require.True(t, exist)
 	})
 
-	t.Run("Success/同じ名前のユーザが存在しない場合、falseを返す", func(t *testing.T) {
-		repo.EXPECT().FindByName(s.ctx, s.userName, gomock.Any()).Return(nil, stderrors.New("sql: no rows in result set"))
-		exist, err := domainService.ExistsByName(s.ctx, s.user, mockDb)
+	t.Run("Success/同じメールアドレスのユーザが存在しない場合、falseを返す", func(t *testing.T) {
+		repo.EXPECT().FindByEmail(s.ctx, s.userEmail, gomock.Any()).Return(nil, errors.Errorf(codes.NotFound, "user not found"))
+		exist, err := domainService.ExistsByEmail(s.ctx, s.user, mockDb)
 		require.NoError(t, err)
 		require.False(t, exist)
 	})
 
-	t.Run("Error/FindByNameでエラーが発生した場合、エラーを返す", func(t *testing.T) {
-		repo.EXPECT().FindByName(s.ctx, s.userName, gomock.Any()).Return(nil, errors.Errorf(codes.Internal, "db error"))
-		exist, err := domainService.ExistsByName(s.ctx, s.user, mockDb)
+	t.Run("Error/FindByEmailでエラーが発生した場合、エラーを返す", func(t *testing.T) {
+		repo.EXPECT().FindByEmail(s.ctx, s.userEmail, gomock.Any()).Return(nil, errors.Errorf(codes.Internal, "db error"))
+		exist, err := domainService.ExistsByEmail(s.ctx, s.user, mockDb)
 		require.Error(t, err)
 		require.False(t, exist)
 	})

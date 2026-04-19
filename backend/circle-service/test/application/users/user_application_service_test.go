@@ -108,7 +108,7 @@ func (s *UserApplicationServiceTestSuite) TestUpdate() {
 
 	t.Run("Success", func(t *testing.T) {
 		repo.EXPECT().Find(s.ctx, s.user.Id, gomock.Any()).Return(&s.user, nil)
-		service.EXPECT().ExistsByName(s.ctx, gomock.Any(), gomock.Any()).Return(false, nil)
+		service.EXPECT().ExistsByEmail(s.ctx, gomock.Any(), gomock.Any()).Return(false, nil)
 		repo.EXPECT().Save(s.ctx, gomock.Any(), gomock.Any()).Return(nil)
 		mock.ExpectBegin()
 		mock.ExpectCommit()
