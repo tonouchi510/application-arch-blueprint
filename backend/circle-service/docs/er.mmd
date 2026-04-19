@@ -1,5 +1,8 @@
 erDiagram
-  USERS {
+  %% ============================================================
+  %% Firebase Authentication DB
+  %% ============================================================
+  "USERS on FirebaseAuth" {
     character_28 id PK
     text user_name
     text email
@@ -10,6 +13,9 @@ erDiagram
     timestamp updated_at
     timestamp deleted_at
   }
+  %% ============================================================
+  %% PostgreSQL DB
+  %% ============================================================
 
   CIRCLES {
     character_36 uuid PK
@@ -56,8 +62,8 @@ erDiagram
     timestamp updated_at
   }
 
-  USERS ||--o{ CIRCLES : owns_or_belongs_to
-  USERS ||--o{ POSTS : writes
+  "USERS on FirebaseAuth" ||--o{ CIRCLES : owns_or_belongs_to
+  "USERS on FirebaseAuth" ||--o{ POSTS : writes
   CIRCLES ||--o{ CIRCLE_MEMBERS : contains
   CIRCLES ||--o{ BOARDS : contains
   CIRCLES ||--|| CIRCLE_PERMISSIONS : has
