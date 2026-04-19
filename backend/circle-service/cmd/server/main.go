@@ -130,7 +130,14 @@ func main() {
 	srv := handler.NewDefaultServer(
 		graph.NewExecutableSchema(
 			graph.Config{
-				Resolvers: di.InitializeResolver(),
+				Resolvers: func() *graph.Resolver {
+					resolver, err := di.InitializeResolver()
+					if err != nil {
+						slog.Error("Failed to initialize resolver", "error", err)
+						panic(err)
+					}
+					return resolver
+				}(),
 			},
 		),
 	)
