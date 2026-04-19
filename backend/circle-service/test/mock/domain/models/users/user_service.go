@@ -57,17 +57,17 @@ func (mr *MockIUserServiceMockRecorder) Exists(ctx, user, executor any) *gomock.
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Exists", reflect.TypeOf((*MockIUserService)(nil).Exists), ctx, user, executor)
 }
 
-// ExistsByName mocks base method.
-func (m *MockIUserService) ExistsByName(ctx context.Context, user users.User, executor db.DbExecutor) (bool, error) {
+// ExistsByEmail mocks base method.
+func (m *MockIUserService) ExistsByEmail(ctx context.Context, user users.User, executor db.DbExecutor) (bool, error) {
 	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "ExistsByName", ctx, user, executor)
+	ret := m.ctrl.Call(m, "ExistsByEmail", ctx, user, executor)
 	ret0, _ := ret[0].(bool)
 	ret1, _ := ret[1].(error)
 	return ret0, ret1
 }
 
-// ExistsByName indicates an expected call of ExistsByName.
-func (mr *MockIUserServiceMockRecorder) ExistsByName(ctx, user, executor any) *gomock.Call {
+// ExistsByEmail indicates an expected call of ExistsByEmail.
+func (mr *MockIUserServiceMockRecorder) ExistsByEmail(ctx, user, executor any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ExistsByName", reflect.TypeOf((*MockIUserService)(nil).ExistsByName), ctx, user, executor)
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ExistsByEmail", reflect.TypeOf((*MockIUserService)(nil).ExistsByEmail), ctx, user, executor)
 }
