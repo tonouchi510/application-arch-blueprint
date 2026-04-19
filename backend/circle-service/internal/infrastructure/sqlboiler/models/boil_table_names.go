@@ -9,12 +9,10 @@ var TableNames = struct {
 	CirclePermissions string
 	Circles           string
 	Posts             string
-	Users             string
 }{
 	Boards:            "boards",
 	CircleMembers:     "circle_members",
 	CirclePermissions: "circle_permissions",
 	Circles:           "circles",
 	Posts:             "posts",
-	Users:             "users",
 }
