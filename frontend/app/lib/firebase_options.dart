@@ -45,14 +45,12 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'YOUR_WEB_API_KEY',
-    appId: 'YOUR_WEB_APP_ID',
-    messagingSenderId: 'YOUR_WEB_MESSAGING_SENDER_ID',
-    projectId: 'YOUR_PROJECT_ID',
-    authDomain: 'YOUR_AUTH_DOMAIN',
-    databaseURL: 'YOUR_DATABASE_URL',
-    storageBucket: 'YOUR_STORAGE_BUCKET',
-    measurementId: 'YOUR_MEASUREMENT_ID',
+    apiKey: 'AIzaSyCZDRPaRIdIdpKTYbpQeJNf_mMzNmPH2dI',
+    appId: '1:415491777381:web:ea5998361c90abee3fb78c',
+    messagingSenderId: '415491777381',
+    projectId: 'application-arch-blueprint',
+    authDomain: 'application-arch-blueprint.firebaseapp.com',
+    storageBucket: 'application-arch-blueprint.firebasestorage.app',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
