@@ -22,6 +22,8 @@ targets:
               name: DateTime
             uuid:
               name: String
+            UUID:
+              name: String
             UInt8:
               name: int
       ferry_generator|serializer_builder:

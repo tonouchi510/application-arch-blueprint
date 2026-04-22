@@ -2,7 +2,6 @@
 // ignore_for_file: type=lint
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'package:app/data/graphql/__generated__/schema.schema.gql.dart' as _i2;
 import 'package:app/data/graphql/__generated__/serializers.gql.dart' as _i1;
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
@@ -53,7 +52,7 @@ abstract class GCreateCircleData_create_circle
 
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
-  _i2.GUUID get id;
+  String get id;
   String get name;
   String get description;
   String get owner_id;
@@ -146,7 +145,7 @@ abstract class GChangeCircleNameData_change_circle_name
 
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
-  _i2.GUUID get id;
+  String get id;
   String get name;
   String get description;
   String get owner_id;
@@ -215,7 +214,7 @@ abstract class GChangeCircleDescriptionData_change_circle_description
 
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
-  _i2.GUUID get id;
+  String get id;
   String get name;
   String get description;
   String get owner_id;
@@ -282,7 +281,7 @@ abstract class GDelegateCircleOwnerData_delegate_circle_owner
 
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
-  _i2.GUUID get id;
+  String get id;
   String get name;
   String get description;
   String get owner_id;

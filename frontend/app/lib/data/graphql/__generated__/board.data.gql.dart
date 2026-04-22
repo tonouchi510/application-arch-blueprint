@@ -2,7 +2,6 @@
 // ignore_for_file: type=lint
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'package:app/data/graphql/__generated__/schema.schema.gql.dart' as _i2;
 import 'package:app/data/graphql/__generated__/serializers.gql.dart' as _i1;
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
@@ -52,8 +51,8 @@ abstract class GCreateBoardData_create_board
 
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
-  _i2.GUUID get id;
-  _i2.GUUID get circle_uuid;
+  String get id;
+  String get circle_uuid;
   String get topic;
   String get status;
   static Serializer<GCreateBoardData_create_board> get serializer =>
@@ -116,8 +115,8 @@ abstract class GChangeBoardTopicData_change_board_topic
 
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
-  _i2.GUUID get id;
-  _i2.GUUID get circle_uuid;
+  String get id;
+  String get circle_uuid;
   String get topic;
   String get status;
   static Serializer<GChangeBoardTopicData_change_board_topic> get serializer =>
@@ -181,8 +180,8 @@ abstract class GChangeBoardStatusData_change_board_status
 
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
-  _i2.GUUID get id;
-  _i2.GUUID get circle_uuid;
+  String get id;
+  String get circle_uuid;
   String get topic;
   String get status;
   static Serializer<GChangeBoardStatusData_change_board_status>
@@ -245,8 +244,8 @@ abstract class GAddBoardPostData_add_board_post
 
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
-  _i2.GUUID get id;
-  _i2.GUUID get circle_uuid;
+  String get id;
+  String get circle_uuid;
   String get topic;
   String get status;
   static Serializer<GAddBoardPostData_add_board_post> get serializer =>

@@ -12,24 +12,29 @@ Serializers _$serializers =
           ..add(GAddBoardPostData.serializer)
           ..add(GAddBoardPostData_add_board_post.serializer)
           ..add(GAddBoardPostInput.serializer)
+          ..add(GAddBoardPostInput.serializer)
           ..add(GAddBoardPostReq.serializer)
           ..add(GAddBoardPostVars.serializer)
           ..add(GAddCircleMemberData.serializer)
+          ..add(GAddCircleMemberInput.serializer)
           ..add(GAddCircleMemberInput.serializer)
           ..add(GAddCircleMemberReq.serializer)
           ..add(GAddCircleMemberVars.serializer)
           ..add(GBoolean_comparison_exp.serializer)
           ..add(GChangeBoardCreationPermissionData.serializer)
           ..add(GChangeBoardCreationPermissionInput.serializer)
+          ..add(GChangeBoardCreationPermissionInput.serializer)
           ..add(GChangeBoardCreationPermissionReq.serializer)
           ..add(GChangeBoardCreationPermissionVars.serializer)
           ..add(GChangeBoardStatusData.serializer)
           ..add(GChangeBoardStatusData_change_board_status.serializer)
           ..add(GChangeBoardStatusInput.serializer)
+          ..add(GChangeBoardStatusInput.serializer)
           ..add(GChangeBoardStatusReq.serializer)
           ..add(GChangeBoardStatusVars.serializer)
           ..add(GChangeBoardTopicData.serializer)
           ..add(GChangeBoardTopicData_change_board_topic.serializer)
+          ..add(GChangeBoardTopicInput.serializer)
           ..add(GChangeBoardTopicInput.serializer)
           ..add(GChangeBoardTopicReq.serializer)
           ..add(GChangeBoardTopicVars.serializer)
@@ -38,48 +43,47 @@ Serializers _$serializers =
             GChangeCircleDescriptionData_change_circle_description.serializer,
           )
           ..add(GChangeCircleDescriptionInput.serializer)
+          ..add(GChangeCircleDescriptionInput.serializer)
           ..add(GChangeCircleDescriptionReq.serializer)
           ..add(GChangeCircleDescriptionVars.serializer)
           ..add(GChangeCircleNameData.serializer)
           ..add(GChangeCircleNameData_change_circle_name.serializer)
+          ..add(GChangeCircleNameInput.serializer)
           ..add(GChangeCircleNameInput.serializer)
           ..add(GChangeCircleNameReq.serializer)
           ..add(GChangeCircleNameVars.serializer)
           ..add(GCreateBoardData.serializer)
           ..add(GCreateBoardData_create_board.serializer)
           ..add(GCreateBoardInput.serializer)
+          ..add(GCreateBoardInput.serializer)
           ..add(GCreateBoardReq.serializer)
           ..add(GCreateBoardVars.serializer)
           ..add(GCreateCircleData.serializer)
           ..add(GCreateCircleData_create_circle.serializer)
+          ..add(GCreateCircleInput.serializer)
           ..add(GCreateCircleInput.serializer)
           ..add(GCreateCircleReq.serializer)
           ..add(GCreateCircleVars.serializer)
           ..add(GDelegateCircleOwnerData.serializer)
           ..add(GDelegateCircleOwnerData_delegate_circle_owner.serializer)
           ..add(GDelegateCircleOwnerInput.serializer)
+          ..add(GDelegateCircleOwnerInput.serializer)
           ..add(GDelegateCircleOwnerReq.serializer)
           ..add(GDelegateCircleOwnerVars.serializer)
           ..add(GDeleteBoardData.serializer)
+          ..add(GDeleteBoardInput.serializer)
           ..add(GDeleteBoardInput.serializer)
           ..add(GDeleteBoardReq.serializer)
           ..add(GDeleteBoardVars.serializer)
           ..add(GDeleteCircleData.serializer)
           ..add(GDeleteCircleInput.serializer)
+          ..add(GDeleteCircleInput.serializer)
           ..add(GDeleteCircleReq.serializer)
           ..add(GDeleteCircleVars.serializer)
-          ..add(GDeleteUserData.serializer)
           ..add(GDeleteUserInput.serializer)
-          ..add(GDeleteUserReq.serializer)
-          ..add(GDeleteUserVars.serializer)
           ..add(GInt_comparison_exp.serializer)
           ..add(GString_comparison_exp.serializer)
-          ..add(GUUID.serializer)
-          ..add(GUpdateUserAttributesData.serializer)
-          ..add(GUpdateUserAttributesData_update_user_attributes.serializer)
           ..add(GUpdateUserAttributesInput.serializer)
-          ..add(GUpdateUserAttributesReq.serializer)
-          ..add(GUpdateUserAttributesVars.serializer)
           ..add(Gboards_aggregate_bool_exp.serializer)
           ..add(Gboards_aggregate_bool_exp_count.serializer)
           ..add(Gboards_aggregate_order_by.serializer)
@@ -155,15 +159,9 @@ Serializers _$serializers =
           ..add(Gcircle_permissions_stream_cursor_value_input.serializer)
           ..add(Gcircle_permissions_update_column.serializer)
           ..add(Gcircle_permissions_updates.serializer)
-          ..add(Gcircles_aggregate_bool_exp.serializer)
-          ..add(Gcircles_aggregate_bool_exp_count.serializer)
-          ..add(Gcircles_aggregate_order_by.serializer)
-          ..add(Gcircles_arr_rel_insert_input.serializer)
           ..add(Gcircles_bool_exp.serializer)
           ..add(Gcircles_constraint.serializer)
           ..add(Gcircles_insert_input.serializer)
-          ..add(Gcircles_max_order_by.serializer)
-          ..add(Gcircles_min_order_by.serializer)
           ..add(Gcircles_obj_rel_insert_input.serializer)
           ..add(Gcircles_on_conflict.serializer)
           ..add(Gcircles_order_by.serializer)
@@ -198,19 +196,6 @@ Serializers _$serializers =
           ..add(Gposts_updates.serializer)
           ..add(Gsmallint_comparison_exp.serializer)
           ..add(Gtimestamptz_comparison_exp.serializer)
-          ..add(Gusers_bool_exp.serializer)
-          ..add(Gusers_constraint.serializer)
-          ..add(Gusers_insert_input.serializer)
-          ..add(Gusers_obj_rel_insert_input.serializer)
-          ..add(Gusers_on_conflict.serializer)
-          ..add(Gusers_order_by.serializer)
-          ..add(Gusers_pk_columns_input.serializer)
-          ..add(Gusers_select_column.serializer)
-          ..add(Gusers_set_input.serializer)
-          ..add(Gusers_stream_cursor_input.serializer)
-          ..add(Gusers_stream_cursor_value_input.serializer)
-          ..add(Gusers_update_column.serializer)
-          ..add(Gusers_updates.serializer)
           ..add(Guuid_comparison_exp.serializer)
           ..addBuilderFactory(
             const FullType(BuiltList, const [const FullType(Gboards_bool_exp)]),
@@ -312,18 +297,6 @@ Serializers _$serializers =
           )
           ..addBuilderFactory(
             const FullType(BuiltList, const [
-              const FullType(Gcircles_insert_input),
-            ]),
-            () => ListBuilder<Gcircles_insert_input>(),
-          )
-          ..addBuilderFactory(
-            const FullType(BuiltList, const [
-              const FullType(Gcircles_select_column),
-            ]),
-            () => ListBuilder<Gcircles_select_column>(),
-          )
-          ..addBuilderFactory(
-            const FullType(BuiltList, const [
               const FullType(Gcircles_update_column),
             ]),
             () => ListBuilder<Gcircles_update_column>(),
@@ -361,20 +334,6 @@ Serializers _$serializers =
               const FullType(Gposts_update_column),
             ]),
             () => ListBuilder<Gposts_update_column>(),
-          )
-          ..addBuilderFactory(
-            const FullType(BuiltList, const [const FullType(Gusers_bool_exp)]),
-            () => ListBuilder<Gusers_bool_exp>(),
-          )
-          ..addBuilderFactory(
-            const FullType(BuiltList, const [const FullType(Gusers_bool_exp)]),
-            () => ListBuilder<Gusers_bool_exp>(),
-          )
-          ..addBuilderFactory(
-            const FullType(BuiltList, const [
-              const FullType(Gusers_update_column),
-            ]),
-            () => ListBuilder<Gusers_update_column>(),
           )
           ..addBuilderFactory(
             const FullType(BuiltList, const [const FullType(String)]),

@@ -124,10 +124,7 @@ class _$GCreateCircleData_create_circleSerializer
         specifiedType: const FullType(String),
       ),
       'id',
-      serializers.serialize(
-        object.id,
-        specifiedType: const FullType(_i2.GUUID),
-      ),
+      serializers.serialize(object.id, specifiedType: const FullType(String)),
       'name',
       serializers.serialize(object.name, specifiedType: const FullType(String)),
       'description',
@@ -168,13 +165,12 @@ class _$GCreateCircleData_create_circleSerializer
                   as String;
           break;
         case 'id':
-          result.id.replace(
-            serializers.deserialize(
-                  value,
-                  specifiedType: const FullType(_i2.GUUID),
-                )!
-                as _i2.GUUID,
-          );
+          result.id =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )!
+                  as String;
           break;
         case 'name':
           result.name =
@@ -371,10 +367,7 @@ class _$GChangeCircleNameData_change_circle_nameSerializer
         specifiedType: const FullType(String),
       ),
       'id',
-      serializers.serialize(
-        object.id,
-        specifiedType: const FullType(_i2.GUUID),
-      ),
+      serializers.serialize(object.id, specifiedType: const FullType(String)),
       'name',
       serializers.serialize(object.name, specifiedType: const FullType(String)),
       'description',
@@ -415,13 +408,12 @@ class _$GChangeCircleNameData_change_circle_nameSerializer
                   as String;
           break;
         case 'id':
-          result.id.replace(
-            serializers.deserialize(
-                  value,
-                  specifiedType: const FullType(_i2.GUUID),
-                )!
-                as _i2.GUUID,
-          );
+          result.id =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )!
+                  as String;
           break;
         case 'name':
           result.name =
@@ -555,10 +547,7 @@ class _$GChangeCircleDescriptionData_change_circle_descriptionSerializer
         specifiedType: const FullType(String),
       ),
       'id',
-      serializers.serialize(
-        object.id,
-        specifiedType: const FullType(_i2.GUUID),
-      ),
+      serializers.serialize(object.id, specifiedType: const FullType(String)),
       'name',
       serializers.serialize(object.name, specifiedType: const FullType(String)),
       'description',
@@ -600,13 +589,12 @@ class _$GChangeCircleDescriptionData_change_circle_descriptionSerializer
                   as String;
           break;
         case 'id':
-          result.id.replace(
-            serializers.deserialize(
-                  value,
-                  specifiedType: const FullType(_i2.GUUID),
-                )!
-                as _i2.GUUID,
-          );
+          result.id =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )!
+                  as String;
           break;
         case 'name':
           result.name =
@@ -737,10 +725,7 @@ class _$GDelegateCircleOwnerData_delegate_circle_ownerSerializer
         specifiedType: const FullType(String),
       ),
       'id',
-      serializers.serialize(
-        object.id,
-        specifiedType: const FullType(_i2.GUUID),
-      ),
+      serializers.serialize(object.id, specifiedType: const FullType(String)),
       'name',
       serializers.serialize(object.name, specifiedType: const FullType(String)),
       'description',
@@ -781,13 +766,12 @@ class _$GDelegateCircleOwnerData_delegate_circle_ownerSerializer
                   as String;
           break;
         case 'id':
-          result.id.replace(
-            serializers.deserialize(
-                  value,
-                  specifiedType: const FullType(_i2.GUUID),
-                )!
-                as _i2.GUUID,
-          );
+          result.id =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )!
+                  as String;
           break;
         case 'name':
           result.name =
@@ -1012,7 +996,7 @@ class _$GCreateCircleData_create_circle
   @override
   final String G__typename;
   @override
-  final _i2.GUUID id;
+  final String id;
   @override
   final String name;
   @override
@@ -1087,9 +1071,9 @@ class GCreateCircleData_create_circleBuilder
   String? get G__typename => _$this._G__typename;
   set G__typename(String? G__typename) => _$this._G__typename = G__typename;
 
-  _i2.GUUIDBuilder? _id;
-  _i2.GUUIDBuilder get id => _$this._id ??= _i2.GUUIDBuilder();
-  set id(_i2.GUUIDBuilder? id) => _$this._id = id;
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
 
   String? _name;
   String? get name => _$this._name;
@@ -1111,7 +1095,7 @@ class GCreateCircleData_create_circleBuilder
     final $v = _$v;
     if ($v != null) {
       _G__typename = $v.G__typename;
-      _id = $v.id.toBuilder();
+      _id = $v.id;
       _name = $v.name;
       _description = $v.description;
       _owner_id = $v.owner_id;
@@ -1134,47 +1118,35 @@ class GCreateCircleData_create_circleBuilder
   GCreateCircleData_create_circle build() => _build();
 
   _$GCreateCircleData_create_circle _build() {
-    _$GCreateCircleData_create_circle _$result;
-    try {
-      _$result =
-          _$v ??
-          _$GCreateCircleData_create_circle._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(
-              G__typename,
-              r'GCreateCircleData_create_circle',
-              'G__typename',
-            ),
-            id: id.build(),
-            name: BuiltValueNullFieldError.checkNotNull(
-              name,
-              r'GCreateCircleData_create_circle',
-              'name',
-            ),
-            description: BuiltValueNullFieldError.checkNotNull(
-              description,
-              r'GCreateCircleData_create_circle',
-              'description',
-            ),
-            owner_id: BuiltValueNullFieldError.checkNotNull(
-              owner_id,
-              r'GCreateCircleData_create_circle',
-              'owner_id',
-            ),
-          );
-    } catch (_) {
-      late String _$failedField;
-      try {
-        _$failedField = 'id';
-        id.build();
-      } catch (e) {
-        throw BuiltValueNestedFieldError(
-          r'GCreateCircleData_create_circle',
-          _$failedField,
-          e.toString(),
+    final _$result =
+        _$v ??
+        _$GCreateCircleData_create_circle._(
+          G__typename: BuiltValueNullFieldError.checkNotNull(
+            G__typename,
+            r'GCreateCircleData_create_circle',
+            'G__typename',
+          ),
+          id: BuiltValueNullFieldError.checkNotNull(
+            id,
+            r'GCreateCircleData_create_circle',
+            'id',
+          ),
+          name: BuiltValueNullFieldError.checkNotNull(
+            name,
+            r'GCreateCircleData_create_circle',
+            'name',
+          ),
+          description: BuiltValueNullFieldError.checkNotNull(
+            description,
+            r'GCreateCircleData_create_circle',
+            'description',
+          ),
+          owner_id: BuiltValueNullFieldError.checkNotNull(
+            owner_id,
+            r'GCreateCircleData_create_circle',
+            'owner_id',
+          ),
         );
-      }
-      rethrow;
-    }
     replace(_$result);
     return _$result;
   }
@@ -1418,7 +1390,7 @@ class _$GChangeCircleNameData_change_circle_name
   @override
   final String G__typename;
   @override
-  final _i2.GUUID id;
+  final String id;
   @override
   final String name;
   @override
@@ -1496,9 +1468,9 @@ class GChangeCircleNameData_change_circle_nameBuilder
   String? get G__typename => _$this._G__typename;
   set G__typename(String? G__typename) => _$this._G__typename = G__typename;
 
-  _i2.GUUIDBuilder? _id;
-  _i2.GUUIDBuilder get id => _$this._id ??= _i2.GUUIDBuilder();
-  set id(_i2.GUUIDBuilder? id) => _$this._id = id;
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
 
   String? _name;
   String? get name => _$this._name;
@@ -1520,7 +1492,7 @@ class GChangeCircleNameData_change_circle_nameBuilder
     final $v = _$v;
     if ($v != null) {
       _G__typename = $v.G__typename;
-      _id = $v.id.toBuilder();
+      _id = $v.id;
       _name = $v.name;
       _description = $v.description;
       _owner_id = $v.owner_id;
@@ -1545,47 +1517,35 @@ class GChangeCircleNameData_change_circle_nameBuilder
   GChangeCircleNameData_change_circle_name build() => _build();
 
   _$GChangeCircleNameData_change_circle_name _build() {
-    _$GChangeCircleNameData_change_circle_name _$result;
-    try {
-      _$result =
-          _$v ??
-          _$GChangeCircleNameData_change_circle_name._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(
-              G__typename,
-              r'GChangeCircleNameData_change_circle_name',
-              'G__typename',
-            ),
-            id: id.build(),
-            name: BuiltValueNullFieldError.checkNotNull(
-              name,
-              r'GChangeCircleNameData_change_circle_name',
-              'name',
-            ),
-            description: BuiltValueNullFieldError.checkNotNull(
-              description,
-              r'GChangeCircleNameData_change_circle_name',
-              'description',
-            ),
-            owner_id: BuiltValueNullFieldError.checkNotNull(
-              owner_id,
-              r'GChangeCircleNameData_change_circle_name',
-              'owner_id',
-            ),
-          );
-    } catch (_) {
-      late String _$failedField;
-      try {
-        _$failedField = 'id';
-        id.build();
-      } catch (e) {
-        throw BuiltValueNestedFieldError(
-          r'GChangeCircleNameData_change_circle_name',
-          _$failedField,
-          e.toString(),
+    final _$result =
+        _$v ??
+        _$GChangeCircleNameData_change_circle_name._(
+          G__typename: BuiltValueNullFieldError.checkNotNull(
+            G__typename,
+            r'GChangeCircleNameData_change_circle_name',
+            'G__typename',
+          ),
+          id: BuiltValueNullFieldError.checkNotNull(
+            id,
+            r'GChangeCircleNameData_change_circle_name',
+            'id',
+          ),
+          name: BuiltValueNullFieldError.checkNotNull(
+            name,
+            r'GChangeCircleNameData_change_circle_name',
+            'name',
+          ),
+          description: BuiltValueNullFieldError.checkNotNull(
+            description,
+            r'GChangeCircleNameData_change_circle_name',
+            'description',
+          ),
+          owner_id: BuiltValueNullFieldError.checkNotNull(
+            owner_id,
+            r'GChangeCircleNameData_change_circle_name',
+            'owner_id',
+          ),
         );
-      }
-      rethrow;
-    }
     replace(_$result);
     return _$result;
   }
@@ -1727,7 +1687,7 @@ class _$GChangeCircleDescriptionData_change_circle_description
   @override
   final String G__typename;
   @override
-  final _i2.GUUID id;
+  final String id;
   @override
   final String name;
   @override
@@ -1812,9 +1772,9 @@ class GChangeCircleDescriptionData_change_circle_descriptionBuilder
   String? get G__typename => _$this._G__typename;
   set G__typename(String? G__typename) => _$this._G__typename = G__typename;
 
-  _i2.GUUIDBuilder? _id;
-  _i2.GUUIDBuilder get id => _$this._id ??= _i2.GUUIDBuilder();
-  set id(_i2.GUUIDBuilder? id) => _$this._id = id;
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
 
   String? _name;
   String? get name => _$this._name;
@@ -1838,7 +1798,7 @@ class GChangeCircleDescriptionData_change_circle_descriptionBuilder
     final $v = _$v;
     if ($v != null) {
       _G__typename = $v.G__typename;
-      _id = $v.id.toBuilder();
+      _id = $v.id;
       _name = $v.name;
       _description = $v.description;
       _owner_id = $v.owner_id;
@@ -1866,47 +1826,35 @@ class GChangeCircleDescriptionData_change_circle_descriptionBuilder
   GChangeCircleDescriptionData_change_circle_description build() => _build();
 
   _$GChangeCircleDescriptionData_change_circle_description _build() {
-    _$GChangeCircleDescriptionData_change_circle_description _$result;
-    try {
-      _$result =
-          _$v ??
-          _$GChangeCircleDescriptionData_change_circle_description._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(
-              G__typename,
-              r'GChangeCircleDescriptionData_change_circle_description',
-              'G__typename',
-            ),
-            id: id.build(),
-            name: BuiltValueNullFieldError.checkNotNull(
-              name,
-              r'GChangeCircleDescriptionData_change_circle_description',
-              'name',
-            ),
-            description: BuiltValueNullFieldError.checkNotNull(
-              description,
-              r'GChangeCircleDescriptionData_change_circle_description',
-              'description',
-            ),
-            owner_id: BuiltValueNullFieldError.checkNotNull(
-              owner_id,
-              r'GChangeCircleDescriptionData_change_circle_description',
-              'owner_id',
-            ),
-          );
-    } catch (_) {
-      late String _$failedField;
-      try {
-        _$failedField = 'id';
-        id.build();
-      } catch (e) {
-        throw BuiltValueNestedFieldError(
-          r'GChangeCircleDescriptionData_change_circle_description',
-          _$failedField,
-          e.toString(),
+    final _$result =
+        _$v ??
+        _$GChangeCircleDescriptionData_change_circle_description._(
+          G__typename: BuiltValueNullFieldError.checkNotNull(
+            G__typename,
+            r'GChangeCircleDescriptionData_change_circle_description',
+            'G__typename',
+          ),
+          id: BuiltValueNullFieldError.checkNotNull(
+            id,
+            r'GChangeCircleDescriptionData_change_circle_description',
+            'id',
+          ),
+          name: BuiltValueNullFieldError.checkNotNull(
+            name,
+            r'GChangeCircleDescriptionData_change_circle_description',
+            'name',
+          ),
+          description: BuiltValueNullFieldError.checkNotNull(
+            description,
+            r'GChangeCircleDescriptionData_change_circle_description',
+            'description',
+          ),
+          owner_id: BuiltValueNullFieldError.checkNotNull(
+            owner_id,
+            r'GChangeCircleDescriptionData_change_circle_description',
+            'owner_id',
+          ),
         );
-      }
-      rethrow;
-    }
     replace(_$result);
     return _$result;
   }
@@ -2043,7 +1991,7 @@ class _$GDelegateCircleOwnerData_delegate_circle_owner
   @override
   final String G__typename;
   @override
-  final _i2.GUUID id;
+  final String id;
   @override
   final String name;
   @override
@@ -2124,9 +2072,9 @@ class GDelegateCircleOwnerData_delegate_circle_ownerBuilder
   String? get G__typename => _$this._G__typename;
   set G__typename(String? G__typename) => _$this._G__typename = G__typename;
 
-  _i2.GUUIDBuilder? _id;
-  _i2.GUUIDBuilder get id => _$this._id ??= _i2.GUUIDBuilder();
-  set id(_i2.GUUIDBuilder? id) => _$this._id = id;
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
 
   String? _name;
   String? get name => _$this._name;
@@ -2148,7 +2096,7 @@ class GDelegateCircleOwnerData_delegate_circle_ownerBuilder
     final $v = _$v;
     if ($v != null) {
       _G__typename = $v.G__typename;
-      _id = $v.id.toBuilder();
+      _id = $v.id;
       _name = $v.name;
       _description = $v.description;
       _owner_id = $v.owner_id;
@@ -2174,47 +2122,35 @@ class GDelegateCircleOwnerData_delegate_circle_ownerBuilder
   GDelegateCircleOwnerData_delegate_circle_owner build() => _build();
 
   _$GDelegateCircleOwnerData_delegate_circle_owner _build() {
-    _$GDelegateCircleOwnerData_delegate_circle_owner _$result;
-    try {
-      _$result =
-          _$v ??
-          _$GDelegateCircleOwnerData_delegate_circle_owner._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(
-              G__typename,
-              r'GDelegateCircleOwnerData_delegate_circle_owner',
-              'G__typename',
-            ),
-            id: id.build(),
-            name: BuiltValueNullFieldError.checkNotNull(
-              name,
-              r'GDelegateCircleOwnerData_delegate_circle_owner',
-              'name',
-            ),
-            description: BuiltValueNullFieldError.checkNotNull(
-              description,
-              r'GDelegateCircleOwnerData_delegate_circle_owner',
-              'description',
-            ),
-            owner_id: BuiltValueNullFieldError.checkNotNull(
-              owner_id,
-              r'GDelegateCircleOwnerData_delegate_circle_owner',
-              'owner_id',
-            ),
-          );
-    } catch (_) {
-      late String _$failedField;
-      try {
-        _$failedField = 'id';
-        id.build();
-      } catch (e) {
-        throw BuiltValueNestedFieldError(
-          r'GDelegateCircleOwnerData_delegate_circle_owner',
-          _$failedField,
-          e.toString(),
+    final _$result =
+        _$v ??
+        _$GDelegateCircleOwnerData_delegate_circle_owner._(
+          G__typename: BuiltValueNullFieldError.checkNotNull(
+            G__typename,
+            r'GDelegateCircleOwnerData_delegate_circle_owner',
+            'G__typename',
+          ),
+          id: BuiltValueNullFieldError.checkNotNull(
+            id,
+            r'GDelegateCircleOwnerData_delegate_circle_owner',
+            'id',
+          ),
+          name: BuiltValueNullFieldError.checkNotNull(
+            name,
+            r'GDelegateCircleOwnerData_delegate_circle_owner',
+            'name',
+          ),
+          description: BuiltValueNullFieldError.checkNotNull(
+            description,
+            r'GDelegateCircleOwnerData_delegate_circle_owner',
+            'description',
+          ),
+          owner_id: BuiltValueNullFieldError.checkNotNull(
+            owner_id,
+            r'GDelegateCircleOwnerData_delegate_circle_owner',
+            'owner_id',
+          ),
         );
-      }
-      rethrow;
-    }
     replace(_$result);
     return _$result;
   }

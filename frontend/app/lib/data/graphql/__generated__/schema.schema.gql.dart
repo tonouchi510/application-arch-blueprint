@@ -19,8 +19,8 @@ abstract class GAddBoardPostInput
           [void Function(GAddBoardPostInputBuilder b) updates]) =
       _$GAddBoardPostInput;
 
-  GUUID get board_id;
-  GUUID get circle_id;
+  String get board_id;
+  String get circle_id;
   String get content;
   String get user_id;
   static Serializer<GAddBoardPostInput> get serializer =>
@@ -46,7 +46,7 @@ abstract class GAddCircleMemberInput
           [void Function(GAddCircleMemberInputBuilder b) updates]) =
       _$GAddCircleMemberInput;
 
-  GUUID get circle_id;
+  String get circle_id;
   String get new_member_id;
   static Serializer<GAddCircleMemberInput> get serializer =>
       _$gAddCircleMemberInputSerializer;
@@ -115,7 +115,7 @@ abstract class GChangeBoardCreationPermissionInput
           updates]) = _$GChangeBoardCreationPermissionInput;
 
   bool get allowed;
-  GUUID get circle_id;
+  String get circle_id;
   static Serializer<GChangeBoardCreationPermissionInput> get serializer =>
       _$gChangeBoardCreationPermissionInputSerializer;
 
@@ -140,8 +140,8 @@ abstract class GChangeBoardStatusInput
           [void Function(GChangeBoardStatusInputBuilder b) updates]) =
       _$GChangeBoardStatusInput;
 
-  GUUID get board_id;
-  GUUID get circle_id;
+  String get board_id;
+  String get circle_id;
   int get new_status;
   static Serializer<GChangeBoardStatusInput> get serializer =>
       _$gChangeBoardStatusInputSerializer;
@@ -166,8 +166,8 @@ abstract class GChangeBoardTopicInput
           [void Function(GChangeBoardTopicInputBuilder b) updates]) =
       _$GChangeBoardTopicInput;
 
-  GUUID get board_id;
-  GUUID get circle_id;
+  String get board_id;
+  String get circle_id;
   String get new_topic;
   static Serializer<GChangeBoardTopicInput> get serializer =>
       _$gChangeBoardTopicInputSerializer;
@@ -194,7 +194,7 @@ abstract class GChangeCircleDescriptionInput
           [void Function(GChangeCircleDescriptionInputBuilder b) updates]) =
       _$GChangeCircleDescriptionInput;
 
-  GUUID get circle_id;
+  String get circle_id;
   String get new_description;
   static Serializer<GChangeCircleDescriptionInput> get serializer =>
       _$gChangeCircleDescriptionInputSerializer;
@@ -219,7 +219,7 @@ abstract class GChangeCircleNameInput
           [void Function(GChangeCircleNameInputBuilder b) updates]) =
       _$GChangeCircleNameInput;
 
-  GUUID get circle_id;
+  String get circle_id;
   String get new_name;
   static Serializer<GChangeCircleNameInput> get serializer =>
       _$gChangeCircleNameInputSerializer;
@@ -244,7 +244,7 @@ abstract class GCreateBoardInput
           [void Function(GCreateBoardInputBuilder b) updates]) =
       _$GCreateBoardInput;
 
-  GUUID get circle_id;
+  String get circle_id;
   String get topic;
   static Serializer<GCreateBoardInput> get serializer =>
       _$gCreateBoardInputSerializer;
@@ -295,7 +295,7 @@ abstract class GDelegateCircleOwnerInput
           [void Function(GDelegateCircleOwnerInputBuilder b) updates]) =
       _$GDelegateCircleOwnerInput;
 
-  GUUID get circle_id;
+  String get circle_id;
   String get new_owner_id;
   static Serializer<GDelegateCircleOwnerInput> get serializer =>
       _$gDelegateCircleOwnerInputSerializer;
@@ -320,8 +320,8 @@ abstract class GDeleteBoardInput
           [void Function(GDeleteBoardInputBuilder b) updates]) =
       _$GDeleteBoardInput;
 
-  GUUID get board_id;
-  GUUID get circle_id;
+  String get board_id;
+  String get circle_id;
   static Serializer<GDeleteBoardInput> get serializer =>
       _$gDeleteBoardInputSerializer;
 
@@ -345,7 +345,7 @@ abstract class GDeleteCircleInput
           [void Function(GDeleteCircleInputBuilder b) updates]) =
       _$GDeleteCircleInput;
 
-  GUUID get circle_id;
+  String get circle_id;
   static Serializer<GDeleteCircleInput> get serializer =>
       _$gDeleteCircleInputSerializer;
 
@@ -484,18 +484,6 @@ abstract class GString_comparison_exp
         GString_comparison_exp.serializer,
         json,
       );
-}
-
-abstract class GUUID implements Built<GUUID, GUUIDBuilder> {
-  GUUID._();
-
-  factory GUUID([String? value]) =>
-      _$GUUID((b) => value != null ? (b..value = value) : b);
-
-  String get value;
-  @BuiltValueSerializer(custom: true)
-  static Serializer<GUUID> get serializer => _i2.DefaultScalarSerializer<GUUID>(
-      (Object serialized) => GUUID((serialized as String?)));
 }
 
 abstract class GUpdateUserAttributesInput
@@ -689,7 +677,6 @@ abstract class Gboards_bool_exp
   Gsmallint_comparison_exp? get status;
   GString_comparison_exp? get topic;
   Gtimestamptz_comparison_exp? get updated_at;
-  Gusers_bool_exp? get user;
   Guuid_comparison_exp? get uuid;
   static Serializer<Gboards_bool_exp> get serializer =>
       _$gboardsBoolExpSerializer;
@@ -760,7 +747,6 @@ abstract class Gboards_insert_input
   int? get status;
   String? get topic;
   String? get updated_at;
-  Gusers_obj_rel_insert_input? get user;
   String? get uuid;
   static Serializer<Gboards_insert_input> get serializer =>
       _$gboardsInsertInputSerializer;
@@ -905,7 +891,6 @@ abstract class Gboards_order_by
   Gorder_by? get status;
   Gorder_by? get topic;
   Gorder_by? get updated_at;
-  Gusers_order_by? get user;
   Gorder_by? get uuid;
   static Serializer<Gboards_order_by> get serializer =>
       _$gboardsOrderBySerializer;
@@ -1492,7 +1477,6 @@ abstract class Gcircle_members_bool_exp
   Gtimestamptz_comparison_exp? get created_at;
   Gdate_comparison_exp? get joined_date;
   Gtimestamptz_comparison_exp? get updated_at;
-  Gusers_bool_exp? get user;
   Gbpchar_comparison_exp? get user_id;
   Guuid_comparison_exp? get uuid;
   static Serializer<Gcircle_members_bool_exp> get serializer =>
@@ -1545,7 +1529,6 @@ abstract class Gcircle_members_insert_input
   String? get created_at;
   Gdate? get joined_date;
   String? get updated_at;
-  Gusers_obj_rel_insert_input? get user;
   String? get user_id;
   String? get uuid;
   static Serializer<Gcircle_members_insert_input> get serializer =>
@@ -1666,7 +1649,6 @@ abstract class Gcircle_members_order_by
   Gorder_by? get created_at;
   Gorder_by? get joined_date;
   Gorder_by? get updated_at;
-  Gusers_order_by? get user;
   Gorder_by? get user_id;
   Gorder_by? get uuid;
   static Serializer<Gcircle_members_order_by> get serializer =>
@@ -2528,115 +2510,6 @@ abstract class Gcircle_permissions_updates
       );
 }
 
-abstract class Gcircles_aggregate_bool_exp
-    implements
-        Built<Gcircles_aggregate_bool_exp, Gcircles_aggregate_bool_expBuilder> {
-  Gcircles_aggregate_bool_exp._();
-
-  factory Gcircles_aggregate_bool_exp(
-          [void Function(Gcircles_aggregate_bool_expBuilder b) updates]) =
-      _$Gcircles_aggregate_bool_exp;
-
-  Gcircles_aggregate_bool_exp_count? get count;
-  static Serializer<Gcircles_aggregate_bool_exp> get serializer =>
-      _$gcirclesAggregateBoolExpSerializer;
-
-  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
-        Gcircles_aggregate_bool_exp.serializer,
-        this,
-      ) as Map<String, dynamic>);
-
-  static Gcircles_aggregate_bool_exp? fromJson(Map<String, dynamic> json) =>
-      _i1.serializers.deserializeWith(
-        Gcircles_aggregate_bool_exp.serializer,
-        json,
-      );
-}
-
-abstract class Gcircles_aggregate_bool_exp_count
-    implements
-        Built<Gcircles_aggregate_bool_exp_count,
-            Gcircles_aggregate_bool_exp_countBuilder> {
-  Gcircles_aggregate_bool_exp_count._();
-
-  factory Gcircles_aggregate_bool_exp_count(
-          [void Function(Gcircles_aggregate_bool_exp_countBuilder b) updates]) =
-      _$Gcircles_aggregate_bool_exp_count;
-
-  BuiltList<Gcircles_select_column>? get arguments;
-  bool? get distinct;
-  Gcircles_bool_exp? get filter;
-  GInt_comparison_exp get predicate;
-  static Serializer<Gcircles_aggregate_bool_exp_count> get serializer =>
-      _$gcirclesAggregateBoolExpCountSerializer;
-
-  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
-        Gcircles_aggregate_bool_exp_count.serializer,
-        this,
-      ) as Map<String, dynamic>);
-
-  static Gcircles_aggregate_bool_exp_count? fromJson(
-          Map<String, dynamic> json) =>
-      _i1.serializers.deserializeWith(
-        Gcircles_aggregate_bool_exp_count.serializer,
-        json,
-      );
-}
-
-abstract class Gcircles_aggregate_order_by
-    implements
-        Built<Gcircles_aggregate_order_by, Gcircles_aggregate_order_byBuilder> {
-  Gcircles_aggregate_order_by._();
-
-  factory Gcircles_aggregate_order_by(
-          [void Function(Gcircles_aggregate_order_byBuilder b) updates]) =
-      _$Gcircles_aggregate_order_by;
-
-  Gorder_by? get count;
-  Gcircles_max_order_by? get max;
-  Gcircles_min_order_by? get min;
-  static Serializer<Gcircles_aggregate_order_by> get serializer =>
-      _$gcirclesAggregateOrderBySerializer;
-
-  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
-        Gcircles_aggregate_order_by.serializer,
-        this,
-      ) as Map<String, dynamic>);
-
-  static Gcircles_aggregate_order_by? fromJson(Map<String, dynamic> json) =>
-      _i1.serializers.deserializeWith(
-        Gcircles_aggregate_order_by.serializer,
-        json,
-      );
-}
-
-abstract class Gcircles_arr_rel_insert_input
-    implements
-        Built<Gcircles_arr_rel_insert_input,
-            Gcircles_arr_rel_insert_inputBuilder> {
-  Gcircles_arr_rel_insert_input._();
-
-  factory Gcircles_arr_rel_insert_input(
-          [void Function(Gcircles_arr_rel_insert_inputBuilder b) updates]) =
-      _$Gcircles_arr_rel_insert_input;
-
-  BuiltList<Gcircles_insert_input> get data;
-  Gcircles_on_conflict? get on_conflict;
-  static Serializer<Gcircles_arr_rel_insert_input> get serializer =>
-      _$gcirclesArrRelInsertInputSerializer;
-
-  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
-        Gcircles_arr_rel_insert_input.serializer,
-        this,
-      ) as Map<String, dynamic>);
-
-  static Gcircles_arr_rel_insert_input? fromJson(Map<String, dynamic> json) =>
-      _i1.serializers.deserializeWith(
-        Gcircles_arr_rel_insert_input.serializer,
-        json,
-      );
-}
-
 abstract class Gcircles_bool_exp
     implements Built<Gcircles_bool_exp, Gcircles_bool_expBuilder> {
   Gcircles_bool_exp._();
@@ -2662,7 +2535,6 @@ abstract class Gcircles_bool_exp
   GString_comparison_exp? get name;
   Gbpchar_comparison_exp? get owner_id;
   Gtimestamptz_comparison_exp? get updated_at;
-  Gusers_bool_exp? get user;
   Guuid_comparison_exp? get uuid;
   static Serializer<Gcircles_bool_exp> get serializer =>
       _$gcirclesBoolExpSerializer;
@@ -2710,7 +2582,6 @@ abstract class Gcircles_insert_input
   String? get name;
   String? get owner_id;
   String? get updated_at;
-  Gusers_obj_rel_insert_input? get user;
   String? get uuid;
   static Serializer<Gcircles_insert_input> get serializer =>
       _$gcirclesInsertInputSerializer;
@@ -2723,64 +2594,6 @@ abstract class Gcircles_insert_input
   static Gcircles_insert_input? fromJson(Map<String, dynamic> json) =>
       _i1.serializers.deserializeWith(
         Gcircles_insert_input.serializer,
-        json,
-      );
-}
-
-abstract class Gcircles_max_order_by
-    implements Built<Gcircles_max_order_by, Gcircles_max_order_byBuilder> {
-  Gcircles_max_order_by._();
-
-  factory Gcircles_max_order_by(
-          [void Function(Gcircles_max_order_byBuilder b) updates]) =
-      _$Gcircles_max_order_by;
-
-  Gorder_by? get created_at;
-  Gorder_by? get description;
-  Gorder_by? get name;
-  Gorder_by? get owner_id;
-  Gorder_by? get updated_at;
-  Gorder_by? get uuid;
-  static Serializer<Gcircles_max_order_by> get serializer =>
-      _$gcirclesMaxOrderBySerializer;
-
-  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
-        Gcircles_max_order_by.serializer,
-        this,
-      ) as Map<String, dynamic>);
-
-  static Gcircles_max_order_by? fromJson(Map<String, dynamic> json) =>
-      _i1.serializers.deserializeWith(
-        Gcircles_max_order_by.serializer,
-        json,
-      );
-}
-
-abstract class Gcircles_min_order_by
-    implements Built<Gcircles_min_order_by, Gcircles_min_order_byBuilder> {
-  Gcircles_min_order_by._();
-
-  factory Gcircles_min_order_by(
-          [void Function(Gcircles_min_order_byBuilder b) updates]) =
-      _$Gcircles_min_order_by;
-
-  Gorder_by? get created_at;
-  Gorder_by? get description;
-  Gorder_by? get name;
-  Gorder_by? get owner_id;
-  Gorder_by? get updated_at;
-  Gorder_by? get uuid;
-  static Serializer<Gcircles_min_order_by> get serializer =>
-      _$gcirclesMinOrderBySerializer;
-
-  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
-        Gcircles_min_order_by.serializer,
-        this,
-      ) as Map<String, dynamic>);
-
-  static Gcircles_min_order_by? fromJson(Map<String, dynamic> json) =>
-      _i1.serializers.deserializeWith(
-        Gcircles_min_order_by.serializer,
         json,
       );
 }
@@ -2854,7 +2667,6 @@ abstract class Gcircles_order_by
   Gorder_by? get name;
   Gorder_by? get owner_id;
   Gorder_by? get updated_at;
-  Gusers_order_by? get user;
   Gorder_by? get uuid;
   static Serializer<Gcircles_order_by> get serializer =>
       _$gcirclesOrderBySerializer;
@@ -3283,7 +3095,6 @@ abstract class Gposts_bool_exp
   GString_comparison_exp? get content;
   Gtimestamptz_comparison_exp? get created_at;
   Gtimestamptz_comparison_exp? get updated_at;
-  Gusers_bool_exp? get user;
   Gbpchar_comparison_exp? get user_id;
   Guuid_comparison_exp? get uuid;
   static Serializer<Gposts_bool_exp> get serializer =>
@@ -3328,7 +3139,6 @@ abstract class Gposts_insert_input
   String? get content;
   String? get created_at;
   String? get updated_at;
-  Gusers_obj_rel_insert_input? get user;
   String? get user_id;
   String? get uuid;
   static Serializer<Gposts_insert_input> get serializer =>
@@ -3442,7 +3252,6 @@ abstract class Gposts_order_by
   Gorder_by? get content;
   Gorder_by? get created_at;
   Gorder_by? get updated_at;
-  Gusers_order_by? get user;
   Gorder_by? get user_id;
   Gorder_by? get uuid;
   static Serializer<Gposts_order_by> get serializer =>
@@ -3724,399 +3533,6 @@ abstract class Gtimestamptz_comparison_exp
   static Gtimestamptz_comparison_exp? fromJson(Map<String, dynamic> json) =>
       _i1.serializers.deserializeWith(
         Gtimestamptz_comparison_exp.serializer,
-        json,
-      );
-}
-
-abstract class Gusers_bool_exp
-    implements Built<Gusers_bool_exp, Gusers_bool_expBuilder> {
-  Gusers_bool_exp._();
-
-  factory Gusers_bool_exp([void Function(Gusers_bool_expBuilder b) updates]) =
-      _$Gusers_bool_exp;
-
-  @BuiltValueField(wireName: '_and')
-  BuiltList<Gusers_bool_exp>? get G_and;
-  @BuiltValueField(wireName: '_not')
-  Gusers_bool_exp? get G_not;
-  @BuiltValueField(wireName: '_or')
-  BuiltList<Gusers_bool_exp>? get G_or;
-  Gboards_bool_exp? get boards;
-  Gboards_aggregate_bool_exp? get boards_aggregate;
-  Gcircle_members_bool_exp? get circle_members;
-  Gcircle_members_aggregate_bool_exp? get circle_members_aggregate;
-  Gcircles_bool_exp? get circles;
-  Gcircles_aggregate_bool_exp? get circles_aggregate;
-  Gtimestamptz_comparison_exp? get created_at;
-  Gtimestamptz_comparison_exp? get deleted_at;
-  GString_comparison_exp? get email;
-  GBoolean_comparison_exp? get email_verified;
-  Gbpchar_comparison_exp? get id;
-  GString_comparison_exp? get name;
-  GString_comparison_exp? get phone_number;
-  GString_comparison_exp? get photo_url;
-  Gposts_bool_exp? get posts;
-  Gposts_aggregate_bool_exp? get posts_aggregate;
-  Gtimestamptz_comparison_exp? get updated_at;
-  static Serializer<Gusers_bool_exp> get serializer =>
-      _$gusersBoolExpSerializer;
-
-  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
-        Gusers_bool_exp.serializer,
-        this,
-      ) as Map<String, dynamic>);
-
-  static Gusers_bool_exp? fromJson(Map<String, dynamic> json) =>
-      _i1.serializers.deserializeWith(
-        Gusers_bool_exp.serializer,
-        json,
-      );
-}
-
-class Gusers_constraint extends EnumClass {
-  const Gusers_constraint._(String name) : super(name);
-
-  static const Gusers_constraint users_email_key =
-      _$gusersConstraintusers_email_key;
-
-  static const Gusers_constraint users_pkey = _$gusersConstraintusers_pkey;
-
-  static Serializer<Gusers_constraint> get serializer =>
-      _$gusersConstraintSerializer;
-
-  static BuiltSet<Gusers_constraint> get values => _$gusersConstraintValues;
-
-  static Gusers_constraint valueOf(String name) =>
-      _$gusersConstraintValueOf(name);
-}
-
-abstract class Gusers_insert_input
-    implements Built<Gusers_insert_input, Gusers_insert_inputBuilder> {
-  Gusers_insert_input._();
-
-  factory Gusers_insert_input(
-          [void Function(Gusers_insert_inputBuilder b) updates]) =
-      _$Gusers_insert_input;
-
-  Gboards_arr_rel_insert_input? get boards;
-  Gcircle_members_arr_rel_insert_input? get circle_members;
-  Gcircles_arr_rel_insert_input? get circles;
-  String? get created_at;
-  String? get deleted_at;
-  String? get email;
-  bool? get email_verified;
-  String? get id;
-  String? get name;
-  String? get phone_number;
-  String? get photo_url;
-  Gposts_arr_rel_insert_input? get posts;
-  String? get updated_at;
-  static Serializer<Gusers_insert_input> get serializer =>
-      _$gusersInsertInputSerializer;
-
-  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
-        Gusers_insert_input.serializer,
-        this,
-      ) as Map<String, dynamic>);
-
-  static Gusers_insert_input? fromJson(Map<String, dynamic> json) =>
-      _i1.serializers.deserializeWith(
-        Gusers_insert_input.serializer,
-        json,
-      );
-}
-
-abstract class Gusers_obj_rel_insert_input
-    implements
-        Built<Gusers_obj_rel_insert_input, Gusers_obj_rel_insert_inputBuilder> {
-  Gusers_obj_rel_insert_input._();
-
-  factory Gusers_obj_rel_insert_input(
-          [void Function(Gusers_obj_rel_insert_inputBuilder b) updates]) =
-      _$Gusers_obj_rel_insert_input;
-
-  Gusers_insert_input get data;
-  Gusers_on_conflict? get on_conflict;
-  static Serializer<Gusers_obj_rel_insert_input> get serializer =>
-      _$gusersObjRelInsertInputSerializer;
-
-  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
-        Gusers_obj_rel_insert_input.serializer,
-        this,
-      ) as Map<String, dynamic>);
-
-  static Gusers_obj_rel_insert_input? fromJson(Map<String, dynamic> json) =>
-      _i1.serializers.deserializeWith(
-        Gusers_obj_rel_insert_input.serializer,
-        json,
-      );
-}
-
-abstract class Gusers_on_conflict
-    implements Built<Gusers_on_conflict, Gusers_on_conflictBuilder> {
-  Gusers_on_conflict._();
-
-  factory Gusers_on_conflict(
-          [void Function(Gusers_on_conflictBuilder b) updates]) =
-      _$Gusers_on_conflict;
-
-  Gusers_constraint get constraint;
-  BuiltList<Gusers_update_column> get update_columns;
-  Gusers_bool_exp? get where;
-  static Serializer<Gusers_on_conflict> get serializer =>
-      _$gusersOnConflictSerializer;
-
-  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
-        Gusers_on_conflict.serializer,
-        this,
-      ) as Map<String, dynamic>);
-
-  static Gusers_on_conflict? fromJson(Map<String, dynamic> json) =>
-      _i1.serializers.deserializeWith(
-        Gusers_on_conflict.serializer,
-        json,
-      );
-}
-
-abstract class Gusers_order_by
-    implements Built<Gusers_order_by, Gusers_order_byBuilder> {
-  Gusers_order_by._();
-
-  factory Gusers_order_by([void Function(Gusers_order_byBuilder b) updates]) =
-      _$Gusers_order_by;
-
-  Gboards_aggregate_order_by? get boards_aggregate;
-  Gcircle_members_aggregate_order_by? get circle_members_aggregate;
-  Gcircles_aggregate_order_by? get circles_aggregate;
-  Gorder_by? get created_at;
-  Gorder_by? get deleted_at;
-  Gorder_by? get email;
-  Gorder_by? get email_verified;
-  Gorder_by? get id;
-  Gorder_by? get name;
-  Gorder_by? get phone_number;
-  Gorder_by? get photo_url;
-  Gposts_aggregate_order_by? get posts_aggregate;
-  Gorder_by? get updated_at;
-  static Serializer<Gusers_order_by> get serializer =>
-      _$gusersOrderBySerializer;
-
-  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
-        Gusers_order_by.serializer,
-        this,
-      ) as Map<String, dynamic>);
-
-  static Gusers_order_by? fromJson(Map<String, dynamic> json) =>
-      _i1.serializers.deserializeWith(
-        Gusers_order_by.serializer,
-        json,
-      );
-}
-
-abstract class Gusers_pk_columns_input
-    implements Built<Gusers_pk_columns_input, Gusers_pk_columns_inputBuilder> {
-  Gusers_pk_columns_input._();
-
-  factory Gusers_pk_columns_input(
-          [void Function(Gusers_pk_columns_inputBuilder b) updates]) =
-      _$Gusers_pk_columns_input;
-
-  String get id;
-  static Serializer<Gusers_pk_columns_input> get serializer =>
-      _$gusersPkColumnsInputSerializer;
-
-  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
-        Gusers_pk_columns_input.serializer,
-        this,
-      ) as Map<String, dynamic>);
-
-  static Gusers_pk_columns_input? fromJson(Map<String, dynamic> json) =>
-      _i1.serializers.deserializeWith(
-        Gusers_pk_columns_input.serializer,
-        json,
-      );
-}
-
-class Gusers_select_column extends EnumClass {
-  const Gusers_select_column._(String name) : super(name);
-
-  static const Gusers_select_column created_at = _$gusersSelectColumncreated_at;
-
-  static const Gusers_select_column deleted_at = _$gusersSelectColumndeleted_at;
-
-  static const Gusers_select_column email = _$gusersSelectColumnemail;
-
-  static const Gusers_select_column email_verified =
-      _$gusersSelectColumnemail_verified;
-
-  static const Gusers_select_column id = _$gusersSelectColumnid;
-
-  @BuiltValueEnumConst(wireName: 'name')
-  static const Gusers_select_column Gname = _$gusersSelectColumnGname;
-
-  static const Gusers_select_column phone_number =
-      _$gusersSelectColumnphone_number;
-
-  static const Gusers_select_column photo_url = _$gusersSelectColumnphoto_url;
-
-  static const Gusers_select_column updated_at = _$gusersSelectColumnupdated_at;
-
-  static Serializer<Gusers_select_column> get serializer =>
-      _$gusersSelectColumnSerializer;
-
-  static BuiltSet<Gusers_select_column> get values =>
-      _$gusersSelectColumnValues;
-
-  static Gusers_select_column valueOf(String name) =>
-      _$gusersSelectColumnValueOf(name);
-}
-
-abstract class Gusers_set_input
-    implements Built<Gusers_set_input, Gusers_set_inputBuilder> {
-  Gusers_set_input._();
-
-  factory Gusers_set_input([void Function(Gusers_set_inputBuilder b) updates]) =
-      _$Gusers_set_input;
-
-  String? get created_at;
-  String? get deleted_at;
-  String? get email;
-  bool? get email_verified;
-  String? get id;
-  String? get name;
-  String? get phone_number;
-  String? get photo_url;
-  String? get updated_at;
-  static Serializer<Gusers_set_input> get serializer =>
-      _$gusersSetInputSerializer;
-
-  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
-        Gusers_set_input.serializer,
-        this,
-      ) as Map<String, dynamic>);
-
-  static Gusers_set_input? fromJson(Map<String, dynamic> json) =>
-      _i1.serializers.deserializeWith(
-        Gusers_set_input.serializer,
-        json,
-      );
-}
-
-abstract class Gusers_stream_cursor_input
-    implements
-        Built<Gusers_stream_cursor_input, Gusers_stream_cursor_inputBuilder> {
-  Gusers_stream_cursor_input._();
-
-  factory Gusers_stream_cursor_input(
-          [void Function(Gusers_stream_cursor_inputBuilder b) updates]) =
-      _$Gusers_stream_cursor_input;
-
-  Gusers_stream_cursor_value_input get initial_value;
-  Gcursor_ordering? get ordering;
-  static Serializer<Gusers_stream_cursor_input> get serializer =>
-      _$gusersStreamCursorInputSerializer;
-
-  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
-        Gusers_stream_cursor_input.serializer,
-        this,
-      ) as Map<String, dynamic>);
-
-  static Gusers_stream_cursor_input? fromJson(Map<String, dynamic> json) =>
-      _i1.serializers.deserializeWith(
-        Gusers_stream_cursor_input.serializer,
-        json,
-      );
-}
-
-abstract class Gusers_stream_cursor_value_input
-    implements
-        Built<Gusers_stream_cursor_value_input,
-            Gusers_stream_cursor_value_inputBuilder> {
-  Gusers_stream_cursor_value_input._();
-
-  factory Gusers_stream_cursor_value_input(
-          [void Function(Gusers_stream_cursor_value_inputBuilder b) updates]) =
-      _$Gusers_stream_cursor_value_input;
-
-  String? get created_at;
-  String? get deleted_at;
-  String? get email;
-  bool? get email_verified;
-  String? get id;
-  String? get name;
-  String? get phone_number;
-  String? get photo_url;
-  String? get updated_at;
-  static Serializer<Gusers_stream_cursor_value_input> get serializer =>
-      _$gusersStreamCursorValueInputSerializer;
-
-  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
-        Gusers_stream_cursor_value_input.serializer,
-        this,
-      ) as Map<String, dynamic>);
-
-  static Gusers_stream_cursor_value_input? fromJson(
-          Map<String, dynamic> json) =>
-      _i1.serializers.deserializeWith(
-        Gusers_stream_cursor_value_input.serializer,
-        json,
-      );
-}
-
-class Gusers_update_column extends EnumClass {
-  const Gusers_update_column._(String name) : super(name);
-
-  static const Gusers_update_column created_at = _$gusersUpdateColumncreated_at;
-
-  static const Gusers_update_column deleted_at = _$gusersUpdateColumndeleted_at;
-
-  static const Gusers_update_column email = _$gusersUpdateColumnemail;
-
-  static const Gusers_update_column email_verified =
-      _$gusersUpdateColumnemail_verified;
-
-  static const Gusers_update_column id = _$gusersUpdateColumnid;
-
-  @BuiltValueEnumConst(wireName: 'name')
-  static const Gusers_update_column Gname = _$gusersUpdateColumnGname;
-
-  static const Gusers_update_column phone_number =
-      _$gusersUpdateColumnphone_number;
-
-  static const Gusers_update_column photo_url = _$gusersUpdateColumnphoto_url;
-
-  static const Gusers_update_column updated_at = _$gusersUpdateColumnupdated_at;
-
-  static Serializer<Gusers_update_column> get serializer =>
-      _$gusersUpdateColumnSerializer;
-
-  static BuiltSet<Gusers_update_column> get values =>
-      _$gusersUpdateColumnValues;
-
-  static Gusers_update_column valueOf(String name) =>
-      _$gusersUpdateColumnValueOf(name);
-}
-
-abstract class Gusers_updates
-    implements Built<Gusers_updates, Gusers_updatesBuilder> {
-  Gusers_updates._();
-
-  factory Gusers_updates([void Function(Gusers_updatesBuilder b) updates]) =
-      _$Gusers_updates;
-
-  @BuiltValueField(wireName: '_set')
-  Gusers_set_input? get G_set;
-  Gusers_bool_exp get where;
-  static Serializer<Gusers_updates> get serializer => _$gusersUpdatesSerializer;
-
-  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
-        Gusers_updates.serializer,
-        this,
-      ) as Map<String, dynamic>);
-
-  static Gusers_updates? fromJson(Map<String, dynamic> json) =>
-      _i1.serializers.deserializeWith(
-        Gusers_updates.serializer,
         json,
       );
 }

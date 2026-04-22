@@ -60,11 +60,10 @@ import 'package:app/data/graphql/__generated__/permission.req.gql.dart'
     show GChangeBoardCreationPermissionReq;
 import 'package:app/data/graphql/__generated__/permission.var.gql.dart'
     show GChangeBoardCreationPermissionVars;
-import 'package:app/data/graphql/__generated__/schema.schema.gql.dart'
+import 'package:app/data/graphql/__generated__/remote_schema_types.schema.gql.dart'
     show
         GAddBoardPostInput,
         GAddCircleMemberInput,
-        GBoolean_comparison_exp,
         GChangeBoardCreationPermissionInput,
         GChangeBoardStatusInput,
         GChangeBoardTopicInput,
@@ -74,11 +73,13 @@ import 'package:app/data/graphql/__generated__/schema.schema.gql.dart'
         GCreateCircleInput,
         GDelegateCircleOwnerInput,
         GDeleteBoardInput,
-        GDeleteCircleInput,
+        GDeleteCircleInput;
+import 'package:app/data/graphql/__generated__/schema.schema.gql.dart'
+    show
+        GBoolean_comparison_exp,
         GDeleteUserInput,
         GInt_comparison_exp,
         GString_comparison_exp,
-        GUUID,
         GUpdateUserAttributesInput,
         Gboards_aggregate_bool_exp,
         Gboards_aggregate_bool_exp_count,
@@ -149,15 +150,9 @@ import 'package:app/data/graphql/__generated__/schema.schema.gql.dart'
         Gcircle_permissions_stream_cursor_value_input,
         Gcircle_permissions_update_column,
         Gcircle_permissions_updates,
-        Gcircles_aggregate_bool_exp,
-        Gcircles_aggregate_bool_exp_count,
-        Gcircles_aggregate_order_by,
-        Gcircles_arr_rel_insert_input,
         Gcircles_bool_exp,
         Gcircles_constraint,
         Gcircles_insert_input,
-        Gcircles_max_order_by,
-        Gcircles_min_order_by,
         Gcircles_obj_rel_insert_input,
         Gcircles_on_conflict,
         Gcircles_order_by,
@@ -192,29 +187,7 @@ import 'package:app/data/graphql/__generated__/schema.schema.gql.dart'
         Gposts_updates,
         Gsmallint_comparison_exp,
         Gtimestamptz_comparison_exp,
-        Gusers_bool_exp,
-        Gusers_constraint,
-        Gusers_insert_input,
-        Gusers_obj_rel_insert_input,
-        Gusers_on_conflict,
-        Gusers_order_by,
-        Gusers_pk_columns_input,
-        Gusers_select_column,
-        Gusers_set_input,
-        Gusers_stream_cursor_input,
-        Gusers_stream_cursor_value_input,
-        Gusers_update_column,
-        Gusers_updates,
         Guuid_comparison_exp;
-import 'package:app/data/graphql/__generated__/user.data.gql.dart'
-    show
-        GDeleteUserData,
-        GUpdateUserAttributesData,
-        GUpdateUserAttributesData_update_user_attributes;
-import 'package:app/data/graphql/__generated__/user.req.gql.dart'
-    show GDeleteUserReq, GUpdateUserAttributesReq;
-import 'package:app/data/graphql/__generated__/user.var.gql.dart'
-    show GDeleteUserVars, GUpdateUserAttributesVars;
 import 'package:built_collection/built_collection.dart';
 import 'package:built_value/serializer.dart';
 import 'package:built_value/standard_json_plugin.dart' show StandardJsonPlugin;
@@ -285,18 +258,10 @@ final SerializersBuilder _serializersBuilder = _$serializers.toBuilder()
   GDeleteCircleInput,
   GDeleteCircleReq,
   GDeleteCircleVars,
-  GDeleteUserData,
   GDeleteUserInput,
-  GDeleteUserReq,
-  GDeleteUserVars,
   GInt_comparison_exp,
   GString_comparison_exp,
-  GUUID,
-  GUpdateUserAttributesData,
-  GUpdateUserAttributesData_update_user_attributes,
   GUpdateUserAttributesInput,
-  GUpdateUserAttributesReq,
-  GUpdateUserAttributesVars,
   Gboards_aggregate_bool_exp,
   Gboards_aggregate_bool_exp_count,
   Gboards_aggregate_order_by,
@@ -366,15 +331,9 @@ final SerializersBuilder _serializersBuilder = _$serializers.toBuilder()
   Gcircle_permissions_stream_cursor_value_input,
   Gcircle_permissions_update_column,
   Gcircle_permissions_updates,
-  Gcircles_aggregate_bool_exp,
-  Gcircles_aggregate_bool_exp_count,
-  Gcircles_aggregate_order_by,
-  Gcircles_arr_rel_insert_input,
   Gcircles_bool_exp,
   Gcircles_constraint,
   Gcircles_insert_input,
-  Gcircles_max_order_by,
-  Gcircles_min_order_by,
   Gcircles_obj_rel_insert_input,
   Gcircles_on_conflict,
   Gcircles_order_by,
@@ -409,19 +368,6 @@ final SerializersBuilder _serializersBuilder = _$serializers.toBuilder()
   Gposts_updates,
   Gsmallint_comparison_exp,
   Gtimestamptz_comparison_exp,
-  Gusers_bool_exp,
-  Gusers_constraint,
-  Gusers_insert_input,
-  Gusers_obj_rel_insert_input,
-  Gusers_on_conflict,
-  Gusers_order_by,
-  Gusers_pk_columns_input,
-  Gusers_select_column,
-  Gusers_set_input,
-  Gusers_stream_cursor_input,
-  Gusers_stream_cursor_value_input,
-  Gusers_update_column,
-  Gusers_updates,
   Guuid_comparison_exp,
 ])
 final Serializers serializers = _serializersBuilder.build();

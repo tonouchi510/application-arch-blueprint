@@ -119,14 +119,11 @@ class _$GCreateBoardData_create_boardSerializer
         specifiedType: const FullType(String),
       ),
       'id',
-      serializers.serialize(
-        object.id,
-        specifiedType: const FullType(_i2.GUUID),
-      ),
+      serializers.serialize(object.id, specifiedType: const FullType(String)),
       'circle_uuid',
       serializers.serialize(
         object.circle_uuid,
-        specifiedType: const FullType(_i2.GUUID),
+        specifiedType: const FullType(String),
       ),
       'topic',
       serializers.serialize(
@@ -166,22 +163,20 @@ class _$GCreateBoardData_create_boardSerializer
                   as String;
           break;
         case 'id':
-          result.id.replace(
-            serializers.deserialize(
-                  value,
-                  specifiedType: const FullType(_i2.GUUID),
-                )!
-                as _i2.GUUID,
-          );
+          result.id =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )!
+                  as String;
           break;
         case 'circle_uuid':
-          result.circle_uuid.replace(
-            serializers.deserialize(
-                  value,
-                  specifiedType: const FullType(_i2.GUUID),
-                )!
-                as _i2.GUUID,
-          );
+          result.circle_uuid =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )!
+                  as String;
           break;
         case 'topic':
           result.topic =
@@ -301,14 +296,11 @@ class _$GChangeBoardTopicData_change_board_topicSerializer
         specifiedType: const FullType(String),
       ),
       'id',
-      serializers.serialize(
-        object.id,
-        specifiedType: const FullType(_i2.GUUID),
-      ),
+      serializers.serialize(object.id, specifiedType: const FullType(String)),
       'circle_uuid',
       serializers.serialize(
         object.circle_uuid,
-        specifiedType: const FullType(_i2.GUUID),
+        specifiedType: const FullType(String),
       ),
       'topic',
       serializers.serialize(
@@ -348,22 +340,20 @@ class _$GChangeBoardTopicData_change_board_topicSerializer
                   as String;
           break;
         case 'id':
-          result.id.replace(
-            serializers.deserialize(
-                  value,
-                  specifiedType: const FullType(_i2.GUUID),
-                )!
-                as _i2.GUUID,
-          );
+          result.id =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )!
+                  as String;
           break;
         case 'circle_uuid':
-          result.circle_uuid.replace(
-            serializers.deserialize(
-                  value,
-                  specifiedType: const FullType(_i2.GUUID),
-                )!
-                as _i2.GUUID,
-          );
+          result.circle_uuid =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )!
+                  as String;
           break;
         case 'topic':
           result.topic =
@@ -486,14 +476,11 @@ class _$GChangeBoardStatusData_change_board_statusSerializer
         specifiedType: const FullType(String),
       ),
       'id',
-      serializers.serialize(
-        object.id,
-        specifiedType: const FullType(_i2.GUUID),
-      ),
+      serializers.serialize(object.id, specifiedType: const FullType(String)),
       'circle_uuid',
       serializers.serialize(
         object.circle_uuid,
-        specifiedType: const FullType(_i2.GUUID),
+        specifiedType: const FullType(String),
       ),
       'topic',
       serializers.serialize(
@@ -533,22 +520,20 @@ class _$GChangeBoardStatusData_change_board_statusSerializer
                   as String;
           break;
         case 'id':
-          result.id.replace(
-            serializers.deserialize(
-                  value,
-                  specifiedType: const FullType(_i2.GUUID),
-                )!
-                as _i2.GUUID,
-          );
+          result.id =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )!
+                  as String;
           break;
         case 'circle_uuid':
-          result.circle_uuid.replace(
-            serializers.deserialize(
-                  value,
-                  specifiedType: const FullType(_i2.GUUID),
-                )!
-                as _i2.GUUID,
-          );
+          result.circle_uuid =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )!
+                  as String;
           break;
         case 'topic':
           result.topic =
@@ -665,14 +650,11 @@ class _$GAddBoardPostData_add_board_postSerializer
         specifiedType: const FullType(String),
       ),
       'id',
-      serializers.serialize(
-        object.id,
-        specifiedType: const FullType(_i2.GUUID),
-      ),
+      serializers.serialize(object.id, specifiedType: const FullType(String)),
       'circle_uuid',
       serializers.serialize(
         object.circle_uuid,
-        specifiedType: const FullType(_i2.GUUID),
+        specifiedType: const FullType(String),
       ),
       'topic',
       serializers.serialize(
@@ -712,22 +694,20 @@ class _$GAddBoardPostData_add_board_postSerializer
                   as String;
           break;
         case 'id':
-          result.id.replace(
-            serializers.deserialize(
-                  value,
-                  specifiedType: const FullType(_i2.GUUID),
-                )!
-                as _i2.GUUID,
-          );
+          result.id =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )!
+                  as String;
           break;
         case 'circle_uuid':
-          result.circle_uuid.replace(
-            serializers.deserialize(
-                  value,
-                  specifiedType: const FullType(_i2.GUUID),
-                )!
-                as _i2.GUUID,
-          );
+          result.circle_uuid =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )!
+                  as String;
           break;
         case 'topic':
           result.topic =
@@ -941,9 +921,9 @@ class _$GCreateBoardData_create_board extends GCreateBoardData_create_board {
   @override
   final String G__typename;
   @override
-  final _i2.GUUID id;
+  final String id;
   @override
-  final _i2.GUUID circle_uuid;
+  final String circle_uuid;
   @override
   final String topic;
   @override
@@ -1016,15 +996,13 @@ class GCreateBoardData_create_boardBuilder
   String? get G__typename => _$this._G__typename;
   set G__typename(String? G__typename) => _$this._G__typename = G__typename;
 
-  _i2.GUUIDBuilder? _id;
-  _i2.GUUIDBuilder get id => _$this._id ??= _i2.GUUIDBuilder();
-  set id(_i2.GUUIDBuilder? id) => _$this._id = id;
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
 
-  _i2.GUUIDBuilder? _circle_uuid;
-  _i2.GUUIDBuilder get circle_uuid =>
-      _$this._circle_uuid ??= _i2.GUUIDBuilder();
-  set circle_uuid(_i2.GUUIDBuilder? circle_uuid) =>
-      _$this._circle_uuid = circle_uuid;
+  String? _circle_uuid;
+  String? get circle_uuid => _$this._circle_uuid;
+  set circle_uuid(String? circle_uuid) => _$this._circle_uuid = circle_uuid;
 
   String? _topic;
   String? get topic => _$this._topic;
@@ -1042,8 +1020,8 @@ class GCreateBoardData_create_boardBuilder
     final $v = _$v;
     if ($v != null) {
       _G__typename = $v.G__typename;
-      _id = $v.id.toBuilder();
-      _circle_uuid = $v.circle_uuid.toBuilder();
+      _id = $v.id;
+      _circle_uuid = $v.circle_uuid;
       _topic = $v.topic;
       _status = $v.status;
       _$v = null;
@@ -1065,45 +1043,35 @@ class GCreateBoardData_create_boardBuilder
   GCreateBoardData_create_board build() => _build();
 
   _$GCreateBoardData_create_board _build() {
-    _$GCreateBoardData_create_board _$result;
-    try {
-      _$result =
-          _$v ??
-          _$GCreateBoardData_create_board._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(
-              G__typename,
-              r'GCreateBoardData_create_board',
-              'G__typename',
-            ),
-            id: id.build(),
-            circle_uuid: circle_uuid.build(),
-            topic: BuiltValueNullFieldError.checkNotNull(
-              topic,
-              r'GCreateBoardData_create_board',
-              'topic',
-            ),
-            status: BuiltValueNullFieldError.checkNotNull(
-              status,
-              r'GCreateBoardData_create_board',
-              'status',
-            ),
-          );
-    } catch (_) {
-      late String _$failedField;
-      try {
-        _$failedField = 'id';
-        id.build();
-        _$failedField = 'circle_uuid';
-        circle_uuid.build();
-      } catch (e) {
-        throw BuiltValueNestedFieldError(
-          r'GCreateBoardData_create_board',
-          _$failedField,
-          e.toString(),
+    final _$result =
+        _$v ??
+        _$GCreateBoardData_create_board._(
+          G__typename: BuiltValueNullFieldError.checkNotNull(
+            G__typename,
+            r'GCreateBoardData_create_board',
+            'G__typename',
+          ),
+          id: BuiltValueNullFieldError.checkNotNull(
+            id,
+            r'GCreateBoardData_create_board',
+            'id',
+          ),
+          circle_uuid: BuiltValueNullFieldError.checkNotNull(
+            circle_uuid,
+            r'GCreateBoardData_create_board',
+            'circle_uuid',
+          ),
+          topic: BuiltValueNullFieldError.checkNotNull(
+            topic,
+            r'GCreateBoardData_create_board',
+            'topic',
+          ),
+          status: BuiltValueNullFieldError.checkNotNull(
+            status,
+            r'GCreateBoardData_create_board',
+            'status',
+          ),
         );
-      }
-      rethrow;
-    }
     replace(_$result);
     return _$result;
   }
@@ -1238,9 +1206,9 @@ class _$GChangeBoardTopicData_change_board_topic
   @override
   final String G__typename;
   @override
-  final _i2.GUUID id;
+  final String id;
   @override
-  final _i2.GUUID circle_uuid;
+  final String circle_uuid;
   @override
   final String topic;
   @override
@@ -1316,15 +1284,13 @@ class GChangeBoardTopicData_change_board_topicBuilder
   String? get G__typename => _$this._G__typename;
   set G__typename(String? G__typename) => _$this._G__typename = G__typename;
 
-  _i2.GUUIDBuilder? _id;
-  _i2.GUUIDBuilder get id => _$this._id ??= _i2.GUUIDBuilder();
-  set id(_i2.GUUIDBuilder? id) => _$this._id = id;
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
 
-  _i2.GUUIDBuilder? _circle_uuid;
-  _i2.GUUIDBuilder get circle_uuid =>
-      _$this._circle_uuid ??= _i2.GUUIDBuilder();
-  set circle_uuid(_i2.GUUIDBuilder? circle_uuid) =>
-      _$this._circle_uuid = circle_uuid;
+  String? _circle_uuid;
+  String? get circle_uuid => _$this._circle_uuid;
+  set circle_uuid(String? circle_uuid) => _$this._circle_uuid = circle_uuid;
 
   String? _topic;
   String? get topic => _$this._topic;
@@ -1342,8 +1308,8 @@ class GChangeBoardTopicData_change_board_topicBuilder
     final $v = _$v;
     if ($v != null) {
       _G__typename = $v.G__typename;
-      _id = $v.id.toBuilder();
-      _circle_uuid = $v.circle_uuid.toBuilder();
+      _id = $v.id;
+      _circle_uuid = $v.circle_uuid;
       _topic = $v.topic;
       _status = $v.status;
       _$v = null;
@@ -1367,45 +1333,35 @@ class GChangeBoardTopicData_change_board_topicBuilder
   GChangeBoardTopicData_change_board_topic build() => _build();
 
   _$GChangeBoardTopicData_change_board_topic _build() {
-    _$GChangeBoardTopicData_change_board_topic _$result;
-    try {
-      _$result =
-          _$v ??
-          _$GChangeBoardTopicData_change_board_topic._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(
-              G__typename,
-              r'GChangeBoardTopicData_change_board_topic',
-              'G__typename',
-            ),
-            id: id.build(),
-            circle_uuid: circle_uuid.build(),
-            topic: BuiltValueNullFieldError.checkNotNull(
-              topic,
-              r'GChangeBoardTopicData_change_board_topic',
-              'topic',
-            ),
-            status: BuiltValueNullFieldError.checkNotNull(
-              status,
-              r'GChangeBoardTopicData_change_board_topic',
-              'status',
-            ),
-          );
-    } catch (_) {
-      late String _$failedField;
-      try {
-        _$failedField = 'id';
-        id.build();
-        _$failedField = 'circle_uuid';
-        circle_uuid.build();
-      } catch (e) {
-        throw BuiltValueNestedFieldError(
-          r'GChangeBoardTopicData_change_board_topic',
-          _$failedField,
-          e.toString(),
+    final _$result =
+        _$v ??
+        _$GChangeBoardTopicData_change_board_topic._(
+          G__typename: BuiltValueNullFieldError.checkNotNull(
+            G__typename,
+            r'GChangeBoardTopicData_change_board_topic',
+            'G__typename',
+          ),
+          id: BuiltValueNullFieldError.checkNotNull(
+            id,
+            r'GChangeBoardTopicData_change_board_topic',
+            'id',
+          ),
+          circle_uuid: BuiltValueNullFieldError.checkNotNull(
+            circle_uuid,
+            r'GChangeBoardTopicData_change_board_topic',
+            'circle_uuid',
+          ),
+          topic: BuiltValueNullFieldError.checkNotNull(
+            topic,
+            r'GChangeBoardTopicData_change_board_topic',
+            'topic',
+          ),
+          status: BuiltValueNullFieldError.checkNotNull(
+            status,
+            r'GChangeBoardTopicData_change_board_topic',
+            'status',
+          ),
         );
-      }
-      rethrow;
-    }
     replace(_$result);
     return _$result;
   }
@@ -1540,9 +1496,9 @@ class _$GChangeBoardStatusData_change_board_status
   @override
   final String G__typename;
   @override
-  final _i2.GUUID id;
+  final String id;
   @override
-  final _i2.GUUID circle_uuid;
+  final String circle_uuid;
   @override
   final String topic;
   @override
@@ -1618,15 +1574,13 @@ class GChangeBoardStatusData_change_board_statusBuilder
   String? get G__typename => _$this._G__typename;
   set G__typename(String? G__typename) => _$this._G__typename = G__typename;
 
-  _i2.GUUIDBuilder? _id;
-  _i2.GUUIDBuilder get id => _$this._id ??= _i2.GUUIDBuilder();
-  set id(_i2.GUUIDBuilder? id) => _$this._id = id;
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
 
-  _i2.GUUIDBuilder? _circle_uuid;
-  _i2.GUUIDBuilder get circle_uuid =>
-      _$this._circle_uuid ??= _i2.GUUIDBuilder();
-  set circle_uuid(_i2.GUUIDBuilder? circle_uuid) =>
-      _$this._circle_uuid = circle_uuid;
+  String? _circle_uuid;
+  String? get circle_uuid => _$this._circle_uuid;
+  set circle_uuid(String? circle_uuid) => _$this._circle_uuid = circle_uuid;
 
   String? _topic;
   String? get topic => _$this._topic;
@@ -1644,8 +1598,8 @@ class GChangeBoardStatusData_change_board_statusBuilder
     final $v = _$v;
     if ($v != null) {
       _G__typename = $v.G__typename;
-      _id = $v.id.toBuilder();
-      _circle_uuid = $v.circle_uuid.toBuilder();
+      _id = $v.id;
+      _circle_uuid = $v.circle_uuid;
       _topic = $v.topic;
       _status = $v.status;
       _$v = null;
@@ -1669,45 +1623,35 @@ class GChangeBoardStatusData_change_board_statusBuilder
   GChangeBoardStatusData_change_board_status build() => _build();
 
   _$GChangeBoardStatusData_change_board_status _build() {
-    _$GChangeBoardStatusData_change_board_status _$result;
-    try {
-      _$result =
-          _$v ??
-          _$GChangeBoardStatusData_change_board_status._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(
-              G__typename,
-              r'GChangeBoardStatusData_change_board_status',
-              'G__typename',
-            ),
-            id: id.build(),
-            circle_uuid: circle_uuid.build(),
-            topic: BuiltValueNullFieldError.checkNotNull(
-              topic,
-              r'GChangeBoardStatusData_change_board_status',
-              'topic',
-            ),
-            status: BuiltValueNullFieldError.checkNotNull(
-              status,
-              r'GChangeBoardStatusData_change_board_status',
-              'status',
-            ),
-          );
-    } catch (_) {
-      late String _$failedField;
-      try {
-        _$failedField = 'id';
-        id.build();
-        _$failedField = 'circle_uuid';
-        circle_uuid.build();
-      } catch (e) {
-        throw BuiltValueNestedFieldError(
-          r'GChangeBoardStatusData_change_board_status',
-          _$failedField,
-          e.toString(),
+    final _$result =
+        _$v ??
+        _$GChangeBoardStatusData_change_board_status._(
+          G__typename: BuiltValueNullFieldError.checkNotNull(
+            G__typename,
+            r'GChangeBoardStatusData_change_board_status',
+            'G__typename',
+          ),
+          id: BuiltValueNullFieldError.checkNotNull(
+            id,
+            r'GChangeBoardStatusData_change_board_status',
+            'id',
+          ),
+          circle_uuid: BuiltValueNullFieldError.checkNotNull(
+            circle_uuid,
+            r'GChangeBoardStatusData_change_board_status',
+            'circle_uuid',
+          ),
+          topic: BuiltValueNullFieldError.checkNotNull(
+            topic,
+            r'GChangeBoardStatusData_change_board_status',
+            'topic',
+          ),
+          status: BuiltValueNullFieldError.checkNotNull(
+            status,
+            r'GChangeBoardStatusData_change_board_status',
+            'status',
+          ),
         );
-      }
-      rethrow;
-    }
     replace(_$result);
     return _$result;
   }
@@ -1839,9 +1783,9 @@ class _$GAddBoardPostData_add_board_post
   @override
   final String G__typename;
   @override
-  final _i2.GUUID id;
+  final String id;
   @override
-  final _i2.GUUID circle_uuid;
+  final String circle_uuid;
   @override
   final String topic;
   @override
@@ -1914,15 +1858,13 @@ class GAddBoardPostData_add_board_postBuilder
   String? get G__typename => _$this._G__typename;
   set G__typename(String? G__typename) => _$this._G__typename = G__typename;
 
-  _i2.GUUIDBuilder? _id;
-  _i2.GUUIDBuilder get id => _$this._id ??= _i2.GUUIDBuilder();
-  set id(_i2.GUUIDBuilder? id) => _$this._id = id;
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
 
-  _i2.GUUIDBuilder? _circle_uuid;
-  _i2.GUUIDBuilder get circle_uuid =>
-      _$this._circle_uuid ??= _i2.GUUIDBuilder();
-  set circle_uuid(_i2.GUUIDBuilder? circle_uuid) =>
-      _$this._circle_uuid = circle_uuid;
+  String? _circle_uuid;
+  String? get circle_uuid => _$this._circle_uuid;
+  set circle_uuid(String? circle_uuid) => _$this._circle_uuid = circle_uuid;
 
   String? _topic;
   String? get topic => _$this._topic;
@@ -1940,8 +1882,8 @@ class GAddBoardPostData_add_board_postBuilder
     final $v = _$v;
     if ($v != null) {
       _G__typename = $v.G__typename;
-      _id = $v.id.toBuilder();
-      _circle_uuid = $v.circle_uuid.toBuilder();
+      _id = $v.id;
+      _circle_uuid = $v.circle_uuid;
       _topic = $v.topic;
       _status = $v.status;
       _$v = null;
@@ -1963,45 +1905,35 @@ class GAddBoardPostData_add_board_postBuilder
   GAddBoardPostData_add_board_post build() => _build();
 
   _$GAddBoardPostData_add_board_post _build() {
-    _$GAddBoardPostData_add_board_post _$result;
-    try {
-      _$result =
-          _$v ??
-          _$GAddBoardPostData_add_board_post._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(
-              G__typename,
-              r'GAddBoardPostData_add_board_post',
-              'G__typename',
-            ),
-            id: id.build(),
-            circle_uuid: circle_uuid.build(),
-            topic: BuiltValueNullFieldError.checkNotNull(
-              topic,
-              r'GAddBoardPostData_add_board_post',
-              'topic',
-            ),
-            status: BuiltValueNullFieldError.checkNotNull(
-              status,
-              r'GAddBoardPostData_add_board_post',
-              'status',
-            ),
-          );
-    } catch (_) {
-      late String _$failedField;
-      try {
-        _$failedField = 'id';
-        id.build();
-        _$failedField = 'circle_uuid';
-        circle_uuid.build();
-      } catch (e) {
-        throw BuiltValueNestedFieldError(
-          r'GAddBoardPostData_add_board_post',
-          _$failedField,
-          e.toString(),
+    final _$result =
+        _$v ??
+        _$GAddBoardPostData_add_board_post._(
+          G__typename: BuiltValueNullFieldError.checkNotNull(
+            G__typename,
+            r'GAddBoardPostData_add_board_post',
+            'G__typename',
+          ),
+          id: BuiltValueNullFieldError.checkNotNull(
+            id,
+            r'GAddBoardPostData_add_board_post',
+            'id',
+          ),
+          circle_uuid: BuiltValueNullFieldError.checkNotNull(
+            circle_uuid,
+            r'GAddBoardPostData_add_board_post',
+            'circle_uuid',
+          ),
+          topic: BuiltValueNullFieldError.checkNotNull(
+            topic,
+            r'GAddBoardPostData_add_board_post',
+            'topic',
+          ),
+          status: BuiltValueNullFieldError.checkNotNull(
+            status,
+            r'GAddBoardPostData_add_board_post',
+            'status',
+          ),
         );
-      }
-      rethrow;
-    }
     replace(_$result);
     return _$result;
   }

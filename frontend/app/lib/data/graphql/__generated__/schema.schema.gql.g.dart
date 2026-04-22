@@ -686,142 +686,6 @@ final BuiltSet<Gposts_update_column> _$gpostsUpdateColumnValues =
       _$gpostsUpdateColumnuuid,
     ]);
 
-const Gusers_constraint _$gusersConstraintusers_email_key =
-    const Gusers_constraint._('users_email_key');
-const Gusers_constraint _$gusersConstraintusers_pkey =
-    const Gusers_constraint._('users_pkey');
-
-Gusers_constraint _$gusersConstraintValueOf(String name) {
-  switch (name) {
-    case 'users_email_key':
-      return _$gusersConstraintusers_email_key;
-    case 'users_pkey':
-      return _$gusersConstraintusers_pkey;
-    default:
-      throw ArgumentError(name);
-  }
-}
-
-final BuiltSet<Gusers_constraint> _$gusersConstraintValues =
-    BuiltSet<Gusers_constraint>(const <Gusers_constraint>[
-      _$gusersConstraintusers_email_key,
-      _$gusersConstraintusers_pkey,
-    ]);
-
-const Gusers_select_column _$gusersSelectColumncreated_at =
-    const Gusers_select_column._('created_at');
-const Gusers_select_column _$gusersSelectColumndeleted_at =
-    const Gusers_select_column._('deleted_at');
-const Gusers_select_column _$gusersSelectColumnemail =
-    const Gusers_select_column._('email');
-const Gusers_select_column _$gusersSelectColumnemail_verified =
-    const Gusers_select_column._('email_verified');
-const Gusers_select_column _$gusersSelectColumnid =
-    const Gusers_select_column._('id');
-const Gusers_select_column _$gusersSelectColumnGname =
-    const Gusers_select_column._('Gname');
-const Gusers_select_column _$gusersSelectColumnphone_number =
-    const Gusers_select_column._('phone_number');
-const Gusers_select_column _$gusersSelectColumnphoto_url =
-    const Gusers_select_column._('photo_url');
-const Gusers_select_column _$gusersSelectColumnupdated_at =
-    const Gusers_select_column._('updated_at');
-
-Gusers_select_column _$gusersSelectColumnValueOf(String name) {
-  switch (name) {
-    case 'created_at':
-      return _$gusersSelectColumncreated_at;
-    case 'deleted_at':
-      return _$gusersSelectColumndeleted_at;
-    case 'email':
-      return _$gusersSelectColumnemail;
-    case 'email_verified':
-      return _$gusersSelectColumnemail_verified;
-    case 'id':
-      return _$gusersSelectColumnid;
-    case 'Gname':
-      return _$gusersSelectColumnGname;
-    case 'phone_number':
-      return _$gusersSelectColumnphone_number;
-    case 'photo_url':
-      return _$gusersSelectColumnphoto_url;
-    case 'updated_at':
-      return _$gusersSelectColumnupdated_at;
-    default:
-      throw ArgumentError(name);
-  }
-}
-
-final BuiltSet<Gusers_select_column> _$gusersSelectColumnValues =
-    BuiltSet<Gusers_select_column>(const <Gusers_select_column>[
-      _$gusersSelectColumncreated_at,
-      _$gusersSelectColumndeleted_at,
-      _$gusersSelectColumnemail,
-      _$gusersSelectColumnemail_verified,
-      _$gusersSelectColumnid,
-      _$gusersSelectColumnGname,
-      _$gusersSelectColumnphone_number,
-      _$gusersSelectColumnphoto_url,
-      _$gusersSelectColumnupdated_at,
-    ]);
-
-const Gusers_update_column _$gusersUpdateColumncreated_at =
-    const Gusers_update_column._('created_at');
-const Gusers_update_column _$gusersUpdateColumndeleted_at =
-    const Gusers_update_column._('deleted_at');
-const Gusers_update_column _$gusersUpdateColumnemail =
-    const Gusers_update_column._('email');
-const Gusers_update_column _$gusersUpdateColumnemail_verified =
-    const Gusers_update_column._('email_verified');
-const Gusers_update_column _$gusersUpdateColumnid =
-    const Gusers_update_column._('id');
-const Gusers_update_column _$gusersUpdateColumnGname =
-    const Gusers_update_column._('Gname');
-const Gusers_update_column _$gusersUpdateColumnphone_number =
-    const Gusers_update_column._('phone_number');
-const Gusers_update_column _$gusersUpdateColumnphoto_url =
-    const Gusers_update_column._('photo_url');
-const Gusers_update_column _$gusersUpdateColumnupdated_at =
-    const Gusers_update_column._('updated_at');
-
-Gusers_update_column _$gusersUpdateColumnValueOf(String name) {
-  switch (name) {
-    case 'created_at':
-      return _$gusersUpdateColumncreated_at;
-    case 'deleted_at':
-      return _$gusersUpdateColumndeleted_at;
-    case 'email':
-      return _$gusersUpdateColumnemail;
-    case 'email_verified':
-      return _$gusersUpdateColumnemail_verified;
-    case 'id':
-      return _$gusersUpdateColumnid;
-    case 'Gname':
-      return _$gusersUpdateColumnGname;
-    case 'phone_number':
-      return _$gusersUpdateColumnphone_number;
-    case 'photo_url':
-      return _$gusersUpdateColumnphoto_url;
-    case 'updated_at':
-      return _$gusersUpdateColumnupdated_at;
-    default:
-      throw ArgumentError(name);
-  }
-}
-
-final BuiltSet<Gusers_update_column> _$gusersUpdateColumnValues =
-    BuiltSet<Gusers_update_column>(const <Gusers_update_column>[
-      _$gusersUpdateColumncreated_at,
-      _$gusersUpdateColumndeleted_at,
-      _$gusersUpdateColumnemail,
-      _$gusersUpdateColumnemail_verified,
-      _$gusersUpdateColumnid,
-      _$gusersUpdateColumnGname,
-      _$gusersUpdateColumnphone_number,
-      _$gusersUpdateColumnphoto_url,
-      _$gusersUpdateColumnupdated_at,
-    ]);
-
 Serializer<GAddBoardPostInput> _$gAddBoardPostInputSerializer =
     _$GAddBoardPostInputSerializer();
 Serializer<GAddCircleMemberInput> _$gAddCircleMemberInputSerializer =
@@ -1030,26 +894,12 @@ _$gcirclePermissionsUpdateColumnSerializer =
     _$Gcircle_permissions_update_columnSerializer();
 Serializer<Gcircle_permissions_updates> _$gcirclePermissionsUpdatesSerializer =
     _$Gcircle_permissions_updatesSerializer();
-Serializer<Gcircles_aggregate_bool_exp> _$gcirclesAggregateBoolExpSerializer =
-    _$Gcircles_aggregate_bool_expSerializer();
-Serializer<Gcircles_aggregate_bool_exp_count>
-_$gcirclesAggregateBoolExpCountSerializer =
-    _$Gcircles_aggregate_bool_exp_countSerializer();
-Serializer<Gcircles_aggregate_order_by> _$gcirclesAggregateOrderBySerializer =
-    _$Gcircles_aggregate_order_bySerializer();
-Serializer<Gcircles_arr_rel_insert_input>
-_$gcirclesArrRelInsertInputSerializer =
-    _$Gcircles_arr_rel_insert_inputSerializer();
 Serializer<Gcircles_bool_exp> _$gcirclesBoolExpSerializer =
     _$Gcircles_bool_expSerializer();
 Serializer<Gcircles_constraint> _$gcirclesConstraintSerializer =
     _$Gcircles_constraintSerializer();
 Serializer<Gcircles_insert_input> _$gcirclesInsertInputSerializer =
     _$Gcircles_insert_inputSerializer();
-Serializer<Gcircles_max_order_by> _$gcirclesMaxOrderBySerializer =
-    _$Gcircles_max_order_bySerializer();
-Serializer<Gcircles_min_order_by> _$gcirclesMinOrderBySerializer =
-    _$Gcircles_min_order_bySerializer();
 Serializer<Gcircles_obj_rel_insert_input>
 _$gcirclesObjRelInsertInputSerializer =
     _$Gcircles_obj_rel_insert_inputSerializer();
@@ -1119,33 +969,6 @@ Serializer<Gsmallint_comparison_exp> _$gsmallintComparisonExpSerializer =
     _$Gsmallint_comparison_expSerializer();
 Serializer<Gtimestamptz_comparison_exp> _$gtimestamptzComparisonExpSerializer =
     _$Gtimestamptz_comparison_expSerializer();
-Serializer<Gusers_bool_exp> _$gusersBoolExpSerializer =
-    _$Gusers_bool_expSerializer();
-Serializer<Gusers_constraint> _$gusersConstraintSerializer =
-    _$Gusers_constraintSerializer();
-Serializer<Gusers_insert_input> _$gusersInsertInputSerializer =
-    _$Gusers_insert_inputSerializer();
-Serializer<Gusers_obj_rel_insert_input> _$gusersObjRelInsertInputSerializer =
-    _$Gusers_obj_rel_insert_inputSerializer();
-Serializer<Gusers_on_conflict> _$gusersOnConflictSerializer =
-    _$Gusers_on_conflictSerializer();
-Serializer<Gusers_order_by> _$gusersOrderBySerializer =
-    _$Gusers_order_bySerializer();
-Serializer<Gusers_pk_columns_input> _$gusersPkColumnsInputSerializer =
-    _$Gusers_pk_columns_inputSerializer();
-Serializer<Gusers_select_column> _$gusersSelectColumnSerializer =
-    _$Gusers_select_columnSerializer();
-Serializer<Gusers_set_input> _$gusersSetInputSerializer =
-    _$Gusers_set_inputSerializer();
-Serializer<Gusers_stream_cursor_input> _$gusersStreamCursorInputSerializer =
-    _$Gusers_stream_cursor_inputSerializer();
-Serializer<Gusers_stream_cursor_value_input>
-_$gusersStreamCursorValueInputSerializer =
-    _$Gusers_stream_cursor_value_inputSerializer();
-Serializer<Gusers_update_column> _$gusersUpdateColumnSerializer =
-    _$Gusers_update_columnSerializer();
-Serializer<Gusers_updates> _$gusersUpdatesSerializer =
-    _$Gusers_updatesSerializer();
 Serializer<Guuid_comparison_exp> _$guuidComparisonExpSerializer =
     _$Guuid_comparison_expSerializer();
 
@@ -1166,12 +989,12 @@ class _$GAddBoardPostInputSerializer
       'board_id',
       serializers.serialize(
         object.board_id,
-        specifiedType: const FullType(GUUID),
+        specifiedType: const FullType(String),
       ),
       'circle_id',
       serializers.serialize(
         object.circle_id,
-        specifiedType: const FullType(GUUID),
+        specifiedType: const FullType(String),
       ),
       'content',
       serializers.serialize(
@@ -1203,22 +1026,20 @@ class _$GAddBoardPostInputSerializer
       final Object? value = iterator.current;
       switch (key) {
         case 'board_id':
-          result.board_id.replace(
-            serializers.deserialize(
-                  value,
-                  specifiedType: const FullType(GUUID),
-                )!
-                as GUUID,
-          );
+          result.board_id =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )!
+                  as String;
           break;
         case 'circle_id':
-          result.circle_id.replace(
-            serializers.deserialize(
-                  value,
-                  specifiedType: const FullType(GUUID),
-                )!
-                as GUUID,
-          );
+          result.circle_id =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )!
+                  as String;
           break;
         case 'content':
           result.content =
@@ -1263,7 +1084,7 @@ class _$GAddCircleMemberInputSerializer
       'circle_id',
       serializers.serialize(
         object.circle_id,
-        specifiedType: const FullType(GUUID),
+        specifiedType: const FullType(String),
       ),
       'new_member_id',
       serializers.serialize(
@@ -1290,13 +1111,12 @@ class _$GAddCircleMemberInputSerializer
       final Object? value = iterator.current;
       switch (key) {
         case 'circle_id':
-          result.circle_id.replace(
-            serializers.deserialize(
-                  value,
-                  specifiedType: const FullType(GUUID),
-                )!
-                as GUUID,
-          );
+          result.circle_id =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )!
+                  as String;
           break;
         case 'new_member_id':
           result.new_member_id =
@@ -1540,7 +1360,7 @@ class _$GChangeBoardCreationPermissionInputSerializer
       'circle_id',
       serializers.serialize(
         object.circle_id,
-        specifiedType: const FullType(GUUID),
+        specifiedType: const FullType(String),
       ),
     ];
 
@@ -1570,13 +1390,12 @@ class _$GChangeBoardCreationPermissionInputSerializer
                   as bool;
           break;
         case 'circle_id':
-          result.circle_id.replace(
-            serializers.deserialize(
-                  value,
-                  specifiedType: const FullType(GUUID),
-                )!
-                as GUUID,
-          );
+          result.circle_id =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )!
+                  as String;
           break;
       }
     }
@@ -1605,12 +1424,12 @@ class _$GChangeBoardStatusInputSerializer
       'board_id',
       serializers.serialize(
         object.board_id,
-        specifiedType: const FullType(GUUID),
+        specifiedType: const FullType(String),
       ),
       'circle_id',
       serializers.serialize(
         object.circle_id,
-        specifiedType: const FullType(GUUID),
+        specifiedType: const FullType(String),
       ),
       'new_status',
       serializers.serialize(
@@ -1637,22 +1456,20 @@ class _$GChangeBoardStatusInputSerializer
       final Object? value = iterator.current;
       switch (key) {
         case 'board_id':
-          result.board_id.replace(
-            serializers.deserialize(
-                  value,
-                  specifiedType: const FullType(GUUID),
-                )!
-                as GUUID,
-          );
+          result.board_id =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )!
+                  as String;
           break;
         case 'circle_id':
-          result.circle_id.replace(
-            serializers.deserialize(
-                  value,
-                  specifiedType: const FullType(GUUID),
-                )!
-                as GUUID,
-          );
+          result.circle_id =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )!
+                  as String;
           break;
         case 'new_status':
           result.new_status =
@@ -1689,12 +1506,12 @@ class _$GChangeBoardTopicInputSerializer
       'board_id',
       serializers.serialize(
         object.board_id,
-        specifiedType: const FullType(GUUID),
+        specifiedType: const FullType(String),
       ),
       'circle_id',
       serializers.serialize(
         object.circle_id,
-        specifiedType: const FullType(GUUID),
+        specifiedType: const FullType(String),
       ),
       'new_topic',
       serializers.serialize(
@@ -1721,22 +1538,20 @@ class _$GChangeBoardTopicInputSerializer
       final Object? value = iterator.current;
       switch (key) {
         case 'board_id':
-          result.board_id.replace(
-            serializers.deserialize(
-                  value,
-                  specifiedType: const FullType(GUUID),
-                )!
-                as GUUID,
-          );
+          result.board_id =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )!
+                  as String;
           break;
         case 'circle_id':
-          result.circle_id.replace(
-            serializers.deserialize(
-                  value,
-                  specifiedType: const FullType(GUUID),
-                )!
-                as GUUID,
-          );
+          result.circle_id =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )!
+                  as String;
           break;
         case 'new_topic':
           result.new_topic =
@@ -1773,7 +1588,7 @@ class _$GChangeCircleDescriptionInputSerializer
       'circle_id',
       serializers.serialize(
         object.circle_id,
-        specifiedType: const FullType(GUUID),
+        specifiedType: const FullType(String),
       ),
       'new_description',
       serializers.serialize(
@@ -1800,13 +1615,12 @@ class _$GChangeCircleDescriptionInputSerializer
       final Object? value = iterator.current;
       switch (key) {
         case 'circle_id':
-          result.circle_id.replace(
-            serializers.deserialize(
-                  value,
-                  specifiedType: const FullType(GUUID),
-                )!
-                as GUUID,
-          );
+          result.circle_id =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )!
+                  as String;
           break;
         case 'new_description':
           result.new_description =
@@ -1843,7 +1657,7 @@ class _$GChangeCircleNameInputSerializer
       'circle_id',
       serializers.serialize(
         object.circle_id,
-        specifiedType: const FullType(GUUID),
+        specifiedType: const FullType(String),
       ),
       'new_name',
       serializers.serialize(
@@ -1870,13 +1684,12 @@ class _$GChangeCircleNameInputSerializer
       final Object? value = iterator.current;
       switch (key) {
         case 'circle_id':
-          result.circle_id.replace(
-            serializers.deserialize(
-                  value,
-                  specifiedType: const FullType(GUUID),
-                )!
-                as GUUID,
-          );
+          result.circle_id =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )!
+                  as String;
           break;
         case 'new_name':
           result.new_name =
@@ -1910,7 +1723,7 @@ class _$GCreateBoardInputSerializer
       'circle_id',
       serializers.serialize(
         object.circle_id,
-        specifiedType: const FullType(GUUID),
+        specifiedType: const FullType(String),
       ),
       'topic',
       serializers.serialize(
@@ -1937,13 +1750,12 @@ class _$GCreateBoardInputSerializer
       final Object? value = iterator.current;
       switch (key) {
         case 'circle_id':
-          result.circle_id.replace(
-            serializers.deserialize(
-                  value,
-                  specifiedType: const FullType(GUUID),
-                )!
-                as GUUID,
-          );
+          result.circle_id =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )!
+                  as String;
           break;
         case 'topic':
           result.topic =
@@ -2043,7 +1855,7 @@ class _$GDelegateCircleOwnerInputSerializer
       'circle_id',
       serializers.serialize(
         object.circle_id,
-        specifiedType: const FullType(GUUID),
+        specifiedType: const FullType(String),
       ),
       'new_owner_id',
       serializers.serialize(
@@ -2070,13 +1882,12 @@ class _$GDelegateCircleOwnerInputSerializer
       final Object? value = iterator.current;
       switch (key) {
         case 'circle_id':
-          result.circle_id.replace(
-            serializers.deserialize(
-                  value,
-                  specifiedType: const FullType(GUUID),
-                )!
-                as GUUID,
-          );
+          result.circle_id =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )!
+                  as String;
           break;
         case 'new_owner_id':
           result.new_owner_id =
@@ -2110,12 +1921,12 @@ class _$GDeleteBoardInputSerializer
       'board_id',
       serializers.serialize(
         object.board_id,
-        specifiedType: const FullType(GUUID),
+        specifiedType: const FullType(String),
       ),
       'circle_id',
       serializers.serialize(
         object.circle_id,
-        specifiedType: const FullType(GUUID),
+        specifiedType: const FullType(String),
       ),
     ];
 
@@ -2137,22 +1948,20 @@ class _$GDeleteBoardInputSerializer
       final Object? value = iterator.current;
       switch (key) {
         case 'board_id':
-          result.board_id.replace(
-            serializers.deserialize(
-                  value,
-                  specifiedType: const FullType(GUUID),
-                )!
-                as GUUID,
-          );
+          result.board_id =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )!
+                  as String;
           break;
         case 'circle_id':
-          result.circle_id.replace(
-            serializers.deserialize(
-                  value,
-                  specifiedType: const FullType(GUUID),
-                )!
-                as GUUID,
-          );
+          result.circle_id =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )!
+                  as String;
           break;
       }
     }
@@ -2178,7 +1987,7 @@ class _$GDeleteCircleInputSerializer
       'circle_id',
       serializers.serialize(
         object.circle_id,
-        specifiedType: const FullType(GUUID),
+        specifiedType: const FullType(String),
       ),
     ];
 
@@ -2200,13 +2009,12 @@ class _$GDeleteCircleInputSerializer
       final Object? value = iterator.current;
       switch (key) {
         case 'circle_id':
-          result.circle_id.replace(
-            serializers.deserialize(
-                  value,
-                  specifiedType: const FullType(GUUID),
-                )!
-                as GUUID,
-          );
+          result.circle_id =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )!
+                  as String;
           break;
       }
     }
@@ -3640,17 +3448,6 @@ class _$Gboards_bool_expSerializer
           ),
         );
     }
-    value = object.user;
-    if (value != null) {
-      result
-        ..add('user')
-        ..add(
-          serializers.serialize(
-            value,
-            specifiedType: const FullType(Gusers_bool_exp),
-          ),
-        );
-    }
     value = object.uuid;
     if (value != null) {
       result
@@ -3789,15 +3586,6 @@ class _$Gboards_bool_expSerializer
                   specifiedType: const FullType(Gtimestamptz_comparison_exp),
                 )!
                 as Gtimestamptz_comparison_exp,
-          );
-          break;
-        case 'user':
-          result.user.replace(
-            serializers.deserialize(
-                  value,
-                  specifiedType: const FullType(Gusers_bool_exp),
-                )!
-                as Gusers_bool_exp,
           );
           break;
         case 'uuid':
@@ -3974,17 +3762,6 @@ class _$Gboards_insert_inputSerializer
           serializers.serialize(value, specifiedType: const FullType(String)),
         );
     }
-    value = object.user;
-    if (value != null) {
-      result
-        ..add('user')
-        ..add(
-          serializers.serialize(
-            value,
-            specifiedType: const FullType(Gusers_obj_rel_insert_input),
-          ),
-        );
-    }
     value = object.uuid;
     if (value != null) {
       result
@@ -4072,15 +3849,6 @@ class _$Gboards_insert_inputSerializer
                     specifiedType: const FullType(String),
                   )
                   as String?;
-          break;
-        case 'user':
-          result.user.replace(
-            serializers.deserialize(
-                  value,
-                  specifiedType: const FullType(Gusers_obj_rel_insert_input),
-                )!
-                as Gusers_obj_rel_insert_input,
-          );
           break;
         case 'uuid':
           result.uuid =
@@ -4721,17 +4489,6 @@ class _$Gboards_order_bySerializer
           ),
         );
     }
-    value = object.user;
-    if (value != null) {
-      result
-        ..add('user')
-        ..add(
-          serializers.serialize(
-            value,
-            specifiedType: const FullType(Gusers_order_by),
-          ),
-        );
-    }
     value = object.uuid;
     if (value != null) {
       result
@@ -4825,15 +4582,6 @@ class _$Gboards_order_bySerializer
                     specifiedType: const FullType(Gorder_by),
                   )
                   as Gorder_by?;
-          break;
-        case 'user':
-          result.user.replace(
-            serializers.deserialize(
-                  value,
-                  specifiedType: const FullType(Gusers_order_by),
-                )!
-                as Gusers_order_by,
-          );
           break;
         case 'uuid':
           result.uuid =
@@ -6678,17 +6426,6 @@ class _$Gcircle_members_bool_expSerializer
           ),
         );
     }
-    value = object.user;
-    if (value != null) {
-      result
-        ..add('user')
-        ..add(
-          serializers.serialize(
-            value,
-            specifiedType: const FullType(Gusers_bool_exp),
-          ),
-        );
-    }
     value = object.user_id;
     if (value != null) {
       result
@@ -6804,15 +6541,6 @@ class _$Gcircle_members_bool_expSerializer
                 as Gtimestamptz_comparison_exp,
           );
           break;
-        case 'user':
-          result.user.replace(
-            serializers.deserialize(
-                  value,
-                  specifiedType: const FullType(Gusers_bool_exp),
-                )!
-                as Gusers_bool_exp,
-          );
-          break;
         case 'user_id':
           result.user_id.replace(
             serializers.deserialize(
@@ -6921,17 +6649,6 @@ class _$Gcircle_members_insert_inputSerializer
           serializers.serialize(value, specifiedType: const FullType(String)),
         );
     }
-    value = object.user;
-    if (value != null) {
-      result
-        ..add('user')
-        ..add(
-          serializers.serialize(
-            value,
-            specifiedType: const FullType(Gusers_obj_rel_insert_input),
-          ),
-        );
-    }
     value = object.user_id;
     if (value != null) {
       result
@@ -7006,15 +6723,6 @@ class _$Gcircle_members_insert_inputSerializer
                     specifiedType: const FullType(String),
                   )
                   as String?;
-          break;
-        case 'user':
-          result.user.replace(
-            serializers.deserialize(
-                  value,
-                  specifiedType: const FullType(Gusers_obj_rel_insert_input),
-                )!
-                as Gusers_obj_rel_insert_input,
-          );
           break;
         case 'user_id':
           result.user_id =
@@ -7518,17 +7226,6 @@ class _$Gcircle_members_order_bySerializer
           ),
         );
     }
-    value = object.user;
-    if (value != null) {
-      result
-        ..add('user')
-        ..add(
-          serializers.serialize(
-            value,
-            specifiedType: const FullType(Gusers_order_by),
-          ),
-        );
-    }
     value = object.user_id;
     if (value != null) {
       result
@@ -7608,15 +7305,6 @@ class _$Gcircle_members_order_bySerializer
                     specifiedType: const FullType(Gorder_by),
                   )
                   as Gorder_by?;
-          break;
-        case 'user':
-          result.user.replace(
-            serializers.deserialize(
-                  value,
-                  specifiedType: const FullType(Gusers_order_by),
-                )!
-                as Gusers_order_by,
-          );
           break;
         case 'user_id':
           result.user_id =
@@ -10228,369 +9916,6 @@ class _$Gcircle_permissions_updatesSerializer
   }
 }
 
-class _$Gcircles_aggregate_bool_expSerializer
-    implements StructuredSerializer<Gcircles_aggregate_bool_exp> {
-  @override
-  final Iterable<Type> types = const [
-    Gcircles_aggregate_bool_exp,
-    _$Gcircles_aggregate_bool_exp,
-  ];
-  @override
-  final String wireName = 'Gcircles_aggregate_bool_exp';
-
-  @override
-  Iterable<Object?> serialize(
-    Serializers serializers,
-    Gcircles_aggregate_bool_exp object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = <Object?>[];
-    Object? value;
-    value = object.count;
-    if (value != null) {
-      result
-        ..add('count')
-        ..add(
-          serializers.serialize(
-            value,
-            specifiedType: const FullType(Gcircles_aggregate_bool_exp_count),
-          ),
-        );
-    }
-    return result;
-  }
-
-  @override
-  Gcircles_aggregate_bool_exp deserialize(
-    Serializers serializers,
-    Iterable<Object?> serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = Gcircles_aggregate_bool_expBuilder();
-
-    final iterator = serialized.iterator;
-    while (iterator.moveNext()) {
-      final key = iterator.current! as String;
-      iterator.moveNext();
-      final Object? value = iterator.current;
-      switch (key) {
-        case 'count':
-          result.count.replace(
-            serializers.deserialize(
-                  value,
-                  specifiedType: const FullType(
-                    Gcircles_aggregate_bool_exp_count,
-                  ),
-                )!
-                as Gcircles_aggregate_bool_exp_count,
-          );
-          break;
-      }
-    }
-
-    return result.build();
-  }
-}
-
-class _$Gcircles_aggregate_bool_exp_countSerializer
-    implements StructuredSerializer<Gcircles_aggregate_bool_exp_count> {
-  @override
-  final Iterable<Type> types = const [
-    Gcircles_aggregate_bool_exp_count,
-    _$Gcircles_aggregate_bool_exp_count,
-  ];
-  @override
-  final String wireName = 'Gcircles_aggregate_bool_exp_count';
-
-  @override
-  Iterable<Object?> serialize(
-    Serializers serializers,
-    Gcircles_aggregate_bool_exp_count object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = <Object?>[
-      'predicate',
-      serializers.serialize(
-        object.predicate,
-        specifiedType: const FullType(GInt_comparison_exp),
-      ),
-    ];
-    Object? value;
-    value = object.arguments;
-    if (value != null) {
-      result
-        ..add('arguments')
-        ..add(
-          serializers.serialize(
-            value,
-            specifiedType: const FullType(BuiltList, const [
-              const FullType(Gcircles_select_column),
-            ]),
-          ),
-        );
-    }
-    value = object.distinct;
-    if (value != null) {
-      result
-        ..add('distinct')
-        ..add(
-          serializers.serialize(value, specifiedType: const FullType(bool)),
-        );
-    }
-    value = object.filter;
-    if (value != null) {
-      result
-        ..add('filter')
-        ..add(
-          serializers.serialize(
-            value,
-            specifiedType: const FullType(Gcircles_bool_exp),
-          ),
-        );
-    }
-    return result;
-  }
-
-  @override
-  Gcircles_aggregate_bool_exp_count deserialize(
-    Serializers serializers,
-    Iterable<Object?> serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = Gcircles_aggregate_bool_exp_countBuilder();
-
-    final iterator = serialized.iterator;
-    while (iterator.moveNext()) {
-      final key = iterator.current! as String;
-      iterator.moveNext();
-      final Object? value = iterator.current;
-      switch (key) {
-        case 'arguments':
-          result.arguments.replace(
-            serializers.deserialize(
-                  value,
-                  specifiedType: const FullType(BuiltList, const [
-                    const FullType(Gcircles_select_column),
-                  ]),
-                )!
-                as BuiltList<Object?>,
-          );
-          break;
-        case 'distinct':
-          result.distinct =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(bool),
-                  )
-                  as bool?;
-          break;
-        case 'filter':
-          result.filter.replace(
-            serializers.deserialize(
-                  value,
-                  specifiedType: const FullType(Gcircles_bool_exp),
-                )!
-                as Gcircles_bool_exp,
-          );
-          break;
-        case 'predicate':
-          result.predicate.replace(
-            serializers.deserialize(
-                  value,
-                  specifiedType: const FullType(GInt_comparison_exp),
-                )!
-                as GInt_comparison_exp,
-          );
-          break;
-      }
-    }
-
-    return result.build();
-  }
-}
-
-class _$Gcircles_aggregate_order_bySerializer
-    implements StructuredSerializer<Gcircles_aggregate_order_by> {
-  @override
-  final Iterable<Type> types = const [
-    Gcircles_aggregate_order_by,
-    _$Gcircles_aggregate_order_by,
-  ];
-  @override
-  final String wireName = 'Gcircles_aggregate_order_by';
-
-  @override
-  Iterable<Object?> serialize(
-    Serializers serializers,
-    Gcircles_aggregate_order_by object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = <Object?>[];
-    Object? value;
-    value = object.count;
-    if (value != null) {
-      result
-        ..add('count')
-        ..add(
-          serializers.serialize(
-            value,
-            specifiedType: const FullType(Gorder_by),
-          ),
-        );
-    }
-    value = object.max;
-    if (value != null) {
-      result
-        ..add('max')
-        ..add(
-          serializers.serialize(
-            value,
-            specifiedType: const FullType(Gcircles_max_order_by),
-          ),
-        );
-    }
-    value = object.min;
-    if (value != null) {
-      result
-        ..add('min')
-        ..add(
-          serializers.serialize(
-            value,
-            specifiedType: const FullType(Gcircles_min_order_by),
-          ),
-        );
-    }
-    return result;
-  }
-
-  @override
-  Gcircles_aggregate_order_by deserialize(
-    Serializers serializers,
-    Iterable<Object?> serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = Gcircles_aggregate_order_byBuilder();
-
-    final iterator = serialized.iterator;
-    while (iterator.moveNext()) {
-      final key = iterator.current! as String;
-      iterator.moveNext();
-      final Object? value = iterator.current;
-      switch (key) {
-        case 'count':
-          result.count =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(Gorder_by),
-                  )
-                  as Gorder_by?;
-          break;
-        case 'max':
-          result.max.replace(
-            serializers.deserialize(
-                  value,
-                  specifiedType: const FullType(Gcircles_max_order_by),
-                )!
-                as Gcircles_max_order_by,
-          );
-          break;
-        case 'min':
-          result.min.replace(
-            serializers.deserialize(
-                  value,
-                  specifiedType: const FullType(Gcircles_min_order_by),
-                )!
-                as Gcircles_min_order_by,
-          );
-          break;
-      }
-    }
-
-    return result.build();
-  }
-}
-
-class _$Gcircles_arr_rel_insert_inputSerializer
-    implements StructuredSerializer<Gcircles_arr_rel_insert_input> {
-  @override
-  final Iterable<Type> types = const [
-    Gcircles_arr_rel_insert_input,
-    _$Gcircles_arr_rel_insert_input,
-  ];
-  @override
-  final String wireName = 'Gcircles_arr_rel_insert_input';
-
-  @override
-  Iterable<Object?> serialize(
-    Serializers serializers,
-    Gcircles_arr_rel_insert_input object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = <Object?>[
-      'data',
-      serializers.serialize(
-        object.data,
-        specifiedType: const FullType(BuiltList, const [
-          const FullType(Gcircles_insert_input),
-        ]),
-      ),
-    ];
-    Object? value;
-    value = object.on_conflict;
-    if (value != null) {
-      result
-        ..add('on_conflict')
-        ..add(
-          serializers.serialize(
-            value,
-            specifiedType: const FullType(Gcircles_on_conflict),
-          ),
-        );
-    }
-    return result;
-  }
-
-  @override
-  Gcircles_arr_rel_insert_input deserialize(
-    Serializers serializers,
-    Iterable<Object?> serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = Gcircles_arr_rel_insert_inputBuilder();
-
-    final iterator = serialized.iterator;
-    while (iterator.moveNext()) {
-      final key = iterator.current! as String;
-      iterator.moveNext();
-      final Object? value = iterator.current;
-      switch (key) {
-        case 'data':
-          result.data.replace(
-            serializers.deserialize(
-                  value,
-                  specifiedType: const FullType(BuiltList, const [
-                    const FullType(Gcircles_insert_input),
-                  ]),
-                )!
-                as BuiltList<Object?>,
-          );
-          break;
-        case 'on_conflict':
-          result.on_conflict.replace(
-            serializers.deserialize(
-                  value,
-                  specifiedType: const FullType(Gcircles_on_conflict),
-                )!
-                as Gcircles_on_conflict,
-          );
-          break;
-      }
-    }
-
-    return result.build();
-  }
-}
-
 class _$Gcircles_bool_expSerializer
     implements StructuredSerializer<Gcircles_bool_exp> {
   @override
@@ -10766,17 +10091,6 @@ class _$Gcircles_bool_expSerializer
           ),
         );
     }
-    value = object.user;
-    if (value != null) {
-      result
-        ..add('user')
-        ..add(
-          serializers.serialize(
-            value,
-            specifiedType: const FullType(Gusers_bool_exp),
-          ),
-        );
-    }
     value = object.uuid;
     if (value != null) {
       result
@@ -10939,15 +10253,6 @@ class _$Gcircles_bool_expSerializer
                 as Gtimestamptz_comparison_exp,
           );
           break;
-        case 'user':
-          result.user.replace(
-            serializers.deserialize(
-                  value,
-                  specifiedType: const FullType(Gusers_bool_exp),
-                )!
-                as Gusers_bool_exp,
-          );
-          break;
         case 'uuid':
           result.uuid.replace(
             serializers.deserialize(
@@ -11079,17 +10384,6 @@ class _$Gcircles_insert_inputSerializer
           serializers.serialize(value, specifiedType: const FullType(String)),
         );
     }
-    value = object.user;
-    if (value != null) {
-      result
-        ..add('user')
-        ..add(
-          serializers.serialize(
-            value,
-            specifiedType: const FullType(Gusers_obj_rel_insert_input),
-          ),
-        );
-    }
     value = object.uuid;
     if (value != null) {
       result
@@ -11186,15 +10480,6 @@ class _$Gcircles_insert_inputSerializer
                   )
                   as String?;
           break;
-        case 'user':
-          result.user.replace(
-            serializers.deserialize(
-                  value,
-                  specifiedType: const FullType(Gusers_obj_rel_insert_input),
-                )!
-                as Gusers_obj_rel_insert_input,
-          );
-          break;
         case 'uuid':
           result.uuid =
               serializers.deserialize(
@@ -11202,318 +10487,6 @@ class _$Gcircles_insert_inputSerializer
                     specifiedType: const FullType(String),
                   )
                   as String?;
-          break;
-      }
-    }
-
-    return result.build();
-  }
-}
-
-class _$Gcircles_max_order_bySerializer
-    implements StructuredSerializer<Gcircles_max_order_by> {
-  @override
-  final Iterable<Type> types = const [
-    Gcircles_max_order_by,
-    _$Gcircles_max_order_by,
-  ];
-  @override
-  final String wireName = 'Gcircles_max_order_by';
-
-  @override
-  Iterable<Object?> serialize(
-    Serializers serializers,
-    Gcircles_max_order_by object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = <Object?>[];
-    Object? value;
-    value = object.created_at;
-    if (value != null) {
-      result
-        ..add('created_at')
-        ..add(
-          serializers.serialize(
-            value,
-            specifiedType: const FullType(Gorder_by),
-          ),
-        );
-    }
-    value = object.description;
-    if (value != null) {
-      result
-        ..add('description')
-        ..add(
-          serializers.serialize(
-            value,
-            specifiedType: const FullType(Gorder_by),
-          ),
-        );
-    }
-    value = object.name;
-    if (value != null) {
-      result
-        ..add('name')
-        ..add(
-          serializers.serialize(
-            value,
-            specifiedType: const FullType(Gorder_by),
-          ),
-        );
-    }
-    value = object.owner_id;
-    if (value != null) {
-      result
-        ..add('owner_id')
-        ..add(
-          serializers.serialize(
-            value,
-            specifiedType: const FullType(Gorder_by),
-          ),
-        );
-    }
-    value = object.updated_at;
-    if (value != null) {
-      result
-        ..add('updated_at')
-        ..add(
-          serializers.serialize(
-            value,
-            specifiedType: const FullType(Gorder_by),
-          ),
-        );
-    }
-    value = object.uuid;
-    if (value != null) {
-      result
-        ..add('uuid')
-        ..add(
-          serializers.serialize(
-            value,
-            specifiedType: const FullType(Gorder_by),
-          ),
-        );
-    }
-    return result;
-  }
-
-  @override
-  Gcircles_max_order_by deserialize(
-    Serializers serializers,
-    Iterable<Object?> serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = Gcircles_max_order_byBuilder();
-
-    final iterator = serialized.iterator;
-    while (iterator.moveNext()) {
-      final key = iterator.current! as String;
-      iterator.moveNext();
-      final Object? value = iterator.current;
-      switch (key) {
-        case 'created_at':
-          result.created_at =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(Gorder_by),
-                  )
-                  as Gorder_by?;
-          break;
-        case 'description':
-          result.description =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(Gorder_by),
-                  )
-                  as Gorder_by?;
-          break;
-        case 'name':
-          result.name =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(Gorder_by),
-                  )
-                  as Gorder_by?;
-          break;
-        case 'owner_id':
-          result.owner_id =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(Gorder_by),
-                  )
-                  as Gorder_by?;
-          break;
-        case 'updated_at':
-          result.updated_at =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(Gorder_by),
-                  )
-                  as Gorder_by?;
-          break;
-        case 'uuid':
-          result.uuid =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(Gorder_by),
-                  )
-                  as Gorder_by?;
-          break;
-      }
-    }
-
-    return result.build();
-  }
-}
-
-class _$Gcircles_min_order_bySerializer
-    implements StructuredSerializer<Gcircles_min_order_by> {
-  @override
-  final Iterable<Type> types = const [
-    Gcircles_min_order_by,
-    _$Gcircles_min_order_by,
-  ];
-  @override
-  final String wireName = 'Gcircles_min_order_by';
-
-  @override
-  Iterable<Object?> serialize(
-    Serializers serializers,
-    Gcircles_min_order_by object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = <Object?>[];
-    Object? value;
-    value = object.created_at;
-    if (value != null) {
-      result
-        ..add('created_at')
-        ..add(
-          serializers.serialize(
-            value,
-            specifiedType: const FullType(Gorder_by),
-          ),
-        );
-    }
-    value = object.description;
-    if (value != null) {
-      result
-        ..add('description')
-        ..add(
-          serializers.serialize(
-            value,
-            specifiedType: const FullType(Gorder_by),
-          ),
-        );
-    }
-    value = object.name;
-    if (value != null) {
-      result
-        ..add('name')
-        ..add(
-          serializers.serialize(
-            value,
-            specifiedType: const FullType(Gorder_by),
-          ),
-        );
-    }
-    value = object.owner_id;
-    if (value != null) {
-      result
-        ..add('owner_id')
-        ..add(
-          serializers.serialize(
-            value,
-            specifiedType: const FullType(Gorder_by),
-          ),
-        );
-    }
-    value = object.updated_at;
-    if (value != null) {
-      result
-        ..add('updated_at')
-        ..add(
-          serializers.serialize(
-            value,
-            specifiedType: const FullType(Gorder_by),
-          ),
-        );
-    }
-    value = object.uuid;
-    if (value != null) {
-      result
-        ..add('uuid')
-        ..add(
-          serializers.serialize(
-            value,
-            specifiedType: const FullType(Gorder_by),
-          ),
-        );
-    }
-    return result;
-  }
-
-  @override
-  Gcircles_min_order_by deserialize(
-    Serializers serializers,
-    Iterable<Object?> serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = Gcircles_min_order_byBuilder();
-
-    final iterator = serialized.iterator;
-    while (iterator.moveNext()) {
-      final key = iterator.current! as String;
-      iterator.moveNext();
-      final Object? value = iterator.current;
-      switch (key) {
-        case 'created_at':
-          result.created_at =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(Gorder_by),
-                  )
-                  as Gorder_by?;
-          break;
-        case 'description':
-          result.description =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(Gorder_by),
-                  )
-                  as Gorder_by?;
-          break;
-        case 'name':
-          result.name =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(Gorder_by),
-                  )
-                  as Gorder_by?;
-          break;
-        case 'owner_id':
-          result.owner_id =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(Gorder_by),
-                  )
-                  as Gorder_by?;
-          break;
-        case 'updated_at':
-          result.updated_at =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(Gorder_by),
-                  )
-                  as Gorder_by?;
-          break;
-        case 'uuid':
-          result.uuid =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(Gorder_by),
-                  )
-                  as Gorder_by?;
           break;
       }
     }
@@ -11798,17 +10771,6 @@ class _$Gcircles_order_bySerializer
           ),
         );
     }
-    value = object.user;
-    if (value != null) {
-      result
-        ..add('user')
-        ..add(
-          serializers.serialize(
-            value,
-            specifiedType: const FullType(Gusers_order_by),
-          ),
-        );
-    }
     value = object.uuid;
     if (value != null) {
       result
@@ -11907,15 +10869,6 @@ class _$Gcircles_order_bySerializer
                     specifiedType: const FullType(Gorder_by),
                   )
                   as Gorder_by?;
-          break;
-        case 'user':
-          result.user.replace(
-            serializers.deserialize(
-                  value,
-                  specifiedType: const FullType(Gusers_order_by),
-                )!
-                as Gusers_order_by,
-          );
           break;
         case 'uuid':
           result.uuid =
@@ -13193,17 +12146,6 @@ class _$Gposts_bool_expSerializer
           ),
         );
     }
-    value = object.user;
-    if (value != null) {
-      result
-        ..add('user')
-        ..add(
-          serializers.serialize(
-            value,
-            specifiedType: const FullType(Gusers_bool_exp),
-          ),
-        );
-    }
     value = object.user_id;
     if (value != null) {
       result
@@ -13319,15 +12261,6 @@ class _$Gposts_bool_expSerializer
                 as Gtimestamptz_comparison_exp,
           );
           break;
-        case 'user':
-          result.user.replace(
-            serializers.deserialize(
-                  value,
-                  specifiedType: const FullType(Gusers_bool_exp),
-                )!
-                as Gusers_bool_exp,
-          );
-          break;
         case 'user_id':
           result.user_id.replace(
             serializers.deserialize(
@@ -13436,17 +12369,6 @@ class _$Gposts_insert_inputSerializer
           serializers.serialize(value, specifiedType: const FullType(String)),
         );
     }
-    value = object.user;
-    if (value != null) {
-      result
-        ..add('user')
-        ..add(
-          serializers.serialize(
-            value,
-            specifiedType: const FullType(Gusers_obj_rel_insert_input),
-          ),
-        );
-    }
     value = object.user_id;
     if (value != null) {
       result
@@ -13520,15 +12442,6 @@ class _$Gposts_insert_inputSerializer
                     specifiedType: const FullType(String),
                   )
                   as String?;
-          break;
-        case 'user':
-          result.user.replace(
-            serializers.deserialize(
-                  value,
-                  specifiedType: const FullType(Gusers_obj_rel_insert_input),
-                )!
-                as Gusers_obj_rel_insert_input,
-          );
           break;
         case 'user_id':
           result.user_id =
@@ -14026,17 +12939,6 @@ class _$Gposts_order_bySerializer
           ),
         );
     }
-    value = object.user;
-    if (value != null) {
-      result
-        ..add('user')
-        ..add(
-          serializers.serialize(
-            value,
-            specifiedType: const FullType(Gusers_order_by),
-          ),
-        );
-    }
     value = object.user_id;
     if (value != null) {
       result
@@ -14116,15 +13018,6 @@ class _$Gposts_order_bySerializer
                     specifiedType: const FullType(Gorder_by),
                   )
                   as Gorder_by?;
-          break;
-        case 'user':
-          result.user.replace(
-            serializers.deserialize(
-                  value,
-                  specifiedType: const FullType(Gusers_order_by),
-                )!
-                as Gusers_order_by,
-          );
           break;
         case 'user_id':
           result.user_id =
@@ -15045,1841 +13938,6 @@ class _$Gtimestamptz_comparison_expSerializer
   }
 }
 
-class _$Gusers_bool_expSerializer
-    implements StructuredSerializer<Gusers_bool_exp> {
-  @override
-  final Iterable<Type> types = const [Gusers_bool_exp, _$Gusers_bool_exp];
-  @override
-  final String wireName = 'Gusers_bool_exp';
-
-  @override
-  Iterable<Object?> serialize(
-    Serializers serializers,
-    Gusers_bool_exp object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = <Object?>[];
-    Object? value;
-    value = object.G_and;
-    if (value != null) {
-      result
-        ..add('_and')
-        ..add(
-          serializers.serialize(
-            value,
-            specifiedType: const FullType(BuiltList, const [
-              const FullType(Gusers_bool_exp),
-            ]),
-          ),
-        );
-    }
-    value = object.G_not;
-    if (value != null) {
-      result
-        ..add('_not')
-        ..add(
-          serializers.serialize(
-            value,
-            specifiedType: const FullType(Gusers_bool_exp),
-          ),
-        );
-    }
-    value = object.G_or;
-    if (value != null) {
-      result
-        ..add('_or')
-        ..add(
-          serializers.serialize(
-            value,
-            specifiedType: const FullType(BuiltList, const [
-              const FullType(Gusers_bool_exp),
-            ]),
-          ),
-        );
-    }
-    value = object.boards;
-    if (value != null) {
-      result
-        ..add('boards')
-        ..add(
-          serializers.serialize(
-            value,
-            specifiedType: const FullType(Gboards_bool_exp),
-          ),
-        );
-    }
-    value = object.boards_aggregate;
-    if (value != null) {
-      result
-        ..add('boards_aggregate')
-        ..add(
-          serializers.serialize(
-            value,
-            specifiedType: const FullType(Gboards_aggregate_bool_exp),
-          ),
-        );
-    }
-    value = object.circle_members;
-    if (value != null) {
-      result
-        ..add('circle_members')
-        ..add(
-          serializers.serialize(
-            value,
-            specifiedType: const FullType(Gcircle_members_bool_exp),
-          ),
-        );
-    }
-    value = object.circle_members_aggregate;
-    if (value != null) {
-      result
-        ..add('circle_members_aggregate')
-        ..add(
-          serializers.serialize(
-            value,
-            specifiedType: const FullType(Gcircle_members_aggregate_bool_exp),
-          ),
-        );
-    }
-    value = object.circles;
-    if (value != null) {
-      result
-        ..add('circles')
-        ..add(
-          serializers.serialize(
-            value,
-            specifiedType: const FullType(Gcircles_bool_exp),
-          ),
-        );
-    }
-    value = object.circles_aggregate;
-    if (value != null) {
-      result
-        ..add('circles_aggregate')
-        ..add(
-          serializers.serialize(
-            value,
-            specifiedType: const FullType(Gcircles_aggregate_bool_exp),
-          ),
-        );
-    }
-    value = object.created_at;
-    if (value != null) {
-      result
-        ..add('created_at')
-        ..add(
-          serializers.serialize(
-            value,
-            specifiedType: const FullType(Gtimestamptz_comparison_exp),
-          ),
-        );
-    }
-    value = object.deleted_at;
-    if (value != null) {
-      result
-        ..add('deleted_at')
-        ..add(
-          serializers.serialize(
-            value,
-            specifiedType: const FullType(Gtimestamptz_comparison_exp),
-          ),
-        );
-    }
-    value = object.email;
-    if (value != null) {
-      result
-        ..add('email')
-        ..add(
-          serializers.serialize(
-            value,
-            specifiedType: const FullType(GString_comparison_exp),
-          ),
-        );
-    }
-    value = object.email_verified;
-    if (value != null) {
-      result
-        ..add('email_verified')
-        ..add(
-          serializers.serialize(
-            value,
-            specifiedType: const FullType(GBoolean_comparison_exp),
-          ),
-        );
-    }
-    value = object.id;
-    if (value != null) {
-      result
-        ..add('id')
-        ..add(
-          serializers.serialize(
-            value,
-            specifiedType: const FullType(Gbpchar_comparison_exp),
-          ),
-        );
-    }
-    value = object.name;
-    if (value != null) {
-      result
-        ..add('name')
-        ..add(
-          serializers.serialize(
-            value,
-            specifiedType: const FullType(GString_comparison_exp),
-          ),
-        );
-    }
-    value = object.phone_number;
-    if (value != null) {
-      result
-        ..add('phone_number')
-        ..add(
-          serializers.serialize(
-            value,
-            specifiedType: const FullType(GString_comparison_exp),
-          ),
-        );
-    }
-    value = object.photo_url;
-    if (value != null) {
-      result
-        ..add('photo_url')
-        ..add(
-          serializers.serialize(
-            value,
-            specifiedType: const FullType(GString_comparison_exp),
-          ),
-        );
-    }
-    value = object.posts;
-    if (value != null) {
-      result
-        ..add('posts')
-        ..add(
-          serializers.serialize(
-            value,
-            specifiedType: const FullType(Gposts_bool_exp),
-          ),
-        );
-    }
-    value = object.posts_aggregate;
-    if (value != null) {
-      result
-        ..add('posts_aggregate')
-        ..add(
-          serializers.serialize(
-            value,
-            specifiedType: const FullType(Gposts_aggregate_bool_exp),
-          ),
-        );
-    }
-    value = object.updated_at;
-    if (value != null) {
-      result
-        ..add('updated_at')
-        ..add(
-          serializers.serialize(
-            value,
-            specifiedType: const FullType(Gtimestamptz_comparison_exp),
-          ),
-        );
-    }
-    return result;
-  }
-
-  @override
-  Gusers_bool_exp deserialize(
-    Serializers serializers,
-    Iterable<Object?> serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = Gusers_bool_expBuilder();
-
-    final iterator = serialized.iterator;
-    while (iterator.moveNext()) {
-      final key = iterator.current! as String;
-      iterator.moveNext();
-      final Object? value = iterator.current;
-      switch (key) {
-        case '_and':
-          result.G_and.replace(
-            serializers.deserialize(
-                  value,
-                  specifiedType: const FullType(BuiltList, const [
-                    const FullType(Gusers_bool_exp),
-                  ]),
-                )!
-                as BuiltList<Object?>,
-          );
-          break;
-        case '_not':
-          result.G_not.replace(
-            serializers.deserialize(
-                  value,
-                  specifiedType: const FullType(Gusers_bool_exp),
-                )!
-                as Gusers_bool_exp,
-          );
-          break;
-        case '_or':
-          result.G_or.replace(
-            serializers.deserialize(
-                  value,
-                  specifiedType: const FullType(BuiltList, const [
-                    const FullType(Gusers_bool_exp),
-                  ]),
-                )!
-                as BuiltList<Object?>,
-          );
-          break;
-        case 'boards':
-          result.boards.replace(
-            serializers.deserialize(
-                  value,
-                  specifiedType: const FullType(Gboards_bool_exp),
-                )!
-                as Gboards_bool_exp,
-          );
-          break;
-        case 'boards_aggregate':
-          result.boards_aggregate.replace(
-            serializers.deserialize(
-                  value,
-                  specifiedType: const FullType(Gboards_aggregate_bool_exp),
-                )!
-                as Gboards_aggregate_bool_exp,
-          );
-          break;
-        case 'circle_members':
-          result.circle_members.replace(
-            serializers.deserialize(
-                  value,
-                  specifiedType: const FullType(Gcircle_members_bool_exp),
-                )!
-                as Gcircle_members_bool_exp,
-          );
-          break;
-        case 'circle_members_aggregate':
-          result.circle_members_aggregate.replace(
-            serializers.deserialize(
-                  value,
-                  specifiedType: const FullType(
-                    Gcircle_members_aggregate_bool_exp,
-                  ),
-                )!
-                as Gcircle_members_aggregate_bool_exp,
-          );
-          break;
-        case 'circles':
-          result.circles.replace(
-            serializers.deserialize(
-                  value,
-                  specifiedType: const FullType(Gcircles_bool_exp),
-                )!
-                as Gcircles_bool_exp,
-          );
-          break;
-        case 'circles_aggregate':
-          result.circles_aggregate.replace(
-            serializers.deserialize(
-                  value,
-                  specifiedType: const FullType(Gcircles_aggregate_bool_exp),
-                )!
-                as Gcircles_aggregate_bool_exp,
-          );
-          break;
-        case 'created_at':
-          result.created_at.replace(
-            serializers.deserialize(
-                  value,
-                  specifiedType: const FullType(Gtimestamptz_comparison_exp),
-                )!
-                as Gtimestamptz_comparison_exp,
-          );
-          break;
-        case 'deleted_at':
-          result.deleted_at.replace(
-            serializers.deserialize(
-                  value,
-                  specifiedType: const FullType(Gtimestamptz_comparison_exp),
-                )!
-                as Gtimestamptz_comparison_exp,
-          );
-          break;
-        case 'email':
-          result.email.replace(
-            serializers.deserialize(
-                  value,
-                  specifiedType: const FullType(GString_comparison_exp),
-                )!
-                as GString_comparison_exp,
-          );
-          break;
-        case 'email_verified':
-          result.email_verified.replace(
-            serializers.deserialize(
-                  value,
-                  specifiedType: const FullType(GBoolean_comparison_exp),
-                )!
-                as GBoolean_comparison_exp,
-          );
-          break;
-        case 'id':
-          result.id.replace(
-            serializers.deserialize(
-                  value,
-                  specifiedType: const FullType(Gbpchar_comparison_exp),
-                )!
-                as Gbpchar_comparison_exp,
-          );
-          break;
-        case 'name':
-          result.name.replace(
-            serializers.deserialize(
-                  value,
-                  specifiedType: const FullType(GString_comparison_exp),
-                )!
-                as GString_comparison_exp,
-          );
-          break;
-        case 'phone_number':
-          result.phone_number.replace(
-            serializers.deserialize(
-                  value,
-                  specifiedType: const FullType(GString_comparison_exp),
-                )!
-                as GString_comparison_exp,
-          );
-          break;
-        case 'photo_url':
-          result.photo_url.replace(
-            serializers.deserialize(
-                  value,
-                  specifiedType: const FullType(GString_comparison_exp),
-                )!
-                as GString_comparison_exp,
-          );
-          break;
-        case 'posts':
-          result.posts.replace(
-            serializers.deserialize(
-                  value,
-                  specifiedType: const FullType(Gposts_bool_exp),
-                )!
-                as Gposts_bool_exp,
-          );
-          break;
-        case 'posts_aggregate':
-          result.posts_aggregate.replace(
-            serializers.deserialize(
-                  value,
-                  specifiedType: const FullType(Gposts_aggregate_bool_exp),
-                )!
-                as Gposts_aggregate_bool_exp,
-          );
-          break;
-        case 'updated_at':
-          result.updated_at.replace(
-            serializers.deserialize(
-                  value,
-                  specifiedType: const FullType(Gtimestamptz_comparison_exp),
-                )!
-                as Gtimestamptz_comparison_exp,
-          );
-          break;
-      }
-    }
-
-    return result.build();
-  }
-}
-
-class _$Gusers_constraintSerializer
-    implements PrimitiveSerializer<Gusers_constraint> {
-  @override
-  final Iterable<Type> types = const <Type>[Gusers_constraint];
-  @override
-  final String wireName = 'Gusers_constraint';
-
-  @override
-  Object serialize(
-    Serializers serializers,
-    Gusers_constraint object, {
-    FullType specifiedType = FullType.unspecified,
-  }) => object.name;
-
-  @override
-  Gusers_constraint deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) => Gusers_constraint.valueOf(serialized as String);
-}
-
-class _$Gusers_insert_inputSerializer
-    implements StructuredSerializer<Gusers_insert_input> {
-  @override
-  final Iterable<Type> types = const [
-    Gusers_insert_input,
-    _$Gusers_insert_input,
-  ];
-  @override
-  final String wireName = 'Gusers_insert_input';
-
-  @override
-  Iterable<Object?> serialize(
-    Serializers serializers,
-    Gusers_insert_input object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = <Object?>[];
-    Object? value;
-    value = object.boards;
-    if (value != null) {
-      result
-        ..add('boards')
-        ..add(
-          serializers.serialize(
-            value,
-            specifiedType: const FullType(Gboards_arr_rel_insert_input),
-          ),
-        );
-    }
-    value = object.circle_members;
-    if (value != null) {
-      result
-        ..add('circle_members')
-        ..add(
-          serializers.serialize(
-            value,
-            specifiedType: const FullType(Gcircle_members_arr_rel_insert_input),
-          ),
-        );
-    }
-    value = object.circles;
-    if (value != null) {
-      result
-        ..add('circles')
-        ..add(
-          serializers.serialize(
-            value,
-            specifiedType: const FullType(Gcircles_arr_rel_insert_input),
-          ),
-        );
-    }
-    value = object.created_at;
-    if (value != null) {
-      result
-        ..add('created_at')
-        ..add(
-          serializers.serialize(value, specifiedType: const FullType(String)),
-        );
-    }
-    value = object.deleted_at;
-    if (value != null) {
-      result
-        ..add('deleted_at')
-        ..add(
-          serializers.serialize(value, specifiedType: const FullType(String)),
-        );
-    }
-    value = object.email;
-    if (value != null) {
-      result
-        ..add('email')
-        ..add(
-          serializers.serialize(value, specifiedType: const FullType(String)),
-        );
-    }
-    value = object.email_verified;
-    if (value != null) {
-      result
-        ..add('email_verified')
-        ..add(
-          serializers.serialize(value, specifiedType: const FullType(bool)),
-        );
-    }
-    value = object.id;
-    if (value != null) {
-      result
-        ..add('id')
-        ..add(
-          serializers.serialize(value, specifiedType: const FullType(String)),
-        );
-    }
-    value = object.name;
-    if (value != null) {
-      result
-        ..add('name')
-        ..add(
-          serializers.serialize(value, specifiedType: const FullType(String)),
-        );
-    }
-    value = object.phone_number;
-    if (value != null) {
-      result
-        ..add('phone_number')
-        ..add(
-          serializers.serialize(value, specifiedType: const FullType(String)),
-        );
-    }
-    value = object.photo_url;
-    if (value != null) {
-      result
-        ..add('photo_url')
-        ..add(
-          serializers.serialize(value, specifiedType: const FullType(String)),
-        );
-    }
-    value = object.posts;
-    if (value != null) {
-      result
-        ..add('posts')
-        ..add(
-          serializers.serialize(
-            value,
-            specifiedType: const FullType(Gposts_arr_rel_insert_input),
-          ),
-        );
-    }
-    value = object.updated_at;
-    if (value != null) {
-      result
-        ..add('updated_at')
-        ..add(
-          serializers.serialize(value, specifiedType: const FullType(String)),
-        );
-    }
-    return result;
-  }
-
-  @override
-  Gusers_insert_input deserialize(
-    Serializers serializers,
-    Iterable<Object?> serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = Gusers_insert_inputBuilder();
-
-    final iterator = serialized.iterator;
-    while (iterator.moveNext()) {
-      final key = iterator.current! as String;
-      iterator.moveNext();
-      final Object? value = iterator.current;
-      switch (key) {
-        case 'boards':
-          result.boards.replace(
-            serializers.deserialize(
-                  value,
-                  specifiedType: const FullType(Gboards_arr_rel_insert_input),
-                )!
-                as Gboards_arr_rel_insert_input,
-          );
-          break;
-        case 'circle_members':
-          result.circle_members.replace(
-            serializers.deserialize(
-                  value,
-                  specifiedType: const FullType(
-                    Gcircle_members_arr_rel_insert_input,
-                  ),
-                )!
-                as Gcircle_members_arr_rel_insert_input,
-          );
-          break;
-        case 'circles':
-          result.circles.replace(
-            serializers.deserialize(
-                  value,
-                  specifiedType: const FullType(Gcircles_arr_rel_insert_input),
-                )!
-                as Gcircles_arr_rel_insert_input,
-          );
-          break;
-        case 'created_at':
-          result.created_at =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String?;
-          break;
-        case 'deleted_at':
-          result.deleted_at =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String?;
-          break;
-        case 'email':
-          result.email =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String?;
-          break;
-        case 'email_verified':
-          result.email_verified =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(bool),
-                  )
-                  as bool?;
-          break;
-        case 'id':
-          result.id =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String?;
-          break;
-        case 'name':
-          result.name =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String?;
-          break;
-        case 'phone_number':
-          result.phone_number =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String?;
-          break;
-        case 'photo_url':
-          result.photo_url =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String?;
-          break;
-        case 'posts':
-          result.posts.replace(
-            serializers.deserialize(
-                  value,
-                  specifiedType: const FullType(Gposts_arr_rel_insert_input),
-                )!
-                as Gposts_arr_rel_insert_input,
-          );
-          break;
-        case 'updated_at':
-          result.updated_at =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String?;
-          break;
-      }
-    }
-
-    return result.build();
-  }
-}
-
-class _$Gusers_obj_rel_insert_inputSerializer
-    implements StructuredSerializer<Gusers_obj_rel_insert_input> {
-  @override
-  final Iterable<Type> types = const [
-    Gusers_obj_rel_insert_input,
-    _$Gusers_obj_rel_insert_input,
-  ];
-  @override
-  final String wireName = 'Gusers_obj_rel_insert_input';
-
-  @override
-  Iterable<Object?> serialize(
-    Serializers serializers,
-    Gusers_obj_rel_insert_input object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = <Object?>[
-      'data',
-      serializers.serialize(
-        object.data,
-        specifiedType: const FullType(Gusers_insert_input),
-      ),
-    ];
-    Object? value;
-    value = object.on_conflict;
-    if (value != null) {
-      result
-        ..add('on_conflict')
-        ..add(
-          serializers.serialize(
-            value,
-            specifiedType: const FullType(Gusers_on_conflict),
-          ),
-        );
-    }
-    return result;
-  }
-
-  @override
-  Gusers_obj_rel_insert_input deserialize(
-    Serializers serializers,
-    Iterable<Object?> serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = Gusers_obj_rel_insert_inputBuilder();
-
-    final iterator = serialized.iterator;
-    while (iterator.moveNext()) {
-      final key = iterator.current! as String;
-      iterator.moveNext();
-      final Object? value = iterator.current;
-      switch (key) {
-        case 'data':
-          result.data.replace(
-            serializers.deserialize(
-                  value,
-                  specifiedType: const FullType(Gusers_insert_input),
-                )!
-                as Gusers_insert_input,
-          );
-          break;
-        case 'on_conflict':
-          result.on_conflict.replace(
-            serializers.deserialize(
-                  value,
-                  specifiedType: const FullType(Gusers_on_conflict),
-                )!
-                as Gusers_on_conflict,
-          );
-          break;
-      }
-    }
-
-    return result.build();
-  }
-}
-
-class _$Gusers_on_conflictSerializer
-    implements StructuredSerializer<Gusers_on_conflict> {
-  @override
-  final Iterable<Type> types = const [Gusers_on_conflict, _$Gusers_on_conflict];
-  @override
-  final String wireName = 'Gusers_on_conflict';
-
-  @override
-  Iterable<Object?> serialize(
-    Serializers serializers,
-    Gusers_on_conflict object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = <Object?>[
-      'constraint',
-      serializers.serialize(
-        object.constraint,
-        specifiedType: const FullType(Gusers_constraint),
-      ),
-      'update_columns',
-      serializers.serialize(
-        object.update_columns,
-        specifiedType: const FullType(BuiltList, const [
-          const FullType(Gusers_update_column),
-        ]),
-      ),
-    ];
-    Object? value;
-    value = object.where;
-    if (value != null) {
-      result
-        ..add('where')
-        ..add(
-          serializers.serialize(
-            value,
-            specifiedType: const FullType(Gusers_bool_exp),
-          ),
-        );
-    }
-    return result;
-  }
-
-  @override
-  Gusers_on_conflict deserialize(
-    Serializers serializers,
-    Iterable<Object?> serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = Gusers_on_conflictBuilder();
-
-    final iterator = serialized.iterator;
-    while (iterator.moveNext()) {
-      final key = iterator.current! as String;
-      iterator.moveNext();
-      final Object? value = iterator.current;
-      switch (key) {
-        case 'constraint':
-          result.constraint =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(Gusers_constraint),
-                  )!
-                  as Gusers_constraint;
-          break;
-        case 'update_columns':
-          result.update_columns.replace(
-            serializers.deserialize(
-                  value,
-                  specifiedType: const FullType(BuiltList, const [
-                    const FullType(Gusers_update_column),
-                  ]),
-                )!
-                as BuiltList<Object?>,
-          );
-          break;
-        case 'where':
-          result.where.replace(
-            serializers.deserialize(
-                  value,
-                  specifiedType: const FullType(Gusers_bool_exp),
-                )!
-                as Gusers_bool_exp,
-          );
-          break;
-      }
-    }
-
-    return result.build();
-  }
-}
-
-class _$Gusers_order_bySerializer
-    implements StructuredSerializer<Gusers_order_by> {
-  @override
-  final Iterable<Type> types = const [Gusers_order_by, _$Gusers_order_by];
-  @override
-  final String wireName = 'Gusers_order_by';
-
-  @override
-  Iterable<Object?> serialize(
-    Serializers serializers,
-    Gusers_order_by object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = <Object?>[];
-    Object? value;
-    value = object.boards_aggregate;
-    if (value != null) {
-      result
-        ..add('boards_aggregate')
-        ..add(
-          serializers.serialize(
-            value,
-            specifiedType: const FullType(Gboards_aggregate_order_by),
-          ),
-        );
-    }
-    value = object.circle_members_aggregate;
-    if (value != null) {
-      result
-        ..add('circle_members_aggregate')
-        ..add(
-          serializers.serialize(
-            value,
-            specifiedType: const FullType(Gcircle_members_aggregate_order_by),
-          ),
-        );
-    }
-    value = object.circles_aggregate;
-    if (value != null) {
-      result
-        ..add('circles_aggregate')
-        ..add(
-          serializers.serialize(
-            value,
-            specifiedType: const FullType(Gcircles_aggregate_order_by),
-          ),
-        );
-    }
-    value = object.created_at;
-    if (value != null) {
-      result
-        ..add('created_at')
-        ..add(
-          serializers.serialize(
-            value,
-            specifiedType: const FullType(Gorder_by),
-          ),
-        );
-    }
-    value = object.deleted_at;
-    if (value != null) {
-      result
-        ..add('deleted_at')
-        ..add(
-          serializers.serialize(
-            value,
-            specifiedType: const FullType(Gorder_by),
-          ),
-        );
-    }
-    value = object.email;
-    if (value != null) {
-      result
-        ..add('email')
-        ..add(
-          serializers.serialize(
-            value,
-            specifiedType: const FullType(Gorder_by),
-          ),
-        );
-    }
-    value = object.email_verified;
-    if (value != null) {
-      result
-        ..add('email_verified')
-        ..add(
-          serializers.serialize(
-            value,
-            specifiedType: const FullType(Gorder_by),
-          ),
-        );
-    }
-    value = object.id;
-    if (value != null) {
-      result
-        ..add('id')
-        ..add(
-          serializers.serialize(
-            value,
-            specifiedType: const FullType(Gorder_by),
-          ),
-        );
-    }
-    value = object.name;
-    if (value != null) {
-      result
-        ..add('name')
-        ..add(
-          serializers.serialize(
-            value,
-            specifiedType: const FullType(Gorder_by),
-          ),
-        );
-    }
-    value = object.phone_number;
-    if (value != null) {
-      result
-        ..add('phone_number')
-        ..add(
-          serializers.serialize(
-            value,
-            specifiedType: const FullType(Gorder_by),
-          ),
-        );
-    }
-    value = object.photo_url;
-    if (value != null) {
-      result
-        ..add('photo_url')
-        ..add(
-          serializers.serialize(
-            value,
-            specifiedType: const FullType(Gorder_by),
-          ),
-        );
-    }
-    value = object.posts_aggregate;
-    if (value != null) {
-      result
-        ..add('posts_aggregate')
-        ..add(
-          serializers.serialize(
-            value,
-            specifiedType: const FullType(Gposts_aggregate_order_by),
-          ),
-        );
-    }
-    value = object.updated_at;
-    if (value != null) {
-      result
-        ..add('updated_at')
-        ..add(
-          serializers.serialize(
-            value,
-            specifiedType: const FullType(Gorder_by),
-          ),
-        );
-    }
-    return result;
-  }
-
-  @override
-  Gusers_order_by deserialize(
-    Serializers serializers,
-    Iterable<Object?> serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = Gusers_order_byBuilder();
-
-    final iterator = serialized.iterator;
-    while (iterator.moveNext()) {
-      final key = iterator.current! as String;
-      iterator.moveNext();
-      final Object? value = iterator.current;
-      switch (key) {
-        case 'boards_aggregate':
-          result.boards_aggregate.replace(
-            serializers.deserialize(
-                  value,
-                  specifiedType: const FullType(Gboards_aggregate_order_by),
-                )!
-                as Gboards_aggregate_order_by,
-          );
-          break;
-        case 'circle_members_aggregate':
-          result.circle_members_aggregate.replace(
-            serializers.deserialize(
-                  value,
-                  specifiedType: const FullType(
-                    Gcircle_members_aggregate_order_by,
-                  ),
-                )!
-                as Gcircle_members_aggregate_order_by,
-          );
-          break;
-        case 'circles_aggregate':
-          result.circles_aggregate.replace(
-            serializers.deserialize(
-                  value,
-                  specifiedType: const FullType(Gcircles_aggregate_order_by),
-                )!
-                as Gcircles_aggregate_order_by,
-          );
-          break;
-        case 'created_at':
-          result.created_at =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(Gorder_by),
-                  )
-                  as Gorder_by?;
-          break;
-        case 'deleted_at':
-          result.deleted_at =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(Gorder_by),
-                  )
-                  as Gorder_by?;
-          break;
-        case 'email':
-          result.email =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(Gorder_by),
-                  )
-                  as Gorder_by?;
-          break;
-        case 'email_verified':
-          result.email_verified =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(Gorder_by),
-                  )
-                  as Gorder_by?;
-          break;
-        case 'id':
-          result.id =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(Gorder_by),
-                  )
-                  as Gorder_by?;
-          break;
-        case 'name':
-          result.name =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(Gorder_by),
-                  )
-                  as Gorder_by?;
-          break;
-        case 'phone_number':
-          result.phone_number =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(Gorder_by),
-                  )
-                  as Gorder_by?;
-          break;
-        case 'photo_url':
-          result.photo_url =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(Gorder_by),
-                  )
-                  as Gorder_by?;
-          break;
-        case 'posts_aggregate':
-          result.posts_aggregate.replace(
-            serializers.deserialize(
-                  value,
-                  specifiedType: const FullType(Gposts_aggregate_order_by),
-                )!
-                as Gposts_aggregate_order_by,
-          );
-          break;
-        case 'updated_at':
-          result.updated_at =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(Gorder_by),
-                  )
-                  as Gorder_by?;
-          break;
-      }
-    }
-
-    return result.build();
-  }
-}
-
-class _$Gusers_pk_columns_inputSerializer
-    implements StructuredSerializer<Gusers_pk_columns_input> {
-  @override
-  final Iterable<Type> types = const [
-    Gusers_pk_columns_input,
-    _$Gusers_pk_columns_input,
-  ];
-  @override
-  final String wireName = 'Gusers_pk_columns_input';
-
-  @override
-  Iterable<Object?> serialize(
-    Serializers serializers,
-    Gusers_pk_columns_input object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = <Object?>[
-      'id',
-      serializers.serialize(object.id, specifiedType: const FullType(String)),
-    ];
-
-    return result;
-  }
-
-  @override
-  Gusers_pk_columns_input deserialize(
-    Serializers serializers,
-    Iterable<Object?> serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = Gusers_pk_columns_inputBuilder();
-
-    final iterator = serialized.iterator;
-    while (iterator.moveNext()) {
-      final key = iterator.current! as String;
-      iterator.moveNext();
-      final Object? value = iterator.current;
-      switch (key) {
-        case 'id':
-          result.id =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )!
-                  as String;
-          break;
-      }
-    }
-
-    return result.build();
-  }
-}
-
-class _$Gusers_select_columnSerializer
-    implements PrimitiveSerializer<Gusers_select_column> {
-  static const Map<String, Object> _toWire = const <String, Object>{
-    'Gname': 'name',
-  };
-  static const Map<Object, String> _fromWire = const <Object, String>{
-    'name': 'Gname',
-  };
-
-  @override
-  final Iterable<Type> types = const <Type>[Gusers_select_column];
-  @override
-  final String wireName = 'Gusers_select_column';
-
-  @override
-  Object serialize(
-    Serializers serializers,
-    Gusers_select_column object, {
-    FullType specifiedType = FullType.unspecified,
-  }) => _toWire[object.name] ?? object.name;
-
-  @override
-  Gusers_select_column deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) => Gusers_select_column.valueOf(
-    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
-  );
-}
-
-class _$Gusers_set_inputSerializer
-    implements StructuredSerializer<Gusers_set_input> {
-  @override
-  final Iterable<Type> types = const [Gusers_set_input, _$Gusers_set_input];
-  @override
-  final String wireName = 'Gusers_set_input';
-
-  @override
-  Iterable<Object?> serialize(
-    Serializers serializers,
-    Gusers_set_input object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = <Object?>[];
-    Object? value;
-    value = object.created_at;
-    if (value != null) {
-      result
-        ..add('created_at')
-        ..add(
-          serializers.serialize(value, specifiedType: const FullType(String)),
-        );
-    }
-    value = object.deleted_at;
-    if (value != null) {
-      result
-        ..add('deleted_at')
-        ..add(
-          serializers.serialize(value, specifiedType: const FullType(String)),
-        );
-    }
-    value = object.email;
-    if (value != null) {
-      result
-        ..add('email')
-        ..add(
-          serializers.serialize(value, specifiedType: const FullType(String)),
-        );
-    }
-    value = object.email_verified;
-    if (value != null) {
-      result
-        ..add('email_verified')
-        ..add(
-          serializers.serialize(value, specifiedType: const FullType(bool)),
-        );
-    }
-    value = object.id;
-    if (value != null) {
-      result
-        ..add('id')
-        ..add(
-          serializers.serialize(value, specifiedType: const FullType(String)),
-        );
-    }
-    value = object.name;
-    if (value != null) {
-      result
-        ..add('name')
-        ..add(
-          serializers.serialize(value, specifiedType: const FullType(String)),
-        );
-    }
-    value = object.phone_number;
-    if (value != null) {
-      result
-        ..add('phone_number')
-        ..add(
-          serializers.serialize(value, specifiedType: const FullType(String)),
-        );
-    }
-    value = object.photo_url;
-    if (value != null) {
-      result
-        ..add('photo_url')
-        ..add(
-          serializers.serialize(value, specifiedType: const FullType(String)),
-        );
-    }
-    value = object.updated_at;
-    if (value != null) {
-      result
-        ..add('updated_at')
-        ..add(
-          serializers.serialize(value, specifiedType: const FullType(String)),
-        );
-    }
-    return result;
-  }
-
-  @override
-  Gusers_set_input deserialize(
-    Serializers serializers,
-    Iterable<Object?> serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = Gusers_set_inputBuilder();
-
-    final iterator = serialized.iterator;
-    while (iterator.moveNext()) {
-      final key = iterator.current! as String;
-      iterator.moveNext();
-      final Object? value = iterator.current;
-      switch (key) {
-        case 'created_at':
-          result.created_at =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String?;
-          break;
-        case 'deleted_at':
-          result.deleted_at =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String?;
-          break;
-        case 'email':
-          result.email =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String?;
-          break;
-        case 'email_verified':
-          result.email_verified =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(bool),
-                  )
-                  as bool?;
-          break;
-        case 'id':
-          result.id =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String?;
-          break;
-        case 'name':
-          result.name =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String?;
-          break;
-        case 'phone_number':
-          result.phone_number =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String?;
-          break;
-        case 'photo_url':
-          result.photo_url =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String?;
-          break;
-        case 'updated_at':
-          result.updated_at =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String?;
-          break;
-      }
-    }
-
-    return result.build();
-  }
-}
-
-class _$Gusers_stream_cursor_inputSerializer
-    implements StructuredSerializer<Gusers_stream_cursor_input> {
-  @override
-  final Iterable<Type> types = const [
-    Gusers_stream_cursor_input,
-    _$Gusers_stream_cursor_input,
-  ];
-  @override
-  final String wireName = 'Gusers_stream_cursor_input';
-
-  @override
-  Iterable<Object?> serialize(
-    Serializers serializers,
-    Gusers_stream_cursor_input object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = <Object?>[
-      'initial_value',
-      serializers.serialize(
-        object.initial_value,
-        specifiedType: const FullType(Gusers_stream_cursor_value_input),
-      ),
-    ];
-    Object? value;
-    value = object.ordering;
-    if (value != null) {
-      result
-        ..add('ordering')
-        ..add(
-          serializers.serialize(
-            value,
-            specifiedType: const FullType(Gcursor_ordering),
-          ),
-        );
-    }
-    return result;
-  }
-
-  @override
-  Gusers_stream_cursor_input deserialize(
-    Serializers serializers,
-    Iterable<Object?> serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = Gusers_stream_cursor_inputBuilder();
-
-    final iterator = serialized.iterator;
-    while (iterator.moveNext()) {
-      final key = iterator.current! as String;
-      iterator.moveNext();
-      final Object? value = iterator.current;
-      switch (key) {
-        case 'initial_value':
-          result.initial_value.replace(
-            serializers.deserialize(
-                  value,
-                  specifiedType: const FullType(
-                    Gusers_stream_cursor_value_input,
-                  ),
-                )!
-                as Gusers_stream_cursor_value_input,
-          );
-          break;
-        case 'ordering':
-          result.ordering =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(Gcursor_ordering),
-                  )
-                  as Gcursor_ordering?;
-          break;
-      }
-    }
-
-    return result.build();
-  }
-}
-
-class _$Gusers_stream_cursor_value_inputSerializer
-    implements StructuredSerializer<Gusers_stream_cursor_value_input> {
-  @override
-  final Iterable<Type> types = const [
-    Gusers_stream_cursor_value_input,
-    _$Gusers_stream_cursor_value_input,
-  ];
-  @override
-  final String wireName = 'Gusers_stream_cursor_value_input';
-
-  @override
-  Iterable<Object?> serialize(
-    Serializers serializers,
-    Gusers_stream_cursor_value_input object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = <Object?>[];
-    Object? value;
-    value = object.created_at;
-    if (value != null) {
-      result
-        ..add('created_at')
-        ..add(
-          serializers.serialize(value, specifiedType: const FullType(String)),
-        );
-    }
-    value = object.deleted_at;
-    if (value != null) {
-      result
-        ..add('deleted_at')
-        ..add(
-          serializers.serialize(value, specifiedType: const FullType(String)),
-        );
-    }
-    value = object.email;
-    if (value != null) {
-      result
-        ..add('email')
-        ..add(
-          serializers.serialize(value, specifiedType: const FullType(String)),
-        );
-    }
-    value = object.email_verified;
-    if (value != null) {
-      result
-        ..add('email_verified')
-        ..add(
-          serializers.serialize(value, specifiedType: const FullType(bool)),
-        );
-    }
-    value = object.id;
-    if (value != null) {
-      result
-        ..add('id')
-        ..add(
-          serializers.serialize(value, specifiedType: const FullType(String)),
-        );
-    }
-    value = object.name;
-    if (value != null) {
-      result
-        ..add('name')
-        ..add(
-          serializers.serialize(value, specifiedType: const FullType(String)),
-        );
-    }
-    value = object.phone_number;
-    if (value != null) {
-      result
-        ..add('phone_number')
-        ..add(
-          serializers.serialize(value, specifiedType: const FullType(String)),
-        );
-    }
-    value = object.photo_url;
-    if (value != null) {
-      result
-        ..add('photo_url')
-        ..add(
-          serializers.serialize(value, specifiedType: const FullType(String)),
-        );
-    }
-    value = object.updated_at;
-    if (value != null) {
-      result
-        ..add('updated_at')
-        ..add(
-          serializers.serialize(value, specifiedType: const FullType(String)),
-        );
-    }
-    return result;
-  }
-
-  @override
-  Gusers_stream_cursor_value_input deserialize(
-    Serializers serializers,
-    Iterable<Object?> serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = Gusers_stream_cursor_value_inputBuilder();
-
-    final iterator = serialized.iterator;
-    while (iterator.moveNext()) {
-      final key = iterator.current! as String;
-      iterator.moveNext();
-      final Object? value = iterator.current;
-      switch (key) {
-        case 'created_at':
-          result.created_at =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String?;
-          break;
-        case 'deleted_at':
-          result.deleted_at =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String?;
-          break;
-        case 'email':
-          result.email =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String?;
-          break;
-        case 'email_verified':
-          result.email_verified =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(bool),
-                  )
-                  as bool?;
-          break;
-        case 'id':
-          result.id =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String?;
-          break;
-        case 'name':
-          result.name =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String?;
-          break;
-        case 'phone_number':
-          result.phone_number =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String?;
-          break;
-        case 'photo_url':
-          result.photo_url =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String?;
-          break;
-        case 'updated_at':
-          result.updated_at =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String?;
-          break;
-      }
-    }
-
-    return result.build();
-  }
-}
-
-class _$Gusers_update_columnSerializer
-    implements PrimitiveSerializer<Gusers_update_column> {
-  static const Map<String, Object> _toWire = const <String, Object>{
-    'Gname': 'name',
-  };
-  static const Map<Object, String> _fromWire = const <Object, String>{
-    'name': 'Gname',
-  };
-
-  @override
-  final Iterable<Type> types = const <Type>[Gusers_update_column];
-  @override
-  final String wireName = 'Gusers_update_column';
-
-  @override
-  Object serialize(
-    Serializers serializers,
-    Gusers_update_column object, {
-    FullType specifiedType = FullType.unspecified,
-  }) => _toWire[object.name] ?? object.name;
-
-  @override
-  Gusers_update_column deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) => Gusers_update_column.valueOf(
-    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
-  );
-}
-
-class _$Gusers_updatesSerializer
-    implements StructuredSerializer<Gusers_updates> {
-  @override
-  final Iterable<Type> types = const [Gusers_updates, _$Gusers_updates];
-  @override
-  final String wireName = 'Gusers_updates';
-
-  @override
-  Iterable<Object?> serialize(
-    Serializers serializers,
-    Gusers_updates object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = <Object?>[
-      'where',
-      serializers.serialize(
-        object.where,
-        specifiedType: const FullType(Gusers_bool_exp),
-      ),
-    ];
-    Object? value;
-    value = object.G_set;
-    if (value != null) {
-      result
-        ..add('_set')
-        ..add(
-          serializers.serialize(
-            value,
-            specifiedType: const FullType(Gusers_set_input),
-          ),
-        );
-    }
-    return result;
-  }
-
-  @override
-  Gusers_updates deserialize(
-    Serializers serializers,
-    Iterable<Object?> serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = Gusers_updatesBuilder();
-
-    final iterator = serialized.iterator;
-    while (iterator.moveNext()) {
-      final key = iterator.current! as String;
-      iterator.moveNext();
-      final Object? value = iterator.current;
-      switch (key) {
-        case '_set':
-          result.G_set.replace(
-            serializers.deserialize(
-                  value,
-                  specifiedType: const FullType(Gusers_set_input),
-                )!
-                as Gusers_set_input,
-          );
-          break;
-        case 'where':
-          result.where.replace(
-            serializers.deserialize(
-                  value,
-                  specifiedType: const FullType(Gusers_bool_exp),
-                )!
-                as Gusers_bool_exp,
-          );
-          break;
-      }
-    }
-
-    return result.build();
-  }
-}
-
 class _$Guuid_comparison_expSerializer
     implements StructuredSerializer<Guuid_comparison_exp> {
   @override
@@ -17084,9 +14142,9 @@ class _$Guuid_comparison_expSerializer
 
 class _$GAddBoardPostInput extends GAddBoardPostInput {
   @override
-  final GUUID board_id;
+  final String board_id;
   @override
-  final GUUID circle_id;
+  final String circle_id;
   @override
   final String content;
   @override
@@ -17147,13 +14205,13 @@ class GAddBoardPostInputBuilder
     implements Builder<GAddBoardPostInput, GAddBoardPostInputBuilder> {
   _$GAddBoardPostInput? _$v;
 
-  GUUIDBuilder? _board_id;
-  GUUIDBuilder get board_id => _$this._board_id ??= GUUIDBuilder();
-  set board_id(GUUIDBuilder? board_id) => _$this._board_id = board_id;
+  String? _board_id;
+  String? get board_id => _$this._board_id;
+  set board_id(String? board_id) => _$this._board_id = board_id;
 
-  GUUIDBuilder? _circle_id;
-  GUUIDBuilder get circle_id => _$this._circle_id ??= GUUIDBuilder();
-  set circle_id(GUUIDBuilder? circle_id) => _$this._circle_id = circle_id;
+  String? _circle_id;
+  String? get circle_id => _$this._circle_id;
+  set circle_id(String? circle_id) => _$this._circle_id = circle_id;
 
   String? _content;
   String? get content => _$this._content;
@@ -17168,8 +14226,8 @@ class GAddBoardPostInputBuilder
   GAddBoardPostInputBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _board_id = $v.board_id.toBuilder();
-      _circle_id = $v.circle_id.toBuilder();
+      _board_id = $v.board_id;
+      _circle_id = $v.circle_id;
       _content = $v.content;
       _user_id = $v.user_id;
       _$v = null;
@@ -17191,40 +14249,30 @@ class GAddBoardPostInputBuilder
   GAddBoardPostInput build() => _build();
 
   _$GAddBoardPostInput _build() {
-    _$GAddBoardPostInput _$result;
-    try {
-      _$result =
-          _$v ??
-          _$GAddBoardPostInput._(
-            board_id: board_id.build(),
-            circle_id: circle_id.build(),
-            content: BuiltValueNullFieldError.checkNotNull(
-              content,
-              r'GAddBoardPostInput',
-              'content',
-            ),
-            user_id: BuiltValueNullFieldError.checkNotNull(
-              user_id,
-              r'GAddBoardPostInput',
-              'user_id',
-            ),
-          );
-    } catch (_) {
-      late String _$failedField;
-      try {
-        _$failedField = 'board_id';
-        board_id.build();
-        _$failedField = 'circle_id';
-        circle_id.build();
-      } catch (e) {
-        throw BuiltValueNestedFieldError(
-          r'GAddBoardPostInput',
-          _$failedField,
-          e.toString(),
+    final _$result =
+        _$v ??
+        _$GAddBoardPostInput._(
+          board_id: BuiltValueNullFieldError.checkNotNull(
+            board_id,
+            r'GAddBoardPostInput',
+            'board_id',
+          ),
+          circle_id: BuiltValueNullFieldError.checkNotNull(
+            circle_id,
+            r'GAddBoardPostInput',
+            'circle_id',
+          ),
+          content: BuiltValueNullFieldError.checkNotNull(
+            content,
+            r'GAddBoardPostInput',
+            'content',
+          ),
+          user_id: BuiltValueNullFieldError.checkNotNull(
+            user_id,
+            r'GAddBoardPostInput',
+            'user_id',
+          ),
         );
-      }
-      rethrow;
-    }
     replace(_$result);
     return _$result;
   }
@@ -17232,7 +14280,7 @@ class GAddBoardPostInputBuilder
 
 class _$GAddCircleMemberInput extends GAddCircleMemberInput {
   @override
-  final GUUID circle_id;
+  final String circle_id;
   @override
   final String new_member_id;
 
@@ -17283,9 +14331,9 @@ class GAddCircleMemberInputBuilder
     implements Builder<GAddCircleMemberInput, GAddCircleMemberInputBuilder> {
   _$GAddCircleMemberInput? _$v;
 
-  GUUIDBuilder? _circle_id;
-  GUUIDBuilder get circle_id => _$this._circle_id ??= GUUIDBuilder();
-  set circle_id(GUUIDBuilder? circle_id) => _$this._circle_id = circle_id;
+  String? _circle_id;
+  String? get circle_id => _$this._circle_id;
+  set circle_id(String? circle_id) => _$this._circle_id = circle_id;
 
   String? _new_member_id;
   String? get new_member_id => _$this._new_member_id;
@@ -17297,7 +14345,7 @@ class GAddCircleMemberInputBuilder
   GAddCircleMemberInputBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _circle_id = $v.circle_id.toBuilder();
+      _circle_id = $v.circle_id;
       _new_member_id = $v.new_member_id;
       _$v = null;
     }
@@ -17318,32 +14366,20 @@ class GAddCircleMemberInputBuilder
   GAddCircleMemberInput build() => _build();
 
   _$GAddCircleMemberInput _build() {
-    _$GAddCircleMemberInput _$result;
-    try {
-      _$result =
-          _$v ??
-          _$GAddCircleMemberInput._(
-            circle_id: circle_id.build(),
-            new_member_id: BuiltValueNullFieldError.checkNotNull(
-              new_member_id,
-              r'GAddCircleMemberInput',
-              'new_member_id',
-            ),
-          );
-    } catch (_) {
-      late String _$failedField;
-      try {
-        _$failedField = 'circle_id';
-        circle_id.build();
-      } catch (e) {
-        throw BuiltValueNestedFieldError(
-          r'GAddCircleMemberInput',
-          _$failedField,
-          e.toString(),
+    final _$result =
+        _$v ??
+        _$GAddCircleMemberInput._(
+          circle_id: BuiltValueNullFieldError.checkNotNull(
+            circle_id,
+            r'GAddCircleMemberInput',
+            'circle_id',
+          ),
+          new_member_id: BuiltValueNullFieldError.checkNotNull(
+            new_member_id,
+            r'GAddCircleMemberInput',
+            'new_member_id',
+          ),
         );
-      }
-      rethrow;
-    }
     replace(_$result);
     return _$result;
   }
@@ -17556,7 +14592,7 @@ class _$GChangeBoardCreationPermissionInput
   @override
   final bool allowed;
   @override
-  final GUUID circle_id;
+  final String circle_id;
 
   factory _$GChangeBoardCreationPermissionInput([
     void Function(GChangeBoardCreationPermissionInputBuilder)? updates,
@@ -17614,9 +14650,9 @@ class GChangeBoardCreationPermissionInputBuilder
   bool? get allowed => _$this._allowed;
   set allowed(bool? allowed) => _$this._allowed = allowed;
 
-  GUUIDBuilder? _circle_id;
-  GUUIDBuilder get circle_id => _$this._circle_id ??= GUUIDBuilder();
-  set circle_id(GUUIDBuilder? circle_id) => _$this._circle_id = circle_id;
+  String? _circle_id;
+  String? get circle_id => _$this._circle_id;
+  set circle_id(String? circle_id) => _$this._circle_id = circle_id;
 
   GChangeBoardCreationPermissionInputBuilder();
 
@@ -17624,7 +14660,7 @@ class GChangeBoardCreationPermissionInputBuilder
     final $v = _$v;
     if ($v != null) {
       _allowed = $v.allowed;
-      _circle_id = $v.circle_id.toBuilder();
+      _circle_id = $v.circle_id;
       _$v = null;
     }
     return this;
@@ -17646,32 +14682,20 @@ class GChangeBoardCreationPermissionInputBuilder
   GChangeBoardCreationPermissionInput build() => _build();
 
   _$GChangeBoardCreationPermissionInput _build() {
-    _$GChangeBoardCreationPermissionInput _$result;
-    try {
-      _$result =
-          _$v ??
-          _$GChangeBoardCreationPermissionInput._(
-            allowed: BuiltValueNullFieldError.checkNotNull(
-              allowed,
-              r'GChangeBoardCreationPermissionInput',
-              'allowed',
-            ),
-            circle_id: circle_id.build(),
-          );
-    } catch (_) {
-      late String _$failedField;
-      try {
-        _$failedField = 'circle_id';
-        circle_id.build();
-      } catch (e) {
-        throw BuiltValueNestedFieldError(
-          r'GChangeBoardCreationPermissionInput',
-          _$failedField,
-          e.toString(),
+    final _$result =
+        _$v ??
+        _$GChangeBoardCreationPermissionInput._(
+          allowed: BuiltValueNullFieldError.checkNotNull(
+            allowed,
+            r'GChangeBoardCreationPermissionInput',
+            'allowed',
+          ),
+          circle_id: BuiltValueNullFieldError.checkNotNull(
+            circle_id,
+            r'GChangeBoardCreationPermissionInput',
+            'circle_id',
+          ),
         );
-      }
-      rethrow;
-    }
     replace(_$result);
     return _$result;
   }
@@ -17679,9 +14703,9 @@ class GChangeBoardCreationPermissionInputBuilder
 
 class _$GChangeBoardStatusInput extends GChangeBoardStatusInput {
   @override
-  final GUUID board_id;
+  final String board_id;
   @override
-  final GUUID circle_id;
+  final String circle_id;
   @override
   final int new_status;
 
@@ -17737,13 +14761,13 @@ class GChangeBoardStatusInputBuilder
         Builder<GChangeBoardStatusInput, GChangeBoardStatusInputBuilder> {
   _$GChangeBoardStatusInput? _$v;
 
-  GUUIDBuilder? _board_id;
-  GUUIDBuilder get board_id => _$this._board_id ??= GUUIDBuilder();
-  set board_id(GUUIDBuilder? board_id) => _$this._board_id = board_id;
+  String? _board_id;
+  String? get board_id => _$this._board_id;
+  set board_id(String? board_id) => _$this._board_id = board_id;
 
-  GUUIDBuilder? _circle_id;
-  GUUIDBuilder get circle_id => _$this._circle_id ??= GUUIDBuilder();
-  set circle_id(GUUIDBuilder? circle_id) => _$this._circle_id = circle_id;
+  String? _circle_id;
+  String? get circle_id => _$this._circle_id;
+  set circle_id(String? circle_id) => _$this._circle_id = circle_id;
 
   int? _new_status;
   int? get new_status => _$this._new_status;
@@ -17754,8 +14778,8 @@ class GChangeBoardStatusInputBuilder
   GChangeBoardStatusInputBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _board_id = $v.board_id.toBuilder();
-      _circle_id = $v.circle_id.toBuilder();
+      _board_id = $v.board_id;
+      _circle_id = $v.circle_id;
       _new_status = $v.new_status;
       _$v = null;
     }
@@ -17776,35 +14800,25 @@ class GChangeBoardStatusInputBuilder
   GChangeBoardStatusInput build() => _build();
 
   _$GChangeBoardStatusInput _build() {
-    _$GChangeBoardStatusInput _$result;
-    try {
-      _$result =
-          _$v ??
-          _$GChangeBoardStatusInput._(
-            board_id: board_id.build(),
-            circle_id: circle_id.build(),
-            new_status: BuiltValueNullFieldError.checkNotNull(
-              new_status,
-              r'GChangeBoardStatusInput',
-              'new_status',
-            ),
-          );
-    } catch (_) {
-      late String _$failedField;
-      try {
-        _$failedField = 'board_id';
-        board_id.build();
-        _$failedField = 'circle_id';
-        circle_id.build();
-      } catch (e) {
-        throw BuiltValueNestedFieldError(
-          r'GChangeBoardStatusInput',
-          _$failedField,
-          e.toString(),
+    final _$result =
+        _$v ??
+        _$GChangeBoardStatusInput._(
+          board_id: BuiltValueNullFieldError.checkNotNull(
+            board_id,
+            r'GChangeBoardStatusInput',
+            'board_id',
+          ),
+          circle_id: BuiltValueNullFieldError.checkNotNull(
+            circle_id,
+            r'GChangeBoardStatusInput',
+            'circle_id',
+          ),
+          new_status: BuiltValueNullFieldError.checkNotNull(
+            new_status,
+            r'GChangeBoardStatusInput',
+            'new_status',
+          ),
         );
-      }
-      rethrow;
-    }
     replace(_$result);
     return _$result;
   }
@@ -17812,9 +14826,9 @@ class GChangeBoardStatusInputBuilder
 
 class _$GChangeBoardTopicInput extends GChangeBoardTopicInput {
   @override
-  final GUUID board_id;
+  final String board_id;
   @override
-  final GUUID circle_id;
+  final String circle_id;
   @override
   final String new_topic;
 
@@ -17869,13 +14883,13 @@ class GChangeBoardTopicInputBuilder
     implements Builder<GChangeBoardTopicInput, GChangeBoardTopicInputBuilder> {
   _$GChangeBoardTopicInput? _$v;
 
-  GUUIDBuilder? _board_id;
-  GUUIDBuilder get board_id => _$this._board_id ??= GUUIDBuilder();
-  set board_id(GUUIDBuilder? board_id) => _$this._board_id = board_id;
+  String? _board_id;
+  String? get board_id => _$this._board_id;
+  set board_id(String? board_id) => _$this._board_id = board_id;
 
-  GUUIDBuilder? _circle_id;
-  GUUIDBuilder get circle_id => _$this._circle_id ??= GUUIDBuilder();
-  set circle_id(GUUIDBuilder? circle_id) => _$this._circle_id = circle_id;
+  String? _circle_id;
+  String? get circle_id => _$this._circle_id;
+  set circle_id(String? circle_id) => _$this._circle_id = circle_id;
 
   String? _new_topic;
   String? get new_topic => _$this._new_topic;
@@ -17886,8 +14900,8 @@ class GChangeBoardTopicInputBuilder
   GChangeBoardTopicInputBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _board_id = $v.board_id.toBuilder();
-      _circle_id = $v.circle_id.toBuilder();
+      _board_id = $v.board_id;
+      _circle_id = $v.circle_id;
       _new_topic = $v.new_topic;
       _$v = null;
     }
@@ -17908,35 +14922,25 @@ class GChangeBoardTopicInputBuilder
   GChangeBoardTopicInput build() => _build();
 
   _$GChangeBoardTopicInput _build() {
-    _$GChangeBoardTopicInput _$result;
-    try {
-      _$result =
-          _$v ??
-          _$GChangeBoardTopicInput._(
-            board_id: board_id.build(),
-            circle_id: circle_id.build(),
-            new_topic: BuiltValueNullFieldError.checkNotNull(
-              new_topic,
-              r'GChangeBoardTopicInput',
-              'new_topic',
-            ),
-          );
-    } catch (_) {
-      late String _$failedField;
-      try {
-        _$failedField = 'board_id';
-        board_id.build();
-        _$failedField = 'circle_id';
-        circle_id.build();
-      } catch (e) {
-        throw BuiltValueNestedFieldError(
-          r'GChangeBoardTopicInput',
-          _$failedField,
-          e.toString(),
+    final _$result =
+        _$v ??
+        _$GChangeBoardTopicInput._(
+          board_id: BuiltValueNullFieldError.checkNotNull(
+            board_id,
+            r'GChangeBoardTopicInput',
+            'board_id',
+          ),
+          circle_id: BuiltValueNullFieldError.checkNotNull(
+            circle_id,
+            r'GChangeBoardTopicInput',
+            'circle_id',
+          ),
+          new_topic: BuiltValueNullFieldError.checkNotNull(
+            new_topic,
+            r'GChangeBoardTopicInput',
+            'new_topic',
+          ),
         );
-      }
-      rethrow;
-    }
     replace(_$result);
     return _$result;
   }
@@ -17944,7 +14948,7 @@ class GChangeBoardTopicInputBuilder
 
 class _$GChangeCircleDescriptionInput extends GChangeCircleDescriptionInput {
   @override
-  final GUUID circle_id;
+  final String circle_id;
   @override
   final String new_description;
 
@@ -17999,9 +15003,9 @@ class GChangeCircleDescriptionInputBuilder
         > {
   _$GChangeCircleDescriptionInput? _$v;
 
-  GUUIDBuilder? _circle_id;
-  GUUIDBuilder get circle_id => _$this._circle_id ??= GUUIDBuilder();
-  set circle_id(GUUIDBuilder? circle_id) => _$this._circle_id = circle_id;
+  String? _circle_id;
+  String? get circle_id => _$this._circle_id;
+  set circle_id(String? circle_id) => _$this._circle_id = circle_id;
 
   String? _new_description;
   String? get new_description => _$this._new_description;
@@ -18013,7 +15017,7 @@ class GChangeCircleDescriptionInputBuilder
   GChangeCircleDescriptionInputBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _circle_id = $v.circle_id.toBuilder();
+      _circle_id = $v.circle_id;
       _new_description = $v.new_description;
       _$v = null;
     }
@@ -18034,32 +15038,20 @@ class GChangeCircleDescriptionInputBuilder
   GChangeCircleDescriptionInput build() => _build();
 
   _$GChangeCircleDescriptionInput _build() {
-    _$GChangeCircleDescriptionInput _$result;
-    try {
-      _$result =
-          _$v ??
-          _$GChangeCircleDescriptionInput._(
-            circle_id: circle_id.build(),
-            new_description: BuiltValueNullFieldError.checkNotNull(
-              new_description,
-              r'GChangeCircleDescriptionInput',
-              'new_description',
-            ),
-          );
-    } catch (_) {
-      late String _$failedField;
-      try {
-        _$failedField = 'circle_id';
-        circle_id.build();
-      } catch (e) {
-        throw BuiltValueNestedFieldError(
-          r'GChangeCircleDescriptionInput',
-          _$failedField,
-          e.toString(),
+    final _$result =
+        _$v ??
+        _$GChangeCircleDescriptionInput._(
+          circle_id: BuiltValueNullFieldError.checkNotNull(
+            circle_id,
+            r'GChangeCircleDescriptionInput',
+            'circle_id',
+          ),
+          new_description: BuiltValueNullFieldError.checkNotNull(
+            new_description,
+            r'GChangeCircleDescriptionInput',
+            'new_description',
+          ),
         );
-      }
-      rethrow;
-    }
     replace(_$result);
     return _$result;
   }
@@ -18067,7 +15059,7 @@ class GChangeCircleDescriptionInputBuilder
 
 class _$GChangeCircleNameInput extends GChangeCircleNameInput {
   @override
-  final GUUID circle_id;
+  final String circle_id;
   @override
   final String new_name;
 
@@ -18116,9 +15108,9 @@ class GChangeCircleNameInputBuilder
     implements Builder<GChangeCircleNameInput, GChangeCircleNameInputBuilder> {
   _$GChangeCircleNameInput? _$v;
 
-  GUUIDBuilder? _circle_id;
-  GUUIDBuilder get circle_id => _$this._circle_id ??= GUUIDBuilder();
-  set circle_id(GUUIDBuilder? circle_id) => _$this._circle_id = circle_id;
+  String? _circle_id;
+  String? get circle_id => _$this._circle_id;
+  set circle_id(String? circle_id) => _$this._circle_id = circle_id;
 
   String? _new_name;
   String? get new_name => _$this._new_name;
@@ -18129,7 +15121,7 @@ class GChangeCircleNameInputBuilder
   GChangeCircleNameInputBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _circle_id = $v.circle_id.toBuilder();
+      _circle_id = $v.circle_id;
       _new_name = $v.new_name;
       _$v = null;
     }
@@ -18150,32 +15142,20 @@ class GChangeCircleNameInputBuilder
   GChangeCircleNameInput build() => _build();
 
   _$GChangeCircleNameInput _build() {
-    _$GChangeCircleNameInput _$result;
-    try {
-      _$result =
-          _$v ??
-          _$GChangeCircleNameInput._(
-            circle_id: circle_id.build(),
-            new_name: BuiltValueNullFieldError.checkNotNull(
-              new_name,
-              r'GChangeCircleNameInput',
-              'new_name',
-            ),
-          );
-    } catch (_) {
-      late String _$failedField;
-      try {
-        _$failedField = 'circle_id';
-        circle_id.build();
-      } catch (e) {
-        throw BuiltValueNestedFieldError(
-          r'GChangeCircleNameInput',
-          _$failedField,
-          e.toString(),
+    final _$result =
+        _$v ??
+        _$GChangeCircleNameInput._(
+          circle_id: BuiltValueNullFieldError.checkNotNull(
+            circle_id,
+            r'GChangeCircleNameInput',
+            'circle_id',
+          ),
+          new_name: BuiltValueNullFieldError.checkNotNull(
+            new_name,
+            r'GChangeCircleNameInput',
+            'new_name',
+          ),
         );
-      }
-      rethrow;
-    }
     replace(_$result);
     return _$result;
   }
@@ -18183,7 +15163,7 @@ class GChangeCircleNameInputBuilder
 
 class _$GCreateBoardInput extends GCreateBoardInput {
   @override
-  final GUUID circle_id;
+  final String circle_id;
   @override
   final String topic;
 
@@ -18231,9 +15211,9 @@ class GCreateBoardInputBuilder
     implements Builder<GCreateBoardInput, GCreateBoardInputBuilder> {
   _$GCreateBoardInput? _$v;
 
-  GUUIDBuilder? _circle_id;
-  GUUIDBuilder get circle_id => _$this._circle_id ??= GUUIDBuilder();
-  set circle_id(GUUIDBuilder? circle_id) => _$this._circle_id = circle_id;
+  String? _circle_id;
+  String? get circle_id => _$this._circle_id;
+  set circle_id(String? circle_id) => _$this._circle_id = circle_id;
 
   String? _topic;
   String? get topic => _$this._topic;
@@ -18244,7 +15224,7 @@ class GCreateBoardInputBuilder
   GCreateBoardInputBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _circle_id = $v.circle_id.toBuilder();
+      _circle_id = $v.circle_id;
       _topic = $v.topic;
       _$v = null;
     }
@@ -18265,32 +15245,20 @@ class GCreateBoardInputBuilder
   GCreateBoardInput build() => _build();
 
   _$GCreateBoardInput _build() {
-    _$GCreateBoardInput _$result;
-    try {
-      _$result =
-          _$v ??
-          _$GCreateBoardInput._(
-            circle_id: circle_id.build(),
-            topic: BuiltValueNullFieldError.checkNotNull(
-              topic,
-              r'GCreateBoardInput',
-              'topic',
-            ),
-          );
-    } catch (_) {
-      late String _$failedField;
-      try {
-        _$failedField = 'circle_id';
-        circle_id.build();
-      } catch (e) {
-        throw BuiltValueNestedFieldError(
-          r'GCreateBoardInput',
-          _$failedField,
-          e.toString(),
+    final _$result =
+        _$v ??
+        _$GCreateBoardInput._(
+          circle_id: BuiltValueNullFieldError.checkNotNull(
+            circle_id,
+            r'GCreateBoardInput',
+            'circle_id',
+          ),
+          topic: BuiltValueNullFieldError.checkNotNull(
+            topic,
+            r'GCreateBoardInput',
+            'topic',
+          ),
         );
-      }
-      rethrow;
-    }
     replace(_$result);
     return _$result;
   }
@@ -18402,7 +15370,7 @@ class GCreateCircleInputBuilder
 
 class _$GDelegateCircleOwnerInput extends GDelegateCircleOwnerInput {
   @override
-  final GUUID circle_id;
+  final String circle_id;
   @override
   final String new_owner_id;
 
@@ -18454,9 +15422,9 @@ class GDelegateCircleOwnerInputBuilder
         Builder<GDelegateCircleOwnerInput, GDelegateCircleOwnerInputBuilder> {
   _$GDelegateCircleOwnerInput? _$v;
 
-  GUUIDBuilder? _circle_id;
-  GUUIDBuilder get circle_id => _$this._circle_id ??= GUUIDBuilder();
-  set circle_id(GUUIDBuilder? circle_id) => _$this._circle_id = circle_id;
+  String? _circle_id;
+  String? get circle_id => _$this._circle_id;
+  set circle_id(String? circle_id) => _$this._circle_id = circle_id;
 
   String? _new_owner_id;
   String? get new_owner_id => _$this._new_owner_id;
@@ -18467,7 +15435,7 @@ class GDelegateCircleOwnerInputBuilder
   GDelegateCircleOwnerInputBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _circle_id = $v.circle_id.toBuilder();
+      _circle_id = $v.circle_id;
       _new_owner_id = $v.new_owner_id;
       _$v = null;
     }
@@ -18488,32 +15456,20 @@ class GDelegateCircleOwnerInputBuilder
   GDelegateCircleOwnerInput build() => _build();
 
   _$GDelegateCircleOwnerInput _build() {
-    _$GDelegateCircleOwnerInput _$result;
-    try {
-      _$result =
-          _$v ??
-          _$GDelegateCircleOwnerInput._(
-            circle_id: circle_id.build(),
-            new_owner_id: BuiltValueNullFieldError.checkNotNull(
-              new_owner_id,
-              r'GDelegateCircleOwnerInput',
-              'new_owner_id',
-            ),
-          );
-    } catch (_) {
-      late String _$failedField;
-      try {
-        _$failedField = 'circle_id';
-        circle_id.build();
-      } catch (e) {
-        throw BuiltValueNestedFieldError(
-          r'GDelegateCircleOwnerInput',
-          _$failedField,
-          e.toString(),
+    final _$result =
+        _$v ??
+        _$GDelegateCircleOwnerInput._(
+          circle_id: BuiltValueNullFieldError.checkNotNull(
+            circle_id,
+            r'GDelegateCircleOwnerInput',
+            'circle_id',
+          ),
+          new_owner_id: BuiltValueNullFieldError.checkNotNull(
+            new_owner_id,
+            r'GDelegateCircleOwnerInput',
+            'new_owner_id',
+          ),
         );
-      }
-      rethrow;
-    }
     replace(_$result);
     return _$result;
   }
@@ -18521,9 +15477,9 @@ class GDelegateCircleOwnerInputBuilder
 
 class _$GDeleteBoardInput extends GDeleteBoardInput {
   @override
-  final GUUID board_id;
+  final String board_id;
   @override
-  final GUUID circle_id;
+  final String circle_id;
 
   factory _$GDeleteBoardInput([
     void Function(GDeleteBoardInputBuilder)? updates,
@@ -18569,21 +15525,21 @@ class GDeleteBoardInputBuilder
     implements Builder<GDeleteBoardInput, GDeleteBoardInputBuilder> {
   _$GDeleteBoardInput? _$v;
 
-  GUUIDBuilder? _board_id;
-  GUUIDBuilder get board_id => _$this._board_id ??= GUUIDBuilder();
-  set board_id(GUUIDBuilder? board_id) => _$this._board_id = board_id;
+  String? _board_id;
+  String? get board_id => _$this._board_id;
+  set board_id(String? board_id) => _$this._board_id = board_id;
 
-  GUUIDBuilder? _circle_id;
-  GUUIDBuilder get circle_id => _$this._circle_id ??= GUUIDBuilder();
-  set circle_id(GUUIDBuilder? circle_id) => _$this._circle_id = circle_id;
+  String? _circle_id;
+  String? get circle_id => _$this._circle_id;
+  set circle_id(String? circle_id) => _$this._circle_id = circle_id;
 
   GDeleteBoardInputBuilder();
 
   GDeleteBoardInputBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _board_id = $v.board_id.toBuilder();
-      _circle_id = $v.circle_id.toBuilder();
+      _board_id = $v.board_id;
+      _circle_id = $v.circle_id;
       _$v = null;
     }
     return this;
@@ -18603,30 +15559,20 @@ class GDeleteBoardInputBuilder
   GDeleteBoardInput build() => _build();
 
   _$GDeleteBoardInput _build() {
-    _$GDeleteBoardInput _$result;
-    try {
-      _$result =
-          _$v ??
-          _$GDeleteBoardInput._(
-            board_id: board_id.build(),
-            circle_id: circle_id.build(),
-          );
-    } catch (_) {
-      late String _$failedField;
-      try {
-        _$failedField = 'board_id';
-        board_id.build();
-        _$failedField = 'circle_id';
-        circle_id.build();
-      } catch (e) {
-        throw BuiltValueNestedFieldError(
-          r'GDeleteBoardInput',
-          _$failedField,
-          e.toString(),
+    final _$result =
+        _$v ??
+        _$GDeleteBoardInput._(
+          board_id: BuiltValueNullFieldError.checkNotNull(
+            board_id,
+            r'GDeleteBoardInput',
+            'board_id',
+          ),
+          circle_id: BuiltValueNullFieldError.checkNotNull(
+            circle_id,
+            r'GDeleteBoardInput',
+            'circle_id',
+          ),
         );
-      }
-      rethrow;
-    }
     replace(_$result);
     return _$result;
   }
@@ -18634,7 +15580,7 @@ class GDeleteBoardInputBuilder
 
 class _$GDeleteCircleInput extends GDeleteCircleInput {
   @override
-  final GUUID circle_id;
+  final String circle_id;
 
   factory _$GDeleteCircleInput([
     void Function(GDeleteCircleInputBuilder)? updates,
@@ -18676,16 +15622,16 @@ class GDeleteCircleInputBuilder
     implements Builder<GDeleteCircleInput, GDeleteCircleInputBuilder> {
   _$GDeleteCircleInput? _$v;
 
-  GUUIDBuilder? _circle_id;
-  GUUIDBuilder get circle_id => _$this._circle_id ??= GUUIDBuilder();
-  set circle_id(GUUIDBuilder? circle_id) => _$this._circle_id = circle_id;
+  String? _circle_id;
+  String? get circle_id => _$this._circle_id;
+  set circle_id(String? circle_id) => _$this._circle_id = circle_id;
 
   GDeleteCircleInputBuilder();
 
   GDeleteCircleInputBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _circle_id = $v.circle_id.toBuilder();
+      _circle_id = $v.circle_id;
       _$v = null;
     }
     return this;
@@ -18705,23 +15651,15 @@ class GDeleteCircleInputBuilder
   GDeleteCircleInput build() => _build();
 
   _$GDeleteCircleInput _build() {
-    _$GDeleteCircleInput _$result;
-    try {
-      _$result = _$v ?? _$GDeleteCircleInput._(circle_id: circle_id.build());
-    } catch (_) {
-      late String _$failedField;
-      try {
-        _$failedField = 'circle_id';
-        circle_id.build();
-      } catch (e) {
-        throw BuiltValueNestedFieldError(
-          r'GDeleteCircleInput',
-          _$failedField,
-          e.toString(),
+    final _$result =
+        _$v ??
+        _$GDeleteCircleInput._(
+          circle_id: BuiltValueNullFieldError.checkNotNull(
+            circle_id,
+            r'GDeleteCircleInput',
+            'circle_id',
+          ),
         );
-      }
-      rethrow;
-    }
     replace(_$result);
     return _$result;
   }
@@ -19330,89 +16268,6 @@ class GString_comparison_expBuilder
       }
       rethrow;
     }
-    replace(_$result);
-    return _$result;
-  }
-}
-
-class _$GUUID extends GUUID {
-  @override
-  final String value;
-
-  factory _$GUUID([void Function(GUUIDBuilder)? updates]) =>
-      (GUUIDBuilder()..update(updates))._build();
-
-  _$GUUID._({required this.value}) : super._();
-  @override
-  GUUID rebuild(void Function(GUUIDBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
-
-  @override
-  GUUIDBuilder toBuilder() => GUUIDBuilder()..replace(this);
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(other, this)) return true;
-    return other is GUUID && value == other.value;
-  }
-
-  @override
-  int get hashCode {
-    var _$hash = 0;
-    _$hash = $jc(_$hash, value.hashCode);
-    _$hash = $jf(_$hash);
-    return _$hash;
-  }
-
-  @override
-  String toString() {
-    return (newBuiltValueToStringHelper(
-      r'GUUID',
-    )..add('value', value)).toString();
-  }
-}
-
-class GUUIDBuilder implements Builder<GUUID, GUUIDBuilder> {
-  _$GUUID? _$v;
-
-  String? _value;
-  String? get value => _$this._value;
-  set value(String? value) => _$this._value = value;
-
-  GUUIDBuilder();
-
-  GUUIDBuilder get _$this {
-    final $v = _$v;
-    if ($v != null) {
-      _value = $v.value;
-      _$v = null;
-    }
-    return this;
-  }
-
-  @override
-  void replace(GUUID other) {
-    _$v = other as _$GUUID;
-  }
-
-  @override
-  void update(void Function(GUUIDBuilder)? updates) {
-    if (updates != null) updates(this);
-  }
-
-  @override
-  GUUID build() => _build();
-
-  _$GUUID _build() {
-    final _$result =
-        _$v ??
-        _$GUUID._(
-          value: BuiltValueNullFieldError.checkNotNull(
-            value,
-            r'GUUID',
-            'value',
-          ),
-        );
     replace(_$result);
     return _$result;
   }
@@ -20275,8 +17130,6 @@ class _$Gboards_bool_exp extends Gboards_bool_exp {
   @override
   final Gtimestamptz_comparison_exp? updated_at;
   @override
-  final Gusers_bool_exp? user;
-  @override
   final Guuid_comparison_exp? uuid;
 
   factory _$Gboards_bool_exp([
@@ -20296,7 +17149,6 @@ class _$Gboards_bool_exp extends Gboards_bool_exp {
     this.status,
     this.topic,
     this.updated_at,
-    this.user,
     this.uuid,
   }) : super._();
   @override
@@ -20323,7 +17175,6 @@ class _$Gboards_bool_exp extends Gboards_bool_exp {
         status == other.status &&
         topic == other.topic &&
         updated_at == other.updated_at &&
-        user == other.user &&
         uuid == other.uuid;
   }
 
@@ -20342,7 +17193,6 @@ class _$Gboards_bool_exp extends Gboards_bool_exp {
     _$hash = $jc(_$hash, status.hashCode);
     _$hash = $jc(_$hash, topic.hashCode);
     _$hash = $jc(_$hash, updated_at.hashCode);
-    _$hash = $jc(_$hash, user.hashCode);
     _$hash = $jc(_$hash, uuid.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -20363,7 +17213,6 @@ class _$Gboards_bool_exp extends Gboards_bool_exp {
           ..add('status', status)
           ..add('topic', topic)
           ..add('updated_at', updated_at)
-          ..add('user', user)
           ..add('uuid', uuid))
         .toString();
   }
@@ -20439,10 +17288,6 @@ class Gboards_bool_expBuilder
   set updated_at(Gtimestamptz_comparison_expBuilder? updated_at) =>
       _$this._updated_at = updated_at;
 
-  Gusers_bool_expBuilder? _user;
-  Gusers_bool_expBuilder get user => _$this._user ??= Gusers_bool_expBuilder();
-  set user(Gusers_bool_expBuilder? user) => _$this._user = user;
-
   Guuid_comparison_expBuilder? _uuid;
   Guuid_comparison_expBuilder get uuid =>
       _$this._uuid ??= Guuid_comparison_expBuilder();
@@ -20465,7 +17310,6 @@ class Gboards_bool_expBuilder
       _status = $v.status?.toBuilder();
       _topic = $v.topic?.toBuilder();
       _updated_at = $v.updated_at?.toBuilder();
-      _user = $v.user?.toBuilder();
       _uuid = $v.uuid?.toBuilder();
       _$v = null;
     }
@@ -20503,7 +17347,6 @@ class Gboards_bool_expBuilder
             status: _status?.build(),
             topic: _topic?.build(),
             updated_at: _updated_at?.build(),
-            user: _user?.build(),
             uuid: _uuid?.build(),
           );
     } catch (_) {
@@ -20533,8 +17376,6 @@ class Gboards_bool_expBuilder
         _topic?.build();
         _$failedField = 'updated_at';
         _updated_at?.build();
-        _$failedField = 'user';
-        _user?.build();
         _$failedField = 'uuid';
         _uuid?.build();
       } catch (e) {
@@ -20647,8 +17488,6 @@ class _$Gboards_insert_input extends Gboards_insert_input {
   @override
   final String? updated_at;
   @override
-  final Gusers_obj_rel_insert_input? user;
-  @override
   final String? uuid;
 
   factory _$Gboards_insert_input([
@@ -20664,7 +17503,6 @@ class _$Gboards_insert_input extends Gboards_insert_input {
     this.status,
     this.topic,
     this.updated_at,
-    this.user,
     this.uuid,
   }) : super._();
   @override
@@ -20688,7 +17526,6 @@ class _$Gboards_insert_input extends Gboards_insert_input {
         status == other.status &&
         topic == other.topic &&
         updated_at == other.updated_at &&
-        user == other.user &&
         uuid == other.uuid;
   }
 
@@ -20703,7 +17540,6 @@ class _$Gboards_insert_input extends Gboards_insert_input {
     _$hash = $jc(_$hash, status.hashCode);
     _$hash = $jc(_$hash, topic.hashCode);
     _$hash = $jc(_$hash, updated_at.hashCode);
-    _$hash = $jc(_$hash, user.hashCode);
     _$hash = $jc(_$hash, uuid.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -20720,7 +17556,6 @@ class _$Gboards_insert_input extends Gboards_insert_input {
           ..add('status', status)
           ..add('topic', topic)
           ..add('updated_at', updated_at)
-          ..add('user', user)
           ..add('uuid', uuid))
         .toString();
   }
@@ -20765,11 +17600,6 @@ class Gboards_insert_inputBuilder
   String? get updated_at => _$this._updated_at;
   set updated_at(String? updated_at) => _$this._updated_at = updated_at;
 
-  Gusers_obj_rel_insert_inputBuilder? _user;
-  Gusers_obj_rel_insert_inputBuilder get user =>
-      _$this._user ??= Gusers_obj_rel_insert_inputBuilder();
-  set user(Gusers_obj_rel_insert_inputBuilder? user) => _$this._user = user;
-
   String? _uuid;
   String? get uuid => _$this._uuid;
   set uuid(String? uuid) => _$this._uuid = uuid;
@@ -20787,7 +17617,6 @@ class Gboards_insert_inputBuilder
       _status = $v.status;
       _topic = $v.topic;
       _updated_at = $v.updated_at;
-      _user = $v.user?.toBuilder();
       _uuid = $v.uuid;
       _$v = null;
     }
@@ -20821,7 +17650,6 @@ class Gboards_insert_inputBuilder
             status: status,
             topic: topic,
             updated_at: updated_at,
-            user: _user?.build(),
             uuid: uuid,
           );
     } catch (_) {
@@ -20832,9 +17660,6 @@ class Gboards_insert_inputBuilder
 
         _$failedField = 'posts';
         _posts?.build();
-
-        _$failedField = 'user';
-        _user?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
           r'Gboards_insert_input',
@@ -21440,8 +18265,6 @@ class _$Gboards_order_by extends Gboards_order_by {
   @override
   final Gorder_by? updated_at;
   @override
-  final Gusers_order_by? user;
-  @override
   final Gorder_by? uuid;
 
   factory _$Gboards_order_by([
@@ -21457,7 +18280,6 @@ class _$Gboards_order_by extends Gboards_order_by {
     this.status,
     this.topic,
     this.updated_at,
-    this.user,
     this.uuid,
   }) : super._();
   @override
@@ -21480,7 +18302,6 @@ class _$Gboards_order_by extends Gboards_order_by {
         status == other.status &&
         topic == other.topic &&
         updated_at == other.updated_at &&
-        user == other.user &&
         uuid == other.uuid;
   }
 
@@ -21495,7 +18316,6 @@ class _$Gboards_order_by extends Gboards_order_by {
     _$hash = $jc(_$hash, status.hashCode);
     _$hash = $jc(_$hash, topic.hashCode);
     _$hash = $jc(_$hash, updated_at.hashCode);
-    _$hash = $jc(_$hash, user.hashCode);
     _$hash = $jc(_$hash, uuid.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -21512,7 +18332,6 @@ class _$Gboards_order_by extends Gboards_order_by {
           ..add('status', status)
           ..add('topic', topic)
           ..add('updated_at', updated_at)
-          ..add('user', user)
           ..add('uuid', uuid))
         .toString();
   }
@@ -21557,10 +18376,6 @@ class Gboards_order_byBuilder
   Gorder_by? get updated_at => _$this._updated_at;
   set updated_at(Gorder_by? updated_at) => _$this._updated_at = updated_at;
 
-  Gusers_order_byBuilder? _user;
-  Gusers_order_byBuilder get user => _$this._user ??= Gusers_order_byBuilder();
-  set user(Gusers_order_byBuilder? user) => _$this._user = user;
-
   Gorder_by? _uuid;
   Gorder_by? get uuid => _$this._uuid;
   set uuid(Gorder_by? uuid) => _$this._uuid = uuid;
@@ -21578,7 +18393,6 @@ class Gboards_order_byBuilder
       _status = $v.status;
       _topic = $v.topic;
       _updated_at = $v.updated_at;
-      _user = $v.user?.toBuilder();
       _uuid = $v.uuid;
       _$v = null;
     }
@@ -21612,7 +18426,6 @@ class Gboards_order_byBuilder
             status: status,
             topic: topic,
             updated_at: updated_at,
-            user: _user?.build(),
             uuid: uuid,
           );
     } catch (_) {
@@ -21623,9 +18436,6 @@ class Gboards_order_byBuilder
 
         _$failedField = 'posts_aggregate';
         _posts_aggregate?.build();
-
-        _$failedField = 'user';
-        _user?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
           r'Gboards_order_by',
@@ -23725,8 +20535,6 @@ class _$Gcircle_members_bool_exp extends Gcircle_members_bool_exp {
   @override
   final Gtimestamptz_comparison_exp? updated_at;
   @override
-  final Gusers_bool_exp? user;
-  @override
   final Gbpchar_comparison_exp? user_id;
   @override
   final Guuid_comparison_exp? uuid;
@@ -23744,7 +20552,6 @@ class _$Gcircle_members_bool_exp extends Gcircle_members_bool_exp {
     this.created_at,
     this.joined_date,
     this.updated_at,
-    this.user,
     this.user_id,
     this.uuid,
   }) : super._();
@@ -23769,7 +20576,6 @@ class _$Gcircle_members_bool_exp extends Gcircle_members_bool_exp {
         created_at == other.created_at &&
         joined_date == other.joined_date &&
         updated_at == other.updated_at &&
-        user == other.user &&
         user_id == other.user_id &&
         uuid == other.uuid;
   }
@@ -23785,7 +20591,6 @@ class _$Gcircle_members_bool_exp extends Gcircle_members_bool_exp {
     _$hash = $jc(_$hash, created_at.hashCode);
     _$hash = $jc(_$hash, joined_date.hashCode);
     _$hash = $jc(_$hash, updated_at.hashCode);
-    _$hash = $jc(_$hash, user.hashCode);
     _$hash = $jc(_$hash, user_id.hashCode);
     _$hash = $jc(_$hash, uuid.hashCode);
     _$hash = $jf(_$hash);
@@ -23803,7 +20608,6 @@ class _$Gcircle_members_bool_exp extends Gcircle_members_bool_exp {
           ..add('created_at', created_at)
           ..add('joined_date', joined_date)
           ..add('updated_at', updated_at)
-          ..add('user', user)
           ..add('user_id', user_id)
           ..add('uuid', uuid))
         .toString();
@@ -23860,10 +20664,6 @@ class Gcircle_members_bool_expBuilder
   set updated_at(Gtimestamptz_comparison_expBuilder? updated_at) =>
       _$this._updated_at = updated_at;
 
-  Gusers_bool_expBuilder? _user;
-  Gusers_bool_expBuilder get user => _$this._user ??= Gusers_bool_expBuilder();
-  set user(Gusers_bool_expBuilder? user) => _$this._user = user;
-
   Gbpchar_comparison_expBuilder? _user_id;
   Gbpchar_comparison_expBuilder get user_id =>
       _$this._user_id ??= Gbpchar_comparison_expBuilder();
@@ -23888,7 +20688,6 @@ class Gcircle_members_bool_expBuilder
       _created_at = $v.created_at?.toBuilder();
       _joined_date = $v.joined_date?.toBuilder();
       _updated_at = $v.updated_at?.toBuilder();
-      _user = $v.user?.toBuilder();
       _user_id = $v.user_id?.toBuilder();
       _uuid = $v.uuid?.toBuilder();
       _$v = null;
@@ -23923,7 +20722,6 @@ class Gcircle_members_bool_expBuilder
             created_at: _created_at?.build(),
             joined_date: _joined_date?.build(),
             updated_at: _updated_at?.build(),
-            user: _user?.build(),
             user_id: _user_id?.build(),
             uuid: _uuid?.build(),
           );
@@ -23946,8 +20744,6 @@ class Gcircle_members_bool_expBuilder
         _joined_date?.build();
         _$failedField = 'updated_at';
         _updated_at?.build();
-        _$failedField = 'user';
-        _user?.build();
         _$failedField = 'user_id';
         _user_id?.build();
         _$failedField = 'uuid';
@@ -23978,8 +20774,6 @@ class _$Gcircle_members_insert_input extends Gcircle_members_insert_input {
   @override
   final String? updated_at;
   @override
-  final Gusers_obj_rel_insert_input? user;
-  @override
   final String? user_id;
   @override
   final String? uuid;
@@ -23994,7 +20788,6 @@ class _$Gcircle_members_insert_input extends Gcircle_members_insert_input {
     this.created_at,
     this.joined_date,
     this.updated_at,
-    this.user,
     this.user_id,
     this.uuid,
   }) : super._();
@@ -24016,7 +20809,6 @@ class _$Gcircle_members_insert_input extends Gcircle_members_insert_input {
         created_at == other.created_at &&
         joined_date == other.joined_date &&
         updated_at == other.updated_at &&
-        user == other.user &&
         user_id == other.user_id &&
         uuid == other.uuid;
   }
@@ -24029,7 +20821,6 @@ class _$Gcircle_members_insert_input extends Gcircle_members_insert_input {
     _$hash = $jc(_$hash, created_at.hashCode);
     _$hash = $jc(_$hash, joined_date.hashCode);
     _$hash = $jc(_$hash, updated_at.hashCode);
-    _$hash = $jc(_$hash, user.hashCode);
     _$hash = $jc(_$hash, user_id.hashCode);
     _$hash = $jc(_$hash, uuid.hashCode);
     _$hash = $jf(_$hash);
@@ -24044,7 +20835,6 @@ class _$Gcircle_members_insert_input extends Gcircle_members_insert_input {
           ..add('created_at', created_at)
           ..add('joined_date', joined_date)
           ..add('updated_at', updated_at)
-          ..add('user', user)
           ..add('user_id', user_id)
           ..add('uuid', uuid))
         .toString();
@@ -24082,11 +20872,6 @@ class Gcircle_members_insert_inputBuilder
   String? get updated_at => _$this._updated_at;
   set updated_at(String? updated_at) => _$this._updated_at = updated_at;
 
-  Gusers_obj_rel_insert_inputBuilder? _user;
-  Gusers_obj_rel_insert_inputBuilder get user =>
-      _$this._user ??= Gusers_obj_rel_insert_inputBuilder();
-  set user(Gusers_obj_rel_insert_inputBuilder? user) => _$this._user = user;
-
   String? _user_id;
   String? get user_id => _$this._user_id;
   set user_id(String? user_id) => _$this._user_id = user_id;
@@ -24105,7 +20890,6 @@ class Gcircle_members_insert_inputBuilder
       _created_at = $v.created_at;
       _joined_date = $v.joined_date?.toBuilder();
       _updated_at = $v.updated_at;
-      _user = $v.user?.toBuilder();
       _user_id = $v.user_id;
       _uuid = $v.uuid;
       _$v = null;
@@ -24137,7 +20921,6 @@ class Gcircle_members_insert_inputBuilder
             created_at: created_at,
             joined_date: _joined_date?.build(),
             updated_at: updated_at,
-            user: _user?.build(),
             user_id: user_id,
             uuid: uuid,
           );
@@ -24149,9 +20932,6 @@ class Gcircle_members_insert_inputBuilder
 
         _$failedField = 'joined_date';
         _joined_date?.build();
-
-        _$failedField = 'user';
-        _user?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
           r'Gcircle_members_insert_input',
@@ -24619,8 +21399,6 @@ class _$Gcircle_members_order_by extends Gcircle_members_order_by {
   @override
   final Gorder_by? updated_at;
   @override
-  final Gusers_order_by? user;
-  @override
   final Gorder_by? user_id;
   @override
   final Gorder_by? uuid;
@@ -24635,7 +21413,6 @@ class _$Gcircle_members_order_by extends Gcircle_members_order_by {
     this.created_at,
     this.joined_date,
     this.updated_at,
-    this.user,
     this.user_id,
     this.uuid,
   }) : super._();
@@ -24657,7 +21434,6 @@ class _$Gcircle_members_order_by extends Gcircle_members_order_by {
         created_at == other.created_at &&
         joined_date == other.joined_date &&
         updated_at == other.updated_at &&
-        user == other.user &&
         user_id == other.user_id &&
         uuid == other.uuid;
   }
@@ -24670,7 +21446,6 @@ class _$Gcircle_members_order_by extends Gcircle_members_order_by {
     _$hash = $jc(_$hash, created_at.hashCode);
     _$hash = $jc(_$hash, joined_date.hashCode);
     _$hash = $jc(_$hash, updated_at.hashCode);
-    _$hash = $jc(_$hash, user.hashCode);
     _$hash = $jc(_$hash, user_id.hashCode);
     _$hash = $jc(_$hash, uuid.hashCode);
     _$hash = $jf(_$hash);
@@ -24685,7 +21460,6 @@ class _$Gcircle_members_order_by extends Gcircle_members_order_by {
           ..add('created_at', created_at)
           ..add('joined_date', joined_date)
           ..add('updated_at', updated_at)
-          ..add('user', user)
           ..add('user_id', user_id)
           ..add('uuid', uuid))
         .toString();
@@ -24718,10 +21492,6 @@ class Gcircle_members_order_byBuilder
   Gorder_by? get updated_at => _$this._updated_at;
   set updated_at(Gorder_by? updated_at) => _$this._updated_at = updated_at;
 
-  Gusers_order_byBuilder? _user;
-  Gusers_order_byBuilder get user => _$this._user ??= Gusers_order_byBuilder();
-  set user(Gusers_order_byBuilder? user) => _$this._user = user;
-
   Gorder_by? _user_id;
   Gorder_by? get user_id => _$this._user_id;
   set user_id(Gorder_by? user_id) => _$this._user_id = user_id;
@@ -24740,7 +21510,6 @@ class Gcircle_members_order_byBuilder
       _created_at = $v.created_at;
       _joined_date = $v.joined_date;
       _updated_at = $v.updated_at;
-      _user = $v.user?.toBuilder();
       _user_id = $v.user_id;
       _uuid = $v.uuid;
       _$v = null;
@@ -24772,7 +21541,6 @@ class Gcircle_members_order_byBuilder
             created_at: created_at,
             joined_date: joined_date,
             updated_at: updated_at,
-            user: _user?.build(),
             user_id: user_id,
             uuid: uuid,
           );
@@ -24781,9 +21549,6 @@ class Gcircle_members_order_byBuilder
       try {
         _$failedField = 'circle';
         _circle?.build();
-
-        _$failedField = 'user';
-        _user?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
           r'Gcircle_members_order_by',
@@ -27968,513 +24733,6 @@ class Gcircle_permissions_updatesBuilder
   }
 }
 
-class _$Gcircles_aggregate_bool_exp extends Gcircles_aggregate_bool_exp {
-  @override
-  final Gcircles_aggregate_bool_exp_count? count;
-
-  factory _$Gcircles_aggregate_bool_exp([
-    void Function(Gcircles_aggregate_bool_expBuilder)? updates,
-  ]) => (Gcircles_aggregate_bool_expBuilder()..update(updates))._build();
-
-  _$Gcircles_aggregate_bool_exp._({this.count}) : super._();
-  @override
-  Gcircles_aggregate_bool_exp rebuild(
-    void Function(Gcircles_aggregate_bool_expBuilder) updates,
-  ) => (toBuilder()..update(updates)).build();
-
-  @override
-  Gcircles_aggregate_bool_expBuilder toBuilder() =>
-      Gcircles_aggregate_bool_expBuilder()..replace(this);
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(other, this)) return true;
-    return other is Gcircles_aggregate_bool_exp && count == other.count;
-  }
-
-  @override
-  int get hashCode {
-    var _$hash = 0;
-    _$hash = $jc(_$hash, count.hashCode);
-    _$hash = $jf(_$hash);
-    return _$hash;
-  }
-
-  @override
-  String toString() {
-    return (newBuiltValueToStringHelper(
-      r'Gcircles_aggregate_bool_exp',
-    )..add('count', count)).toString();
-  }
-}
-
-class Gcircles_aggregate_bool_expBuilder
-    implements
-        Builder<
-          Gcircles_aggregate_bool_exp,
-          Gcircles_aggregate_bool_expBuilder
-        > {
-  _$Gcircles_aggregate_bool_exp? _$v;
-
-  Gcircles_aggregate_bool_exp_countBuilder? _count;
-  Gcircles_aggregate_bool_exp_countBuilder get count =>
-      _$this._count ??= Gcircles_aggregate_bool_exp_countBuilder();
-  set count(Gcircles_aggregate_bool_exp_countBuilder? count) =>
-      _$this._count = count;
-
-  Gcircles_aggregate_bool_expBuilder();
-
-  Gcircles_aggregate_bool_expBuilder get _$this {
-    final $v = _$v;
-    if ($v != null) {
-      _count = $v.count?.toBuilder();
-      _$v = null;
-    }
-    return this;
-  }
-
-  @override
-  void replace(Gcircles_aggregate_bool_exp other) {
-    _$v = other as _$Gcircles_aggregate_bool_exp;
-  }
-
-  @override
-  void update(void Function(Gcircles_aggregate_bool_expBuilder)? updates) {
-    if (updates != null) updates(this);
-  }
-
-  @override
-  Gcircles_aggregate_bool_exp build() => _build();
-
-  _$Gcircles_aggregate_bool_exp _build() {
-    _$Gcircles_aggregate_bool_exp _$result;
-    try {
-      _$result = _$v ?? _$Gcircles_aggregate_bool_exp._(count: _count?.build());
-    } catch (_) {
-      late String _$failedField;
-      try {
-        _$failedField = 'count';
-        _count?.build();
-      } catch (e) {
-        throw BuiltValueNestedFieldError(
-          r'Gcircles_aggregate_bool_exp',
-          _$failedField,
-          e.toString(),
-        );
-      }
-      rethrow;
-    }
-    replace(_$result);
-    return _$result;
-  }
-}
-
-class _$Gcircles_aggregate_bool_exp_count
-    extends Gcircles_aggregate_bool_exp_count {
-  @override
-  final BuiltList<Gcircles_select_column>? arguments;
-  @override
-  final bool? distinct;
-  @override
-  final Gcircles_bool_exp? filter;
-  @override
-  final GInt_comparison_exp predicate;
-
-  factory _$Gcircles_aggregate_bool_exp_count([
-    void Function(Gcircles_aggregate_bool_exp_countBuilder)? updates,
-  ]) => (Gcircles_aggregate_bool_exp_countBuilder()..update(updates))._build();
-
-  _$Gcircles_aggregate_bool_exp_count._({
-    this.arguments,
-    this.distinct,
-    this.filter,
-    required this.predicate,
-  }) : super._();
-  @override
-  Gcircles_aggregate_bool_exp_count rebuild(
-    void Function(Gcircles_aggregate_bool_exp_countBuilder) updates,
-  ) => (toBuilder()..update(updates)).build();
-
-  @override
-  Gcircles_aggregate_bool_exp_countBuilder toBuilder() =>
-      Gcircles_aggregate_bool_exp_countBuilder()..replace(this);
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(other, this)) return true;
-    return other is Gcircles_aggregate_bool_exp_count &&
-        arguments == other.arguments &&
-        distinct == other.distinct &&
-        filter == other.filter &&
-        predicate == other.predicate;
-  }
-
-  @override
-  int get hashCode {
-    var _$hash = 0;
-    _$hash = $jc(_$hash, arguments.hashCode);
-    _$hash = $jc(_$hash, distinct.hashCode);
-    _$hash = $jc(_$hash, filter.hashCode);
-    _$hash = $jc(_$hash, predicate.hashCode);
-    _$hash = $jf(_$hash);
-    return _$hash;
-  }
-
-  @override
-  String toString() {
-    return (newBuiltValueToStringHelper(r'Gcircles_aggregate_bool_exp_count')
-          ..add('arguments', arguments)
-          ..add('distinct', distinct)
-          ..add('filter', filter)
-          ..add('predicate', predicate))
-        .toString();
-  }
-}
-
-class Gcircles_aggregate_bool_exp_countBuilder
-    implements
-        Builder<
-          Gcircles_aggregate_bool_exp_count,
-          Gcircles_aggregate_bool_exp_countBuilder
-        > {
-  _$Gcircles_aggregate_bool_exp_count? _$v;
-
-  ListBuilder<Gcircles_select_column>? _arguments;
-  ListBuilder<Gcircles_select_column> get arguments =>
-      _$this._arguments ??= ListBuilder<Gcircles_select_column>();
-  set arguments(ListBuilder<Gcircles_select_column>? arguments) =>
-      _$this._arguments = arguments;
-
-  bool? _distinct;
-  bool? get distinct => _$this._distinct;
-  set distinct(bool? distinct) => _$this._distinct = distinct;
-
-  Gcircles_bool_expBuilder? _filter;
-  Gcircles_bool_expBuilder get filter =>
-      _$this._filter ??= Gcircles_bool_expBuilder();
-  set filter(Gcircles_bool_expBuilder? filter) => _$this._filter = filter;
-
-  GInt_comparison_expBuilder? _predicate;
-  GInt_comparison_expBuilder get predicate =>
-      _$this._predicate ??= GInt_comparison_expBuilder();
-  set predicate(GInt_comparison_expBuilder? predicate) =>
-      _$this._predicate = predicate;
-
-  Gcircles_aggregate_bool_exp_countBuilder();
-
-  Gcircles_aggregate_bool_exp_countBuilder get _$this {
-    final $v = _$v;
-    if ($v != null) {
-      _arguments = $v.arguments?.toBuilder();
-      _distinct = $v.distinct;
-      _filter = $v.filter?.toBuilder();
-      _predicate = $v.predicate.toBuilder();
-      _$v = null;
-    }
-    return this;
-  }
-
-  @override
-  void replace(Gcircles_aggregate_bool_exp_count other) {
-    _$v = other as _$Gcircles_aggregate_bool_exp_count;
-  }
-
-  @override
-  void update(
-    void Function(Gcircles_aggregate_bool_exp_countBuilder)? updates,
-  ) {
-    if (updates != null) updates(this);
-  }
-
-  @override
-  Gcircles_aggregate_bool_exp_count build() => _build();
-
-  _$Gcircles_aggregate_bool_exp_count _build() {
-    _$Gcircles_aggregate_bool_exp_count _$result;
-    try {
-      _$result =
-          _$v ??
-          _$Gcircles_aggregate_bool_exp_count._(
-            arguments: _arguments?.build(),
-            distinct: distinct,
-            filter: _filter?.build(),
-            predicate: predicate.build(),
-          );
-    } catch (_) {
-      late String _$failedField;
-      try {
-        _$failedField = 'arguments';
-        _arguments?.build();
-
-        _$failedField = 'filter';
-        _filter?.build();
-        _$failedField = 'predicate';
-        predicate.build();
-      } catch (e) {
-        throw BuiltValueNestedFieldError(
-          r'Gcircles_aggregate_bool_exp_count',
-          _$failedField,
-          e.toString(),
-        );
-      }
-      rethrow;
-    }
-    replace(_$result);
-    return _$result;
-  }
-}
-
-class _$Gcircles_aggregate_order_by extends Gcircles_aggregate_order_by {
-  @override
-  final Gorder_by? count;
-  @override
-  final Gcircles_max_order_by? max;
-  @override
-  final Gcircles_min_order_by? min;
-
-  factory _$Gcircles_aggregate_order_by([
-    void Function(Gcircles_aggregate_order_byBuilder)? updates,
-  ]) => (Gcircles_aggregate_order_byBuilder()..update(updates))._build();
-
-  _$Gcircles_aggregate_order_by._({this.count, this.max, this.min}) : super._();
-  @override
-  Gcircles_aggregate_order_by rebuild(
-    void Function(Gcircles_aggregate_order_byBuilder) updates,
-  ) => (toBuilder()..update(updates)).build();
-
-  @override
-  Gcircles_aggregate_order_byBuilder toBuilder() =>
-      Gcircles_aggregate_order_byBuilder()..replace(this);
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(other, this)) return true;
-    return other is Gcircles_aggregate_order_by &&
-        count == other.count &&
-        max == other.max &&
-        min == other.min;
-  }
-
-  @override
-  int get hashCode {
-    var _$hash = 0;
-    _$hash = $jc(_$hash, count.hashCode);
-    _$hash = $jc(_$hash, max.hashCode);
-    _$hash = $jc(_$hash, min.hashCode);
-    _$hash = $jf(_$hash);
-    return _$hash;
-  }
-
-  @override
-  String toString() {
-    return (newBuiltValueToStringHelper(r'Gcircles_aggregate_order_by')
-          ..add('count', count)
-          ..add('max', max)
-          ..add('min', min))
-        .toString();
-  }
-}
-
-class Gcircles_aggregate_order_byBuilder
-    implements
-        Builder<
-          Gcircles_aggregate_order_by,
-          Gcircles_aggregate_order_byBuilder
-        > {
-  _$Gcircles_aggregate_order_by? _$v;
-
-  Gorder_by? _count;
-  Gorder_by? get count => _$this._count;
-  set count(Gorder_by? count) => _$this._count = count;
-
-  Gcircles_max_order_byBuilder? _max;
-  Gcircles_max_order_byBuilder get max =>
-      _$this._max ??= Gcircles_max_order_byBuilder();
-  set max(Gcircles_max_order_byBuilder? max) => _$this._max = max;
-
-  Gcircles_min_order_byBuilder? _min;
-  Gcircles_min_order_byBuilder get min =>
-      _$this._min ??= Gcircles_min_order_byBuilder();
-  set min(Gcircles_min_order_byBuilder? min) => _$this._min = min;
-
-  Gcircles_aggregate_order_byBuilder();
-
-  Gcircles_aggregate_order_byBuilder get _$this {
-    final $v = _$v;
-    if ($v != null) {
-      _count = $v.count;
-      _max = $v.max?.toBuilder();
-      _min = $v.min?.toBuilder();
-      _$v = null;
-    }
-    return this;
-  }
-
-  @override
-  void replace(Gcircles_aggregate_order_by other) {
-    _$v = other as _$Gcircles_aggregate_order_by;
-  }
-
-  @override
-  void update(void Function(Gcircles_aggregate_order_byBuilder)? updates) {
-    if (updates != null) updates(this);
-  }
-
-  @override
-  Gcircles_aggregate_order_by build() => _build();
-
-  _$Gcircles_aggregate_order_by _build() {
-    _$Gcircles_aggregate_order_by _$result;
-    try {
-      _$result =
-          _$v ??
-          _$Gcircles_aggregate_order_by._(
-            count: count,
-            max: _max?.build(),
-            min: _min?.build(),
-          );
-    } catch (_) {
-      late String _$failedField;
-      try {
-        _$failedField = 'max';
-        _max?.build();
-        _$failedField = 'min';
-        _min?.build();
-      } catch (e) {
-        throw BuiltValueNestedFieldError(
-          r'Gcircles_aggregate_order_by',
-          _$failedField,
-          e.toString(),
-        );
-      }
-      rethrow;
-    }
-    replace(_$result);
-    return _$result;
-  }
-}
-
-class _$Gcircles_arr_rel_insert_input extends Gcircles_arr_rel_insert_input {
-  @override
-  final BuiltList<Gcircles_insert_input> data;
-  @override
-  final Gcircles_on_conflict? on_conflict;
-
-  factory _$Gcircles_arr_rel_insert_input([
-    void Function(Gcircles_arr_rel_insert_inputBuilder)? updates,
-  ]) => (Gcircles_arr_rel_insert_inputBuilder()..update(updates))._build();
-
-  _$Gcircles_arr_rel_insert_input._({required this.data, this.on_conflict})
-    : super._();
-  @override
-  Gcircles_arr_rel_insert_input rebuild(
-    void Function(Gcircles_arr_rel_insert_inputBuilder) updates,
-  ) => (toBuilder()..update(updates)).build();
-
-  @override
-  Gcircles_arr_rel_insert_inputBuilder toBuilder() =>
-      Gcircles_arr_rel_insert_inputBuilder()..replace(this);
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(other, this)) return true;
-    return other is Gcircles_arr_rel_insert_input &&
-        data == other.data &&
-        on_conflict == other.on_conflict;
-  }
-
-  @override
-  int get hashCode {
-    var _$hash = 0;
-    _$hash = $jc(_$hash, data.hashCode);
-    _$hash = $jc(_$hash, on_conflict.hashCode);
-    _$hash = $jf(_$hash);
-    return _$hash;
-  }
-
-  @override
-  String toString() {
-    return (newBuiltValueToStringHelper(r'Gcircles_arr_rel_insert_input')
-          ..add('data', data)
-          ..add('on_conflict', on_conflict))
-        .toString();
-  }
-}
-
-class Gcircles_arr_rel_insert_inputBuilder
-    implements
-        Builder<
-          Gcircles_arr_rel_insert_input,
-          Gcircles_arr_rel_insert_inputBuilder
-        > {
-  _$Gcircles_arr_rel_insert_input? _$v;
-
-  ListBuilder<Gcircles_insert_input>? _data;
-  ListBuilder<Gcircles_insert_input> get data =>
-      _$this._data ??= ListBuilder<Gcircles_insert_input>();
-  set data(ListBuilder<Gcircles_insert_input>? data) => _$this._data = data;
-
-  Gcircles_on_conflictBuilder? _on_conflict;
-  Gcircles_on_conflictBuilder get on_conflict =>
-      _$this._on_conflict ??= Gcircles_on_conflictBuilder();
-  set on_conflict(Gcircles_on_conflictBuilder? on_conflict) =>
-      _$this._on_conflict = on_conflict;
-
-  Gcircles_arr_rel_insert_inputBuilder();
-
-  Gcircles_arr_rel_insert_inputBuilder get _$this {
-    final $v = _$v;
-    if ($v != null) {
-      _data = $v.data.toBuilder();
-      _on_conflict = $v.on_conflict?.toBuilder();
-      _$v = null;
-    }
-    return this;
-  }
-
-  @override
-  void replace(Gcircles_arr_rel_insert_input other) {
-    _$v = other as _$Gcircles_arr_rel_insert_input;
-  }
-
-  @override
-  void update(void Function(Gcircles_arr_rel_insert_inputBuilder)? updates) {
-    if (updates != null) updates(this);
-  }
-
-  @override
-  Gcircles_arr_rel_insert_input build() => _build();
-
-  _$Gcircles_arr_rel_insert_input _build() {
-    _$Gcircles_arr_rel_insert_input _$result;
-    try {
-      _$result =
-          _$v ??
-          _$Gcircles_arr_rel_insert_input._(
-            data: data.build(),
-            on_conflict: _on_conflict?.build(),
-          );
-    } catch (_) {
-      late String _$failedField;
-      try {
-        _$failedField = 'data';
-        data.build();
-        _$failedField = 'on_conflict';
-        _on_conflict?.build();
-      } catch (e) {
-        throw BuiltValueNestedFieldError(
-          r'Gcircles_arr_rel_insert_input',
-          _$failedField,
-          e.toString(),
-        );
-      }
-      rethrow;
-    }
-    replace(_$result);
-    return _$result;
-  }
-}
-
 class _$Gcircles_bool_exp extends Gcircles_bool_exp {
   @override
   final BuiltList<Gcircles_bool_exp>? G_and;
@@ -28505,8 +24763,6 @@ class _$Gcircles_bool_exp extends Gcircles_bool_exp {
   @override
   final Gtimestamptz_comparison_exp? updated_at;
   @override
-  final Gusers_bool_exp? user;
-  @override
   final Guuid_comparison_exp? uuid;
 
   factory _$Gcircles_bool_exp([
@@ -28528,7 +24784,6 @@ class _$Gcircles_bool_exp extends Gcircles_bool_exp {
     this.name,
     this.owner_id,
     this.updated_at,
-    this.user,
     this.uuid,
   }) : super._();
   @override
@@ -28557,7 +24812,6 @@ class _$Gcircles_bool_exp extends Gcircles_bool_exp {
         name == other.name &&
         owner_id == other.owner_id &&
         updated_at == other.updated_at &&
-        user == other.user &&
         uuid == other.uuid;
   }
 
@@ -28578,7 +24832,6 @@ class _$Gcircles_bool_exp extends Gcircles_bool_exp {
     _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, owner_id.hashCode);
     _$hash = $jc(_$hash, updated_at.hashCode);
-    _$hash = $jc(_$hash, user.hashCode);
     _$hash = $jc(_$hash, uuid.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -28601,7 +24854,6 @@ class _$Gcircles_bool_exp extends Gcircles_bool_exp {
           ..add('name', name)
           ..add('owner_id', owner_id)
           ..add('updated_at', updated_at)
-          ..add('user', user)
           ..add('uuid', uuid))
         .toString();
   }
@@ -28695,10 +24947,6 @@ class Gcircles_bool_expBuilder
   set updated_at(Gtimestamptz_comparison_expBuilder? updated_at) =>
       _$this._updated_at = updated_at;
 
-  Gusers_bool_expBuilder? _user;
-  Gusers_bool_expBuilder get user => _$this._user ??= Gusers_bool_expBuilder();
-  set user(Gusers_bool_expBuilder? user) => _$this._user = user;
-
   Guuid_comparison_expBuilder? _uuid;
   Guuid_comparison_expBuilder get uuid =>
       _$this._uuid ??= Guuid_comparison_expBuilder();
@@ -28724,7 +24972,6 @@ class Gcircles_bool_expBuilder
       _name = $v.name?.toBuilder();
       _owner_id = $v.owner_id?.toBuilder();
       _updated_at = $v.updated_at?.toBuilder();
-      _user = $v.user?.toBuilder();
       _uuid = $v.uuid?.toBuilder();
       _$v = null;
     }
@@ -28765,7 +25012,6 @@ class Gcircles_bool_expBuilder
             name: _name?.build(),
             owner_id: _owner_id?.build(),
             updated_at: _updated_at?.build(),
-            user: _user?.build(),
             uuid: _uuid?.build(),
           );
     } catch (_) {
@@ -28799,8 +25045,6 @@ class Gcircles_bool_expBuilder
         _owner_id?.build();
         _$failedField = 'updated_at';
         _updated_at?.build();
-        _$failedField = 'user';
-        _user?.build();
         _$failedField = 'uuid';
         _uuid?.build();
       } catch (e) {
@@ -28835,8 +25079,6 @@ class _$Gcircles_insert_input extends Gcircles_insert_input {
   @override
   final String? updated_at;
   @override
-  final Gusers_obj_rel_insert_input? user;
-  @override
   final String? uuid;
 
   factory _$Gcircles_insert_input([
@@ -28852,7 +25094,6 @@ class _$Gcircles_insert_input extends Gcircles_insert_input {
     this.name,
     this.owner_id,
     this.updated_at,
-    this.user,
     this.uuid,
   }) : super._();
   @override
@@ -28876,7 +25117,6 @@ class _$Gcircles_insert_input extends Gcircles_insert_input {
         name == other.name &&
         owner_id == other.owner_id &&
         updated_at == other.updated_at &&
-        user == other.user &&
         uuid == other.uuid;
   }
 
@@ -28891,7 +25131,6 @@ class _$Gcircles_insert_input extends Gcircles_insert_input {
     _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, owner_id.hashCode);
     _$hash = $jc(_$hash, updated_at.hashCode);
-    _$hash = $jc(_$hash, user.hashCode);
     _$hash = $jc(_$hash, uuid.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -28908,7 +25147,6 @@ class _$Gcircles_insert_input extends Gcircles_insert_input {
           ..add('name', name)
           ..add('owner_id', owner_id)
           ..add('updated_at', updated_at)
-          ..add('user', user)
           ..add('uuid', uuid))
         .toString();
   }
@@ -28959,11 +25197,6 @@ class Gcircles_insert_inputBuilder
   String? get updated_at => _$this._updated_at;
   set updated_at(String? updated_at) => _$this._updated_at = updated_at;
 
-  Gusers_obj_rel_insert_inputBuilder? _user;
-  Gusers_obj_rel_insert_inputBuilder get user =>
-      _$this._user ??= Gusers_obj_rel_insert_inputBuilder();
-  set user(Gusers_obj_rel_insert_inputBuilder? user) => _$this._user = user;
-
   String? _uuid;
   String? get uuid => _$this._uuid;
   set uuid(String? uuid) => _$this._uuid = uuid;
@@ -28981,7 +25214,6 @@ class Gcircles_insert_inputBuilder
       _name = $v.name;
       _owner_id = $v.owner_id;
       _updated_at = $v.updated_at;
-      _user = $v.user?.toBuilder();
       _uuid = $v.uuid;
       _$v = null;
     }
@@ -29015,7 +25247,6 @@ class Gcircles_insert_inputBuilder
             name: name,
             owner_id: owner_id,
             updated_at: updated_at,
-            user: _user?.build(),
             uuid: uuid,
           );
     } catch (_) {
@@ -29027,9 +25258,6 @@ class Gcircles_insert_inputBuilder
         _circle_members?.build();
         _$failedField = 'circle_permissions';
         _circle_permissions?.build();
-
-        _$failedField = 'user';
-        _user?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
           r'Gcircles_insert_input',
@@ -29039,298 +25267,6 @@ class Gcircles_insert_inputBuilder
       }
       rethrow;
     }
-    replace(_$result);
-    return _$result;
-  }
-}
-
-class _$Gcircles_max_order_by extends Gcircles_max_order_by {
-  @override
-  final Gorder_by? created_at;
-  @override
-  final Gorder_by? description;
-  @override
-  final Gorder_by? name;
-  @override
-  final Gorder_by? owner_id;
-  @override
-  final Gorder_by? updated_at;
-  @override
-  final Gorder_by? uuid;
-
-  factory _$Gcircles_max_order_by([
-    void Function(Gcircles_max_order_byBuilder)? updates,
-  ]) => (Gcircles_max_order_byBuilder()..update(updates))._build();
-
-  _$Gcircles_max_order_by._({
-    this.created_at,
-    this.description,
-    this.name,
-    this.owner_id,
-    this.updated_at,
-    this.uuid,
-  }) : super._();
-  @override
-  Gcircles_max_order_by rebuild(
-    void Function(Gcircles_max_order_byBuilder) updates,
-  ) => (toBuilder()..update(updates)).build();
-
-  @override
-  Gcircles_max_order_byBuilder toBuilder() =>
-      Gcircles_max_order_byBuilder()..replace(this);
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(other, this)) return true;
-    return other is Gcircles_max_order_by &&
-        created_at == other.created_at &&
-        description == other.description &&
-        name == other.name &&
-        owner_id == other.owner_id &&
-        updated_at == other.updated_at &&
-        uuid == other.uuid;
-  }
-
-  @override
-  int get hashCode {
-    var _$hash = 0;
-    _$hash = $jc(_$hash, created_at.hashCode);
-    _$hash = $jc(_$hash, description.hashCode);
-    _$hash = $jc(_$hash, name.hashCode);
-    _$hash = $jc(_$hash, owner_id.hashCode);
-    _$hash = $jc(_$hash, updated_at.hashCode);
-    _$hash = $jc(_$hash, uuid.hashCode);
-    _$hash = $jf(_$hash);
-    return _$hash;
-  }
-
-  @override
-  String toString() {
-    return (newBuiltValueToStringHelper(r'Gcircles_max_order_by')
-          ..add('created_at', created_at)
-          ..add('description', description)
-          ..add('name', name)
-          ..add('owner_id', owner_id)
-          ..add('updated_at', updated_at)
-          ..add('uuid', uuid))
-        .toString();
-  }
-}
-
-class Gcircles_max_order_byBuilder
-    implements Builder<Gcircles_max_order_by, Gcircles_max_order_byBuilder> {
-  _$Gcircles_max_order_by? _$v;
-
-  Gorder_by? _created_at;
-  Gorder_by? get created_at => _$this._created_at;
-  set created_at(Gorder_by? created_at) => _$this._created_at = created_at;
-
-  Gorder_by? _description;
-  Gorder_by? get description => _$this._description;
-  set description(Gorder_by? description) => _$this._description = description;
-
-  Gorder_by? _name;
-  Gorder_by? get name => _$this._name;
-  set name(Gorder_by? name) => _$this._name = name;
-
-  Gorder_by? _owner_id;
-  Gorder_by? get owner_id => _$this._owner_id;
-  set owner_id(Gorder_by? owner_id) => _$this._owner_id = owner_id;
-
-  Gorder_by? _updated_at;
-  Gorder_by? get updated_at => _$this._updated_at;
-  set updated_at(Gorder_by? updated_at) => _$this._updated_at = updated_at;
-
-  Gorder_by? _uuid;
-  Gorder_by? get uuid => _$this._uuid;
-  set uuid(Gorder_by? uuid) => _$this._uuid = uuid;
-
-  Gcircles_max_order_byBuilder();
-
-  Gcircles_max_order_byBuilder get _$this {
-    final $v = _$v;
-    if ($v != null) {
-      _created_at = $v.created_at;
-      _description = $v.description;
-      _name = $v.name;
-      _owner_id = $v.owner_id;
-      _updated_at = $v.updated_at;
-      _uuid = $v.uuid;
-      _$v = null;
-    }
-    return this;
-  }
-
-  @override
-  void replace(Gcircles_max_order_by other) {
-    _$v = other as _$Gcircles_max_order_by;
-  }
-
-  @override
-  void update(void Function(Gcircles_max_order_byBuilder)? updates) {
-    if (updates != null) updates(this);
-  }
-
-  @override
-  Gcircles_max_order_by build() => _build();
-
-  _$Gcircles_max_order_by _build() {
-    final _$result =
-        _$v ??
-        _$Gcircles_max_order_by._(
-          created_at: created_at,
-          description: description,
-          name: name,
-          owner_id: owner_id,
-          updated_at: updated_at,
-          uuid: uuid,
-        );
-    replace(_$result);
-    return _$result;
-  }
-}
-
-class _$Gcircles_min_order_by extends Gcircles_min_order_by {
-  @override
-  final Gorder_by? created_at;
-  @override
-  final Gorder_by? description;
-  @override
-  final Gorder_by? name;
-  @override
-  final Gorder_by? owner_id;
-  @override
-  final Gorder_by? updated_at;
-  @override
-  final Gorder_by? uuid;
-
-  factory _$Gcircles_min_order_by([
-    void Function(Gcircles_min_order_byBuilder)? updates,
-  ]) => (Gcircles_min_order_byBuilder()..update(updates))._build();
-
-  _$Gcircles_min_order_by._({
-    this.created_at,
-    this.description,
-    this.name,
-    this.owner_id,
-    this.updated_at,
-    this.uuid,
-  }) : super._();
-  @override
-  Gcircles_min_order_by rebuild(
-    void Function(Gcircles_min_order_byBuilder) updates,
-  ) => (toBuilder()..update(updates)).build();
-
-  @override
-  Gcircles_min_order_byBuilder toBuilder() =>
-      Gcircles_min_order_byBuilder()..replace(this);
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(other, this)) return true;
-    return other is Gcircles_min_order_by &&
-        created_at == other.created_at &&
-        description == other.description &&
-        name == other.name &&
-        owner_id == other.owner_id &&
-        updated_at == other.updated_at &&
-        uuid == other.uuid;
-  }
-
-  @override
-  int get hashCode {
-    var _$hash = 0;
-    _$hash = $jc(_$hash, created_at.hashCode);
-    _$hash = $jc(_$hash, description.hashCode);
-    _$hash = $jc(_$hash, name.hashCode);
-    _$hash = $jc(_$hash, owner_id.hashCode);
-    _$hash = $jc(_$hash, updated_at.hashCode);
-    _$hash = $jc(_$hash, uuid.hashCode);
-    _$hash = $jf(_$hash);
-    return _$hash;
-  }
-
-  @override
-  String toString() {
-    return (newBuiltValueToStringHelper(r'Gcircles_min_order_by')
-          ..add('created_at', created_at)
-          ..add('description', description)
-          ..add('name', name)
-          ..add('owner_id', owner_id)
-          ..add('updated_at', updated_at)
-          ..add('uuid', uuid))
-        .toString();
-  }
-}
-
-class Gcircles_min_order_byBuilder
-    implements Builder<Gcircles_min_order_by, Gcircles_min_order_byBuilder> {
-  _$Gcircles_min_order_by? _$v;
-
-  Gorder_by? _created_at;
-  Gorder_by? get created_at => _$this._created_at;
-  set created_at(Gorder_by? created_at) => _$this._created_at = created_at;
-
-  Gorder_by? _description;
-  Gorder_by? get description => _$this._description;
-  set description(Gorder_by? description) => _$this._description = description;
-
-  Gorder_by? _name;
-  Gorder_by? get name => _$this._name;
-  set name(Gorder_by? name) => _$this._name = name;
-
-  Gorder_by? _owner_id;
-  Gorder_by? get owner_id => _$this._owner_id;
-  set owner_id(Gorder_by? owner_id) => _$this._owner_id = owner_id;
-
-  Gorder_by? _updated_at;
-  Gorder_by? get updated_at => _$this._updated_at;
-  set updated_at(Gorder_by? updated_at) => _$this._updated_at = updated_at;
-
-  Gorder_by? _uuid;
-  Gorder_by? get uuid => _$this._uuid;
-  set uuid(Gorder_by? uuid) => _$this._uuid = uuid;
-
-  Gcircles_min_order_byBuilder();
-
-  Gcircles_min_order_byBuilder get _$this {
-    final $v = _$v;
-    if ($v != null) {
-      _created_at = $v.created_at;
-      _description = $v.description;
-      _name = $v.name;
-      _owner_id = $v.owner_id;
-      _updated_at = $v.updated_at;
-      _uuid = $v.uuid;
-      _$v = null;
-    }
-    return this;
-  }
-
-  @override
-  void replace(Gcircles_min_order_by other) {
-    _$v = other as _$Gcircles_min_order_by;
-  }
-
-  @override
-  void update(void Function(Gcircles_min_order_byBuilder)? updates) {
-    if (updates != null) updates(this);
-  }
-
-  @override
-  Gcircles_min_order_by build() => _build();
-
-  _$Gcircles_min_order_by _build() {
-    final _$result =
-        _$v ??
-        _$Gcircles_min_order_by._(
-          created_at: created_at,
-          description: description,
-          name: name,
-          owner_id: owner_id,
-          updated_at: updated_at,
-          uuid: uuid,
-        );
     replace(_$result);
     return _$result;
   }
@@ -29611,8 +25547,6 @@ class _$Gcircles_order_by extends Gcircles_order_by {
   @override
   final Gorder_by? updated_at;
   @override
-  final Gusers_order_by? user;
-  @override
   final Gorder_by? uuid;
 
   factory _$Gcircles_order_by([
@@ -29628,7 +25562,6 @@ class _$Gcircles_order_by extends Gcircles_order_by {
     this.name,
     this.owner_id,
     this.updated_at,
-    this.user,
     this.uuid,
   }) : super._();
   @override
@@ -29651,7 +25584,6 @@ class _$Gcircles_order_by extends Gcircles_order_by {
         name == other.name &&
         owner_id == other.owner_id &&
         updated_at == other.updated_at &&
-        user == other.user &&
         uuid == other.uuid;
   }
 
@@ -29666,7 +25598,6 @@ class _$Gcircles_order_by extends Gcircles_order_by {
     _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, owner_id.hashCode);
     _$hash = $jc(_$hash, updated_at.hashCode);
-    _$hash = $jc(_$hash, user.hashCode);
     _$hash = $jc(_$hash, uuid.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -29683,7 +25614,6 @@ class _$Gcircles_order_by extends Gcircles_order_by {
           ..add('name', name)
           ..add('owner_id', owner_id)
           ..add('updated_at', updated_at)
-          ..add('user', user)
           ..add('uuid', uuid))
         .toString();
   }
@@ -29735,10 +25665,6 @@ class Gcircles_order_byBuilder
   Gorder_by? get updated_at => _$this._updated_at;
   set updated_at(Gorder_by? updated_at) => _$this._updated_at = updated_at;
 
-  Gusers_order_byBuilder? _user;
-  Gusers_order_byBuilder get user => _$this._user ??= Gusers_order_byBuilder();
-  set user(Gusers_order_byBuilder? user) => _$this._user = user;
-
   Gorder_by? _uuid;
   Gorder_by? get uuid => _$this._uuid;
   set uuid(Gorder_by? uuid) => _$this._uuid = uuid;
@@ -29757,7 +25683,6 @@ class Gcircles_order_byBuilder
       _name = $v.name;
       _owner_id = $v.owner_id;
       _updated_at = $v.updated_at;
-      _user = $v.user?.toBuilder();
       _uuid = $v.uuid;
       _$v = null;
     }
@@ -29792,7 +25717,6 @@ class Gcircles_order_byBuilder
             name: name,
             owner_id: owner_id,
             updated_at: updated_at,
-            user: _user?.build(),
             uuid: uuid,
           );
     } catch (_) {
@@ -29804,9 +25728,6 @@ class Gcircles_order_byBuilder
         _circle_members_aggregate?.build();
         _$failedField = 'circle_permissions_aggregate';
         _circle_permissions_aggregate?.build();
-
-        _$failedField = 'user';
-        _user?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
           r'Gcircles_order_by',
@@ -31250,8 +27171,6 @@ class _$Gposts_bool_exp extends Gposts_bool_exp {
   @override
   final Gtimestamptz_comparison_exp? updated_at;
   @override
-  final Gusers_bool_exp? user;
-  @override
   final Gbpchar_comparison_exp? user_id;
   @override
   final Guuid_comparison_exp? uuid;
@@ -31268,7 +27187,6 @@ class _$Gposts_bool_exp extends Gposts_bool_exp {
     this.content,
     this.created_at,
     this.updated_at,
-    this.user,
     this.user_id,
     this.uuid,
   }) : super._();
@@ -31291,7 +27209,6 @@ class _$Gposts_bool_exp extends Gposts_bool_exp {
         content == other.content &&
         created_at == other.created_at &&
         updated_at == other.updated_at &&
-        user == other.user &&
         user_id == other.user_id &&
         uuid == other.uuid;
   }
@@ -31307,7 +27224,6 @@ class _$Gposts_bool_exp extends Gposts_bool_exp {
     _$hash = $jc(_$hash, content.hashCode);
     _$hash = $jc(_$hash, created_at.hashCode);
     _$hash = $jc(_$hash, updated_at.hashCode);
-    _$hash = $jc(_$hash, user.hashCode);
     _$hash = $jc(_$hash, user_id.hashCode);
     _$hash = $jc(_$hash, uuid.hashCode);
     _$hash = $jf(_$hash);
@@ -31325,7 +27241,6 @@ class _$Gposts_bool_exp extends Gposts_bool_exp {
           ..add('content', content)
           ..add('created_at', created_at)
           ..add('updated_at', updated_at)
-          ..add('user', user)
           ..add('user_id', user_id)
           ..add('uuid', uuid))
         .toString();
@@ -31380,10 +27295,6 @@ class Gposts_bool_expBuilder
   set updated_at(Gtimestamptz_comparison_expBuilder? updated_at) =>
       _$this._updated_at = updated_at;
 
-  Gusers_bool_expBuilder? _user;
-  Gusers_bool_expBuilder get user => _$this._user ??= Gusers_bool_expBuilder();
-  set user(Gusers_bool_expBuilder? user) => _$this._user = user;
-
   Gbpchar_comparison_expBuilder? _user_id;
   Gbpchar_comparison_expBuilder get user_id =>
       _$this._user_id ??= Gbpchar_comparison_expBuilder();
@@ -31408,7 +27319,6 @@ class Gposts_bool_expBuilder
       _content = $v.content?.toBuilder();
       _created_at = $v.created_at?.toBuilder();
       _updated_at = $v.updated_at?.toBuilder();
-      _user = $v.user?.toBuilder();
       _user_id = $v.user_id?.toBuilder();
       _uuid = $v.uuid?.toBuilder();
       _$v = null;
@@ -31443,7 +27353,6 @@ class Gposts_bool_expBuilder
             content: _content?.build(),
             created_at: _created_at?.build(),
             updated_at: _updated_at?.build(),
-            user: _user?.build(),
             user_id: _user_id?.build(),
             uuid: _uuid?.build(),
           );
@@ -31466,8 +27375,6 @@ class Gposts_bool_expBuilder
         _created_at?.build();
         _$failedField = 'updated_at';
         _updated_at?.build();
-        _$failedField = 'user';
-        _user?.build();
         _$failedField = 'user_id';
         _user_id?.build();
         _$failedField = 'uuid';
@@ -31498,8 +27405,6 @@ class _$Gposts_insert_input extends Gposts_insert_input {
   @override
   final String? updated_at;
   @override
-  final Gusers_obj_rel_insert_input? user;
-  @override
   final String? user_id;
   @override
   final String? uuid;
@@ -31514,7 +27419,6 @@ class _$Gposts_insert_input extends Gposts_insert_input {
     this.content,
     this.created_at,
     this.updated_at,
-    this.user,
     this.user_id,
     this.uuid,
   }) : super._();
@@ -31536,7 +27440,6 @@ class _$Gposts_insert_input extends Gposts_insert_input {
         content == other.content &&
         created_at == other.created_at &&
         updated_at == other.updated_at &&
-        user == other.user &&
         user_id == other.user_id &&
         uuid == other.uuid;
   }
@@ -31549,7 +27452,6 @@ class _$Gposts_insert_input extends Gposts_insert_input {
     _$hash = $jc(_$hash, content.hashCode);
     _$hash = $jc(_$hash, created_at.hashCode);
     _$hash = $jc(_$hash, updated_at.hashCode);
-    _$hash = $jc(_$hash, user.hashCode);
     _$hash = $jc(_$hash, user_id.hashCode);
     _$hash = $jc(_$hash, uuid.hashCode);
     _$hash = $jf(_$hash);
@@ -31564,7 +27466,6 @@ class _$Gposts_insert_input extends Gposts_insert_input {
           ..add('content', content)
           ..add('created_at', created_at)
           ..add('updated_at', updated_at)
-          ..add('user', user)
           ..add('user_id', user_id)
           ..add('uuid', uuid))
         .toString();
@@ -31597,11 +27498,6 @@ class Gposts_insert_inputBuilder
   String? get updated_at => _$this._updated_at;
   set updated_at(String? updated_at) => _$this._updated_at = updated_at;
 
-  Gusers_obj_rel_insert_inputBuilder? _user;
-  Gusers_obj_rel_insert_inputBuilder get user =>
-      _$this._user ??= Gusers_obj_rel_insert_inputBuilder();
-  set user(Gusers_obj_rel_insert_inputBuilder? user) => _$this._user = user;
-
   String? _user_id;
   String? get user_id => _$this._user_id;
   set user_id(String? user_id) => _$this._user_id = user_id;
@@ -31620,7 +27516,6 @@ class Gposts_insert_inputBuilder
       _content = $v.content;
       _created_at = $v.created_at;
       _updated_at = $v.updated_at;
-      _user = $v.user?.toBuilder();
       _user_id = $v.user_id;
       _uuid = $v.uuid;
       _$v = null;
@@ -31652,7 +27547,6 @@ class Gposts_insert_inputBuilder
             content: content,
             created_at: created_at,
             updated_at: updated_at,
-            user: _user?.build(),
             user_id: user_id,
             uuid: uuid,
           );
@@ -31661,9 +27555,6 @@ class Gposts_insert_inputBuilder
       try {
         _$failedField = 'board';
         _board?.build();
-
-        _$failedField = 'user';
-        _user?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
           r'Gposts_insert_input',
@@ -32118,8 +28009,6 @@ class _$Gposts_order_by extends Gposts_order_by {
   @override
   final Gorder_by? updated_at;
   @override
-  final Gusers_order_by? user;
-  @override
   final Gorder_by? user_id;
   @override
   final Gorder_by? uuid;
@@ -32133,7 +28022,6 @@ class _$Gposts_order_by extends Gposts_order_by {
     this.content,
     this.created_at,
     this.updated_at,
-    this.user,
     this.user_id,
     this.uuid,
   }) : super._();
@@ -32153,7 +28041,6 @@ class _$Gposts_order_by extends Gposts_order_by {
         content == other.content &&
         created_at == other.created_at &&
         updated_at == other.updated_at &&
-        user == other.user &&
         user_id == other.user_id &&
         uuid == other.uuid;
   }
@@ -32166,7 +28053,6 @@ class _$Gposts_order_by extends Gposts_order_by {
     _$hash = $jc(_$hash, content.hashCode);
     _$hash = $jc(_$hash, created_at.hashCode);
     _$hash = $jc(_$hash, updated_at.hashCode);
-    _$hash = $jc(_$hash, user.hashCode);
     _$hash = $jc(_$hash, user_id.hashCode);
     _$hash = $jc(_$hash, uuid.hashCode);
     _$hash = $jf(_$hash);
@@ -32181,7 +28067,6 @@ class _$Gposts_order_by extends Gposts_order_by {
           ..add('content', content)
           ..add('created_at', created_at)
           ..add('updated_at', updated_at)
-          ..add('user', user)
           ..add('user_id', user_id)
           ..add('uuid', uuid))
         .toString();
@@ -32213,10 +28098,6 @@ class Gposts_order_byBuilder
   Gorder_by? get updated_at => _$this._updated_at;
   set updated_at(Gorder_by? updated_at) => _$this._updated_at = updated_at;
 
-  Gusers_order_byBuilder? _user;
-  Gusers_order_byBuilder get user => _$this._user ??= Gusers_order_byBuilder();
-  set user(Gusers_order_byBuilder? user) => _$this._user = user;
-
   Gorder_by? _user_id;
   Gorder_by? get user_id => _$this._user_id;
   set user_id(Gorder_by? user_id) => _$this._user_id = user_id;
@@ -32235,7 +28116,6 @@ class Gposts_order_byBuilder
       _content = $v.content;
       _created_at = $v.created_at;
       _updated_at = $v.updated_at;
-      _user = $v.user?.toBuilder();
       _user_id = $v.user_id;
       _uuid = $v.uuid;
       _$v = null;
@@ -32267,7 +28147,6 @@ class Gposts_order_byBuilder
             content: content,
             created_at: created_at,
             updated_at: updated_at,
-            user: _user?.build(),
             user_id: user_id,
             uuid: uuid,
           );
@@ -32276,9 +28155,6 @@ class Gposts_order_byBuilder
       try {
         _$failedField = 'board';
         _board?.build();
-
-        _$failedField = 'user';
-        _user?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
           r'Gposts_order_by',
@@ -33297,1869 +29173,6 @@ class Gtimestamptz_comparison_expBuilder
       } catch (e) {
         throw BuiltValueNestedFieldError(
           r'Gtimestamptz_comparison_exp',
-          _$failedField,
-          e.toString(),
-        );
-      }
-      rethrow;
-    }
-    replace(_$result);
-    return _$result;
-  }
-}
-
-class _$Gusers_bool_exp extends Gusers_bool_exp {
-  @override
-  final BuiltList<Gusers_bool_exp>? G_and;
-  @override
-  final Gusers_bool_exp? G_not;
-  @override
-  final BuiltList<Gusers_bool_exp>? G_or;
-  @override
-  final Gboards_bool_exp? boards;
-  @override
-  final Gboards_aggregate_bool_exp? boards_aggregate;
-  @override
-  final Gcircle_members_bool_exp? circle_members;
-  @override
-  final Gcircle_members_aggregate_bool_exp? circle_members_aggregate;
-  @override
-  final Gcircles_bool_exp? circles;
-  @override
-  final Gcircles_aggregate_bool_exp? circles_aggregate;
-  @override
-  final Gtimestamptz_comparison_exp? created_at;
-  @override
-  final Gtimestamptz_comparison_exp? deleted_at;
-  @override
-  final GString_comparison_exp? email;
-  @override
-  final GBoolean_comparison_exp? email_verified;
-  @override
-  final Gbpchar_comparison_exp? id;
-  @override
-  final GString_comparison_exp? name;
-  @override
-  final GString_comparison_exp? phone_number;
-  @override
-  final GString_comparison_exp? photo_url;
-  @override
-  final Gposts_bool_exp? posts;
-  @override
-  final Gposts_aggregate_bool_exp? posts_aggregate;
-  @override
-  final Gtimestamptz_comparison_exp? updated_at;
-
-  factory _$Gusers_bool_exp([void Function(Gusers_bool_expBuilder)? updates]) =>
-      (Gusers_bool_expBuilder()..update(updates))._build();
-
-  _$Gusers_bool_exp._({
-    this.G_and,
-    this.G_not,
-    this.G_or,
-    this.boards,
-    this.boards_aggregate,
-    this.circle_members,
-    this.circle_members_aggregate,
-    this.circles,
-    this.circles_aggregate,
-    this.created_at,
-    this.deleted_at,
-    this.email,
-    this.email_verified,
-    this.id,
-    this.name,
-    this.phone_number,
-    this.photo_url,
-    this.posts,
-    this.posts_aggregate,
-    this.updated_at,
-  }) : super._();
-  @override
-  Gusers_bool_exp rebuild(void Function(Gusers_bool_expBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
-
-  @override
-  Gusers_bool_expBuilder toBuilder() => Gusers_bool_expBuilder()..replace(this);
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(other, this)) return true;
-    return other is Gusers_bool_exp &&
-        G_and == other.G_and &&
-        G_not == other.G_not &&
-        G_or == other.G_or &&
-        boards == other.boards &&
-        boards_aggregate == other.boards_aggregate &&
-        circle_members == other.circle_members &&
-        circle_members_aggregate == other.circle_members_aggregate &&
-        circles == other.circles &&
-        circles_aggregate == other.circles_aggregate &&
-        created_at == other.created_at &&
-        deleted_at == other.deleted_at &&
-        email == other.email &&
-        email_verified == other.email_verified &&
-        id == other.id &&
-        name == other.name &&
-        phone_number == other.phone_number &&
-        photo_url == other.photo_url &&
-        posts == other.posts &&
-        posts_aggregate == other.posts_aggregate &&
-        updated_at == other.updated_at;
-  }
-
-  @override
-  int get hashCode {
-    var _$hash = 0;
-    _$hash = $jc(_$hash, G_and.hashCode);
-    _$hash = $jc(_$hash, G_not.hashCode);
-    _$hash = $jc(_$hash, G_or.hashCode);
-    _$hash = $jc(_$hash, boards.hashCode);
-    _$hash = $jc(_$hash, boards_aggregate.hashCode);
-    _$hash = $jc(_$hash, circle_members.hashCode);
-    _$hash = $jc(_$hash, circle_members_aggregate.hashCode);
-    _$hash = $jc(_$hash, circles.hashCode);
-    _$hash = $jc(_$hash, circles_aggregate.hashCode);
-    _$hash = $jc(_$hash, created_at.hashCode);
-    _$hash = $jc(_$hash, deleted_at.hashCode);
-    _$hash = $jc(_$hash, email.hashCode);
-    _$hash = $jc(_$hash, email_verified.hashCode);
-    _$hash = $jc(_$hash, id.hashCode);
-    _$hash = $jc(_$hash, name.hashCode);
-    _$hash = $jc(_$hash, phone_number.hashCode);
-    _$hash = $jc(_$hash, photo_url.hashCode);
-    _$hash = $jc(_$hash, posts.hashCode);
-    _$hash = $jc(_$hash, posts_aggregate.hashCode);
-    _$hash = $jc(_$hash, updated_at.hashCode);
-    _$hash = $jf(_$hash);
-    return _$hash;
-  }
-
-  @override
-  String toString() {
-    return (newBuiltValueToStringHelper(r'Gusers_bool_exp')
-          ..add('G_and', G_and)
-          ..add('G_not', G_not)
-          ..add('G_or', G_or)
-          ..add('boards', boards)
-          ..add('boards_aggregate', boards_aggregate)
-          ..add('circle_members', circle_members)
-          ..add('circle_members_aggregate', circle_members_aggregate)
-          ..add('circles', circles)
-          ..add('circles_aggregate', circles_aggregate)
-          ..add('created_at', created_at)
-          ..add('deleted_at', deleted_at)
-          ..add('email', email)
-          ..add('email_verified', email_verified)
-          ..add('id', id)
-          ..add('name', name)
-          ..add('phone_number', phone_number)
-          ..add('photo_url', photo_url)
-          ..add('posts', posts)
-          ..add('posts_aggregate', posts_aggregate)
-          ..add('updated_at', updated_at))
-        .toString();
-  }
-}
-
-class Gusers_bool_expBuilder
-    implements Builder<Gusers_bool_exp, Gusers_bool_expBuilder> {
-  _$Gusers_bool_exp? _$v;
-
-  ListBuilder<Gusers_bool_exp>? _G_and;
-  ListBuilder<Gusers_bool_exp> get G_and =>
-      _$this._G_and ??= ListBuilder<Gusers_bool_exp>();
-  set G_and(ListBuilder<Gusers_bool_exp>? G_and) => _$this._G_and = G_and;
-
-  Gusers_bool_expBuilder? _G_not;
-  Gusers_bool_expBuilder get G_not =>
-      _$this._G_not ??= Gusers_bool_expBuilder();
-  set G_not(Gusers_bool_expBuilder? G_not) => _$this._G_not = G_not;
-
-  ListBuilder<Gusers_bool_exp>? _G_or;
-  ListBuilder<Gusers_bool_exp> get G_or =>
-      _$this._G_or ??= ListBuilder<Gusers_bool_exp>();
-  set G_or(ListBuilder<Gusers_bool_exp>? G_or) => _$this._G_or = G_or;
-
-  Gboards_bool_expBuilder? _boards;
-  Gboards_bool_expBuilder get boards =>
-      _$this._boards ??= Gboards_bool_expBuilder();
-  set boards(Gboards_bool_expBuilder? boards) => _$this._boards = boards;
-
-  Gboards_aggregate_bool_expBuilder? _boards_aggregate;
-  Gboards_aggregate_bool_expBuilder get boards_aggregate =>
-      _$this._boards_aggregate ??= Gboards_aggregate_bool_expBuilder();
-  set boards_aggregate(Gboards_aggregate_bool_expBuilder? boards_aggregate) =>
-      _$this._boards_aggregate = boards_aggregate;
-
-  Gcircle_members_bool_expBuilder? _circle_members;
-  Gcircle_members_bool_expBuilder get circle_members =>
-      _$this._circle_members ??= Gcircle_members_bool_expBuilder();
-  set circle_members(Gcircle_members_bool_expBuilder? circle_members) =>
-      _$this._circle_members = circle_members;
-
-  Gcircle_members_aggregate_bool_expBuilder? _circle_members_aggregate;
-  Gcircle_members_aggregate_bool_expBuilder get circle_members_aggregate =>
-      _$this._circle_members_aggregate ??=
-          Gcircle_members_aggregate_bool_expBuilder();
-  set circle_members_aggregate(
-    Gcircle_members_aggregate_bool_expBuilder? circle_members_aggregate,
-  ) => _$this._circle_members_aggregate = circle_members_aggregate;
-
-  Gcircles_bool_expBuilder? _circles;
-  Gcircles_bool_expBuilder get circles =>
-      _$this._circles ??= Gcircles_bool_expBuilder();
-  set circles(Gcircles_bool_expBuilder? circles) => _$this._circles = circles;
-
-  Gcircles_aggregate_bool_expBuilder? _circles_aggregate;
-  Gcircles_aggregate_bool_expBuilder get circles_aggregate =>
-      _$this._circles_aggregate ??= Gcircles_aggregate_bool_expBuilder();
-  set circles_aggregate(
-    Gcircles_aggregate_bool_expBuilder? circles_aggregate,
-  ) => _$this._circles_aggregate = circles_aggregate;
-
-  Gtimestamptz_comparison_expBuilder? _created_at;
-  Gtimestamptz_comparison_expBuilder get created_at =>
-      _$this._created_at ??= Gtimestamptz_comparison_expBuilder();
-  set created_at(Gtimestamptz_comparison_expBuilder? created_at) =>
-      _$this._created_at = created_at;
-
-  Gtimestamptz_comparison_expBuilder? _deleted_at;
-  Gtimestamptz_comparison_expBuilder get deleted_at =>
-      _$this._deleted_at ??= Gtimestamptz_comparison_expBuilder();
-  set deleted_at(Gtimestamptz_comparison_expBuilder? deleted_at) =>
-      _$this._deleted_at = deleted_at;
-
-  GString_comparison_expBuilder? _email;
-  GString_comparison_expBuilder get email =>
-      _$this._email ??= GString_comparison_expBuilder();
-  set email(GString_comparison_expBuilder? email) => _$this._email = email;
-
-  GBoolean_comparison_expBuilder? _email_verified;
-  GBoolean_comparison_expBuilder get email_verified =>
-      _$this._email_verified ??= GBoolean_comparison_expBuilder();
-  set email_verified(GBoolean_comparison_expBuilder? email_verified) =>
-      _$this._email_verified = email_verified;
-
-  Gbpchar_comparison_expBuilder? _id;
-  Gbpchar_comparison_expBuilder get id =>
-      _$this._id ??= Gbpchar_comparison_expBuilder();
-  set id(Gbpchar_comparison_expBuilder? id) => _$this._id = id;
-
-  GString_comparison_expBuilder? _name;
-  GString_comparison_expBuilder get name =>
-      _$this._name ??= GString_comparison_expBuilder();
-  set name(GString_comparison_expBuilder? name) => _$this._name = name;
-
-  GString_comparison_expBuilder? _phone_number;
-  GString_comparison_expBuilder get phone_number =>
-      _$this._phone_number ??= GString_comparison_expBuilder();
-  set phone_number(GString_comparison_expBuilder? phone_number) =>
-      _$this._phone_number = phone_number;
-
-  GString_comparison_expBuilder? _photo_url;
-  GString_comparison_expBuilder get photo_url =>
-      _$this._photo_url ??= GString_comparison_expBuilder();
-  set photo_url(GString_comparison_expBuilder? photo_url) =>
-      _$this._photo_url = photo_url;
-
-  Gposts_bool_expBuilder? _posts;
-  Gposts_bool_expBuilder get posts =>
-      _$this._posts ??= Gposts_bool_expBuilder();
-  set posts(Gposts_bool_expBuilder? posts) => _$this._posts = posts;
-
-  Gposts_aggregate_bool_expBuilder? _posts_aggregate;
-  Gposts_aggregate_bool_expBuilder get posts_aggregate =>
-      _$this._posts_aggregate ??= Gposts_aggregate_bool_expBuilder();
-  set posts_aggregate(Gposts_aggregate_bool_expBuilder? posts_aggregate) =>
-      _$this._posts_aggregate = posts_aggregate;
-
-  Gtimestamptz_comparison_expBuilder? _updated_at;
-  Gtimestamptz_comparison_expBuilder get updated_at =>
-      _$this._updated_at ??= Gtimestamptz_comparison_expBuilder();
-  set updated_at(Gtimestamptz_comparison_expBuilder? updated_at) =>
-      _$this._updated_at = updated_at;
-
-  Gusers_bool_expBuilder();
-
-  Gusers_bool_expBuilder get _$this {
-    final $v = _$v;
-    if ($v != null) {
-      _G_and = $v.G_and?.toBuilder();
-      _G_not = $v.G_not?.toBuilder();
-      _G_or = $v.G_or?.toBuilder();
-      _boards = $v.boards?.toBuilder();
-      _boards_aggregate = $v.boards_aggregate?.toBuilder();
-      _circle_members = $v.circle_members?.toBuilder();
-      _circle_members_aggregate = $v.circle_members_aggregate?.toBuilder();
-      _circles = $v.circles?.toBuilder();
-      _circles_aggregate = $v.circles_aggregate?.toBuilder();
-      _created_at = $v.created_at?.toBuilder();
-      _deleted_at = $v.deleted_at?.toBuilder();
-      _email = $v.email?.toBuilder();
-      _email_verified = $v.email_verified?.toBuilder();
-      _id = $v.id?.toBuilder();
-      _name = $v.name?.toBuilder();
-      _phone_number = $v.phone_number?.toBuilder();
-      _photo_url = $v.photo_url?.toBuilder();
-      _posts = $v.posts?.toBuilder();
-      _posts_aggregate = $v.posts_aggregate?.toBuilder();
-      _updated_at = $v.updated_at?.toBuilder();
-      _$v = null;
-    }
-    return this;
-  }
-
-  @override
-  void replace(Gusers_bool_exp other) {
-    _$v = other as _$Gusers_bool_exp;
-  }
-
-  @override
-  void update(void Function(Gusers_bool_expBuilder)? updates) {
-    if (updates != null) updates(this);
-  }
-
-  @override
-  Gusers_bool_exp build() => _build();
-
-  _$Gusers_bool_exp _build() {
-    _$Gusers_bool_exp _$result;
-    try {
-      _$result =
-          _$v ??
-          _$Gusers_bool_exp._(
-            G_and: _G_and?.build(),
-            G_not: _G_not?.build(),
-            G_or: _G_or?.build(),
-            boards: _boards?.build(),
-            boards_aggregate: _boards_aggregate?.build(),
-            circle_members: _circle_members?.build(),
-            circle_members_aggregate: _circle_members_aggregate?.build(),
-            circles: _circles?.build(),
-            circles_aggregate: _circles_aggregate?.build(),
-            created_at: _created_at?.build(),
-            deleted_at: _deleted_at?.build(),
-            email: _email?.build(),
-            email_verified: _email_verified?.build(),
-            id: _id?.build(),
-            name: _name?.build(),
-            phone_number: _phone_number?.build(),
-            photo_url: _photo_url?.build(),
-            posts: _posts?.build(),
-            posts_aggregate: _posts_aggregate?.build(),
-            updated_at: _updated_at?.build(),
-          );
-    } catch (_) {
-      late String _$failedField;
-      try {
-        _$failedField = 'G_and';
-        _G_and?.build();
-        _$failedField = 'G_not';
-        _G_not?.build();
-        _$failedField = 'G_or';
-        _G_or?.build();
-        _$failedField = 'boards';
-        _boards?.build();
-        _$failedField = 'boards_aggregate';
-        _boards_aggregate?.build();
-        _$failedField = 'circle_members';
-        _circle_members?.build();
-        _$failedField = 'circle_members_aggregate';
-        _circle_members_aggregate?.build();
-        _$failedField = 'circles';
-        _circles?.build();
-        _$failedField = 'circles_aggregate';
-        _circles_aggregate?.build();
-        _$failedField = 'created_at';
-        _created_at?.build();
-        _$failedField = 'deleted_at';
-        _deleted_at?.build();
-        _$failedField = 'email';
-        _email?.build();
-        _$failedField = 'email_verified';
-        _email_verified?.build();
-        _$failedField = 'id';
-        _id?.build();
-        _$failedField = 'name';
-        _name?.build();
-        _$failedField = 'phone_number';
-        _phone_number?.build();
-        _$failedField = 'photo_url';
-        _photo_url?.build();
-        _$failedField = 'posts';
-        _posts?.build();
-        _$failedField = 'posts_aggregate';
-        _posts_aggregate?.build();
-        _$failedField = 'updated_at';
-        _updated_at?.build();
-      } catch (e) {
-        throw BuiltValueNestedFieldError(
-          r'Gusers_bool_exp',
-          _$failedField,
-          e.toString(),
-        );
-      }
-      rethrow;
-    }
-    replace(_$result);
-    return _$result;
-  }
-}
-
-class _$Gusers_insert_input extends Gusers_insert_input {
-  @override
-  final Gboards_arr_rel_insert_input? boards;
-  @override
-  final Gcircle_members_arr_rel_insert_input? circle_members;
-  @override
-  final Gcircles_arr_rel_insert_input? circles;
-  @override
-  final String? created_at;
-  @override
-  final String? deleted_at;
-  @override
-  final String? email;
-  @override
-  final bool? email_verified;
-  @override
-  final String? id;
-  @override
-  final String? name;
-  @override
-  final String? phone_number;
-  @override
-  final String? photo_url;
-  @override
-  final Gposts_arr_rel_insert_input? posts;
-  @override
-  final String? updated_at;
-
-  factory _$Gusers_insert_input([
-    void Function(Gusers_insert_inputBuilder)? updates,
-  ]) => (Gusers_insert_inputBuilder()..update(updates))._build();
-
-  _$Gusers_insert_input._({
-    this.boards,
-    this.circle_members,
-    this.circles,
-    this.created_at,
-    this.deleted_at,
-    this.email,
-    this.email_verified,
-    this.id,
-    this.name,
-    this.phone_number,
-    this.photo_url,
-    this.posts,
-    this.updated_at,
-  }) : super._();
-  @override
-  Gusers_insert_input rebuild(
-    void Function(Gusers_insert_inputBuilder) updates,
-  ) => (toBuilder()..update(updates)).build();
-
-  @override
-  Gusers_insert_inputBuilder toBuilder() =>
-      Gusers_insert_inputBuilder()..replace(this);
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(other, this)) return true;
-    return other is Gusers_insert_input &&
-        boards == other.boards &&
-        circle_members == other.circle_members &&
-        circles == other.circles &&
-        created_at == other.created_at &&
-        deleted_at == other.deleted_at &&
-        email == other.email &&
-        email_verified == other.email_verified &&
-        id == other.id &&
-        name == other.name &&
-        phone_number == other.phone_number &&
-        photo_url == other.photo_url &&
-        posts == other.posts &&
-        updated_at == other.updated_at;
-  }
-
-  @override
-  int get hashCode {
-    var _$hash = 0;
-    _$hash = $jc(_$hash, boards.hashCode);
-    _$hash = $jc(_$hash, circle_members.hashCode);
-    _$hash = $jc(_$hash, circles.hashCode);
-    _$hash = $jc(_$hash, created_at.hashCode);
-    _$hash = $jc(_$hash, deleted_at.hashCode);
-    _$hash = $jc(_$hash, email.hashCode);
-    _$hash = $jc(_$hash, email_verified.hashCode);
-    _$hash = $jc(_$hash, id.hashCode);
-    _$hash = $jc(_$hash, name.hashCode);
-    _$hash = $jc(_$hash, phone_number.hashCode);
-    _$hash = $jc(_$hash, photo_url.hashCode);
-    _$hash = $jc(_$hash, posts.hashCode);
-    _$hash = $jc(_$hash, updated_at.hashCode);
-    _$hash = $jf(_$hash);
-    return _$hash;
-  }
-
-  @override
-  String toString() {
-    return (newBuiltValueToStringHelper(r'Gusers_insert_input')
-          ..add('boards', boards)
-          ..add('circle_members', circle_members)
-          ..add('circles', circles)
-          ..add('created_at', created_at)
-          ..add('deleted_at', deleted_at)
-          ..add('email', email)
-          ..add('email_verified', email_verified)
-          ..add('id', id)
-          ..add('name', name)
-          ..add('phone_number', phone_number)
-          ..add('photo_url', photo_url)
-          ..add('posts', posts)
-          ..add('updated_at', updated_at))
-        .toString();
-  }
-}
-
-class Gusers_insert_inputBuilder
-    implements Builder<Gusers_insert_input, Gusers_insert_inputBuilder> {
-  _$Gusers_insert_input? _$v;
-
-  Gboards_arr_rel_insert_inputBuilder? _boards;
-  Gboards_arr_rel_insert_inputBuilder get boards =>
-      _$this._boards ??= Gboards_arr_rel_insert_inputBuilder();
-  set boards(Gboards_arr_rel_insert_inputBuilder? boards) =>
-      _$this._boards = boards;
-
-  Gcircle_members_arr_rel_insert_inputBuilder? _circle_members;
-  Gcircle_members_arr_rel_insert_inputBuilder get circle_members =>
-      _$this._circle_members ??= Gcircle_members_arr_rel_insert_inputBuilder();
-  set circle_members(
-    Gcircle_members_arr_rel_insert_inputBuilder? circle_members,
-  ) => _$this._circle_members = circle_members;
-
-  Gcircles_arr_rel_insert_inputBuilder? _circles;
-  Gcircles_arr_rel_insert_inputBuilder get circles =>
-      _$this._circles ??= Gcircles_arr_rel_insert_inputBuilder();
-  set circles(Gcircles_arr_rel_insert_inputBuilder? circles) =>
-      _$this._circles = circles;
-
-  String? _created_at;
-  String? get created_at => _$this._created_at;
-  set created_at(String? created_at) => _$this._created_at = created_at;
-
-  String? _deleted_at;
-  String? get deleted_at => _$this._deleted_at;
-  set deleted_at(String? deleted_at) => _$this._deleted_at = deleted_at;
-
-  String? _email;
-  String? get email => _$this._email;
-  set email(String? email) => _$this._email = email;
-
-  bool? _email_verified;
-  bool? get email_verified => _$this._email_verified;
-  set email_verified(bool? email_verified) =>
-      _$this._email_verified = email_verified;
-
-  String? _id;
-  String? get id => _$this._id;
-  set id(String? id) => _$this._id = id;
-
-  String? _name;
-  String? get name => _$this._name;
-  set name(String? name) => _$this._name = name;
-
-  String? _phone_number;
-  String? get phone_number => _$this._phone_number;
-  set phone_number(String? phone_number) => _$this._phone_number = phone_number;
-
-  String? _photo_url;
-  String? get photo_url => _$this._photo_url;
-  set photo_url(String? photo_url) => _$this._photo_url = photo_url;
-
-  Gposts_arr_rel_insert_inputBuilder? _posts;
-  Gposts_arr_rel_insert_inputBuilder get posts =>
-      _$this._posts ??= Gposts_arr_rel_insert_inputBuilder();
-  set posts(Gposts_arr_rel_insert_inputBuilder? posts) => _$this._posts = posts;
-
-  String? _updated_at;
-  String? get updated_at => _$this._updated_at;
-  set updated_at(String? updated_at) => _$this._updated_at = updated_at;
-
-  Gusers_insert_inputBuilder();
-
-  Gusers_insert_inputBuilder get _$this {
-    final $v = _$v;
-    if ($v != null) {
-      _boards = $v.boards?.toBuilder();
-      _circle_members = $v.circle_members?.toBuilder();
-      _circles = $v.circles?.toBuilder();
-      _created_at = $v.created_at;
-      _deleted_at = $v.deleted_at;
-      _email = $v.email;
-      _email_verified = $v.email_verified;
-      _id = $v.id;
-      _name = $v.name;
-      _phone_number = $v.phone_number;
-      _photo_url = $v.photo_url;
-      _posts = $v.posts?.toBuilder();
-      _updated_at = $v.updated_at;
-      _$v = null;
-    }
-    return this;
-  }
-
-  @override
-  void replace(Gusers_insert_input other) {
-    _$v = other as _$Gusers_insert_input;
-  }
-
-  @override
-  void update(void Function(Gusers_insert_inputBuilder)? updates) {
-    if (updates != null) updates(this);
-  }
-
-  @override
-  Gusers_insert_input build() => _build();
-
-  _$Gusers_insert_input _build() {
-    _$Gusers_insert_input _$result;
-    try {
-      _$result =
-          _$v ??
-          _$Gusers_insert_input._(
-            boards: _boards?.build(),
-            circle_members: _circle_members?.build(),
-            circles: _circles?.build(),
-            created_at: created_at,
-            deleted_at: deleted_at,
-            email: email,
-            email_verified: email_verified,
-            id: id,
-            name: name,
-            phone_number: phone_number,
-            photo_url: photo_url,
-            posts: _posts?.build(),
-            updated_at: updated_at,
-          );
-    } catch (_) {
-      late String _$failedField;
-      try {
-        _$failedField = 'boards';
-        _boards?.build();
-        _$failedField = 'circle_members';
-        _circle_members?.build();
-        _$failedField = 'circles';
-        _circles?.build();
-
-        _$failedField = 'posts';
-        _posts?.build();
-      } catch (e) {
-        throw BuiltValueNestedFieldError(
-          r'Gusers_insert_input',
-          _$failedField,
-          e.toString(),
-        );
-      }
-      rethrow;
-    }
-    replace(_$result);
-    return _$result;
-  }
-}
-
-class _$Gusers_obj_rel_insert_input extends Gusers_obj_rel_insert_input {
-  @override
-  final Gusers_insert_input data;
-  @override
-  final Gusers_on_conflict? on_conflict;
-
-  factory _$Gusers_obj_rel_insert_input([
-    void Function(Gusers_obj_rel_insert_inputBuilder)? updates,
-  ]) => (Gusers_obj_rel_insert_inputBuilder()..update(updates))._build();
-
-  _$Gusers_obj_rel_insert_input._({required this.data, this.on_conflict})
-    : super._();
-  @override
-  Gusers_obj_rel_insert_input rebuild(
-    void Function(Gusers_obj_rel_insert_inputBuilder) updates,
-  ) => (toBuilder()..update(updates)).build();
-
-  @override
-  Gusers_obj_rel_insert_inputBuilder toBuilder() =>
-      Gusers_obj_rel_insert_inputBuilder()..replace(this);
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(other, this)) return true;
-    return other is Gusers_obj_rel_insert_input &&
-        data == other.data &&
-        on_conflict == other.on_conflict;
-  }
-
-  @override
-  int get hashCode {
-    var _$hash = 0;
-    _$hash = $jc(_$hash, data.hashCode);
-    _$hash = $jc(_$hash, on_conflict.hashCode);
-    _$hash = $jf(_$hash);
-    return _$hash;
-  }
-
-  @override
-  String toString() {
-    return (newBuiltValueToStringHelper(r'Gusers_obj_rel_insert_input')
-          ..add('data', data)
-          ..add('on_conflict', on_conflict))
-        .toString();
-  }
-}
-
-class Gusers_obj_rel_insert_inputBuilder
-    implements
-        Builder<
-          Gusers_obj_rel_insert_input,
-          Gusers_obj_rel_insert_inputBuilder
-        > {
-  _$Gusers_obj_rel_insert_input? _$v;
-
-  Gusers_insert_inputBuilder? _data;
-  Gusers_insert_inputBuilder get data =>
-      _$this._data ??= Gusers_insert_inputBuilder();
-  set data(Gusers_insert_inputBuilder? data) => _$this._data = data;
-
-  Gusers_on_conflictBuilder? _on_conflict;
-  Gusers_on_conflictBuilder get on_conflict =>
-      _$this._on_conflict ??= Gusers_on_conflictBuilder();
-  set on_conflict(Gusers_on_conflictBuilder? on_conflict) =>
-      _$this._on_conflict = on_conflict;
-
-  Gusers_obj_rel_insert_inputBuilder();
-
-  Gusers_obj_rel_insert_inputBuilder get _$this {
-    final $v = _$v;
-    if ($v != null) {
-      _data = $v.data.toBuilder();
-      _on_conflict = $v.on_conflict?.toBuilder();
-      _$v = null;
-    }
-    return this;
-  }
-
-  @override
-  void replace(Gusers_obj_rel_insert_input other) {
-    _$v = other as _$Gusers_obj_rel_insert_input;
-  }
-
-  @override
-  void update(void Function(Gusers_obj_rel_insert_inputBuilder)? updates) {
-    if (updates != null) updates(this);
-  }
-
-  @override
-  Gusers_obj_rel_insert_input build() => _build();
-
-  _$Gusers_obj_rel_insert_input _build() {
-    _$Gusers_obj_rel_insert_input _$result;
-    try {
-      _$result =
-          _$v ??
-          _$Gusers_obj_rel_insert_input._(
-            data: data.build(),
-            on_conflict: _on_conflict?.build(),
-          );
-    } catch (_) {
-      late String _$failedField;
-      try {
-        _$failedField = 'data';
-        data.build();
-        _$failedField = 'on_conflict';
-        _on_conflict?.build();
-      } catch (e) {
-        throw BuiltValueNestedFieldError(
-          r'Gusers_obj_rel_insert_input',
-          _$failedField,
-          e.toString(),
-        );
-      }
-      rethrow;
-    }
-    replace(_$result);
-    return _$result;
-  }
-}
-
-class _$Gusers_on_conflict extends Gusers_on_conflict {
-  @override
-  final Gusers_constraint constraint;
-  @override
-  final BuiltList<Gusers_update_column> update_columns;
-  @override
-  final Gusers_bool_exp? where;
-
-  factory _$Gusers_on_conflict([
-    void Function(Gusers_on_conflictBuilder)? updates,
-  ]) => (Gusers_on_conflictBuilder()..update(updates))._build();
-
-  _$Gusers_on_conflict._({
-    required this.constraint,
-    required this.update_columns,
-    this.where,
-  }) : super._();
-  @override
-  Gusers_on_conflict rebuild(
-    void Function(Gusers_on_conflictBuilder) updates,
-  ) => (toBuilder()..update(updates)).build();
-
-  @override
-  Gusers_on_conflictBuilder toBuilder() =>
-      Gusers_on_conflictBuilder()..replace(this);
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(other, this)) return true;
-    return other is Gusers_on_conflict &&
-        constraint == other.constraint &&
-        update_columns == other.update_columns &&
-        where == other.where;
-  }
-
-  @override
-  int get hashCode {
-    var _$hash = 0;
-    _$hash = $jc(_$hash, constraint.hashCode);
-    _$hash = $jc(_$hash, update_columns.hashCode);
-    _$hash = $jc(_$hash, where.hashCode);
-    _$hash = $jf(_$hash);
-    return _$hash;
-  }
-
-  @override
-  String toString() {
-    return (newBuiltValueToStringHelper(r'Gusers_on_conflict')
-          ..add('constraint', constraint)
-          ..add('update_columns', update_columns)
-          ..add('where', where))
-        .toString();
-  }
-}
-
-class Gusers_on_conflictBuilder
-    implements Builder<Gusers_on_conflict, Gusers_on_conflictBuilder> {
-  _$Gusers_on_conflict? _$v;
-
-  Gusers_constraint? _constraint;
-  Gusers_constraint? get constraint => _$this._constraint;
-  set constraint(Gusers_constraint? constraint) =>
-      _$this._constraint = constraint;
-
-  ListBuilder<Gusers_update_column>? _update_columns;
-  ListBuilder<Gusers_update_column> get update_columns =>
-      _$this._update_columns ??= ListBuilder<Gusers_update_column>();
-  set update_columns(ListBuilder<Gusers_update_column>? update_columns) =>
-      _$this._update_columns = update_columns;
-
-  Gusers_bool_expBuilder? _where;
-  Gusers_bool_expBuilder get where =>
-      _$this._where ??= Gusers_bool_expBuilder();
-  set where(Gusers_bool_expBuilder? where) => _$this._where = where;
-
-  Gusers_on_conflictBuilder();
-
-  Gusers_on_conflictBuilder get _$this {
-    final $v = _$v;
-    if ($v != null) {
-      _constraint = $v.constraint;
-      _update_columns = $v.update_columns.toBuilder();
-      _where = $v.where?.toBuilder();
-      _$v = null;
-    }
-    return this;
-  }
-
-  @override
-  void replace(Gusers_on_conflict other) {
-    _$v = other as _$Gusers_on_conflict;
-  }
-
-  @override
-  void update(void Function(Gusers_on_conflictBuilder)? updates) {
-    if (updates != null) updates(this);
-  }
-
-  @override
-  Gusers_on_conflict build() => _build();
-
-  _$Gusers_on_conflict _build() {
-    _$Gusers_on_conflict _$result;
-    try {
-      _$result =
-          _$v ??
-          _$Gusers_on_conflict._(
-            constraint: BuiltValueNullFieldError.checkNotNull(
-              constraint,
-              r'Gusers_on_conflict',
-              'constraint',
-            ),
-            update_columns: update_columns.build(),
-            where: _where?.build(),
-          );
-    } catch (_) {
-      late String _$failedField;
-      try {
-        _$failedField = 'update_columns';
-        update_columns.build();
-        _$failedField = 'where';
-        _where?.build();
-      } catch (e) {
-        throw BuiltValueNestedFieldError(
-          r'Gusers_on_conflict',
-          _$failedField,
-          e.toString(),
-        );
-      }
-      rethrow;
-    }
-    replace(_$result);
-    return _$result;
-  }
-}
-
-class _$Gusers_order_by extends Gusers_order_by {
-  @override
-  final Gboards_aggregate_order_by? boards_aggregate;
-  @override
-  final Gcircle_members_aggregate_order_by? circle_members_aggregate;
-  @override
-  final Gcircles_aggregate_order_by? circles_aggregate;
-  @override
-  final Gorder_by? created_at;
-  @override
-  final Gorder_by? deleted_at;
-  @override
-  final Gorder_by? email;
-  @override
-  final Gorder_by? email_verified;
-  @override
-  final Gorder_by? id;
-  @override
-  final Gorder_by? name;
-  @override
-  final Gorder_by? phone_number;
-  @override
-  final Gorder_by? photo_url;
-  @override
-  final Gposts_aggregate_order_by? posts_aggregate;
-  @override
-  final Gorder_by? updated_at;
-
-  factory _$Gusers_order_by([void Function(Gusers_order_byBuilder)? updates]) =>
-      (Gusers_order_byBuilder()..update(updates))._build();
-
-  _$Gusers_order_by._({
-    this.boards_aggregate,
-    this.circle_members_aggregate,
-    this.circles_aggregate,
-    this.created_at,
-    this.deleted_at,
-    this.email,
-    this.email_verified,
-    this.id,
-    this.name,
-    this.phone_number,
-    this.photo_url,
-    this.posts_aggregate,
-    this.updated_at,
-  }) : super._();
-  @override
-  Gusers_order_by rebuild(void Function(Gusers_order_byBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
-
-  @override
-  Gusers_order_byBuilder toBuilder() => Gusers_order_byBuilder()..replace(this);
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(other, this)) return true;
-    return other is Gusers_order_by &&
-        boards_aggregate == other.boards_aggregate &&
-        circle_members_aggregate == other.circle_members_aggregate &&
-        circles_aggregate == other.circles_aggregate &&
-        created_at == other.created_at &&
-        deleted_at == other.deleted_at &&
-        email == other.email &&
-        email_verified == other.email_verified &&
-        id == other.id &&
-        name == other.name &&
-        phone_number == other.phone_number &&
-        photo_url == other.photo_url &&
-        posts_aggregate == other.posts_aggregate &&
-        updated_at == other.updated_at;
-  }
-
-  @override
-  int get hashCode {
-    var _$hash = 0;
-    _$hash = $jc(_$hash, boards_aggregate.hashCode);
-    _$hash = $jc(_$hash, circle_members_aggregate.hashCode);
-    _$hash = $jc(_$hash, circles_aggregate.hashCode);
-    _$hash = $jc(_$hash, created_at.hashCode);
-    _$hash = $jc(_$hash, deleted_at.hashCode);
-    _$hash = $jc(_$hash, email.hashCode);
-    _$hash = $jc(_$hash, email_verified.hashCode);
-    _$hash = $jc(_$hash, id.hashCode);
-    _$hash = $jc(_$hash, name.hashCode);
-    _$hash = $jc(_$hash, phone_number.hashCode);
-    _$hash = $jc(_$hash, photo_url.hashCode);
-    _$hash = $jc(_$hash, posts_aggregate.hashCode);
-    _$hash = $jc(_$hash, updated_at.hashCode);
-    _$hash = $jf(_$hash);
-    return _$hash;
-  }
-
-  @override
-  String toString() {
-    return (newBuiltValueToStringHelper(r'Gusers_order_by')
-          ..add('boards_aggregate', boards_aggregate)
-          ..add('circle_members_aggregate', circle_members_aggregate)
-          ..add('circles_aggregate', circles_aggregate)
-          ..add('created_at', created_at)
-          ..add('deleted_at', deleted_at)
-          ..add('email', email)
-          ..add('email_verified', email_verified)
-          ..add('id', id)
-          ..add('name', name)
-          ..add('phone_number', phone_number)
-          ..add('photo_url', photo_url)
-          ..add('posts_aggregate', posts_aggregate)
-          ..add('updated_at', updated_at))
-        .toString();
-  }
-}
-
-class Gusers_order_byBuilder
-    implements Builder<Gusers_order_by, Gusers_order_byBuilder> {
-  _$Gusers_order_by? _$v;
-
-  Gboards_aggregate_order_byBuilder? _boards_aggregate;
-  Gboards_aggregate_order_byBuilder get boards_aggregate =>
-      _$this._boards_aggregate ??= Gboards_aggregate_order_byBuilder();
-  set boards_aggregate(Gboards_aggregate_order_byBuilder? boards_aggregate) =>
-      _$this._boards_aggregate = boards_aggregate;
-
-  Gcircle_members_aggregate_order_byBuilder? _circle_members_aggregate;
-  Gcircle_members_aggregate_order_byBuilder get circle_members_aggregate =>
-      _$this._circle_members_aggregate ??=
-          Gcircle_members_aggregate_order_byBuilder();
-  set circle_members_aggregate(
-    Gcircle_members_aggregate_order_byBuilder? circle_members_aggregate,
-  ) => _$this._circle_members_aggregate = circle_members_aggregate;
-
-  Gcircles_aggregate_order_byBuilder? _circles_aggregate;
-  Gcircles_aggregate_order_byBuilder get circles_aggregate =>
-      _$this._circles_aggregate ??= Gcircles_aggregate_order_byBuilder();
-  set circles_aggregate(
-    Gcircles_aggregate_order_byBuilder? circles_aggregate,
-  ) => _$this._circles_aggregate = circles_aggregate;
-
-  Gorder_by? _created_at;
-  Gorder_by? get created_at => _$this._created_at;
-  set created_at(Gorder_by? created_at) => _$this._created_at = created_at;
-
-  Gorder_by? _deleted_at;
-  Gorder_by? get deleted_at => _$this._deleted_at;
-  set deleted_at(Gorder_by? deleted_at) => _$this._deleted_at = deleted_at;
-
-  Gorder_by? _email;
-  Gorder_by? get email => _$this._email;
-  set email(Gorder_by? email) => _$this._email = email;
-
-  Gorder_by? _email_verified;
-  Gorder_by? get email_verified => _$this._email_verified;
-  set email_verified(Gorder_by? email_verified) =>
-      _$this._email_verified = email_verified;
-
-  Gorder_by? _id;
-  Gorder_by? get id => _$this._id;
-  set id(Gorder_by? id) => _$this._id = id;
-
-  Gorder_by? _name;
-  Gorder_by? get name => _$this._name;
-  set name(Gorder_by? name) => _$this._name = name;
-
-  Gorder_by? _phone_number;
-  Gorder_by? get phone_number => _$this._phone_number;
-  set phone_number(Gorder_by? phone_number) =>
-      _$this._phone_number = phone_number;
-
-  Gorder_by? _photo_url;
-  Gorder_by? get photo_url => _$this._photo_url;
-  set photo_url(Gorder_by? photo_url) => _$this._photo_url = photo_url;
-
-  Gposts_aggregate_order_byBuilder? _posts_aggregate;
-  Gposts_aggregate_order_byBuilder get posts_aggregate =>
-      _$this._posts_aggregate ??= Gposts_aggregate_order_byBuilder();
-  set posts_aggregate(Gposts_aggregate_order_byBuilder? posts_aggregate) =>
-      _$this._posts_aggregate = posts_aggregate;
-
-  Gorder_by? _updated_at;
-  Gorder_by? get updated_at => _$this._updated_at;
-  set updated_at(Gorder_by? updated_at) => _$this._updated_at = updated_at;
-
-  Gusers_order_byBuilder();
-
-  Gusers_order_byBuilder get _$this {
-    final $v = _$v;
-    if ($v != null) {
-      _boards_aggregate = $v.boards_aggregate?.toBuilder();
-      _circle_members_aggregate = $v.circle_members_aggregate?.toBuilder();
-      _circles_aggregate = $v.circles_aggregate?.toBuilder();
-      _created_at = $v.created_at;
-      _deleted_at = $v.deleted_at;
-      _email = $v.email;
-      _email_verified = $v.email_verified;
-      _id = $v.id;
-      _name = $v.name;
-      _phone_number = $v.phone_number;
-      _photo_url = $v.photo_url;
-      _posts_aggregate = $v.posts_aggregate?.toBuilder();
-      _updated_at = $v.updated_at;
-      _$v = null;
-    }
-    return this;
-  }
-
-  @override
-  void replace(Gusers_order_by other) {
-    _$v = other as _$Gusers_order_by;
-  }
-
-  @override
-  void update(void Function(Gusers_order_byBuilder)? updates) {
-    if (updates != null) updates(this);
-  }
-
-  @override
-  Gusers_order_by build() => _build();
-
-  _$Gusers_order_by _build() {
-    _$Gusers_order_by _$result;
-    try {
-      _$result =
-          _$v ??
-          _$Gusers_order_by._(
-            boards_aggregate: _boards_aggregate?.build(),
-            circle_members_aggregate: _circle_members_aggregate?.build(),
-            circles_aggregate: _circles_aggregate?.build(),
-            created_at: created_at,
-            deleted_at: deleted_at,
-            email: email,
-            email_verified: email_verified,
-            id: id,
-            name: name,
-            phone_number: phone_number,
-            photo_url: photo_url,
-            posts_aggregate: _posts_aggregate?.build(),
-            updated_at: updated_at,
-          );
-    } catch (_) {
-      late String _$failedField;
-      try {
-        _$failedField = 'boards_aggregate';
-        _boards_aggregate?.build();
-        _$failedField = 'circle_members_aggregate';
-        _circle_members_aggregate?.build();
-        _$failedField = 'circles_aggregate';
-        _circles_aggregate?.build();
-
-        _$failedField = 'posts_aggregate';
-        _posts_aggregate?.build();
-      } catch (e) {
-        throw BuiltValueNestedFieldError(
-          r'Gusers_order_by',
-          _$failedField,
-          e.toString(),
-        );
-      }
-      rethrow;
-    }
-    replace(_$result);
-    return _$result;
-  }
-}
-
-class _$Gusers_pk_columns_input extends Gusers_pk_columns_input {
-  @override
-  final String id;
-
-  factory _$Gusers_pk_columns_input([
-    void Function(Gusers_pk_columns_inputBuilder)? updates,
-  ]) => (Gusers_pk_columns_inputBuilder()..update(updates))._build();
-
-  _$Gusers_pk_columns_input._({required this.id}) : super._();
-  @override
-  Gusers_pk_columns_input rebuild(
-    void Function(Gusers_pk_columns_inputBuilder) updates,
-  ) => (toBuilder()..update(updates)).build();
-
-  @override
-  Gusers_pk_columns_inputBuilder toBuilder() =>
-      Gusers_pk_columns_inputBuilder()..replace(this);
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(other, this)) return true;
-    return other is Gusers_pk_columns_input && id == other.id;
-  }
-
-  @override
-  int get hashCode {
-    var _$hash = 0;
-    _$hash = $jc(_$hash, id.hashCode);
-    _$hash = $jf(_$hash);
-    return _$hash;
-  }
-
-  @override
-  String toString() {
-    return (newBuiltValueToStringHelper(
-      r'Gusers_pk_columns_input',
-    )..add('id', id)).toString();
-  }
-}
-
-class Gusers_pk_columns_inputBuilder
-    implements
-        Builder<Gusers_pk_columns_input, Gusers_pk_columns_inputBuilder> {
-  _$Gusers_pk_columns_input? _$v;
-
-  String? _id;
-  String? get id => _$this._id;
-  set id(String? id) => _$this._id = id;
-
-  Gusers_pk_columns_inputBuilder();
-
-  Gusers_pk_columns_inputBuilder get _$this {
-    final $v = _$v;
-    if ($v != null) {
-      _id = $v.id;
-      _$v = null;
-    }
-    return this;
-  }
-
-  @override
-  void replace(Gusers_pk_columns_input other) {
-    _$v = other as _$Gusers_pk_columns_input;
-  }
-
-  @override
-  void update(void Function(Gusers_pk_columns_inputBuilder)? updates) {
-    if (updates != null) updates(this);
-  }
-
-  @override
-  Gusers_pk_columns_input build() => _build();
-
-  _$Gusers_pk_columns_input _build() {
-    final _$result =
-        _$v ??
-        _$Gusers_pk_columns_input._(
-          id: BuiltValueNullFieldError.checkNotNull(
-            id,
-            r'Gusers_pk_columns_input',
-            'id',
-          ),
-        );
-    replace(_$result);
-    return _$result;
-  }
-}
-
-class _$Gusers_set_input extends Gusers_set_input {
-  @override
-  final String? created_at;
-  @override
-  final String? deleted_at;
-  @override
-  final String? email;
-  @override
-  final bool? email_verified;
-  @override
-  final String? id;
-  @override
-  final String? name;
-  @override
-  final String? phone_number;
-  @override
-  final String? photo_url;
-  @override
-  final String? updated_at;
-
-  factory _$Gusers_set_input([
-    void Function(Gusers_set_inputBuilder)? updates,
-  ]) => (Gusers_set_inputBuilder()..update(updates))._build();
-
-  _$Gusers_set_input._({
-    this.created_at,
-    this.deleted_at,
-    this.email,
-    this.email_verified,
-    this.id,
-    this.name,
-    this.phone_number,
-    this.photo_url,
-    this.updated_at,
-  }) : super._();
-  @override
-  Gusers_set_input rebuild(void Function(Gusers_set_inputBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
-
-  @override
-  Gusers_set_inputBuilder toBuilder() =>
-      Gusers_set_inputBuilder()..replace(this);
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(other, this)) return true;
-    return other is Gusers_set_input &&
-        created_at == other.created_at &&
-        deleted_at == other.deleted_at &&
-        email == other.email &&
-        email_verified == other.email_verified &&
-        id == other.id &&
-        name == other.name &&
-        phone_number == other.phone_number &&
-        photo_url == other.photo_url &&
-        updated_at == other.updated_at;
-  }
-
-  @override
-  int get hashCode {
-    var _$hash = 0;
-    _$hash = $jc(_$hash, created_at.hashCode);
-    _$hash = $jc(_$hash, deleted_at.hashCode);
-    _$hash = $jc(_$hash, email.hashCode);
-    _$hash = $jc(_$hash, email_verified.hashCode);
-    _$hash = $jc(_$hash, id.hashCode);
-    _$hash = $jc(_$hash, name.hashCode);
-    _$hash = $jc(_$hash, phone_number.hashCode);
-    _$hash = $jc(_$hash, photo_url.hashCode);
-    _$hash = $jc(_$hash, updated_at.hashCode);
-    _$hash = $jf(_$hash);
-    return _$hash;
-  }
-
-  @override
-  String toString() {
-    return (newBuiltValueToStringHelper(r'Gusers_set_input')
-          ..add('created_at', created_at)
-          ..add('deleted_at', deleted_at)
-          ..add('email', email)
-          ..add('email_verified', email_verified)
-          ..add('id', id)
-          ..add('name', name)
-          ..add('phone_number', phone_number)
-          ..add('photo_url', photo_url)
-          ..add('updated_at', updated_at))
-        .toString();
-  }
-}
-
-class Gusers_set_inputBuilder
-    implements Builder<Gusers_set_input, Gusers_set_inputBuilder> {
-  _$Gusers_set_input? _$v;
-
-  String? _created_at;
-  String? get created_at => _$this._created_at;
-  set created_at(String? created_at) => _$this._created_at = created_at;
-
-  String? _deleted_at;
-  String? get deleted_at => _$this._deleted_at;
-  set deleted_at(String? deleted_at) => _$this._deleted_at = deleted_at;
-
-  String? _email;
-  String? get email => _$this._email;
-  set email(String? email) => _$this._email = email;
-
-  bool? _email_verified;
-  bool? get email_verified => _$this._email_verified;
-  set email_verified(bool? email_verified) =>
-      _$this._email_verified = email_verified;
-
-  String? _id;
-  String? get id => _$this._id;
-  set id(String? id) => _$this._id = id;
-
-  String? _name;
-  String? get name => _$this._name;
-  set name(String? name) => _$this._name = name;
-
-  String? _phone_number;
-  String? get phone_number => _$this._phone_number;
-  set phone_number(String? phone_number) => _$this._phone_number = phone_number;
-
-  String? _photo_url;
-  String? get photo_url => _$this._photo_url;
-  set photo_url(String? photo_url) => _$this._photo_url = photo_url;
-
-  String? _updated_at;
-  String? get updated_at => _$this._updated_at;
-  set updated_at(String? updated_at) => _$this._updated_at = updated_at;
-
-  Gusers_set_inputBuilder();
-
-  Gusers_set_inputBuilder get _$this {
-    final $v = _$v;
-    if ($v != null) {
-      _created_at = $v.created_at;
-      _deleted_at = $v.deleted_at;
-      _email = $v.email;
-      _email_verified = $v.email_verified;
-      _id = $v.id;
-      _name = $v.name;
-      _phone_number = $v.phone_number;
-      _photo_url = $v.photo_url;
-      _updated_at = $v.updated_at;
-      _$v = null;
-    }
-    return this;
-  }
-
-  @override
-  void replace(Gusers_set_input other) {
-    _$v = other as _$Gusers_set_input;
-  }
-
-  @override
-  void update(void Function(Gusers_set_inputBuilder)? updates) {
-    if (updates != null) updates(this);
-  }
-
-  @override
-  Gusers_set_input build() => _build();
-
-  _$Gusers_set_input _build() {
-    final _$result =
-        _$v ??
-        _$Gusers_set_input._(
-          created_at: created_at,
-          deleted_at: deleted_at,
-          email: email,
-          email_verified: email_verified,
-          id: id,
-          name: name,
-          phone_number: phone_number,
-          photo_url: photo_url,
-          updated_at: updated_at,
-        );
-    replace(_$result);
-    return _$result;
-  }
-}
-
-class _$Gusers_stream_cursor_input extends Gusers_stream_cursor_input {
-  @override
-  final Gusers_stream_cursor_value_input initial_value;
-  @override
-  final Gcursor_ordering? ordering;
-
-  factory _$Gusers_stream_cursor_input([
-    void Function(Gusers_stream_cursor_inputBuilder)? updates,
-  ]) => (Gusers_stream_cursor_inputBuilder()..update(updates))._build();
-
-  _$Gusers_stream_cursor_input._({required this.initial_value, this.ordering})
-    : super._();
-  @override
-  Gusers_stream_cursor_input rebuild(
-    void Function(Gusers_stream_cursor_inputBuilder) updates,
-  ) => (toBuilder()..update(updates)).build();
-
-  @override
-  Gusers_stream_cursor_inputBuilder toBuilder() =>
-      Gusers_stream_cursor_inputBuilder()..replace(this);
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(other, this)) return true;
-    return other is Gusers_stream_cursor_input &&
-        initial_value == other.initial_value &&
-        ordering == other.ordering;
-  }
-
-  @override
-  int get hashCode {
-    var _$hash = 0;
-    _$hash = $jc(_$hash, initial_value.hashCode);
-    _$hash = $jc(_$hash, ordering.hashCode);
-    _$hash = $jf(_$hash);
-    return _$hash;
-  }
-
-  @override
-  String toString() {
-    return (newBuiltValueToStringHelper(r'Gusers_stream_cursor_input')
-          ..add('initial_value', initial_value)
-          ..add('ordering', ordering))
-        .toString();
-  }
-}
-
-class Gusers_stream_cursor_inputBuilder
-    implements
-        Builder<Gusers_stream_cursor_input, Gusers_stream_cursor_inputBuilder> {
-  _$Gusers_stream_cursor_input? _$v;
-
-  Gusers_stream_cursor_value_inputBuilder? _initial_value;
-  Gusers_stream_cursor_value_inputBuilder get initial_value =>
-      _$this._initial_value ??= Gusers_stream_cursor_value_inputBuilder();
-  set initial_value(Gusers_stream_cursor_value_inputBuilder? initial_value) =>
-      _$this._initial_value = initial_value;
-
-  Gcursor_ordering? _ordering;
-  Gcursor_ordering? get ordering => _$this._ordering;
-  set ordering(Gcursor_ordering? ordering) => _$this._ordering = ordering;
-
-  Gusers_stream_cursor_inputBuilder();
-
-  Gusers_stream_cursor_inputBuilder get _$this {
-    final $v = _$v;
-    if ($v != null) {
-      _initial_value = $v.initial_value.toBuilder();
-      _ordering = $v.ordering;
-      _$v = null;
-    }
-    return this;
-  }
-
-  @override
-  void replace(Gusers_stream_cursor_input other) {
-    _$v = other as _$Gusers_stream_cursor_input;
-  }
-
-  @override
-  void update(void Function(Gusers_stream_cursor_inputBuilder)? updates) {
-    if (updates != null) updates(this);
-  }
-
-  @override
-  Gusers_stream_cursor_input build() => _build();
-
-  _$Gusers_stream_cursor_input _build() {
-    _$Gusers_stream_cursor_input _$result;
-    try {
-      _$result =
-          _$v ??
-          _$Gusers_stream_cursor_input._(
-            initial_value: initial_value.build(),
-            ordering: ordering,
-          );
-    } catch (_) {
-      late String _$failedField;
-      try {
-        _$failedField = 'initial_value';
-        initial_value.build();
-      } catch (e) {
-        throw BuiltValueNestedFieldError(
-          r'Gusers_stream_cursor_input',
-          _$failedField,
-          e.toString(),
-        );
-      }
-      rethrow;
-    }
-    replace(_$result);
-    return _$result;
-  }
-}
-
-class _$Gusers_stream_cursor_value_input
-    extends Gusers_stream_cursor_value_input {
-  @override
-  final String? created_at;
-  @override
-  final String? deleted_at;
-  @override
-  final String? email;
-  @override
-  final bool? email_verified;
-  @override
-  final String? id;
-  @override
-  final String? name;
-  @override
-  final String? phone_number;
-  @override
-  final String? photo_url;
-  @override
-  final String? updated_at;
-
-  factory _$Gusers_stream_cursor_value_input([
-    void Function(Gusers_stream_cursor_value_inputBuilder)? updates,
-  ]) => (Gusers_stream_cursor_value_inputBuilder()..update(updates))._build();
-
-  _$Gusers_stream_cursor_value_input._({
-    this.created_at,
-    this.deleted_at,
-    this.email,
-    this.email_verified,
-    this.id,
-    this.name,
-    this.phone_number,
-    this.photo_url,
-    this.updated_at,
-  }) : super._();
-  @override
-  Gusers_stream_cursor_value_input rebuild(
-    void Function(Gusers_stream_cursor_value_inputBuilder) updates,
-  ) => (toBuilder()..update(updates)).build();
-
-  @override
-  Gusers_stream_cursor_value_inputBuilder toBuilder() =>
-      Gusers_stream_cursor_value_inputBuilder()..replace(this);
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(other, this)) return true;
-    return other is Gusers_stream_cursor_value_input &&
-        created_at == other.created_at &&
-        deleted_at == other.deleted_at &&
-        email == other.email &&
-        email_verified == other.email_verified &&
-        id == other.id &&
-        name == other.name &&
-        phone_number == other.phone_number &&
-        photo_url == other.photo_url &&
-        updated_at == other.updated_at;
-  }
-
-  @override
-  int get hashCode {
-    var _$hash = 0;
-    _$hash = $jc(_$hash, created_at.hashCode);
-    _$hash = $jc(_$hash, deleted_at.hashCode);
-    _$hash = $jc(_$hash, email.hashCode);
-    _$hash = $jc(_$hash, email_verified.hashCode);
-    _$hash = $jc(_$hash, id.hashCode);
-    _$hash = $jc(_$hash, name.hashCode);
-    _$hash = $jc(_$hash, phone_number.hashCode);
-    _$hash = $jc(_$hash, photo_url.hashCode);
-    _$hash = $jc(_$hash, updated_at.hashCode);
-    _$hash = $jf(_$hash);
-    return _$hash;
-  }
-
-  @override
-  String toString() {
-    return (newBuiltValueToStringHelper(r'Gusers_stream_cursor_value_input')
-          ..add('created_at', created_at)
-          ..add('deleted_at', deleted_at)
-          ..add('email', email)
-          ..add('email_verified', email_verified)
-          ..add('id', id)
-          ..add('name', name)
-          ..add('phone_number', phone_number)
-          ..add('photo_url', photo_url)
-          ..add('updated_at', updated_at))
-        .toString();
-  }
-}
-
-class Gusers_stream_cursor_value_inputBuilder
-    implements
-        Builder<
-          Gusers_stream_cursor_value_input,
-          Gusers_stream_cursor_value_inputBuilder
-        > {
-  _$Gusers_stream_cursor_value_input? _$v;
-
-  String? _created_at;
-  String? get created_at => _$this._created_at;
-  set created_at(String? created_at) => _$this._created_at = created_at;
-
-  String? _deleted_at;
-  String? get deleted_at => _$this._deleted_at;
-  set deleted_at(String? deleted_at) => _$this._deleted_at = deleted_at;
-
-  String? _email;
-  String? get email => _$this._email;
-  set email(String? email) => _$this._email = email;
-
-  bool? _email_verified;
-  bool? get email_verified => _$this._email_verified;
-  set email_verified(bool? email_verified) =>
-      _$this._email_verified = email_verified;
-
-  String? _id;
-  String? get id => _$this._id;
-  set id(String? id) => _$this._id = id;
-
-  String? _name;
-  String? get name => _$this._name;
-  set name(String? name) => _$this._name = name;
-
-  String? _phone_number;
-  String? get phone_number => _$this._phone_number;
-  set phone_number(String? phone_number) => _$this._phone_number = phone_number;
-
-  String? _photo_url;
-  String? get photo_url => _$this._photo_url;
-  set photo_url(String? photo_url) => _$this._photo_url = photo_url;
-
-  String? _updated_at;
-  String? get updated_at => _$this._updated_at;
-  set updated_at(String? updated_at) => _$this._updated_at = updated_at;
-
-  Gusers_stream_cursor_value_inputBuilder();
-
-  Gusers_stream_cursor_value_inputBuilder get _$this {
-    final $v = _$v;
-    if ($v != null) {
-      _created_at = $v.created_at;
-      _deleted_at = $v.deleted_at;
-      _email = $v.email;
-      _email_verified = $v.email_verified;
-      _id = $v.id;
-      _name = $v.name;
-      _phone_number = $v.phone_number;
-      _photo_url = $v.photo_url;
-      _updated_at = $v.updated_at;
-      _$v = null;
-    }
-    return this;
-  }
-
-  @override
-  void replace(Gusers_stream_cursor_value_input other) {
-    _$v = other as _$Gusers_stream_cursor_value_input;
-  }
-
-  @override
-  void update(void Function(Gusers_stream_cursor_value_inputBuilder)? updates) {
-    if (updates != null) updates(this);
-  }
-
-  @override
-  Gusers_stream_cursor_value_input build() => _build();
-
-  _$Gusers_stream_cursor_value_input _build() {
-    final _$result =
-        _$v ??
-        _$Gusers_stream_cursor_value_input._(
-          created_at: created_at,
-          deleted_at: deleted_at,
-          email: email,
-          email_verified: email_verified,
-          id: id,
-          name: name,
-          phone_number: phone_number,
-          photo_url: photo_url,
-          updated_at: updated_at,
-        );
-    replace(_$result);
-    return _$result;
-  }
-}
-
-class _$Gusers_updates extends Gusers_updates {
-  @override
-  final Gusers_set_input? G_set;
-  @override
-  final Gusers_bool_exp where;
-
-  factory _$Gusers_updates([void Function(Gusers_updatesBuilder)? updates]) =>
-      (Gusers_updatesBuilder()..update(updates))._build();
-
-  _$Gusers_updates._({this.G_set, required this.where}) : super._();
-  @override
-  Gusers_updates rebuild(void Function(Gusers_updatesBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
-
-  @override
-  Gusers_updatesBuilder toBuilder() => Gusers_updatesBuilder()..replace(this);
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(other, this)) return true;
-    return other is Gusers_updates &&
-        G_set == other.G_set &&
-        where == other.where;
-  }
-
-  @override
-  int get hashCode {
-    var _$hash = 0;
-    _$hash = $jc(_$hash, G_set.hashCode);
-    _$hash = $jc(_$hash, where.hashCode);
-    _$hash = $jf(_$hash);
-    return _$hash;
-  }
-
-  @override
-  String toString() {
-    return (newBuiltValueToStringHelper(r'Gusers_updates')
-          ..add('G_set', G_set)
-          ..add('where', where))
-        .toString();
-  }
-}
-
-class Gusers_updatesBuilder
-    implements Builder<Gusers_updates, Gusers_updatesBuilder> {
-  _$Gusers_updates? _$v;
-
-  Gusers_set_inputBuilder? _G_set;
-  Gusers_set_inputBuilder get G_set =>
-      _$this._G_set ??= Gusers_set_inputBuilder();
-  set G_set(Gusers_set_inputBuilder? G_set) => _$this._G_set = G_set;
-
-  Gusers_bool_expBuilder? _where;
-  Gusers_bool_expBuilder get where =>
-      _$this._where ??= Gusers_bool_expBuilder();
-  set where(Gusers_bool_expBuilder? where) => _$this._where = where;
-
-  Gusers_updatesBuilder();
-
-  Gusers_updatesBuilder get _$this {
-    final $v = _$v;
-    if ($v != null) {
-      _G_set = $v.G_set?.toBuilder();
-      _where = $v.where.toBuilder();
-      _$v = null;
-    }
-    return this;
-  }
-
-  @override
-  void replace(Gusers_updates other) {
-    _$v = other as _$Gusers_updates;
-  }
-
-  @override
-  void update(void Function(Gusers_updatesBuilder)? updates) {
-    if (updates != null) updates(this);
-  }
-
-  @override
-  Gusers_updates build() => _build();
-
-  _$Gusers_updates _build() {
-    _$Gusers_updates _$result;
-    try {
-      _$result =
-          _$v ??
-          _$Gusers_updates._(G_set: _G_set?.build(), where: where.build());
-    } catch (_) {
-      late String _$failedField;
-      try {
-        _$failedField = 'G_set';
-        _G_set?.build();
-        _$failedField = 'where';
-        where.build();
-      } catch (e) {
-        throw BuiltValueNestedFieldError(
-          r'Gusers_updates',
           _$failedField,
           e.toString(),
         );

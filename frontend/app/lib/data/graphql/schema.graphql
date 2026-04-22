@@ -243,9 +243,6 @@ type boards {
   status: smallint!
   topic: String!
   updated_at: timestamptz!
-
-  """An object relationship"""
-  user: users!
   uuid: uuid!
 }
 
@@ -340,7 +337,6 @@ input boards_bool_exp {
   status: smallint_comparison_exp
   topic: String_comparison_exp
   updated_at: timestamptz_comparison_exp
-  user: users_bool_exp
   uuid: uuid_comparison_exp
 }
 
@@ -373,7 +369,6 @@ input boards_insert_input {
   status: smallint
   topic: String
   updated_at: timestamptz
-  user: users_obj_rel_insert_input
   uuid: uuid
 }
 
@@ -465,7 +460,6 @@ input boards_order_by {
   status: order_by
   topic: order_by
   updated_at: order_by
-  user: users_order_by
   uuid: order_by
 }
 
@@ -721,9 +715,6 @@ type circle_members {
   created_at: timestamptz!
   joined_date: date!
   updated_at: timestamptz!
-
-  """An object relationship"""
-  user: users!
   user_id: bpchar!
   uuid: uuid!
 }
@@ -787,7 +778,6 @@ input circle_members_bool_exp {
   created_at: timestamptz_comparison_exp
   joined_date: date_comparison_exp
   updated_at: timestamptz_comparison_exp
-  user: users_bool_exp
   user_id: bpchar_comparison_exp
   uuid: uuid_comparison_exp
 }
@@ -816,7 +806,6 @@ input circle_members_insert_input {
   created_at: timestamptz
   joined_date: date
   updated_at: timestamptz
-  user: users_obj_rel_insert_input
   user_id: bpchar
   uuid: uuid
 }
@@ -892,7 +881,6 @@ input circle_members_order_by {
   created_at: order_by
   joined_date: order_by
   updated_at: order_by
-  user: users_order_by
   user_id: order_by
   uuid: order_by
 }
@@ -1386,9 +1374,6 @@ type circles {
   name: String!
   owner_id: bpchar!
   updated_at: timestamptz!
-
-  """An object relationship"""
-  user: users!
   uuid: uuid!
 }
 
@@ -1400,17 +1385,6 @@ type circles_aggregate {
   nodes: [circles!]!
 }
 
-input circles_aggregate_bool_exp {
-  count: circles_aggregate_bool_exp_count
-}
-
-input circles_aggregate_bool_exp_count {
-  arguments: [circles_select_column!]
-  distinct: Boolean
-  filter: circles_bool_exp
-  predicate: Int_comparison_exp!
-}
-
 """
 aggregate fields of "circles"
 """
@@ -1418,25 +1392,6 @@ type circles_aggregate_fields {
   count(columns: [circles_select_column!], distinct: Boolean): Int!
   max: circles_max_fields
   min: circles_min_fields
-}
-
-"""
-order by aggregate values of table "circles"
-"""
-input circles_aggregate_order_by {
-  count: order_by
-  max: circles_max_order_by
-  min: circles_min_order_by
-}
-
-"""
-input type for inserting array relation for remote table "circles"
-"""
-input circles_arr_rel_insert_input {
-  data: [circles_insert_input!]!
-
-  """upsert condition"""
-  on_conflict: circles_on_conflict
 }
 
 """
@@ -1457,7 +1412,6 @@ input circles_bool_exp {
   name: String_comparison_exp
   owner_id: bpchar_comparison_exp
   updated_at: timestamptz_comparison_exp
-  user: users_bool_exp
   uuid: uuid_comparison_exp
 }
 
@@ -1483,7 +1437,6 @@ input circles_insert_input {
   name: String
   owner_id: bpchar
   updated_at: timestamptz
-  user: users_obj_rel_insert_input
   uuid: uuid
 }
 
@@ -1497,18 +1450,6 @@ type circles_max_fields {
   uuid: uuid
 }
 
-"""
-order by max() on columns of table "circles"
-"""
-input circles_max_order_by {
-  created_at: order_by
-  description: order_by
-  name: order_by
-  owner_id: order_by
-  updated_at: order_by
-  uuid: order_by
-}
-
 """aggregate min on columns"""
 type circles_min_fields {
   created_at: timestamptz
@@ -1517,18 +1458,6 @@ type circles_min_fields {
   owner_id: bpchar
   updated_at: timestamptz
   uuid: uuid
-}
-
-"""
-order by min() on columns of table "circles"
-"""
-input circles_min_order_by {
-  created_at: order_by
-  description: order_by
-  name: order_by
-  owner_id: order_by
-  updated_at: order_by
-  uuid: order_by
 }
 
 """
@@ -1571,7 +1500,6 @@ input circles_order_by {
   name: order_by
   owner_id: order_by
   updated_at: order_by
-  user: users_order_by
   uuid: order_by
 }
 
@@ -1775,19 +1703,6 @@ type mutation_root {
   delete_user(input: DeleteUserInput!): Boolean!
 
   """
-  delete data from the table: "users"
-  """
-  delete_users(
-    """filter the rows which have to be deleted"""
-    where: users_bool_exp!
-  ): users_mutation_response
-
-  """
-  delete single row from the table: "users"
-  """
-  delete_users_by_pk(id: bpchar!): users
-
-  """
   insert data into the table: "boards"
   """
   insert_boards(
@@ -1896,28 +1811,6 @@ type mutation_root {
     """upsert condition"""
     on_conflict: posts_on_conflict
   ): posts
-
-  """
-  insert data into the table: "users"
-  """
-  insert_users(
-    """the rows to be inserted"""
-    objects: [users_insert_input!]!
-
-    """upsert condition"""
-    on_conflict: users_on_conflict
-  ): users_mutation_response
-
-  """
-  insert a single row into the table: "users"
-  """
-  insert_users_one(
-    """the row to be inserted"""
-    object: users_insert_input!
-
-    """upsert condition"""
-    on_conflict: users_on_conflict
-  ): users
 
   """
   update data of the table: "boards"
@@ -2065,34 +1958,6 @@ type mutation_root {
     updates: [posts_updates!]!
   ): [posts_mutation_response]
   update_user_attributes(input: UpdateUserAttributesInput!): UserModel!
-
-  """
-  update data of the table: "users"
-  """
-  update_users(
-    """sets the columns of the filtered rows to the given values"""
-    _set: users_set_input
-
-    """filter the rows which have to be updated"""
-    where: users_bool_exp!
-  ): users_mutation_response
-
-  """
-  update single row of the table: "users"
-  """
-  update_users_by_pk(
-    """sets the columns of the filtered rows to the given values"""
-    _set: users_set_input
-    pk_columns: users_pk_columns_input!
-  ): users
-
-  """
-  update multiples rows of table: "users"
-  """
-  update_users_many(
-    """updates to execute, in order"""
-    updates: [users_updates!]!
-  ): [users_mutation_response]
 }
 
 """column ordering options"""
@@ -2126,9 +1991,6 @@ type posts {
   content: String!
   created_at: timestamptz!
   updated_at: timestamptz!
-
-  """An object relationship"""
-  user: users!
   user_id: bpchar!
   uuid: uuid!
 }
@@ -2192,7 +2054,6 @@ input posts_bool_exp {
   content: String_comparison_exp
   created_at: timestamptz_comparison_exp
   updated_at: timestamptz_comparison_exp
-  user: users_bool_exp
   user_id: bpchar_comparison_exp
   uuid: uuid_comparison_exp
 }
@@ -2216,7 +2077,6 @@ input posts_insert_input {
   content: String
   created_at: timestamptz
   updated_at: timestamptz
-  user: users_obj_rel_insert_input
   user_id: bpchar
   uuid: uuid
 }
@@ -2292,7 +2152,6 @@ input posts_order_by {
   content: order_by
   created_at: order_by
   updated_at: order_by
-  user: users_order_by
   user_id: order_by
   uuid: order_by
 }
@@ -2509,7 +2368,9 @@ type query_root {
   """
   circle_permissions_by_pk(circle_uuid: uuid!): circle_permissions
 
-  """An array relationship"""
+  """
+  fetch data from the table: "circles"
+  """
   circles(
     """distinct select on columns"""
     distinct_on: [circles_select_column!]
@@ -2527,7 +2388,9 @@ type query_root {
     where: circles_bool_exp
   ): [circles!]!
 
-  """An aggregate relationship"""
+  """
+  fetch aggregated fields from the table: "circles"
+  """
   circles_aggregate(
     """distinct select on columns"""
     distinct_on: [circles_select_column!]
@@ -2587,49 +2450,6 @@ type query_root {
 
   """fetch data from the table: "posts" using primary key columns"""
   posts_by_pk(uuid: uuid!): posts
-
-  """
-  fetch data from the table: "users"
-  """
-  users(
-    """distinct select on columns"""
-    distinct_on: [users_select_column!]
-
-    """limit the number of rows returned"""
-    limit: Int
-
-    """skip the first n rows. Use only with order_by"""
-    offset: Int
-
-    """sort the rows by one or more columns"""
-    order_by: [users_order_by!]
-
-    """filter the rows returned"""
-    where: users_bool_exp
-  ): [users!]!
-
-  """
-  fetch aggregated fields from the table: "users"
-  """
-  users_aggregate(
-    """distinct select on columns"""
-    distinct_on: [users_select_column!]
-
-    """limit the number of rows returned"""
-    limit: Int
-
-    """skip the first n rows. Use only with order_by"""
-    offset: Int
-
-    """sort the rows by one or more columns"""
-    order_by: [users_order_by!]
-
-    """filter the rows returned"""
-    where: users_bool_exp
-  ): users_aggregate!
-
-  """fetch data from the table: "users" using primary key columns"""
-  users_by_pk(id: bpchar!): users
 }
 
 scalar smallint
@@ -2811,7 +2631,9 @@ type subscription_root {
     where: circle_permissions_bool_exp
   ): [circle_permissions!]!
 
-  """An array relationship"""
+  """
+  fetch data from the table: "circles"
+  """
   circles(
     """distinct select on columns"""
     distinct_on: [circles_select_column!]
@@ -2829,7 +2651,9 @@ type subscription_root {
     where: circles_bool_exp
   ): [circles!]!
 
-  """An aggregate relationship"""
+  """
+  fetch aggregated fields from the table: "circles"
+  """
   circles_aggregate(
     """distinct select on columns"""
     distinct_on: [circles_select_column!]
@@ -2916,63 +2740,6 @@ type subscription_root {
     """filter the rows returned"""
     where: posts_bool_exp
   ): [posts!]!
-
-  """
-  fetch data from the table: "users"
-  """
-  users(
-    """distinct select on columns"""
-    distinct_on: [users_select_column!]
-
-    """limit the number of rows returned"""
-    limit: Int
-
-    """skip the first n rows. Use only with order_by"""
-    offset: Int
-
-    """sort the rows by one or more columns"""
-    order_by: [users_order_by!]
-
-    """filter the rows returned"""
-    where: users_bool_exp
-  ): [users!]!
-
-  """
-  fetch aggregated fields from the table: "users"
-  """
-  users_aggregate(
-    """distinct select on columns"""
-    distinct_on: [users_select_column!]
-
-    """limit the number of rows returned"""
-    limit: Int
-
-    """skip the first n rows. Use only with order_by"""
-    offset: Int
-
-    """sort the rows by one or more columns"""
-    order_by: [users_order_by!]
-
-    """filter the rows returned"""
-    where: users_bool_exp
-  ): users_aggregate!
-
-  """fetch data from the table: "users" using primary key columns"""
-  users_by_pk(id: bpchar!): users
-
-  """
-  fetch data from the table in a streaming manner: "users"
-  """
-  users_stream(
-    """maximum number of rows returned in a single batch"""
-    batch_size: Int!
-
-    """cursor to stream the results returned by the query"""
-    cursor: [users_stream_cursor_input]!
-
-    """filter the rows returned"""
-    where: users_bool_exp
-  ): [users!]!
 }
 
 scalar timestamptz
@@ -2990,428 +2757,6 @@ input timestamptz_comparison_exp {
   _lte: timestamptz
   _neq: timestamptz
   _nin: [timestamptz!]
-}
-
-"""
-columns and relationships of "users"
-"""
-type users {
-  """An array relationship"""
-  boards(
-    """distinct select on columns"""
-    distinct_on: [boards_select_column!]
-
-    """limit the number of rows returned"""
-    limit: Int
-
-    """skip the first n rows. Use only with order_by"""
-    offset: Int
-
-    """sort the rows by one or more columns"""
-    order_by: [boards_order_by!]
-
-    """filter the rows returned"""
-    where: boards_bool_exp
-  ): [boards!]!
-
-  """An aggregate relationship"""
-  boards_aggregate(
-    """distinct select on columns"""
-    distinct_on: [boards_select_column!]
-
-    """limit the number of rows returned"""
-    limit: Int
-
-    """skip the first n rows. Use only with order_by"""
-    offset: Int
-
-    """sort the rows by one or more columns"""
-    order_by: [boards_order_by!]
-
-    """filter the rows returned"""
-    where: boards_bool_exp
-  ): boards_aggregate!
-
-  """An array relationship"""
-  circle_members(
-    """distinct select on columns"""
-    distinct_on: [circle_members_select_column!]
-
-    """limit the number of rows returned"""
-    limit: Int
-
-    """skip the first n rows. Use only with order_by"""
-    offset: Int
-
-    """sort the rows by one or more columns"""
-    order_by: [circle_members_order_by!]
-
-    """filter the rows returned"""
-    where: circle_members_bool_exp
-  ): [circle_members!]!
-
-  """An aggregate relationship"""
-  circle_members_aggregate(
-    """distinct select on columns"""
-    distinct_on: [circle_members_select_column!]
-
-    """limit the number of rows returned"""
-    limit: Int
-
-    """skip the first n rows. Use only with order_by"""
-    offset: Int
-
-    """sort the rows by one or more columns"""
-    order_by: [circle_members_order_by!]
-
-    """filter the rows returned"""
-    where: circle_members_bool_exp
-  ): circle_members_aggregate!
-
-  """An array relationship"""
-  circles(
-    """distinct select on columns"""
-    distinct_on: [circles_select_column!]
-
-    """limit the number of rows returned"""
-    limit: Int
-
-    """skip the first n rows. Use only with order_by"""
-    offset: Int
-
-    """sort the rows by one or more columns"""
-    order_by: [circles_order_by!]
-
-    """filter the rows returned"""
-    where: circles_bool_exp
-  ): [circles!]!
-
-  """An aggregate relationship"""
-  circles_aggregate(
-    """distinct select on columns"""
-    distinct_on: [circles_select_column!]
-
-    """limit the number of rows returned"""
-    limit: Int
-
-    """skip the first n rows. Use only with order_by"""
-    offset: Int
-
-    """sort the rows by one or more columns"""
-    order_by: [circles_order_by!]
-
-    """filter the rows returned"""
-    where: circles_bool_exp
-  ): circles_aggregate!
-  created_at: timestamptz!
-  deleted_at: timestamptz
-  email: String!
-  email_verified: Boolean!
-  id: bpchar!
-  name: String!
-  phone_number: String
-  photo_url: String
-
-  """An array relationship"""
-  posts(
-    """distinct select on columns"""
-    distinct_on: [posts_select_column!]
-
-    """limit the number of rows returned"""
-    limit: Int
-
-    """skip the first n rows. Use only with order_by"""
-    offset: Int
-
-    """sort the rows by one or more columns"""
-    order_by: [posts_order_by!]
-
-    """filter the rows returned"""
-    where: posts_bool_exp
-  ): [posts!]!
-
-  """An aggregate relationship"""
-  posts_aggregate(
-    """distinct select on columns"""
-    distinct_on: [posts_select_column!]
-
-    """limit the number of rows returned"""
-    limit: Int
-
-    """skip the first n rows. Use only with order_by"""
-    offset: Int
-
-    """sort the rows by one or more columns"""
-    order_by: [posts_order_by!]
-
-    """filter the rows returned"""
-    where: posts_bool_exp
-  ): posts_aggregate!
-  updated_at: timestamptz!
-}
-
-"""
-aggregated selection of "users"
-"""
-type users_aggregate {
-  aggregate: users_aggregate_fields
-  nodes: [users!]!
-}
-
-"""
-aggregate fields of "users"
-"""
-type users_aggregate_fields {
-  count(columns: [users_select_column!], distinct: Boolean): Int!
-  max: users_max_fields
-  min: users_min_fields
-}
-
-"""
-Boolean expression to filter rows from the table "users". All fields are combined with a logical 'AND'.
-"""
-input users_bool_exp {
-  _and: [users_bool_exp!]
-  _not: users_bool_exp
-  _or: [users_bool_exp!]
-  boards: boards_bool_exp
-  boards_aggregate: boards_aggregate_bool_exp
-  circle_members: circle_members_bool_exp
-  circle_members_aggregate: circle_members_aggregate_bool_exp
-  circles: circles_bool_exp
-  circles_aggregate: circles_aggregate_bool_exp
-  created_at: timestamptz_comparison_exp
-  deleted_at: timestamptz_comparison_exp
-  email: String_comparison_exp
-  email_verified: Boolean_comparison_exp
-  id: bpchar_comparison_exp
-  name: String_comparison_exp
-  phone_number: String_comparison_exp
-  photo_url: String_comparison_exp
-  posts: posts_bool_exp
-  posts_aggregate: posts_aggregate_bool_exp
-  updated_at: timestamptz_comparison_exp
-}
-
-"""
-unique or primary key constraints on table "users"
-"""
-enum users_constraint {
-  """
-  unique or primary key constraint on columns "email"
-  """
-  users_email_key
-
-  """
-  unique or primary key constraint on columns "id"
-  """
-  users_pkey
-}
-
-"""
-input type for inserting data into table "users"
-"""
-input users_insert_input {
-  boards: boards_arr_rel_insert_input
-  circle_members: circle_members_arr_rel_insert_input
-  circles: circles_arr_rel_insert_input
-  created_at: timestamptz
-  deleted_at: timestamptz
-  email: String
-  email_verified: Boolean
-  id: bpchar
-  name: String
-  phone_number: String
-  photo_url: String
-  posts: posts_arr_rel_insert_input
-  updated_at: timestamptz
-}
-
-"""aggregate max on columns"""
-type users_max_fields {
-  created_at: timestamptz
-  deleted_at: timestamptz
-  email: String
-  id: bpchar
-  name: String
-  phone_number: String
-  photo_url: String
-  updated_at: timestamptz
-}
-
-"""aggregate min on columns"""
-type users_min_fields {
-  created_at: timestamptz
-  deleted_at: timestamptz
-  email: String
-  id: bpchar
-  name: String
-  phone_number: String
-  photo_url: String
-  updated_at: timestamptz
-}
-
-"""
-response of any mutation on the table "users"
-"""
-type users_mutation_response {
-  """number of rows affected by the mutation"""
-  affected_rows: Int!
-
-  """data from the rows affected by the mutation"""
-  returning: [users!]!
-}
-
-"""
-input type for inserting object relation for remote table "users"
-"""
-input users_obj_rel_insert_input {
-  data: users_insert_input!
-
-  """upsert condition"""
-  on_conflict: users_on_conflict
-}
-
-"""
-on_conflict condition type for table "users"
-"""
-input users_on_conflict {
-  constraint: users_constraint!
-  update_columns: [users_update_column!]! = []
-  where: users_bool_exp
-}
-
-"""Ordering options when selecting data from "users"."""
-input users_order_by {
-  boards_aggregate: boards_aggregate_order_by
-  circle_members_aggregate: circle_members_aggregate_order_by
-  circles_aggregate: circles_aggregate_order_by
-  created_at: order_by
-  deleted_at: order_by
-  email: order_by
-  email_verified: order_by
-  id: order_by
-  name: order_by
-  phone_number: order_by
-  photo_url: order_by
-  posts_aggregate: posts_aggregate_order_by
-  updated_at: order_by
-}
-
-"""primary key columns input for table: users"""
-input users_pk_columns_input {
-  id: bpchar!
-}
-
-"""
-select columns of table "users"
-"""
-enum users_select_column {
-  """column name"""
-  created_at
-
-  """column name"""
-  deleted_at
-
-  """column name"""
-  email
-
-  """column name"""
-  email_verified
-
-  """column name"""
-  id
-
-  """column name"""
-  name
-
-  """column name"""
-  phone_number
-
-  """column name"""
-  photo_url
-
-  """column name"""
-  updated_at
-}
-
-"""
-input type for updating data in table "users"
-"""
-input users_set_input {
-  created_at: timestamptz
-  deleted_at: timestamptz
-  email: String
-  email_verified: Boolean
-  id: bpchar
-  name: String
-  phone_number: String
-  photo_url: String
-  updated_at: timestamptz
-}
-
-"""
-Streaming cursor of the table "users"
-"""
-input users_stream_cursor_input {
-  """Stream column input with initial value"""
-  initial_value: users_stream_cursor_value_input!
-
-  """cursor ordering"""
-  ordering: cursor_ordering
-}
-
-"""Initial value of the column from where the streaming should start"""
-input users_stream_cursor_value_input {
-  created_at: timestamptz
-  deleted_at: timestamptz
-  email: String
-  email_verified: Boolean
-  id: bpchar
-  name: String
-  phone_number: String
-  photo_url: String
-  updated_at: timestamptz
-}
-
-"""
-update columns of table "users"
-"""
-enum users_update_column {
-  """column name"""
-  created_at
-
-  """column name"""
-  deleted_at
-
-  """column name"""
-  email
-
-  """column name"""
-  email_verified
-
-  """column name"""
-  id
-
-  """column name"""
-  name
-
-  """column name"""
-  phone_number
-
-  """column name"""
-  photo_url
-
-  """column name"""
-  updated_at
-}
-
-input users_updates {
-  """sets the columns of the filtered rows to the given values"""
-  _set: users_set_input
-
-  """filter the rows which have to be updated"""
-  where: users_bool_exp!
 }
 
 scalar uuid
