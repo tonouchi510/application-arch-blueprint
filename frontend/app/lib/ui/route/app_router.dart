@@ -30,14 +30,16 @@ class AppRouter extends RootStackRouter {
 
   @override
   List<AutoRoute> get routes => [
-    AutoRoute(page: SigninRoute.page, initial: true),
     AutoRoute(
       page: HomeRoute.page,
       guards: [authGuard],
+      initial: true,
       children: [
         AutoRoute(page: CircleListRoute.page, initial: true),
         AutoRoute(page: CircleDetailRoute.page),
       ],
     ),
+    AutoRoute(path: '/signin', page: SigninRoute.page),
+    AutoRoute(path: '/signup', page: SignupRoute.page),
   ];
 }
