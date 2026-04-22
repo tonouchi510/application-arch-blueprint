@@ -18,12 +18,15 @@ services:
     depends_on:
       - "postgres"
     restart: always
+    volumes:
+      - ./${FIREBASE_ADMIN_SDK_KEY_FILE}:/secrets/firebase-adminsdk.json:ro
     environment:
       - ENV=local
       - PORT=5001
       - TZ=Asia/Tokyo
       - DATABASE_URL=postgres://postgres:password@postgres:5432/main
       - FIREBASE_PROJECT_ID=${FIREBASE_PROJECT_ID}
+      - GOOGLE_APPLICATION_CREDENTIALS=/secrets/firebase-adminsdk.json
       - HASURA_REGISTER_SECRET=secret
 
   hasura-gateway:
