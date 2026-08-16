@@ -17,17 +17,39 @@ services:
       - "5001:5001"
     depends_on:
       - "postgres"
+      - "firebase-emulator"
     restart: always
-    volumes:
-      - ./${FIREBASE_ADMIN_SDK_KEY_FILE}:/secrets/firebase-adminsdk.json:ro
     environment:
       - ENV=local
       - PORT=5001
       - TZ=Asia/Tokyo
       - DATABASE_URL=postgres://postgres:password@postgres:5432/main
       - FIREBASE_PROJECT_ID=${FIREBASE_PROJECT_ID}
-      - GOOGLE_APPLICATION_CREDENTIALS=/secrets/firebase-adminsdk.json
+      - FIREBASE_AUTH_EMULATOR_HOST=firebase-emulator:9099
       - HASURA_REGISTER_SECRET=secret
+
+  # ローカル実行時、circle-serviceとFlutterアプリ(local flavor)はここに向けてFirebase Authを利用する
+  # Auth EmulatorはisEmulator扱いとなり実クレデンシャルを使わないため、サービスアカウントキーは不要
+  firebase-emulator:
+    build:
+      context: .
+      dockerfile: backend/firebase-emulator/Dockerfile
+    ports:
+      - "9099:9099" # Auth Emulator
+      - "4000:4000" # Emulator UI
+    restart: always
+
+  # ローカル実行時のみ使用。Auth Emulatorが発行する無署名トークンを検証してHasuraへX-Hasura-*ヘッダーを返す
+  local-auth-webhook:
+    build: ./backend/local-auth-webhook
+    depends_on:
+      - "firebase-emulator"
+    restart: always
+    environment:
+      - PORT=5002
+      - FIREBASE_PROJECT_ID=${FIREBASE_PROJECT_ID}
+      - FIREBASE_AUTH_EMULATOR_HOST=firebase-emulator:9099
+      - LOCAL_HASURA_ROLE=${LOCAL_HASURA_ROLE:-freemium}
 
   hasura-gateway:
     image: hasura/graphql-engine:latest.cli-migrations-v3
@@ -38,6 +60,7 @@ services:
       - ./backend/hasura/metadata:/hasura-metadata
     depends_on:
       - "postgres"
+      - "local-auth-webhook"
     restart: always
     environment:
       ## postgres database to store Hasura metadata
@@ -51,7 +74,11 @@ services:
       HASURA_GRAPHQL_ENABLED_LOG_TYPES: startup, http-log, webhook-log, websocket-log, query-log
       # authentication
       HASURA_GRAPHQL_ADMIN_SECRET: password
-      HASURA_GRAPHQL_JWT_SECRET: '{"type":"RS256","jwk_url": "https://www.googleapis.com/service_accounts/v1/jwk/securetoken@system.gserviceaccount.com", "audience": "${FIREBASE_PROJECT_ID}", "issuer": "https://securetoken.google.com/${FIREBASE_PROJECT_ID}"}'
+      # 本番はHASURA_GRAPHQL_JWT_SECRETでFirebaseのJWKを直接検証する構成を想定:
+      # HASURA_GRAPHQL_JWT_SECRET: '{"type":"RS256","jwk_url": "https://www.googleapis.com/service_accounts/v1/jwk/securetoken@system.gserviceaccount.com", "audience": "${FIREBASE_PROJECT_ID}", "issuer": "https://securetoken.google.com/${FIREBASE_PROJECT_ID}"}'
+      # Auth Emulatorのトークンは無署名でJWK検証を通せないため、ローカルはlocal-auth-webhookによる認証ウェブフックモードを使用する
+      HASURA_GRAPHQL_AUTH_HOOK: http://local-auth-webhook:5002/webhook
+      HASURA_GRAPHQL_AUTH_HOOK_MODE: POST
       # remote schema
       HASURA_GRAPHQL_ENABLE_REMOTE_SCHEMA_PERMISSIONS: "true"
       CIRCLE_SERVICE_GRAPHQL_ENDPOINT: http://circle-service:5001/query

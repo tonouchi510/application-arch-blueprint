@@ -1,7 +1,9 @@
+import 'package:firebase_auth/firebase_auth.dart' show FirebaseAuth;
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_ui_auth/firebase_ui_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:app/foundation/constants.dart';
 import 'package:app/foundation/riverpod_compat.dart';
 import 'package:app/data/observer/provider_logger.dart';
 import 'package:app/firebase_options.dart';
@@ -11,6 +13,14 @@ import 'package:app/ui/theme/app_theme.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+
+  final constants = Constants.of();
+  final emulatorHost = constants.authEmulatorHost;
+  final emulatorPort = constants.authEmulatorPort;
+  if (emulatorHost != null && emulatorPort != null) {
+    await FirebaseAuth.instance.useAuthEmulator(emulatorHost, emulatorPort);
+  }
+
   FirebaseUIAuth.configureProviders([EmailAuthProvider()]);
 
   // 開発環境でのみProviderObserverを追加

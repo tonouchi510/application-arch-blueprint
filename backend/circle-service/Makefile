@@ -1,6 +1,8 @@
 # variables
-FIREBASE_PROJECT_ID := "YOUR_PROJECT_ID"
+FIREBASE_PROJECT_ID := "application-arch-blueprint"
 DATABASE_URL := postgres://postgres:password@postgres:5432/main
+# `make -C ../.. firebase-emulator` で起動したAuth Emulatorに接続する
+FIREBASE_AUTH_EMULATOR_HOST := localhost:9099
 PATH_TO_SQL_BOILER := $(shell ls -d $(shell go env GOMODCACHE)/github.com/aarondl/sqlboiler/v4@v* 2>/dev/null | sort -V | tail -n 1)
 
 # backend(go)
@@ -14,7 +16,7 @@ setup:
 
 .PHONY: run
 run:
-	FIREBASE_PROJECT_ID=$(FIREBASE_PROJECT_ID) DATABASE_URL=$(DATABASE_URL) go run server.go
+	FIREBASE_PROJECT_ID=$(FIREBASE_PROJECT_ID) FIREBASE_AUTH_EMULATOR_HOST=$(FIREBASE_AUTH_EMULATOR_HOST) DATABASE_URL=$(DATABASE_URL) go run server.go
 
 .PHONY: build
 build:

@@ -1,0 +1,9 @@
+.vscode/
+
+# Firebase Admin SDK service account key files
+*-firebase-adminsdk-*.json
+
+# Firebase Emulator Suite
+firebase-debug.log
+ui-debug.log
+.firebase/
