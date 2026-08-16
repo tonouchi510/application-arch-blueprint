@@ -114,12 +114,15 @@ func (s *UserApplicationServiceTestSuite) TestUpdate() {
 		mock.ExpectCommit()
 
 		newName := "new-name"
+		newEmail := "new-email@test.com"
 		c := users.UpdateUserAttributesCommand{
-			Name: &newName,
+			Name:  &newName,
+			Email: &newEmail,
 		}
 		data, err := appService.UpdateAttributes(s.ctx, c)
 		require.NoError(t, err)
 		require.Equal(t, newName, data.Name)
+		require.Equal(t, newEmail, data.Email)
 	})
 }
 
