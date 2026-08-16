@@ -37,6 +37,7 @@ services:
     ports:
       - "9099:9099" # Auth Emulator
       - "4000:4000" # Emulator UI
+      - "4400:4400" # Emulator Hub (make firebase-emulator-seed-update用)
     restart: always
 
   # ローカル実行時のみ使用。Auth Emulatorが発行する無署名トークンを検証してHasuraへX-Hasura-*ヘッダーを返す
@@ -49,7 +50,6 @@ services:
       - PORT=5002
       - FIREBASE_PROJECT_ID=${FIREBASE_PROJECT_ID}
       - FIREBASE_AUTH_EMULATOR_HOST=firebase-emulator:9099
-      - LOCAL_HASURA_ROLE=${LOCAL_HASURA_ROLE:-freemium}
 
   hasura-gateway:
     image: hasura/graphql-engine:latest.cli-migrations-v3

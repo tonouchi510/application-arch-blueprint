@@ -7,10 +7,11 @@
 //
 // It verifies the incoming Firebase ID token against the Auth Emulator via the
 // Admin SDK (which skips signature checks in emulator mode, see
-// firebase.google.com/go/v4/auth) and returns X-Hasura-* session variables,
-// using a role fixed by the LOCAL_HASURA_ROLE env var. See
-// snippet/firebase/firebase_auth_command.py for how roles are assigned in
-// production via Firebase custom claims (https://hasura.io/jwt/claims).
+// firebase.google.com/go/v4/auth) and reads the Hasura role from the token's
+// "https://hasura.io/jwt/claims" custom claim (the same claim
+// snippet/firebase/firebase_auth_command.py sets in production). A token with
+// no role in that claim (e.g. an anonymous sign-in, or a user with no custom
+// claims set) is rejected, since there is no role to authorize it with.
 package main
 
 import (
@@ -25,7 +26,7 @@ import (
 	"firebase.google.com/go/v4/auth"
 )
 
-const allowedRoles = "admin,premium,freemium"
+const hasuraClaimsKey = "https://hasura.io/jwt/claims"
 
 type webhookRequest struct {
 	Headers map[string]string `json:"headers"`
@@ -40,7 +41,31 @@ func headerValue(headers map[string]string, name string) string {
 	return ""
 }
 
-func newHandler(authClient *auth.Client, role string) http.HandlerFunc {
+// resolveRole reads x-hasura-default-role/x-hasura-allowed-roles from the token's
+// Hasura custom claim. It reports ok=false if the token has no default role set.
+func resolveRole(token *auth.Token) (role string, allowedRoles string, ok bool) {
+	claims, ok := token.Claims[hasuraClaimsKey].(map[string]any)
+	if !ok {
+		return "", "", false
+	}
+	role, ok = claims["x-hasura-default-role"].(string)
+	if !ok || role == "" {
+		return "", "", false
+	}
+
+	if rawAllowed, ok := claims["x-hasura-allowed-roles"].([]any); ok {
+		roles := make([]string, 0, len(rawAllowed))
+		for _, r := range rawAllowed {
+			if s, ok := r.(string); ok {
+				roles = append(roles, s)
+			}
+		}
+		allowedRoles = strings.Join(roles, ",")
+	}
+	return role, allowedRoles, true
+}
+
+func newHandler(authClient *auth.Client) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		var body webhookRequest
 		if err := json.NewDecoder(r.Body).Decode(&body); err != nil {
@@ -63,6 +88,13 @@ func newHandler(authClient *auth.Client, role string) http.HandlerFunc {
 			return
 		}
 
+		role, allowedRoles, ok := resolveRole(token)
+		if !ok {
+			slog.Warn("id token has no x-hasura-default-role claim", "uid", token.UID)
+			w.WriteHeader(http.StatusUnauthorized)
+			return
+		}
+
 		w.Header().Set("Content-Type", "application/json")
 		json.NewEncoder(w).Encode(map[string]string{
 			"X-Hasura-User-Id":       token.UID,
@@ -77,10 +109,6 @@ func main() {
 	if port == "" {
 		port = "5002"
 	}
-	role := os.Getenv("LOCAL_HASURA_ROLE")
-	if role == "" {
-		role = "freemium"
-	}
 
 	ctx := context.Background()
 	app, err := firebase.NewApp(ctx, &firebase.Config{ProjectID: os.Getenv("FIREBASE_PROJECT_ID")})
@@ -94,9 +122,9 @@ func main() {
 		panic(err)
 	}
 
-	http.HandleFunc("/webhook", newHandler(authClient, role))
+	http.HandleFunc("/webhook", newHandler(authClient))
 
-	slog.Info("starting local-auth-webhook", "port", port, "role", role)
+	slog.Info("starting local-auth-webhook", "port", port)
 	if err := http.ListenAndServe(":"+port, nil); err != nil {
 		slog.Error("server failed to start", "error", err, "port", port)
 		panic(err)

@@ -28,4 +28,41 @@ DDDを効率よく実践してアプリケーション開発を行うための�
 └── terraform     # インフラコード置き場
 ```
 
+### backend-services
+
+- circle-service
+  - サークル管理のメインバックエンドサービス
+- hasura
+  - GraphQL API Gateway
+- その他
+  - firebase-emulator
+    - ローカルで動作確認の際に使用するfirebase-authのエミュレーター
+  - local-auth-webhook
+    - ローカル実行時にhasuraの代わりにJWTトークン検証を行うwebhook
+    - emulatorだと署名なしトークンになるため、hasuraと相性が悪いため
+
 それぞれ詳細は各ディレクトリのREADME、ドキュメントを参照してください。
+
+## 動作確認
+
+```
+# 必要なバックエンドサービスの起動
+$ make docker-compose-up
+
+# Webアプリ起動
+$ make run-local
+```
+
+### 動作確認用アカウント
+
+Firebase Auth Emulator起動時には、下記ユーザーアカウントをシードデータとして登録します。
+
+目的に応じた権限のアカウントでサインインして使用してください。なお、Roleはあくまで例なのでアプリに合わせて設定してください。
+
+| Account | Role |
+| ---- | ---- |
+| admin@example.com	| admin |
+| premium@example.com	| premium |
+| test@example.com	| freemium |
+
+なお、各アカウントのパスワードはここでは全て`password`に設定されています。

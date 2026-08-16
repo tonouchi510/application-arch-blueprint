@@ -1,8 +1,6 @@
 # variables
 FIREBASE_PROJECT_ID := "application-arch-blueprint"
 DATABASE_URL := postgres://postgres:password@postgres:5432/main
-# ローカル実行時にlocal-auth-webhookが全リクエストに割り当てるHasuraロール。 例: make docker-compose-up ROLE=admin
-ROLE := freemium
 
 .PHONY: setup
 setup:
@@ -18,12 +16,14 @@ docker-compose-build:
 
 .PHONY: docker-compose-up
 docker-compose-up:
-	FIREBASE_PROJECT_ID=$(FIREBASE_PROJECT_ID) DATABASE_URL=$(DATABASE_URL) LOCAL_HASURA_ROLE=$(ROLE) docker compose up -d
+	FIREBASE_PROJECT_ID=$(FIREBASE_PROJECT_ID) DATABASE_URL=$(DATABASE_URL) docker compose up -d
 
 # Firebase Auth Emulator (docker-composeを使わずcircle-serviceをネイティブ実行する場合用)
+# あらかじめ用意したテストユーザー(backend/firebase-emulator/seed-data)付きで起動する
 .PHONY: firebase-emulator
 firebase-emulator:
-	firebase emulators:start --only auth --project $(FIREBASE_PROJECT_ID)
+	firebase emulators:start --only auth --project $(FIREBASE_PROJECT_ID) --import=./backend/firebase-emulator/seed-data
+
 
 # App
 .PHONY: run-local
