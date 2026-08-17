@@ -16,4 +16,30 @@ class CircleDetailViewModel extends AsyncNotifier<CircleModel?> {
   Future<CircleModel?> build() {
     return ref.read(circleRepositoryProvider).getCircle(_circleId);
   }
+
+  Future<void> refresh() async {
+    ref.invalidateSelf();
+    await future;
+  }
+
+  Future<void> updateName(String newName) async {
+    state = const AsyncValue.loading();
+    state = await AsyncValue.guard(
+      () => ref
+          .read(circleRepositoryProvider)
+          .updateCircleName(circleId: _circleId, newName: newName),
+    );
+  }
+
+  Future<void> updateDescription(String newDescription) async {
+    state = const AsyncValue.loading();
+    state = await AsyncValue.guard(
+      () => ref
+          .read(circleRepositoryProvider)
+          .updateCircleDescription(
+            circleId: _circleId,
+            newDescription: newDescription,
+          ),
+    );
+  }
 }

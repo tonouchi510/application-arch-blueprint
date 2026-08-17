@@ -1,6 +1,8 @@
 package users
 
 import (
+	"unicode/utf8"
+
 	"github.com/tonouchi510/application-arch-blueprint/circle-service/internal/shared/codes"
 	"github.com/tonouchi510/application-arch-blueprint/circle-service/internal/shared/errors"
 )
@@ -8,7 +10,7 @@ import (
 type UserName string
 
 func NewUserName(value string) (*UserName, error) {
-	length := len(value)
+	length := utf8.RuneCountInString(value)
 	if length < 3 {
 		return nil, errors.Errorf(codes.InvalidArgument, "ユーザ名は3文字以上です。")
 	} else if length > 20 {

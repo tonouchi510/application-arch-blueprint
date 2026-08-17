@@ -2411,6 +2411,7 @@ type query_root {
   """fetch data from the table: "circles" using primary key columns"""
   circles_by_pk(uuid: uuid!): circles
   healthz: String!
+  users(ids: [ID!]!): [UserModel!]!
 
   """An array relationship"""
   posts(

@@ -1,3 +1,70 @@
+query GetMyCircles($uid: bpchar!) {
+  circles(
+    where: {
+      _or: [
+        { owner_id: { _eq: $uid } }
+        { circle_members: { user_id: { _eq: $uid } } }
+      ]
+    }
+  ) {
+    uuid
+    name
+    description
+    owner_id
+    circle_members_aggregate {
+      aggregate {
+        count
+      }
+    }
+  }
+}
+
+query GetAllCircles {
+  circles(order_by: { created_at: desc }) {
+    uuid
+    name
+    description
+    owner_id
+    circle_members_aggregate {
+      aggregate {
+        count
+      }
+    }
+  }
+}
+
+query GetCircle($id: uuid!) {
+  circles_by_pk(uuid: $id) {
+    uuid
+    name
+    description
+    owner_id
+    created_at
+    circle_members_aggregate {
+      aggregate {
+        count
+      }
+    }
+  }
+}
+
+query GetCircleMembers($circleId: uuid!) {
+  circle_members(where: { circle_uuid: { _eq: $circleId } }) {
+    uuid
+    user_id
+    circle_uuid
+    joined_date
+  }
+}
+
+mutation LeaveCircle($circleId: uuid!, $userId: bpchar!) {
+  delete_circle_members(
+    where: { circle_uuid: { _eq: $circleId }, user_id: { _eq: $userId } }
+  ) {
+    affected_rows
+  }
+}
+
 mutation CreateCircle($input: CreateCircleInput!) {
   create_circle(input: $input) {
     id

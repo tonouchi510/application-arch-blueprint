@@ -13,6 +13,166 @@ import 'package:gql_exec/gql_exec.dart' as _i4;
 
 part 'board.req.gql.g.dart';
 
+abstract class GGetCircleBoardsReq
+    implements
+        Built<GGetCircleBoardsReq, GGetCircleBoardsReqBuilder>,
+        _i1
+        .OperationRequest<_i2.GGetCircleBoardsData, _i3.GGetCircleBoardsVars> {
+  GGetCircleBoardsReq._();
+
+  factory GGetCircleBoardsReq(
+          [void Function(GGetCircleBoardsReqBuilder b) updates]) =
+      _$GGetCircleBoardsReq;
+
+  static void _initializeBuilder(GGetCircleBoardsReqBuilder b) => b
+    ..operation = _i4.Operation(
+      document: _i5.document,
+      operationName: 'GetCircleBoards',
+    )
+    ..executeOnListen = true;
+
+  @override
+  _i3.GGetCircleBoardsVars get vars;
+  @override
+  _i4.Operation get operation;
+  @override
+  _i4.Request get execRequest => _i4.Request(
+        operation: operation,
+        variables: vars.toJson(),
+        context: context ?? const _i4.Context(),
+      );
+
+  @override
+  String? get requestId;
+  @override
+  @BuiltValueField(serialize: false)
+  _i2.GGetCircleBoardsData? Function(
+    _i2.GGetCircleBoardsData?,
+    _i2.GGetCircleBoardsData?,
+  )? get updateResult;
+  @override
+  _i2.GGetCircleBoardsData? get optimisticResponse;
+  @override
+  String? get updateCacheHandlerKey;
+  @override
+  Map<String, dynamic>? get updateCacheHandlerContext;
+  @override
+  _i1.FetchPolicy? get fetchPolicy;
+  @override
+  bool get executeOnListen;
+  @override
+  @BuiltValueField(serialize: false)
+  _i4.Context? get context;
+  @override
+  _i2.GGetCircleBoardsData? parseData(Map<String, dynamic> json) =>
+      _i2.GGetCircleBoardsData.fromJson(json);
+
+  @override
+  Map<String, dynamic> varsToJson() => vars.toJson();
+
+  @override
+  Map<String, dynamic> dataToJson(_i2.GGetCircleBoardsData data) =>
+      data.toJson();
+
+  @override
+  _i1.OperationRequest<_i2.GGetCircleBoardsData, _i3.GGetCircleBoardsVars>
+      transformOperation(_i4.Operation Function(_i4.Operation) transform) =>
+          this.rebuild((b) => b..operation = transform(operation));
+
+  static Serializer<GGetCircleBoardsReq> get serializer =>
+      _$gGetCircleBoardsReqSerializer;
+
+  Map<String, dynamic> toJson() => (_i6.serializers.serializeWith(
+        GGetCircleBoardsReq.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GGetCircleBoardsReq? fromJson(Map<String, dynamic> json) =>
+      _i6.serializers.deserializeWith(
+        GGetCircleBoardsReq.serializer,
+        json,
+      );
+}
+
+abstract class GGetBoardPostsReq
+    implements
+        Built<GGetBoardPostsReq, GGetBoardPostsReqBuilder>,
+        _i1.OperationRequest<_i2.GGetBoardPostsData, _i3.GGetBoardPostsVars> {
+  GGetBoardPostsReq._();
+
+  factory GGetBoardPostsReq(
+          [void Function(GGetBoardPostsReqBuilder b) updates]) =
+      _$GGetBoardPostsReq;
+
+  static void _initializeBuilder(GGetBoardPostsReqBuilder b) => b
+    ..operation = _i4.Operation(
+      document: _i5.document,
+      operationName: 'GetBoardPosts',
+    )
+    ..executeOnListen = true;
+
+  @override
+  _i3.GGetBoardPostsVars get vars;
+  @override
+  _i4.Operation get operation;
+  @override
+  _i4.Request get execRequest => _i4.Request(
+        operation: operation,
+        variables: vars.toJson(),
+        context: context ?? const _i4.Context(),
+      );
+
+  @override
+  String? get requestId;
+  @override
+  @BuiltValueField(serialize: false)
+  _i2.GGetBoardPostsData? Function(
+    _i2.GGetBoardPostsData?,
+    _i2.GGetBoardPostsData?,
+  )? get updateResult;
+  @override
+  _i2.GGetBoardPostsData? get optimisticResponse;
+  @override
+  String? get updateCacheHandlerKey;
+  @override
+  Map<String, dynamic>? get updateCacheHandlerContext;
+  @override
+  _i1.FetchPolicy? get fetchPolicy;
+  @override
+  bool get executeOnListen;
+  @override
+  @BuiltValueField(serialize: false)
+  _i4.Context? get context;
+  @override
+  _i2.GGetBoardPostsData? parseData(Map<String, dynamic> json) =>
+      _i2.GGetBoardPostsData.fromJson(json);
+
+  @override
+  Map<String, dynamic> varsToJson() => vars.toJson();
+
+  @override
+  Map<String, dynamic> dataToJson(_i2.GGetBoardPostsData data) => data.toJson();
+
+  @override
+  _i1.OperationRequest<_i2.GGetBoardPostsData, _i3.GGetBoardPostsVars>
+      transformOperation(_i4.Operation Function(_i4.Operation) transform) =>
+          this.rebuild((b) => b..operation = transform(operation));
+
+  static Serializer<GGetBoardPostsReq> get serializer =>
+      _$gGetBoardPostsReqSerializer;
+
+  Map<String, dynamic> toJson() => (_i6.serializers.serializeWith(
+        GGetBoardPostsReq.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GGetBoardPostsReq? fromJson(Map<String, dynamic> json) =>
+      _i6.serializers.deserializeWith(
+        GGetBoardPostsReq.serializer,
+        json,
+      );
+}
+
 abstract class GCreateBoardReq
     implements
         Built<GCreateBoardReq, GCreateBoardReqBuilder>,

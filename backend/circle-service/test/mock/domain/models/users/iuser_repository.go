@@ -86,6 +86,21 @@ func (mr *MockIUserRepositoryMockRecorder) FindByEmail(ctx, email, executor any)
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "FindByEmail", reflect.TypeOf((*MockIUserRepository)(nil).FindByEmail), ctx, email, executor)
 }
 
+// FindMany mocks base method.
+func (m *MockIUserRepository) FindMany(ctx context.Context, ids []users.UserId, executor db.DbExecutor) ([]*users.User, error) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "FindMany", ctx, ids, executor)
+	ret0, _ := ret[0].([]*users.User)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// FindMany indicates an expected call of FindMany.
+func (mr *MockIUserRepositoryMockRecorder) FindMany(ctx, ids, executor any) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "FindMany", reflect.TypeOf((*MockIUserRepository)(nil).FindMany), ctx, ids, executor)
+}
+
 // Save mocks base method.
 func (m *MockIUserRepository) Save(ctx context.Context, user users.User, executor db.DbExecutor) error {
 	m.ctrl.T.Helper()

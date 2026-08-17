@@ -39,6 +39,7 @@ class AppRouter extends RootStackRouter {
         AutoRoute(page: CircleDetailRoute.page),
       ],
     ),
+    AutoRoute(path: '/settings', page: UserSettingsRoute.page, guards: [authGuard]),
     AutoRoute(path: '/signin', page: SigninRoute.page),
     AutoRoute(path: '/signup', page: SignupRoute.page),
   ];

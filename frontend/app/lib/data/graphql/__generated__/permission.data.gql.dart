@@ -8,6 +8,72 @@ import 'package:built_value/serializer.dart';
 
 part 'permission.data.gql.g.dart';
 
+abstract class GGetCirclePermissionData
+    implements
+        Built<GGetCirclePermissionData, GGetCirclePermissionDataBuilder> {
+  GGetCirclePermissionData._();
+
+  factory GGetCirclePermissionData(
+          [void Function(GGetCirclePermissionDataBuilder b) updates]) =
+      _$GGetCirclePermissionData;
+
+  static void _initializeBuilder(GGetCirclePermissionDataBuilder b) =>
+      b..G__typename = 'query_root';
+
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  GGetCirclePermissionData_circle_permissions_by_pk?
+      get circle_permissions_by_pk;
+  static Serializer<GGetCirclePermissionData> get serializer =>
+      _$gGetCirclePermissionDataSerializer;
+
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GGetCirclePermissionData.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GGetCirclePermissionData? fromJson(Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GGetCirclePermissionData.serializer,
+        json,
+      );
+}
+
+abstract class GGetCirclePermissionData_circle_permissions_by_pk
+    implements
+        Built<GGetCirclePermissionData_circle_permissions_by_pk,
+            GGetCirclePermissionData_circle_permissions_by_pkBuilder> {
+  GGetCirclePermissionData_circle_permissions_by_pk._();
+
+  factory GGetCirclePermissionData_circle_permissions_by_pk(
+      [void Function(GGetCirclePermissionData_circle_permissions_by_pkBuilder b)
+          updates]) = _$GGetCirclePermissionData_circle_permissions_by_pk;
+
+  static void _initializeBuilder(
+          GGetCirclePermissionData_circle_permissions_by_pkBuilder b) =>
+      b..G__typename = 'circle_permissions';
+
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  String get circle_uuid;
+  bool get permission_board_creation;
+  static Serializer<GGetCirclePermissionData_circle_permissions_by_pk>
+      get serializer =>
+          _$gGetCirclePermissionDataCirclePermissionsByPkSerializer;
+
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GGetCirclePermissionData_circle_permissions_by_pk.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GGetCirclePermissionData_circle_permissions_by_pk? fromJson(
+          Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GGetCirclePermissionData_circle_permissions_by_pk.serializer,
+        json,
+      );
+}
+
 abstract class GChangeBoardCreationPermissionData
     implements
         Built<GChangeBoardCreationPermissionData,

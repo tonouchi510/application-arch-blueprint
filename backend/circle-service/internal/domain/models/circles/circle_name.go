@@ -1,6 +1,8 @@
 package circles
 
 import (
+	"unicode/utf8"
+
 	"github.com/tonouchi510/application-arch-blueprint/circle-service/internal/shared/codes"
 	"github.com/tonouchi510/application-arch-blueprint/circle-service/internal/shared/errors"
 )
@@ -11,10 +13,11 @@ func NewCircleName(value string) (*CircleName, error) {
 	if value == "" {
 		return nil, errors.Errorf(codes.InvalidArgument, "CircleNameが空です。")
 	}
-	if len(value) < 3 {
+	length := utf8.RuneCountInString(value)
+	if length < 3 {
 		return nil, errors.Errorf(codes.InvalidArgument, "CircleNameは3文字以上でなければなりません。")
 	}
-	if len(value) > 20 {
+	if length > 20 {
 		return nil, errors.Errorf(codes.InvalidArgument, "CircleNameは20文字以下でなければなりません。")
 	}
 	name := CircleName(value)

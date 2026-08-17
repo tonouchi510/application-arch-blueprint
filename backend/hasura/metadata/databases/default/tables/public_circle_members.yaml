@@ -16,6 +16,7 @@ select_permissions:
         - circle_uuid
         - uuid
       filter: {}
+      allow_aggregations: true
     comment: ""
   - role: premium
     permission:
@@ -27,4 +28,5 @@ select_permissions:
         - circle_uuid
         - uuid
       filter: {}
+      allow_aggregations: true
     comment: ""

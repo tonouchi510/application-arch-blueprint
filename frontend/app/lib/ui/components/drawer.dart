@@ -30,24 +30,6 @@ class AppDrawer extends HookConsumerWidget {
           ),
           ListTile(
             title: Text(
-              'ホーム',
-              style: TextStyle(
-                fontSize: 18.0,
-                color: theme.data.colorScheme.onPrimary,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            trailing: Icon(
-              Icons.arrow_forward,
-              color: theme.data.colorScheme.onPrimary,
-            ),
-            onTap: () => router.pushAndPopUntil(
-              const HomeRoute(),
-              predicate: ((_) => false),
-            ),
-          ),
-          ListTile(
-            title: Text(
               'サークル一覧',
               style: TextStyle(
                 fontSize: 18.0,
@@ -63,6 +45,21 @@ class AppDrawer extends HookConsumerWidget {
               const CircleListRoute(),
               predicate: ((_) => false),
             ),
+          ),
+          ListTile(
+            title: Text(
+              'ユーザー設定',
+              style: TextStyle(
+                fontSize: 18.0,
+                color: theme.data.colorScheme.onPrimary,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            trailing: Icon(
+              Icons.arrow_forward,
+              color: theme.data.colorScheme.onPrimary,
+            ),
+            onTap: () => router.push(const UserSettingsRoute()),
           ),
         ],
       ),

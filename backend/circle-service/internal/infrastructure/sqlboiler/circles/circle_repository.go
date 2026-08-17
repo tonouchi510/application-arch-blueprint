@@ -40,6 +40,9 @@ func (r circleRepository) Find(ctx context.Context, circleId uuid.UUID, executor
 func (r circleRepository) FindByName(ctx context.Context, name domainModel.CircleName, executor db.DbExecutor) (*domainModel.Circle, error) {
 	circleData, err := models.Circles(models.CircleWhere.Name.EQ(string(name))).One(ctx, executor)
 	if err != nil {
+		if err.Error() == "sql: no rows in result set" {
+			return nil, nil
+		}
 		return nil, err
 	}
 

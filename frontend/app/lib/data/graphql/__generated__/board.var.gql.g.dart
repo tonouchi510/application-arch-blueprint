@@ -6,6 +6,10 @@ part of 'board.var.gql.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
+Serializer<GGetCircleBoardsVars> _$gGetCircleBoardsVarsSerializer =
+    _$GGetCircleBoardsVarsSerializer();
+Serializer<GGetBoardPostsVars> _$gGetBoardPostsVarsSerializer =
+    _$GGetBoardPostsVarsSerializer();
 Serializer<GCreateBoardVars> _$gCreateBoardVarsSerializer =
     _$GCreateBoardVarsSerializer();
 Serializer<GChangeBoardTopicVars> _$gChangeBoardTopicVarsSerializer =
@@ -16,6 +20,115 @@ Serializer<GAddBoardPostVars> _$gAddBoardPostVarsSerializer =
     _$GAddBoardPostVarsSerializer();
 Serializer<GDeleteBoardVars> _$gDeleteBoardVarsSerializer =
     _$GDeleteBoardVarsSerializer();
+
+class _$GGetCircleBoardsVarsSerializer
+    implements StructuredSerializer<GGetCircleBoardsVars> {
+  @override
+  final Iterable<Type> types = const [
+    GGetCircleBoardsVars,
+    _$GGetCircleBoardsVars,
+  ];
+  @override
+  final String wireName = 'GGetCircleBoardsVars';
+
+  @override
+  Iterable<Object?> serialize(
+    Serializers serializers,
+    GGetCircleBoardsVars object, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    final result = <Object?>[
+      'circleId',
+      serializers.serialize(
+        object.circleId,
+        specifiedType: const FullType(String),
+      ),
+    ];
+
+    return result;
+  }
+
+  @override
+  GGetCircleBoardsVars deserialize(
+    Serializers serializers,
+    Iterable<Object?> serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    final result = GGetCircleBoardsVarsBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'circleId':
+          result.circleId =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )!
+                  as String;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GGetBoardPostsVarsSerializer
+    implements StructuredSerializer<GGetBoardPostsVars> {
+  @override
+  final Iterable<Type> types = const [GGetBoardPostsVars, _$GGetBoardPostsVars];
+  @override
+  final String wireName = 'GGetBoardPostsVars';
+
+  @override
+  Iterable<Object?> serialize(
+    Serializers serializers,
+    GGetBoardPostsVars object, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    final result = <Object?>[
+      'boardId',
+      serializers.serialize(
+        object.boardId,
+        specifiedType: const FullType(String),
+      ),
+    ];
+
+    return result;
+  }
+
+  @override
+  GGetBoardPostsVars deserialize(
+    Serializers serializers,
+    Iterable<Object?> serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    final result = GGetBoardPostsVarsBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'boardId':
+          result.boardId =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )!
+                  as String;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
 
 class _$GCreateBoardVarsSerializer
     implements StructuredSerializer<GCreateBoardVars> {
@@ -34,7 +147,7 @@ class _$GCreateBoardVarsSerializer
       'input',
       serializers.serialize(
         object.input,
-        specifiedType: const FullType(_i1.GCreateBoardInput),
+        specifiedType: const FullType(_i2.GCreateBoardInput),
       ),
     ];
 
@@ -59,9 +172,9 @@ class _$GCreateBoardVarsSerializer
           result.input.replace(
             serializers.deserialize(
                   value,
-                  specifiedType: const FullType(_i1.GCreateBoardInput),
+                  specifiedType: const FullType(_i2.GCreateBoardInput),
                 )!
-                as _i1.GCreateBoardInput,
+                as _i2.GCreateBoardInput,
           );
           break;
       }
@@ -91,7 +204,7 @@ class _$GChangeBoardTopicVarsSerializer
       'input',
       serializers.serialize(
         object.input,
-        specifiedType: const FullType(_i1.GChangeBoardTopicInput),
+        specifiedType: const FullType(_i2.GChangeBoardTopicInput),
       ),
     ];
 
@@ -116,9 +229,9 @@ class _$GChangeBoardTopicVarsSerializer
           result.input.replace(
             serializers.deserialize(
                   value,
-                  specifiedType: const FullType(_i1.GChangeBoardTopicInput),
+                  specifiedType: const FullType(_i2.GChangeBoardTopicInput),
                 )!
-                as _i1.GChangeBoardTopicInput,
+                as _i2.GChangeBoardTopicInput,
           );
           break;
       }
@@ -148,7 +261,7 @@ class _$GChangeBoardStatusVarsSerializer
       'input',
       serializers.serialize(
         object.input,
-        specifiedType: const FullType(_i1.GChangeBoardStatusInput),
+        specifiedType: const FullType(_i2.GChangeBoardStatusInput),
       ),
     ];
 
@@ -173,9 +286,9 @@ class _$GChangeBoardStatusVarsSerializer
           result.input.replace(
             serializers.deserialize(
                   value,
-                  specifiedType: const FullType(_i1.GChangeBoardStatusInput),
+                  specifiedType: const FullType(_i2.GChangeBoardStatusInput),
                 )!
-                as _i1.GChangeBoardStatusInput,
+                as _i2.GChangeBoardStatusInput,
           );
           break;
       }
@@ -202,7 +315,7 @@ class _$GAddBoardPostVarsSerializer
       'input',
       serializers.serialize(
         object.input,
-        specifiedType: const FullType(_i1.GAddBoardPostInput),
+        specifiedType: const FullType(_i2.GAddBoardPostInput),
       ),
     ];
 
@@ -227,9 +340,9 @@ class _$GAddBoardPostVarsSerializer
           result.input.replace(
             serializers.deserialize(
                   value,
-                  specifiedType: const FullType(_i1.GAddBoardPostInput),
+                  specifiedType: const FullType(_i2.GAddBoardPostInput),
                 )!
-                as _i1.GAddBoardPostInput,
+                as _i2.GAddBoardPostInput,
           );
           break;
       }
@@ -256,7 +369,7 @@ class _$GDeleteBoardVarsSerializer
       'input',
       serializers.serialize(
         object.input,
-        specifiedType: const FullType(_i1.GDeleteBoardInput),
+        specifiedType: const FullType(_i2.GDeleteBoardInput),
       ),
     ];
 
@@ -281,9 +394,9 @@ class _$GDeleteBoardVarsSerializer
           result.input.replace(
             serializers.deserialize(
                   value,
-                  specifiedType: const FullType(_i1.GDeleteBoardInput),
+                  specifiedType: const FullType(_i2.GDeleteBoardInput),
                 )!
-                as _i1.GDeleteBoardInput,
+                as _i2.GDeleteBoardInput,
           );
           break;
       }
@@ -293,9 +406,183 @@ class _$GDeleteBoardVarsSerializer
   }
 }
 
+class _$GGetCircleBoardsVars extends GGetCircleBoardsVars {
+  @override
+  final String circleId;
+
+  factory _$GGetCircleBoardsVars([
+    void Function(GGetCircleBoardsVarsBuilder)? updates,
+  ]) => (GGetCircleBoardsVarsBuilder()..update(updates))._build();
+
+  _$GGetCircleBoardsVars._({required this.circleId}) : super._();
+  @override
+  GGetCircleBoardsVars rebuild(
+    void Function(GGetCircleBoardsVarsBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
+
+  @override
+  GGetCircleBoardsVarsBuilder toBuilder() =>
+      GGetCircleBoardsVarsBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GGetCircleBoardsVars && circleId == other.circleId;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, circleId.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+      r'GGetCircleBoardsVars',
+    )..add('circleId', circleId)).toString();
+  }
+}
+
+class GGetCircleBoardsVarsBuilder
+    implements Builder<GGetCircleBoardsVars, GGetCircleBoardsVarsBuilder> {
+  _$GGetCircleBoardsVars? _$v;
+
+  String? _circleId;
+  String? get circleId => _$this._circleId;
+  set circleId(String? circleId) => _$this._circleId = circleId;
+
+  GGetCircleBoardsVarsBuilder();
+
+  GGetCircleBoardsVarsBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _circleId = $v.circleId;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GGetCircleBoardsVars other) {
+    _$v = other as _$GGetCircleBoardsVars;
+  }
+
+  @override
+  void update(void Function(GGetCircleBoardsVarsBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GGetCircleBoardsVars build() => _build();
+
+  _$GGetCircleBoardsVars _build() {
+    final _$result =
+        _$v ??
+        _$GGetCircleBoardsVars._(
+          circleId: BuiltValueNullFieldError.checkNotNull(
+            circleId,
+            r'GGetCircleBoardsVars',
+            'circleId',
+          ),
+        );
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GGetBoardPostsVars extends GGetBoardPostsVars {
+  @override
+  final String boardId;
+
+  factory _$GGetBoardPostsVars([
+    void Function(GGetBoardPostsVarsBuilder)? updates,
+  ]) => (GGetBoardPostsVarsBuilder()..update(updates))._build();
+
+  _$GGetBoardPostsVars._({required this.boardId}) : super._();
+  @override
+  GGetBoardPostsVars rebuild(
+    void Function(GGetBoardPostsVarsBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
+
+  @override
+  GGetBoardPostsVarsBuilder toBuilder() =>
+      GGetBoardPostsVarsBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GGetBoardPostsVars && boardId == other.boardId;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, boardId.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+      r'GGetBoardPostsVars',
+    )..add('boardId', boardId)).toString();
+  }
+}
+
+class GGetBoardPostsVarsBuilder
+    implements Builder<GGetBoardPostsVars, GGetBoardPostsVarsBuilder> {
+  _$GGetBoardPostsVars? _$v;
+
+  String? _boardId;
+  String? get boardId => _$this._boardId;
+  set boardId(String? boardId) => _$this._boardId = boardId;
+
+  GGetBoardPostsVarsBuilder();
+
+  GGetBoardPostsVarsBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _boardId = $v.boardId;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GGetBoardPostsVars other) {
+    _$v = other as _$GGetBoardPostsVars;
+  }
+
+  @override
+  void update(void Function(GGetBoardPostsVarsBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GGetBoardPostsVars build() => _build();
+
+  _$GGetBoardPostsVars _build() {
+    final _$result =
+        _$v ??
+        _$GGetBoardPostsVars._(
+          boardId: BuiltValueNullFieldError.checkNotNull(
+            boardId,
+            r'GGetBoardPostsVars',
+            'boardId',
+          ),
+        );
+    replace(_$result);
+    return _$result;
+  }
+}
+
 class _$GCreateBoardVars extends GCreateBoardVars {
   @override
-  final _i1.GCreateBoardInput input;
+  final _i2.GCreateBoardInput input;
 
   factory _$GCreateBoardVars([
     void Function(GCreateBoardVarsBuilder)? updates,
@@ -336,10 +623,10 @@ class GCreateBoardVarsBuilder
     implements Builder<GCreateBoardVars, GCreateBoardVarsBuilder> {
   _$GCreateBoardVars? _$v;
 
-  _i1.GCreateBoardInputBuilder? _input;
-  _i1.GCreateBoardInputBuilder get input =>
-      _$this._input ??= _i1.GCreateBoardInputBuilder();
-  set input(_i1.GCreateBoardInputBuilder? input) => _$this._input = input;
+  _i2.GCreateBoardInputBuilder? _input;
+  _i2.GCreateBoardInputBuilder get input =>
+      _$this._input ??= _i2.GCreateBoardInputBuilder();
+  set input(_i2.GCreateBoardInputBuilder? input) => _$this._input = input;
 
   GCreateBoardVarsBuilder();
 
@@ -390,7 +677,7 @@ class GCreateBoardVarsBuilder
 
 class _$GChangeBoardTopicVars extends GChangeBoardTopicVars {
   @override
-  final _i1.GChangeBoardTopicInput input;
+  final _i2.GChangeBoardTopicInput input;
 
   factory _$GChangeBoardTopicVars([
     void Function(GChangeBoardTopicVarsBuilder)? updates,
@@ -432,10 +719,10 @@ class GChangeBoardTopicVarsBuilder
     implements Builder<GChangeBoardTopicVars, GChangeBoardTopicVarsBuilder> {
   _$GChangeBoardTopicVars? _$v;
 
-  _i1.GChangeBoardTopicInputBuilder? _input;
-  _i1.GChangeBoardTopicInputBuilder get input =>
-      _$this._input ??= _i1.GChangeBoardTopicInputBuilder();
-  set input(_i1.GChangeBoardTopicInputBuilder? input) => _$this._input = input;
+  _i2.GChangeBoardTopicInputBuilder? _input;
+  _i2.GChangeBoardTopicInputBuilder get input =>
+      _$this._input ??= _i2.GChangeBoardTopicInputBuilder();
+  set input(_i2.GChangeBoardTopicInputBuilder? input) => _$this._input = input;
 
   GChangeBoardTopicVarsBuilder();
 
@@ -486,7 +773,7 @@ class GChangeBoardTopicVarsBuilder
 
 class _$GChangeBoardStatusVars extends GChangeBoardStatusVars {
   @override
-  final _i1.GChangeBoardStatusInput input;
+  final _i2.GChangeBoardStatusInput input;
 
   factory _$GChangeBoardStatusVars([
     void Function(GChangeBoardStatusVarsBuilder)? updates,
@@ -528,10 +815,10 @@ class GChangeBoardStatusVarsBuilder
     implements Builder<GChangeBoardStatusVars, GChangeBoardStatusVarsBuilder> {
   _$GChangeBoardStatusVars? _$v;
 
-  _i1.GChangeBoardStatusInputBuilder? _input;
-  _i1.GChangeBoardStatusInputBuilder get input =>
-      _$this._input ??= _i1.GChangeBoardStatusInputBuilder();
-  set input(_i1.GChangeBoardStatusInputBuilder? input) => _$this._input = input;
+  _i2.GChangeBoardStatusInputBuilder? _input;
+  _i2.GChangeBoardStatusInputBuilder get input =>
+      _$this._input ??= _i2.GChangeBoardStatusInputBuilder();
+  set input(_i2.GChangeBoardStatusInputBuilder? input) => _$this._input = input;
 
   GChangeBoardStatusVarsBuilder();
 
@@ -582,7 +869,7 @@ class GChangeBoardStatusVarsBuilder
 
 class _$GAddBoardPostVars extends GAddBoardPostVars {
   @override
-  final _i1.GAddBoardPostInput input;
+  final _i2.GAddBoardPostInput input;
 
   factory _$GAddBoardPostVars([
     void Function(GAddBoardPostVarsBuilder)? updates,
@@ -623,10 +910,10 @@ class GAddBoardPostVarsBuilder
     implements Builder<GAddBoardPostVars, GAddBoardPostVarsBuilder> {
   _$GAddBoardPostVars? _$v;
 
-  _i1.GAddBoardPostInputBuilder? _input;
-  _i1.GAddBoardPostInputBuilder get input =>
-      _$this._input ??= _i1.GAddBoardPostInputBuilder();
-  set input(_i1.GAddBoardPostInputBuilder? input) => _$this._input = input;
+  _i2.GAddBoardPostInputBuilder? _input;
+  _i2.GAddBoardPostInputBuilder get input =>
+      _$this._input ??= _i2.GAddBoardPostInputBuilder();
+  set input(_i2.GAddBoardPostInputBuilder? input) => _$this._input = input;
 
   GAddBoardPostVarsBuilder();
 
@@ -677,7 +964,7 @@ class GAddBoardPostVarsBuilder
 
 class _$GDeleteBoardVars extends GDeleteBoardVars {
   @override
-  final _i1.GDeleteBoardInput input;
+  final _i2.GDeleteBoardInput input;
 
   factory _$GDeleteBoardVars([
     void Function(GDeleteBoardVarsBuilder)? updates,
@@ -718,10 +1005,10 @@ class GDeleteBoardVarsBuilder
     implements Builder<GDeleteBoardVars, GDeleteBoardVarsBuilder> {
   _$GDeleteBoardVars? _$v;
 
-  _i1.GDeleteBoardInputBuilder? _input;
-  _i1.GDeleteBoardInputBuilder get input =>
-      _$this._input ??= _i1.GDeleteBoardInputBuilder();
-  set input(_i1.GDeleteBoardInputBuilder? input) => _$this._input = input;
+  _i2.GDeleteBoardInputBuilder? _input;
+  _i2.GDeleteBoardInputBuilder get input =>
+      _$this._input ??= _i2.GDeleteBoardInputBuilder();
+  set input(_i2.GDeleteBoardInputBuilder? input) => _$this._input = input;
 
   GDeleteBoardVarsBuilder();
 

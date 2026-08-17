@@ -3,10 +3,206 @@
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:app/data/graphql/__generated__/serializers.gql.dart' as _i1;
+import 'package:built_collection/built_collection.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
 part 'board.data.gql.g.dart';
+
+abstract class GGetCircleBoardsData
+    implements Built<GGetCircleBoardsData, GGetCircleBoardsDataBuilder> {
+  GGetCircleBoardsData._();
+
+  factory GGetCircleBoardsData(
+          [void Function(GGetCircleBoardsDataBuilder b) updates]) =
+      _$GGetCircleBoardsData;
+
+  static void _initializeBuilder(GGetCircleBoardsDataBuilder b) =>
+      b..G__typename = 'query_root';
+
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  BuiltList<GGetCircleBoardsData_boards> get boards;
+  static Serializer<GGetCircleBoardsData> get serializer =>
+      _$gGetCircleBoardsDataSerializer;
+
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GGetCircleBoardsData.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GGetCircleBoardsData? fromJson(Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GGetCircleBoardsData.serializer,
+        json,
+      );
+}
+
+abstract class GGetCircleBoardsData_boards
+    implements
+        Built<GGetCircleBoardsData_boards, GGetCircleBoardsData_boardsBuilder> {
+  GGetCircleBoardsData_boards._();
+
+  factory GGetCircleBoardsData_boards(
+          [void Function(GGetCircleBoardsData_boardsBuilder b) updates]) =
+      _$GGetCircleBoardsData_boards;
+
+  static void _initializeBuilder(GGetCircleBoardsData_boardsBuilder b) =>
+      b..G__typename = 'boards';
+
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  String get uuid;
+  String get circle_uuid;
+  String get owner_id;
+  String get topic;
+  int get status;
+  GGetCircleBoardsData_boards_posts_aggregate get posts_aggregate;
+  static Serializer<GGetCircleBoardsData_boards> get serializer =>
+      _$gGetCircleBoardsDataBoardsSerializer;
+
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GGetCircleBoardsData_boards.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GGetCircleBoardsData_boards? fromJson(Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GGetCircleBoardsData_boards.serializer,
+        json,
+      );
+}
+
+abstract class GGetCircleBoardsData_boards_posts_aggregate
+    implements
+        Built<GGetCircleBoardsData_boards_posts_aggregate,
+            GGetCircleBoardsData_boards_posts_aggregateBuilder> {
+  GGetCircleBoardsData_boards_posts_aggregate._();
+
+  factory GGetCircleBoardsData_boards_posts_aggregate(
+      [void Function(GGetCircleBoardsData_boards_posts_aggregateBuilder b)
+          updates]) = _$GGetCircleBoardsData_boards_posts_aggregate;
+
+  static void _initializeBuilder(
+          GGetCircleBoardsData_boards_posts_aggregateBuilder b) =>
+      b..G__typename = 'posts_aggregate';
+
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  GGetCircleBoardsData_boards_posts_aggregate_aggregate? get aggregate;
+  static Serializer<GGetCircleBoardsData_boards_posts_aggregate>
+      get serializer => _$gGetCircleBoardsDataBoardsPostsAggregateSerializer;
+
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GGetCircleBoardsData_boards_posts_aggregate.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GGetCircleBoardsData_boards_posts_aggregate? fromJson(
+          Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GGetCircleBoardsData_boards_posts_aggregate.serializer,
+        json,
+      );
+}
+
+abstract class GGetCircleBoardsData_boards_posts_aggregate_aggregate
+    implements
+        Built<GGetCircleBoardsData_boards_posts_aggregate_aggregate,
+            GGetCircleBoardsData_boards_posts_aggregate_aggregateBuilder> {
+  GGetCircleBoardsData_boards_posts_aggregate_aggregate._();
+
+  factory GGetCircleBoardsData_boards_posts_aggregate_aggregate(
+      [void Function(
+              GGetCircleBoardsData_boards_posts_aggregate_aggregateBuilder b)
+          updates]) = _$GGetCircleBoardsData_boards_posts_aggregate_aggregate;
+
+  static void _initializeBuilder(
+          GGetCircleBoardsData_boards_posts_aggregate_aggregateBuilder b) =>
+      b..G__typename = 'posts_aggregate_fields';
+
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  int get count;
+  static Serializer<GGetCircleBoardsData_boards_posts_aggregate_aggregate>
+      get serializer =>
+          _$gGetCircleBoardsDataBoardsPostsAggregateAggregateSerializer;
+
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GGetCircleBoardsData_boards_posts_aggregate_aggregate.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GGetCircleBoardsData_boards_posts_aggregate_aggregate? fromJson(
+          Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GGetCircleBoardsData_boards_posts_aggregate_aggregate.serializer,
+        json,
+      );
+}
+
+abstract class GGetBoardPostsData
+    implements Built<GGetBoardPostsData, GGetBoardPostsDataBuilder> {
+  GGetBoardPostsData._();
+
+  factory GGetBoardPostsData(
+          [void Function(GGetBoardPostsDataBuilder b) updates]) =
+      _$GGetBoardPostsData;
+
+  static void _initializeBuilder(GGetBoardPostsDataBuilder b) =>
+      b..G__typename = 'query_root';
+
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  BuiltList<GGetBoardPostsData_posts> get posts;
+  static Serializer<GGetBoardPostsData> get serializer =>
+      _$gGetBoardPostsDataSerializer;
+
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GGetBoardPostsData.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GGetBoardPostsData? fromJson(Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GGetBoardPostsData.serializer,
+        json,
+      );
+}
+
+abstract class GGetBoardPostsData_posts
+    implements
+        Built<GGetBoardPostsData_posts, GGetBoardPostsData_postsBuilder> {
+  GGetBoardPostsData_posts._();
+
+  factory GGetBoardPostsData_posts(
+          [void Function(GGetBoardPostsData_postsBuilder b) updates]) =
+      _$GGetBoardPostsData_posts;
+
+  static void _initializeBuilder(GGetBoardPostsData_postsBuilder b) =>
+      b..G__typename = 'posts';
+
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  String get uuid;
+  String get board_uuid;
+  String get user_id;
+  String get content;
+  String get created_at;
+  static Serializer<GGetBoardPostsData_posts> get serializer =>
+      _$gGetBoardPostsDataPostsSerializer;
+
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GGetBoardPostsData_posts.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GGetBoardPostsData_posts? fromJson(Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GGetBoardPostsData_posts.serializer,
+        json,
+      );
+}
 
 abstract class GCreateBoardData
     implements Built<GCreateBoardData, GCreateBoardDataBuilder> {

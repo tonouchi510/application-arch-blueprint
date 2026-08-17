@@ -6,6 +6,16 @@ part of 'circle.var.gql.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
+Serializer<GGetMyCirclesVars> _$gGetMyCirclesVarsSerializer =
+    _$GGetMyCirclesVarsSerializer();
+Serializer<GGetAllCirclesVars> _$gGetAllCirclesVarsSerializer =
+    _$GGetAllCirclesVarsSerializer();
+Serializer<GGetCircleVars> _$gGetCircleVarsSerializer =
+    _$GGetCircleVarsSerializer();
+Serializer<GGetCircleMembersVars> _$gGetCircleMembersVarsSerializer =
+    _$GGetCircleMembersVarsSerializer();
+Serializer<GLeaveCircleVars> _$gLeaveCircleVarsSerializer =
+    _$GLeaveCircleVarsSerializer();
 Serializer<GCreateCircleVars> _$gCreateCircleVarsSerializer =
     _$GCreateCircleVarsSerializer();
 Serializer<GAddCircleMemberVars> _$gAddCircleMemberVarsSerializer =
@@ -19,6 +29,254 @@ Serializer<GDelegateCircleOwnerVars> _$gDelegateCircleOwnerVarsSerializer =
     _$GDelegateCircleOwnerVarsSerializer();
 Serializer<GDeleteCircleVars> _$gDeleteCircleVarsSerializer =
     _$GDeleteCircleVarsSerializer();
+
+class _$GGetMyCirclesVarsSerializer
+    implements StructuredSerializer<GGetMyCirclesVars> {
+  @override
+  final Iterable<Type> types = const [GGetMyCirclesVars, _$GGetMyCirclesVars];
+  @override
+  final String wireName = 'GGetMyCirclesVars';
+
+  @override
+  Iterable<Object?> serialize(
+    Serializers serializers,
+    GGetMyCirclesVars object, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    final result = <Object?>[
+      'uid',
+      serializers.serialize(object.uid, specifiedType: const FullType(String)),
+    ];
+
+    return result;
+  }
+
+  @override
+  GGetMyCirclesVars deserialize(
+    Serializers serializers,
+    Iterable<Object?> serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    final result = GGetMyCirclesVarsBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'uid':
+          result.uid =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )!
+                  as String;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GGetAllCirclesVarsSerializer
+    implements StructuredSerializer<GGetAllCirclesVars> {
+  @override
+  final Iterable<Type> types = const [GGetAllCirclesVars, _$GGetAllCirclesVars];
+  @override
+  final String wireName = 'GGetAllCirclesVars';
+
+  @override
+  Iterable<Object?> serialize(
+    Serializers serializers,
+    GGetAllCirclesVars object, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    return <Object?>[];
+  }
+
+  @override
+  GGetAllCirclesVars deserialize(
+    Serializers serializers,
+    Iterable<Object?> serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    return GGetAllCirclesVarsBuilder().build();
+  }
+}
+
+class _$GGetCircleVarsSerializer
+    implements StructuredSerializer<GGetCircleVars> {
+  @override
+  final Iterable<Type> types = const [GGetCircleVars, _$GGetCircleVars];
+  @override
+  final String wireName = 'GGetCircleVars';
+
+  @override
+  Iterable<Object?> serialize(
+    Serializers serializers,
+    GGetCircleVars object, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    final result = <Object?>[
+      'id',
+      serializers.serialize(object.id, specifiedType: const FullType(String)),
+    ];
+
+    return result;
+  }
+
+  @override
+  GGetCircleVars deserialize(
+    Serializers serializers,
+    Iterable<Object?> serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    final result = GGetCircleVarsBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'id':
+          result.id =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )!
+                  as String;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GGetCircleMembersVarsSerializer
+    implements StructuredSerializer<GGetCircleMembersVars> {
+  @override
+  final Iterable<Type> types = const [
+    GGetCircleMembersVars,
+    _$GGetCircleMembersVars,
+  ];
+  @override
+  final String wireName = 'GGetCircleMembersVars';
+
+  @override
+  Iterable<Object?> serialize(
+    Serializers serializers,
+    GGetCircleMembersVars object, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    final result = <Object?>[
+      'circleId',
+      serializers.serialize(
+        object.circleId,
+        specifiedType: const FullType(String),
+      ),
+    ];
+
+    return result;
+  }
+
+  @override
+  GGetCircleMembersVars deserialize(
+    Serializers serializers,
+    Iterable<Object?> serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    final result = GGetCircleMembersVarsBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'circleId':
+          result.circleId =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )!
+                  as String;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GLeaveCircleVarsSerializer
+    implements StructuredSerializer<GLeaveCircleVars> {
+  @override
+  final Iterable<Type> types = const [GLeaveCircleVars, _$GLeaveCircleVars];
+  @override
+  final String wireName = 'GLeaveCircleVars';
+
+  @override
+  Iterable<Object?> serialize(
+    Serializers serializers,
+    GLeaveCircleVars object, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    final result = <Object?>[
+      'circleId',
+      serializers.serialize(
+        object.circleId,
+        specifiedType: const FullType(String),
+      ),
+      'userId',
+      serializers.serialize(
+        object.userId,
+        specifiedType: const FullType(String),
+      ),
+    ];
+
+    return result;
+  }
+
+  @override
+  GLeaveCircleVars deserialize(
+    Serializers serializers,
+    Iterable<Object?> serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    final result = GLeaveCircleVarsBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'circleId':
+          result.circleId =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )!
+                  as String;
+          break;
+        case 'userId':
+          result.userId =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )!
+                  as String;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
 
 class _$GCreateCircleVarsSerializer
     implements StructuredSerializer<GCreateCircleVars> {
@@ -37,7 +295,7 @@ class _$GCreateCircleVarsSerializer
       'input',
       serializers.serialize(
         object.input,
-        specifiedType: const FullType(_i1.GCreateCircleInput),
+        specifiedType: const FullType(_i2.GCreateCircleInput),
       ),
     ];
 
@@ -62,9 +320,9 @@ class _$GCreateCircleVarsSerializer
           result.input.replace(
             serializers.deserialize(
                   value,
-                  specifiedType: const FullType(_i1.GCreateCircleInput),
+                  specifiedType: const FullType(_i2.GCreateCircleInput),
                 )!
-                as _i1.GCreateCircleInput,
+                as _i2.GCreateCircleInput,
           );
           break;
       }
@@ -94,7 +352,7 @@ class _$GAddCircleMemberVarsSerializer
       'input',
       serializers.serialize(
         object.input,
-        specifiedType: const FullType(_i1.GAddCircleMemberInput),
+        specifiedType: const FullType(_i2.GAddCircleMemberInput),
       ),
     ];
 
@@ -119,9 +377,9 @@ class _$GAddCircleMemberVarsSerializer
           result.input.replace(
             serializers.deserialize(
                   value,
-                  specifiedType: const FullType(_i1.GAddCircleMemberInput),
+                  specifiedType: const FullType(_i2.GAddCircleMemberInput),
                 )!
-                as _i1.GAddCircleMemberInput,
+                as _i2.GAddCircleMemberInput,
           );
           break;
       }
@@ -151,7 +409,7 @@ class _$GChangeCircleNameVarsSerializer
       'input',
       serializers.serialize(
         object.input,
-        specifiedType: const FullType(_i1.GChangeCircleNameInput),
+        specifiedType: const FullType(_i2.GChangeCircleNameInput),
       ),
     ];
 
@@ -176,9 +434,9 @@ class _$GChangeCircleNameVarsSerializer
           result.input.replace(
             serializers.deserialize(
                   value,
-                  specifiedType: const FullType(_i1.GChangeCircleNameInput),
+                  specifiedType: const FullType(_i2.GChangeCircleNameInput),
                 )!
-                as _i1.GChangeCircleNameInput,
+                as _i2.GChangeCircleNameInput,
           );
           break;
       }
@@ -208,7 +466,7 @@ class _$GChangeCircleDescriptionVarsSerializer
       'input',
       serializers.serialize(
         object.input,
-        specifiedType: const FullType(_i1.GChangeCircleDescriptionInput),
+        specifiedType: const FullType(_i2.GChangeCircleDescriptionInput),
       ),
     ];
 
@@ -234,10 +492,10 @@ class _$GChangeCircleDescriptionVarsSerializer
             serializers.deserialize(
                   value,
                   specifiedType: const FullType(
-                    _i1.GChangeCircleDescriptionInput,
+                    _i2.GChangeCircleDescriptionInput,
                   ),
                 )!
-                as _i1.GChangeCircleDescriptionInput,
+                as _i2.GChangeCircleDescriptionInput,
           );
           break;
       }
@@ -267,7 +525,7 @@ class _$GDelegateCircleOwnerVarsSerializer
       'input',
       serializers.serialize(
         object.input,
-        specifiedType: const FullType(_i1.GDelegateCircleOwnerInput),
+        specifiedType: const FullType(_i2.GDelegateCircleOwnerInput),
       ),
     ];
 
@@ -292,9 +550,9 @@ class _$GDelegateCircleOwnerVarsSerializer
           result.input.replace(
             serializers.deserialize(
                   value,
-                  specifiedType: const FullType(_i1.GDelegateCircleOwnerInput),
+                  specifiedType: const FullType(_i2.GDelegateCircleOwnerInput),
                 )!
-                as _i1.GDelegateCircleOwnerInput,
+                as _i2.GDelegateCircleOwnerInput,
           );
           break;
       }
@@ -321,7 +579,7 @@ class _$GDeleteCircleVarsSerializer
       'input',
       serializers.serialize(
         object.input,
-        specifiedType: const FullType(_i1.GDeleteCircleInput),
+        specifiedType: const FullType(_i2.GDeleteCircleInput),
       ),
     ];
 
@@ -346,9 +604,9 @@ class _$GDeleteCircleVarsSerializer
           result.input.replace(
             serializers.deserialize(
                   value,
-                  specifiedType: const FullType(_i1.GDeleteCircleInput),
+                  specifiedType: const FullType(_i2.GDeleteCircleInput),
                 )!
-                as _i1.GDeleteCircleInput,
+                as _i2.GDeleteCircleInput,
           );
           break;
       }
@@ -358,9 +616,427 @@ class _$GDeleteCircleVarsSerializer
   }
 }
 
+class _$GGetMyCirclesVars extends GGetMyCirclesVars {
+  @override
+  final String uid;
+
+  factory _$GGetMyCirclesVars([
+    void Function(GGetMyCirclesVarsBuilder)? updates,
+  ]) => (GGetMyCirclesVarsBuilder()..update(updates))._build();
+
+  _$GGetMyCirclesVars._({required this.uid}) : super._();
+  @override
+  GGetMyCirclesVars rebuild(void Function(GGetMyCirclesVarsBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GGetMyCirclesVarsBuilder toBuilder() =>
+      GGetMyCirclesVarsBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GGetMyCirclesVars && uid == other.uid;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, uid.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+      r'GGetMyCirclesVars',
+    )..add('uid', uid)).toString();
+  }
+}
+
+class GGetMyCirclesVarsBuilder
+    implements Builder<GGetMyCirclesVars, GGetMyCirclesVarsBuilder> {
+  _$GGetMyCirclesVars? _$v;
+
+  String? _uid;
+  String? get uid => _$this._uid;
+  set uid(String? uid) => _$this._uid = uid;
+
+  GGetMyCirclesVarsBuilder();
+
+  GGetMyCirclesVarsBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _uid = $v.uid;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GGetMyCirclesVars other) {
+    _$v = other as _$GGetMyCirclesVars;
+  }
+
+  @override
+  void update(void Function(GGetMyCirclesVarsBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GGetMyCirclesVars build() => _build();
+
+  _$GGetMyCirclesVars _build() {
+    final _$result =
+        _$v ??
+        _$GGetMyCirclesVars._(
+          uid: BuiltValueNullFieldError.checkNotNull(
+            uid,
+            r'GGetMyCirclesVars',
+            'uid',
+          ),
+        );
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GGetAllCirclesVars extends GGetAllCirclesVars {
+  factory _$GGetAllCirclesVars([
+    void Function(GGetAllCirclesVarsBuilder)? updates,
+  ]) => (GGetAllCirclesVarsBuilder()..update(updates))._build();
+
+  _$GGetAllCirclesVars._() : super._();
+  @override
+  GGetAllCirclesVars rebuild(
+    void Function(GGetAllCirclesVarsBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
+
+  @override
+  GGetAllCirclesVarsBuilder toBuilder() =>
+      GGetAllCirclesVarsBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GGetAllCirclesVars;
+  }
+
+  @override
+  int get hashCode {
+    return 912330680;
+  }
+
+  @override
+  String toString() {
+    return newBuiltValueToStringHelper(r'GGetAllCirclesVars').toString();
+  }
+}
+
+class GGetAllCirclesVarsBuilder
+    implements Builder<GGetAllCirclesVars, GGetAllCirclesVarsBuilder> {
+  _$GGetAllCirclesVars? _$v;
+
+  GGetAllCirclesVarsBuilder();
+
+  @override
+  void replace(GGetAllCirclesVars other) {
+    _$v = other as _$GGetAllCirclesVars;
+  }
+
+  @override
+  void update(void Function(GGetAllCirclesVarsBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GGetAllCirclesVars build() => _build();
+
+  _$GGetAllCirclesVars _build() {
+    final _$result = _$v ?? _$GGetAllCirclesVars._();
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GGetCircleVars extends GGetCircleVars {
+  @override
+  final String id;
+
+  factory _$GGetCircleVars([void Function(GGetCircleVarsBuilder)? updates]) =>
+      (GGetCircleVarsBuilder()..update(updates))._build();
+
+  _$GGetCircleVars._({required this.id}) : super._();
+  @override
+  GGetCircleVars rebuild(void Function(GGetCircleVarsBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GGetCircleVarsBuilder toBuilder() => GGetCircleVarsBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GGetCircleVars && id == other.id;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+      r'GGetCircleVars',
+    )..add('id', id)).toString();
+  }
+}
+
+class GGetCircleVarsBuilder
+    implements Builder<GGetCircleVars, GGetCircleVarsBuilder> {
+  _$GGetCircleVars? _$v;
+
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
+
+  GGetCircleVarsBuilder();
+
+  GGetCircleVarsBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _id = $v.id;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GGetCircleVars other) {
+    _$v = other as _$GGetCircleVars;
+  }
+
+  @override
+  void update(void Function(GGetCircleVarsBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GGetCircleVars build() => _build();
+
+  _$GGetCircleVars _build() {
+    final _$result =
+        _$v ??
+        _$GGetCircleVars._(
+          id: BuiltValueNullFieldError.checkNotNull(
+            id,
+            r'GGetCircleVars',
+            'id',
+          ),
+        );
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GGetCircleMembersVars extends GGetCircleMembersVars {
+  @override
+  final String circleId;
+
+  factory _$GGetCircleMembersVars([
+    void Function(GGetCircleMembersVarsBuilder)? updates,
+  ]) => (GGetCircleMembersVarsBuilder()..update(updates))._build();
+
+  _$GGetCircleMembersVars._({required this.circleId}) : super._();
+  @override
+  GGetCircleMembersVars rebuild(
+    void Function(GGetCircleMembersVarsBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
+
+  @override
+  GGetCircleMembersVarsBuilder toBuilder() =>
+      GGetCircleMembersVarsBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GGetCircleMembersVars && circleId == other.circleId;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, circleId.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+      r'GGetCircleMembersVars',
+    )..add('circleId', circleId)).toString();
+  }
+}
+
+class GGetCircleMembersVarsBuilder
+    implements Builder<GGetCircleMembersVars, GGetCircleMembersVarsBuilder> {
+  _$GGetCircleMembersVars? _$v;
+
+  String? _circleId;
+  String? get circleId => _$this._circleId;
+  set circleId(String? circleId) => _$this._circleId = circleId;
+
+  GGetCircleMembersVarsBuilder();
+
+  GGetCircleMembersVarsBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _circleId = $v.circleId;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GGetCircleMembersVars other) {
+    _$v = other as _$GGetCircleMembersVars;
+  }
+
+  @override
+  void update(void Function(GGetCircleMembersVarsBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GGetCircleMembersVars build() => _build();
+
+  _$GGetCircleMembersVars _build() {
+    final _$result =
+        _$v ??
+        _$GGetCircleMembersVars._(
+          circleId: BuiltValueNullFieldError.checkNotNull(
+            circleId,
+            r'GGetCircleMembersVars',
+            'circleId',
+          ),
+        );
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GLeaveCircleVars extends GLeaveCircleVars {
+  @override
+  final String circleId;
+  @override
+  final String userId;
+
+  factory _$GLeaveCircleVars([
+    void Function(GLeaveCircleVarsBuilder)? updates,
+  ]) => (GLeaveCircleVarsBuilder()..update(updates))._build();
+
+  _$GLeaveCircleVars._({required this.circleId, required this.userId})
+    : super._();
+  @override
+  GLeaveCircleVars rebuild(void Function(GLeaveCircleVarsBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GLeaveCircleVarsBuilder toBuilder() =>
+      GLeaveCircleVarsBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GLeaveCircleVars &&
+        circleId == other.circleId &&
+        userId == other.userId;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, circleId.hashCode);
+    _$hash = $jc(_$hash, userId.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GLeaveCircleVars')
+          ..add('circleId', circleId)
+          ..add('userId', userId))
+        .toString();
+  }
+}
+
+class GLeaveCircleVarsBuilder
+    implements Builder<GLeaveCircleVars, GLeaveCircleVarsBuilder> {
+  _$GLeaveCircleVars? _$v;
+
+  String? _circleId;
+  String? get circleId => _$this._circleId;
+  set circleId(String? circleId) => _$this._circleId = circleId;
+
+  String? _userId;
+  String? get userId => _$this._userId;
+  set userId(String? userId) => _$this._userId = userId;
+
+  GLeaveCircleVarsBuilder();
+
+  GLeaveCircleVarsBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _circleId = $v.circleId;
+      _userId = $v.userId;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GLeaveCircleVars other) {
+    _$v = other as _$GLeaveCircleVars;
+  }
+
+  @override
+  void update(void Function(GLeaveCircleVarsBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GLeaveCircleVars build() => _build();
+
+  _$GLeaveCircleVars _build() {
+    final _$result =
+        _$v ??
+        _$GLeaveCircleVars._(
+          circleId: BuiltValueNullFieldError.checkNotNull(
+            circleId,
+            r'GLeaveCircleVars',
+            'circleId',
+          ),
+          userId: BuiltValueNullFieldError.checkNotNull(
+            userId,
+            r'GLeaveCircleVars',
+            'userId',
+          ),
+        );
+    replace(_$result);
+    return _$result;
+  }
+}
+
 class _$GCreateCircleVars extends GCreateCircleVars {
   @override
-  final _i1.GCreateCircleInput input;
+  final _i2.GCreateCircleInput input;
 
   factory _$GCreateCircleVars([
     void Function(GCreateCircleVarsBuilder)? updates,
@@ -401,10 +1077,10 @@ class GCreateCircleVarsBuilder
     implements Builder<GCreateCircleVars, GCreateCircleVarsBuilder> {
   _$GCreateCircleVars? _$v;
 
-  _i1.GCreateCircleInputBuilder? _input;
-  _i1.GCreateCircleInputBuilder get input =>
-      _$this._input ??= _i1.GCreateCircleInputBuilder();
-  set input(_i1.GCreateCircleInputBuilder? input) => _$this._input = input;
+  _i2.GCreateCircleInputBuilder? _input;
+  _i2.GCreateCircleInputBuilder get input =>
+      _$this._input ??= _i2.GCreateCircleInputBuilder();
+  set input(_i2.GCreateCircleInputBuilder? input) => _$this._input = input;
 
   GCreateCircleVarsBuilder();
 
@@ -455,7 +1131,7 @@ class GCreateCircleVarsBuilder
 
 class _$GAddCircleMemberVars extends GAddCircleMemberVars {
   @override
-  final _i1.GAddCircleMemberInput input;
+  final _i2.GAddCircleMemberInput input;
 
   factory _$GAddCircleMemberVars([
     void Function(GAddCircleMemberVarsBuilder)? updates,
@@ -497,10 +1173,10 @@ class GAddCircleMemberVarsBuilder
     implements Builder<GAddCircleMemberVars, GAddCircleMemberVarsBuilder> {
   _$GAddCircleMemberVars? _$v;
 
-  _i1.GAddCircleMemberInputBuilder? _input;
-  _i1.GAddCircleMemberInputBuilder get input =>
-      _$this._input ??= _i1.GAddCircleMemberInputBuilder();
-  set input(_i1.GAddCircleMemberInputBuilder? input) => _$this._input = input;
+  _i2.GAddCircleMemberInputBuilder? _input;
+  _i2.GAddCircleMemberInputBuilder get input =>
+      _$this._input ??= _i2.GAddCircleMemberInputBuilder();
+  set input(_i2.GAddCircleMemberInputBuilder? input) => _$this._input = input;
 
   GAddCircleMemberVarsBuilder();
 
@@ -551,7 +1227,7 @@ class GAddCircleMemberVarsBuilder
 
 class _$GChangeCircleNameVars extends GChangeCircleNameVars {
   @override
-  final _i1.GChangeCircleNameInput input;
+  final _i2.GChangeCircleNameInput input;
 
   factory _$GChangeCircleNameVars([
     void Function(GChangeCircleNameVarsBuilder)? updates,
@@ -593,10 +1269,10 @@ class GChangeCircleNameVarsBuilder
     implements Builder<GChangeCircleNameVars, GChangeCircleNameVarsBuilder> {
   _$GChangeCircleNameVars? _$v;
 
-  _i1.GChangeCircleNameInputBuilder? _input;
-  _i1.GChangeCircleNameInputBuilder get input =>
-      _$this._input ??= _i1.GChangeCircleNameInputBuilder();
-  set input(_i1.GChangeCircleNameInputBuilder? input) => _$this._input = input;
+  _i2.GChangeCircleNameInputBuilder? _input;
+  _i2.GChangeCircleNameInputBuilder get input =>
+      _$this._input ??= _i2.GChangeCircleNameInputBuilder();
+  set input(_i2.GChangeCircleNameInputBuilder? input) => _$this._input = input;
 
   GChangeCircleNameVarsBuilder();
 
@@ -647,7 +1323,7 @@ class GChangeCircleNameVarsBuilder
 
 class _$GChangeCircleDescriptionVars extends GChangeCircleDescriptionVars {
   @override
-  final _i1.GChangeCircleDescriptionInput input;
+  final _i2.GChangeCircleDescriptionInput input;
 
   factory _$GChangeCircleDescriptionVars([
     void Function(GChangeCircleDescriptionVarsBuilder)? updates,
@@ -693,10 +1369,10 @@ class GChangeCircleDescriptionVarsBuilder
         > {
   _$GChangeCircleDescriptionVars? _$v;
 
-  _i1.GChangeCircleDescriptionInputBuilder? _input;
-  _i1.GChangeCircleDescriptionInputBuilder get input =>
-      _$this._input ??= _i1.GChangeCircleDescriptionInputBuilder();
-  set input(_i1.GChangeCircleDescriptionInputBuilder? input) =>
+  _i2.GChangeCircleDescriptionInputBuilder? _input;
+  _i2.GChangeCircleDescriptionInputBuilder get input =>
+      _$this._input ??= _i2.GChangeCircleDescriptionInputBuilder();
+  set input(_i2.GChangeCircleDescriptionInputBuilder? input) =>
       _$this._input = input;
 
   GChangeCircleDescriptionVarsBuilder();
@@ -748,7 +1424,7 @@ class GChangeCircleDescriptionVarsBuilder
 
 class _$GDelegateCircleOwnerVars extends GDelegateCircleOwnerVars {
   @override
-  final _i1.GDelegateCircleOwnerInput input;
+  final _i2.GDelegateCircleOwnerInput input;
 
   factory _$GDelegateCircleOwnerVars([
     void Function(GDelegateCircleOwnerVarsBuilder)? updates,
@@ -791,10 +1467,10 @@ class GDelegateCircleOwnerVarsBuilder
         Builder<GDelegateCircleOwnerVars, GDelegateCircleOwnerVarsBuilder> {
   _$GDelegateCircleOwnerVars? _$v;
 
-  _i1.GDelegateCircleOwnerInputBuilder? _input;
-  _i1.GDelegateCircleOwnerInputBuilder get input =>
-      _$this._input ??= _i1.GDelegateCircleOwnerInputBuilder();
-  set input(_i1.GDelegateCircleOwnerInputBuilder? input) =>
+  _i2.GDelegateCircleOwnerInputBuilder? _input;
+  _i2.GDelegateCircleOwnerInputBuilder get input =>
+      _$this._input ??= _i2.GDelegateCircleOwnerInputBuilder();
+  set input(_i2.GDelegateCircleOwnerInputBuilder? input) =>
       _$this._input = input;
 
   GDelegateCircleOwnerVarsBuilder();
@@ -846,7 +1522,7 @@ class GDelegateCircleOwnerVarsBuilder
 
 class _$GDeleteCircleVars extends GDeleteCircleVars {
   @override
-  final _i1.GDeleteCircleInput input;
+  final _i2.GDeleteCircleInput input;
 
   factory _$GDeleteCircleVars([
     void Function(GDeleteCircleVarsBuilder)? updates,
@@ -887,10 +1563,10 @@ class GDeleteCircleVarsBuilder
     implements Builder<GDeleteCircleVars, GDeleteCircleVarsBuilder> {
   _$GDeleteCircleVars? _$v;
 
-  _i1.GDeleteCircleInputBuilder? _input;
-  _i1.GDeleteCircleInputBuilder get input =>
-      _$this._input ??= _i1.GDeleteCircleInputBuilder();
-  set input(_i1.GDeleteCircleInputBuilder? input) => _$this._input = input;
+  _i2.GDeleteCircleInputBuilder? _input;
+  _i2.GDeleteCircleInputBuilder get input =>
+      _$this._input ??= _i2.GDeleteCircleInputBuilder();
+  set input(_i2.GDeleteCircleInputBuilder? input) => _$this._input = input;
 
   GDeleteCircleVarsBuilder();
 

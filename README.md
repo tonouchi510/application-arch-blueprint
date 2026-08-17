@@ -49,6 +49,9 @@ DDDを効率よく実践してアプリケーション開発を行うための�
 # 必要なバックエンドサービスの起動
 $ make docker-compose-up
 
+# DBへ初期シードデータを投入（docker起動し、一定時間経過後）
+$ make hasura-seed-apply
+
 # Webアプリ起動
 $ make run-local
 ```

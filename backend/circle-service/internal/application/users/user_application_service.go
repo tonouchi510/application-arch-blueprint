@@ -14,6 +14,10 @@ type IUserApplicationService interface {
 	RegistorUserFromFirebaseAuth(ctx context.Context, command RegistorUserFromFirebaseAuthCommand) (*UserData, error)
 	UpdateAttributes(ctx context.Context, command UpdateUserAttributesCommand) (*UserData, error)
 	Delete(ctx context.Context, command DeleteUserCommand) error
+	// GetUsers looks up multiple users by id (e.g. to resolve display names for a
+	// circle's member list). Ids that don't correspond to an existing user are
+	// silently omitted from the result.
+	GetUsers(ctx context.Context, uids []string) ([]UserData, error)
 }
 
 // 実装側はprivateに
@@ -163,6 +167,30 @@ func (s userApplicationService) UpdateAttributes(ctx context.Context, command Up
 	user.Notify(userDataBuilder)
 	userData := userDataBuilder.Build()
 	return &userData, nil
+}
+
+func (s userApplicationService) GetUsers(ctx context.Context, uids []string) ([]UserData, error) {
+	ids := make([]users.UserId, 0, len(uids))
+	for _, uid := range uids {
+		id, err := users.NewUserId(uid)
+		if err != nil {
+			return nil, err
+		}
+		ids = append(ids, *id)
+	}
+
+	found, err := s.repo.FindMany(ctx, ids, nil)
+	if err != nil {
+		return nil, err
+	}
+
+	data := make([]UserData, 0, len(found))
+	for _, user := range found {
+		builder := &UserDataBuilder{}
+		user.Notify(builder)
+		data = append(data, builder.Build())
+	}
+	return data, nil
 }
 
 func (s userApplicationService) Delete(ctx context.Context, command DeleteUserCommand) error {

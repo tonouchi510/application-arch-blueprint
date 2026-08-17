@@ -11,21 +11,31 @@ import 'package:app/data/graphql/__generated__/board.data.gql.dart'
         GChangeBoardTopicData_change_board_topic,
         GCreateBoardData,
         GCreateBoardData_create_board,
-        GDeleteBoardData;
+        GDeleteBoardData,
+        GGetBoardPostsData,
+        GGetBoardPostsData_posts,
+        GGetCircleBoardsData,
+        GGetCircleBoardsData_boards,
+        GGetCircleBoardsData_boards_posts_aggregate,
+        GGetCircleBoardsData_boards_posts_aggregate_aggregate;
 import 'package:app/data/graphql/__generated__/board.req.gql.dart'
     show
         GAddBoardPostReq,
         GChangeBoardStatusReq,
         GChangeBoardTopicReq,
         GCreateBoardReq,
-        GDeleteBoardReq;
+        GDeleteBoardReq,
+        GGetBoardPostsReq,
+        GGetCircleBoardsReq;
 import 'package:app/data/graphql/__generated__/board.var.gql.dart'
     show
         GAddBoardPostVars,
         GChangeBoardStatusVars,
         GChangeBoardTopicVars,
         GCreateBoardVars,
-        GDeleteBoardVars;
+        GDeleteBoardVars,
+        GGetBoardPostsVars,
+        GGetCircleBoardsVars;
 import 'package:app/data/graphql/__generated__/circle.data.gql.dart'
     show
         GAddCircleMemberData,
@@ -37,7 +47,23 @@ import 'package:app/data/graphql/__generated__/circle.data.gql.dart'
         GCreateCircleData_create_circle,
         GDelegateCircleOwnerData,
         GDelegateCircleOwnerData_delegate_circle_owner,
-        GDeleteCircleData;
+        GDeleteCircleData,
+        GGetAllCirclesData,
+        GGetAllCirclesData_circles,
+        GGetAllCirclesData_circles_circle_members_aggregate,
+        GGetAllCirclesData_circles_circle_members_aggregate_aggregate,
+        GGetCircleData,
+        GGetCircleData_circles_by_pk,
+        GGetCircleData_circles_by_pk_circle_members_aggregate,
+        GGetCircleData_circles_by_pk_circle_members_aggregate_aggregate,
+        GGetCircleMembersData,
+        GGetCircleMembersData_circle_members,
+        GGetMyCirclesData,
+        GGetMyCirclesData_circles,
+        GGetMyCirclesData_circles_circle_members_aggregate,
+        GGetMyCirclesData_circles_circle_members_aggregate_aggregate,
+        GLeaveCircleData,
+        GLeaveCircleData_delete_circle_members;
 import 'package:app/data/graphql/__generated__/circle.req.gql.dart'
     show
         GAddCircleMemberReq,
@@ -45,7 +71,12 @@ import 'package:app/data/graphql/__generated__/circle.req.gql.dart'
         GChangeCircleNameReq,
         GCreateCircleReq,
         GDelegateCircleOwnerReq,
-        GDeleteCircleReq;
+        GDeleteCircleReq,
+        GGetAllCirclesReq,
+        GGetCircleMembersReq,
+        GGetCircleReq,
+        GGetMyCirclesReq,
+        GLeaveCircleReq;
 import 'package:app/data/graphql/__generated__/circle.var.gql.dart'
     show
         GAddCircleMemberVars,
@@ -53,17 +84,26 @@ import 'package:app/data/graphql/__generated__/circle.var.gql.dart'
         GChangeCircleNameVars,
         GCreateCircleVars,
         GDelegateCircleOwnerVars,
-        GDeleteCircleVars;
+        GDeleteCircleVars,
+        GGetAllCirclesVars,
+        GGetCircleMembersVars,
+        GGetCircleVars,
+        GGetMyCirclesVars,
+        GLeaveCircleVars;
 import 'package:app/data/graphql/__generated__/permission.data.gql.dart'
-    show GChangeBoardCreationPermissionData;
+    show
+        GChangeBoardCreationPermissionData,
+        GGetCirclePermissionData,
+        GGetCirclePermissionData_circle_permissions_by_pk;
 import 'package:app/data/graphql/__generated__/permission.req.gql.dart'
-    show GChangeBoardCreationPermissionReq;
+    show GChangeBoardCreationPermissionReq, GGetCirclePermissionReq;
 import 'package:app/data/graphql/__generated__/permission.var.gql.dart'
-    show GChangeBoardCreationPermissionVars;
-import 'package:app/data/graphql/__generated__/remote_schema_types.schema.gql.dart'
+    show GChangeBoardCreationPermissionVars, GGetCirclePermissionVars;
+import 'package:app/data/graphql/__generated__/schema.schema.gql.dart'
     show
         GAddBoardPostInput,
         GAddCircleMemberInput,
+        GBoolean_comparison_exp,
         GChangeBoardCreationPermissionInput,
         GChangeBoardStatusInput,
         GChangeBoardTopicInput,
@@ -73,10 +113,7 @@ import 'package:app/data/graphql/__generated__/remote_schema_types.schema.gql.da
         GCreateCircleInput,
         GDelegateCircleOwnerInput,
         GDeleteBoardInput,
-        GDeleteCircleInput;
-import 'package:app/data/graphql/__generated__/schema.schema.gql.dart'
-    show
-        GBoolean_comparison_exp,
+        GDeleteCircleInput,
         GDeleteUserInput,
         GInt_comparison_exp,
         GString_comparison_exp,
@@ -188,6 +225,17 @@ import 'package:app/data/graphql/__generated__/schema.schema.gql.dart'
         Gsmallint_comparison_exp,
         Gtimestamptz_comparison_exp,
         Guuid_comparison_exp;
+import 'package:app/data/graphql/__generated__/user.data.gql.dart'
+    show
+        GDeleteUserData,
+        GGetUsersData,
+        GGetUsersData_users,
+        GUpdateUserAttributesData,
+        GUpdateUserAttributesData_update_user_attributes;
+import 'package:app/data/graphql/__generated__/user.req.gql.dart'
+    show GDeleteUserReq, GGetUsersReq, GUpdateUserAttributesReq;
+import 'package:app/data/graphql/__generated__/user.var.gql.dart'
+    show GDeleteUserVars, GGetUsersVars, GUpdateUserAttributesVars;
 import 'package:built_collection/built_collection.dart';
 import 'package:built_value/serializer.dart';
 import 'package:built_value/standard_json_plugin.dart' show StandardJsonPlugin;
@@ -258,10 +306,61 @@ final SerializersBuilder _serializersBuilder = _$serializers.toBuilder()
   GDeleteCircleInput,
   GDeleteCircleReq,
   GDeleteCircleVars,
+  GDeleteUserData,
   GDeleteUserInput,
+  GDeleteUserReq,
+  GDeleteUserVars,
+  GGetAllCirclesData,
+  GGetAllCirclesData_circles,
+  GGetAllCirclesData_circles_circle_members_aggregate,
+  GGetAllCirclesData_circles_circle_members_aggregate_aggregate,
+  GGetAllCirclesReq,
+  GGetAllCirclesVars,
+  GGetBoardPostsData,
+  GGetBoardPostsData_posts,
+  GGetBoardPostsReq,
+  GGetBoardPostsVars,
+  GGetCircleBoardsData,
+  GGetCircleBoardsData_boards,
+  GGetCircleBoardsData_boards_posts_aggregate,
+  GGetCircleBoardsData_boards_posts_aggregate_aggregate,
+  GGetCircleBoardsReq,
+  GGetCircleBoardsVars,
+  GGetCircleData,
+  GGetCircleData_circles_by_pk,
+  GGetCircleData_circles_by_pk_circle_members_aggregate,
+  GGetCircleData_circles_by_pk_circle_members_aggregate_aggregate,
+  GGetCircleMembersData,
+  GGetCircleMembersData_circle_members,
+  GGetCircleMembersReq,
+  GGetCircleMembersVars,
+  GGetCirclePermissionData,
+  GGetCirclePermissionData_circle_permissions_by_pk,
+  GGetCirclePermissionReq,
+  GGetCirclePermissionVars,
+  GGetCircleReq,
+  GGetCircleVars,
+  GGetMyCirclesData,
+  GGetMyCirclesData_circles,
+  GGetMyCirclesData_circles_circle_members_aggregate,
+  GGetMyCirclesData_circles_circle_members_aggregate_aggregate,
+  GGetMyCirclesReq,
+  GGetMyCirclesVars,
+  GGetUsersData,
+  GGetUsersData_users,
+  GGetUsersReq,
+  GGetUsersVars,
   GInt_comparison_exp,
+  GLeaveCircleData,
+  GLeaveCircleData_delete_circle_members,
+  GLeaveCircleReq,
+  GLeaveCircleVars,
   GString_comparison_exp,
+  GUpdateUserAttributesData,
+  GUpdateUserAttributesData_update_user_attributes,
   GUpdateUserAttributesInput,
+  GUpdateUserAttributesReq,
+  GUpdateUserAttributesVars,
   Gboards_aggregate_bool_exp,
   Gboards_aggregate_bool_exp_count,
   Gboards_aggregate_order_by,

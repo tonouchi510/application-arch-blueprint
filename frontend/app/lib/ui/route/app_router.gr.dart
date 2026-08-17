@@ -12,18 +12,19 @@
 import 'package:app/ui/circle/circle_detail_page.dart' as _i1;
 import 'package:app/ui/circle/circle_list_page.dart' as _i2;
 import 'package:app/ui/home/home_page.dart' as _i3;
+import 'package:app/ui/settings/user_settings_page.dart' as _i6;
 import 'package:app/ui/signin/signin_page.dart' as _i4;
 import 'package:app/ui/signup/signup_page.dart' as _i5;
-import 'package:auto_route/auto_route.dart' as _i6;
-import 'package:flutter/material.dart' as _i7;
+import 'package:auto_route/auto_route.dart' as _i7;
+import 'package:flutter/material.dart' as _i8;
 
 /// generated route for
 /// [_i1.CircleDetailPage]
-class CircleDetailRoute extends _i6.PageRouteInfo<CircleDetailRouteArgs> {
+class CircleDetailRoute extends _i7.PageRouteInfo<CircleDetailRouteArgs> {
   CircleDetailRoute({
-    _i7.Key? key,
+    _i8.Key? key,
     required String circleId,
-    List<_i6.PageRouteInfo>? children,
+    List<_i7.PageRouteInfo>? children,
   }) : super(
          CircleDetailRoute.name,
          args: CircleDetailRouteArgs(key: key, circleId: circleId),
@@ -33,7 +34,7 @@ class CircleDetailRoute extends _i6.PageRouteInfo<CircleDetailRouteArgs> {
 
   static const String name = 'CircleDetailRoute';
 
-  static _i6.PageInfo page = _i6.PageInfo(
+  static _i7.PageInfo page = _i7.PageInfo(
     name,
     builder: (data) {
       final pathParams = data.inheritedPathParams;
@@ -49,7 +50,7 @@ class CircleDetailRoute extends _i6.PageRouteInfo<CircleDetailRouteArgs> {
 class CircleDetailRouteArgs {
   const CircleDetailRouteArgs({this.key, required this.circleId});
 
-  final _i7.Key? key;
+  final _i8.Key? key;
 
   final String circleId;
 
@@ -71,13 +72,13 @@ class CircleDetailRouteArgs {
 
 /// generated route for
 /// [_i2.CircleListPage]
-class CircleListRoute extends _i6.PageRouteInfo<void> {
-  const CircleListRoute({List<_i6.PageRouteInfo>? children})
+class CircleListRoute extends _i7.PageRouteInfo<void> {
+  const CircleListRoute({List<_i7.PageRouteInfo>? children})
     : super(CircleListRoute.name, initialChildren: children);
 
   static const String name = 'CircleListRoute';
 
-  static _i6.PageInfo page = _i6.PageInfo(
+  static _i7.PageInfo page = _i7.PageInfo(
     name,
     builder: (data) {
       return const _i2.CircleListPage();
@@ -87,13 +88,13 @@ class CircleListRoute extends _i6.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i3.HomePage]
-class HomeRoute extends _i6.PageRouteInfo<void> {
-  const HomeRoute({List<_i6.PageRouteInfo>? children})
+class HomeRoute extends _i7.PageRouteInfo<void> {
+  const HomeRoute({List<_i7.PageRouteInfo>? children})
     : super(HomeRoute.name, initialChildren: children);
 
   static const String name = 'HomeRoute';
 
-  static _i6.PageInfo page = _i6.PageInfo(
+  static _i7.PageInfo page = _i7.PageInfo(
     name,
     builder: (data) {
       return const _i3.HomePage();
@@ -103,13 +104,13 @@ class HomeRoute extends _i6.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i4.SigninPage]
-class SigninRoute extends _i6.PageRouteInfo<void> {
-  const SigninRoute({List<_i6.PageRouteInfo>? children})
+class SigninRoute extends _i7.PageRouteInfo<void> {
+  const SigninRoute({List<_i7.PageRouteInfo>? children})
     : super(SigninRoute.name, initialChildren: children);
 
   static const String name = 'SigninRoute';
 
-  static _i6.PageInfo page = _i6.PageInfo(
+  static _i7.PageInfo page = _i7.PageInfo(
     name,
     builder: (data) {
       return const _i4.SigninPage();
@@ -119,16 +120,32 @@ class SigninRoute extends _i6.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i5.SignupPage]
-class SignupRoute extends _i6.PageRouteInfo<void> {
-  const SignupRoute({List<_i6.PageRouteInfo>? children})
+class SignupRoute extends _i7.PageRouteInfo<void> {
+  const SignupRoute({List<_i7.PageRouteInfo>? children})
     : super(SignupRoute.name, initialChildren: children);
 
   static const String name = 'SignupRoute';
 
-  static _i6.PageInfo page = _i6.PageInfo(
+  static _i7.PageInfo page = _i7.PageInfo(
     name,
     builder: (data) {
       return const _i5.SignupPage();
+    },
+  );
+}
+
+/// generated route for
+/// [_i6.UserSettingsPage]
+class UserSettingsRoute extends _i7.PageRouteInfo<void> {
+  const UserSettingsRoute({List<_i7.PageRouteInfo>? children})
+    : super(UserSettingsRoute.name, initialChildren: children);
+
+  static const String name = 'UserSettingsRoute';
+
+  static _i7.PageInfo page = _i7.PageInfo(
+    name,
+    builder: (data) {
+      return const _i6.UserSettingsPage();
     },
   );
 }

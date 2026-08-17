@@ -1,3 +1,31 @@
+query GetCircleBoards($circleId: uuid!) {
+  boards(
+    where: { circle_uuid: { _eq: $circleId } }
+    order_by: { created_at: desc }
+  ) {
+    uuid
+    circle_uuid
+    owner_id
+    topic
+    status
+    posts_aggregate {
+      aggregate {
+        count
+      }
+    }
+  }
+}
+
+query GetBoardPosts($boardId: uuid!) {
+  posts(where: { board_uuid: { _eq: $boardId } }, order_by: { created_at: asc }) {
+    uuid
+    board_uuid
+    user_id
+    content
+    created_at
+  }
+}
+
 mutation CreateBoard($input: CreateBoardInput!) {
   create_board(input: $input) {
     id
