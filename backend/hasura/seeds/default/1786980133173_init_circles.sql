@@ -1,0 +1,15 @@
+\restrict hasura
+SET transaction_timeout = 0;
+SET check_function_bodies = false;
+INSERT INTO public.circles (uuid, owner_id, name, description, created_at, updated_at) VALUES ('11111111-1111-1111-1111-111111111111', 'wM10vEtqTYWBlK07f4qrcUZ4jBhD', 'ボードゲーム同好会', '毎週末にボードゲームで遊ぶサークルです。初心者も歓迎です。', '2026-08-17 14:53:33.279847+00', '2026-08-17 14:53:33.279847+00');
+INSERT INTO public.circles (uuid, owner_id, name, description, created_at, updated_at) VALUES ('22222222-2222-2222-2222-222222222222', 'wM10vEtqTYWBlK07f4qrcUZ4jBhD', '写真部', 'カメラ好きが集まる写真サークルです。撮影会や作品講評会を行います。', '2026-08-17 14:53:33.279847+00', '2026-08-17 14:53:33.279847+00');
+INSERT INTO public.circles (uuid, owner_id, name, description, created_at, updated_at) VALUES ('33333333-3333-3333-3333-333333333333', 'uBxl06WPVjYtLd3Xvtku6xLjxd3i', 'プログラミング勉強会', 'もくもく会形式で開発スキルを高め合うサークルです。週1回オンラインで集まっています。', '2026-08-17 14:53:33.279847+00', '2026-08-17 14:53:33.279847+00');
+INSERT INTO public.circles (uuid, owner_id, name, description, created_at, updated_at) VALUES ('01a0104a-c01e-7154-9f02-c0de4be87c5a', 'wM10vEtqTYWBlK07f4qrcUZ4jBhD', '将棋部', '将棋好きな人歓迎です！', '2026-08-17 15:15:29.445271+00', '2026-08-17 15:15:29.445271+00');
+INSERT INTO public.circle_members (uuid, circle_uuid, user_id, joined_date, created_at, updated_at) VALUES ('11111111-1111-1111-1111-100000000002', '11111111-1111-1111-1111-111111111111', '9zTE2K2AF5toQAcNc1xrLQ9DpgCb', '2026-08-17', '2026-08-17 14:53:33.279847+00', '2026-08-17 14:53:33.279847+00');
+INSERT INTO public.circle_members (uuid, circle_uuid, user_id, joined_date, created_at, updated_at) VALUES ('33333333-3333-3333-3333-100000000002', '33333333-3333-3333-3333-333333333333', 'wM10vEtqTYWBlK07f4qrcUZ4jBhD', '2026-08-17', '2026-08-17 14:53:33.279847+00', '2026-08-17 14:53:33.279847+00');
+INSERT INTO public.circle_members (uuid, circle_uuid, user_id, joined_date, created_at, updated_at) VALUES ('33333333-3333-3333-3333-100000000003', '33333333-3333-3333-3333-333333333333', '9zTE2K2AF5toQAcNc1xrLQ9DpgCb', '2026-08-17', '2026-08-17 14:53:33.279847+00', '2026-08-17 14:53:33.279847+00');
+INSERT INTO public.circle_permissions (circle_uuid, permission_board_creation, permission_self_join, created_at, updated_at) VALUES ('11111111-1111-1111-1111-111111111111', false, false, '2026-08-17 14:53:33.279847+00', '2026-08-17 14:53:33.279847+00');
+INSERT INTO public.circle_permissions (circle_uuid, permission_board_creation, permission_self_join, created_at, updated_at) VALUES ('22222222-2222-2222-2222-222222222222', true, false, '2026-08-17 14:53:33.279847+00', '2026-08-17 14:53:33.279847+00');
+INSERT INTO public.circle_permissions (circle_uuid, permission_board_creation, permission_self_join, created_at, updated_at) VALUES ('33333333-3333-3333-3333-333333333333', false, false, '2026-08-17 14:53:33.279847+00', '2026-08-17 14:53:33.279847+00');
+INSERT INTO public.circle_permissions (circle_uuid, permission_board_creation, permission_self_join, created_at, updated_at) VALUES ('01a0104a-c01e-7154-9f02-c0de4be87c5a', true, false, '2026-08-17 15:15:40.015994+00', '2026-08-17 15:15:40.013356+00');
+\unrestrict hasura

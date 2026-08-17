@@ -41,10 +41,8 @@ hasura-migrate-init:
 	@cd backend/hasura && hasura migrate create "init" --from-server
 
 hasura-seed-create:
-	@cd backend/hasura && hasura seed create "init_users" --from-table users --from-table user_profiles
-	@cd backend/hasura && hasura seed create "init_records" --from-table records --from-table positions --from-table records_positions
-	@cd backend/hasura && hasura seed create "init_trophies" --from-table traphies --from-table user_trophies
-	@cd backend/hasura && hasura seed create "init_friends" --from-table friends
+	@cd backend/hasura && hasura seed create "init_circles" --from-table circles --from-table circle_members --from-table circle_permissions --database-name default
+	@cd backend/hasura && hasura seed create "init_boards" --from-table boards --from-table posts --database-name default
 
 hasura-seed-apply:
 	@cd backend/hasura && hasura seed apply --database-name default
