@@ -13,19 +13,21 @@ import (
 	domaincircles "github.com/tonouchi510/application-arch-blueprint/circle-service/internal/domain/models/circles"
 	domainusers "github.com/tonouchi510/application-arch-blueprint/circle-service/internal/domain/models/users"
 	"github.com/tonouchi510/application-arch-blueprint/circle-service/internal/domain/services"
+	infra_firebase "github.com/tonouchi510/application-arch-blueprint/circle-service/internal/infrastructure/firebase"
+	infra_firebase_users "github.com/tonouchi510/application-arch-blueprint/circle-service/internal/infrastructure/firebase/users"
 	infra_boards "github.com/tonouchi510/application-arch-blueprint/circle-service/internal/infrastructure/sqlboiler/boards"
 	infra_circles "github.com/tonouchi510/application-arch-blueprint/circle-service/internal/infrastructure/sqlboiler/circles"
 	infra_permissions "github.com/tonouchi510/application-arch-blueprint/circle-service/internal/infrastructure/sqlboiler/permissions"
-	infra_users "github.com/tonouchi510/application-arch-blueprint/circle-service/internal/infrastructure/sqlboiler/users"
 	"github.com/tonouchi510/application-arch-blueprint/circle-service/internal/interface/graph"
 )
 
 //go:generate wire
 
 // InitializeResolver initializes and returns a configured Resolver
-func InitializeResolver() *graph.Resolver {
+func InitializeResolver() (*graph.Resolver, error) {
 	wire.Build(
-		infra_users.NewUserRepository,
+		infra_firebase.NewFirebaseAuthClient,
+		infra_firebase_users.NewUserRepository,
 		infra_circles.NewCircleRepository,
 		infra_boards.NewBoardRepository,
 		infra_permissions.NewCirclePermissionRepository,
@@ -39,5 +41,5 @@ func InitializeResolver() *graph.Resolver {
 		apppermissions.NewCirclePermissionApplicationService,
 		graph.NewResolver,
 	)
-	return &graph.Resolver{}
+	return &graph.Resolver{}, nil
 }

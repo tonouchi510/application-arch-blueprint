@@ -15,18 +15,23 @@ import (
 	circles2 "github.com/tonouchi510/application-arch-blueprint/circle-service/internal/domain/models/circles"
 	users2 "github.com/tonouchi510/application-arch-blueprint/circle-service/internal/domain/models/users"
 	"github.com/tonouchi510/application-arch-blueprint/circle-service/internal/domain/services"
+	"github.com/tonouchi510/application-arch-blueprint/circle-service/internal/infrastructure/firebase"
+	"github.com/tonouchi510/application-arch-blueprint/circle-service/internal/infrastructure/firebase/users"
 	"github.com/tonouchi510/application-arch-blueprint/circle-service/internal/infrastructure/sqlboiler/boards"
 	"github.com/tonouchi510/application-arch-blueprint/circle-service/internal/infrastructure/sqlboiler/circles"
 	"github.com/tonouchi510/application-arch-blueprint/circle-service/internal/infrastructure/sqlboiler/permissions"
-	"github.com/tonouchi510/application-arch-blueprint/circle-service/internal/infrastructure/sqlboiler/users"
 	"github.com/tonouchi510/application-arch-blueprint/circle-service/internal/interface/graph"
 )
 
 // Injectors from wire.go:
 
 // InitializeResolver initializes and returns a configured Resolver
-func InitializeResolver() *graph.Resolver {
-	iUserRepository := users.NewUserRepository()
+func InitializeResolver() (*graph.Resolver, error) {
+	client, err := firebase.NewFirebaseAuthClient()
+	if err != nil {
+		return nil, err
+	}
+	iUserRepository := users.NewUserRepository(client)
 	iUserService := users2.NewUserService(iUserRepository)
 	iUserApplicationService := users3.NewUserApplicationService(iUserRepository, iUserService)
 	iCircleRepository := circles.NewCircleRepository()
@@ -39,5 +44,5 @@ func InitializeResolver() *graph.Resolver {
 	iBoardApplicationService := boards3.NewBoardApplicationService(iBoardRepository, iCircleRepository, iBoardDomainService, iBoardCreationService)
 	iCirclePermissionApplicationService := permissions2.NewCirclePermissionApplicationService(iCirclePermissionRepository, iCircleRepository)
 	resolver := graph.NewResolver(iUserApplicationService, iCircleApplicationService, iBoardApplicationService, iCirclePermissionApplicationService)
-	return resolver
+	return resolver, nil
 }

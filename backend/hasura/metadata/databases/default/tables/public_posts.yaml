@@ -5,9 +5,6 @@ object_relationships:
   - name: board
     using:
       foreign_key_constraint_on: board_uuid
-  - name: user
-    using:
-      foreign_key_constraint_on: user_id
 select_permissions:
   - role: freemium
     permission:

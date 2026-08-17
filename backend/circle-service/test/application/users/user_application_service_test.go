@@ -108,18 +108,21 @@ func (s *UserApplicationServiceTestSuite) TestUpdate() {
 
 	t.Run("Success", func(t *testing.T) {
 		repo.EXPECT().Find(s.ctx, s.user.Id, gomock.Any()).Return(&s.user, nil)
-		service.EXPECT().ExistsByName(s.ctx, gomock.Any(), gomock.Any()).Return(false, nil)
+		service.EXPECT().ExistsByEmail(s.ctx, gomock.Any(), gomock.Any()).Return(false, nil)
 		repo.EXPECT().Save(s.ctx, gomock.Any(), gomock.Any()).Return(nil)
 		mock.ExpectBegin()
 		mock.ExpectCommit()
 
 		newName := "new-name"
+		newEmail := "new-email@test.com"
 		c := users.UpdateUserAttributesCommand{
-			Name: &newName,
+			Name:  &newName,
+			Email: &newEmail,
 		}
 		data, err := appService.UpdateAttributes(s.ctx, c)
 		require.NoError(t, err)
 		require.Equal(t, newName, data.Name)
+		require.Equal(t, newEmail, data.Email)
 	})
 }
 
