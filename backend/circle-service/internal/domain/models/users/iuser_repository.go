@@ -11,6 +11,9 @@ import (
 type IUserRepository interface {
 	Find(ctx context.Context, id UserId, executor db.DbExecutor) (*User, error)
 	FindByEmail(ctx context.Context, email Email, executor db.DbExecutor) (*User, error)
+	// FindMany retrieves multiple users at once. Ids that don't correspond to an
+	// existing user are silently omitted from the result (no error).
+	FindMany(ctx context.Context, ids []UserId, executor db.DbExecutor) ([]*User, error)
 	Save(ctx context.Context, user User, executor db.DbExecutor) error
 	Delete(ctx context.Context, userId UserId, executor db.DbExecutor) error
 }

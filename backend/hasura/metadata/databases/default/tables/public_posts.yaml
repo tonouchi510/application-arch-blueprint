@@ -26,6 +26,7 @@ select_permissions:
                 circle_members:
                   user_id:
                     _eq: X-Hasura-User-Id
+      allow_aggregations: true
     comment: ""
   - role: premium
     permission:
@@ -47,4 +48,5 @@ select_permissions:
                 circle_members:
                   user_id:
                     _eq: X-Hasura-User-Id
+      allow_aggregations: true
     comment: ""

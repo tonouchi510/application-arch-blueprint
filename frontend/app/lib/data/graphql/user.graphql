@@ -1,0 +1,21 @@
+query GetUsers($ids: [ID!]!) {
+  users(ids: $ids) {
+    id
+    name
+  }
+}
+
+mutation UpdateUserAttributes($input: UpdateUserAttributesInput!) {
+  update_user_attributes(input: $input) {
+    id
+    name
+    email
+    email_verified
+    phone_number
+    photo_url
+  }
+}
+
+mutation DeleteUser($input: DeleteUserInput!) {
+  delete_user(input: $input)
+}

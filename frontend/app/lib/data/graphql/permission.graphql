@@ -1,0 +1,10 @@
+query GetCirclePermission($circleId: uuid!) {
+  circle_permissions_by_pk(circle_uuid: $circleId) {
+    circle_uuid
+    permission_board_creation
+  }
+}
+
+mutation ChangeBoardCreationPermission($input: ChangeBoardCreationPermissionInput!) {
+  change_board_creation_permission(input: $input)
+}

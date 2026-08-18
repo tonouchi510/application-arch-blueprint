@@ -1,0 +1,110 @@
+query GetMyCircles($uid: bpchar!) {
+  circles(
+    where: {
+      _or: [
+        { owner_id: { _eq: $uid } }
+        { circle_members: { user_id: { _eq: $uid } } }
+      ]
+    }
+  ) {
+    uuid
+    name
+    description
+    owner_id
+    circle_members_aggregate {
+      aggregate {
+        count
+      }
+    }
+  }
+}
+
+query GetAllCircles {
+  circles(order_by: { created_at: desc }) {
+    uuid
+    name
+    description
+    owner_id
+    circle_members_aggregate {
+      aggregate {
+        count
+      }
+    }
+  }
+}
+
+query GetCircle($id: uuid!) {
+  circles_by_pk(uuid: $id) {
+    uuid
+    name
+    description
+    owner_id
+    created_at
+    circle_members_aggregate {
+      aggregate {
+        count
+      }
+    }
+  }
+}
+
+query GetCircleMembers($circleId: uuid!) {
+  circle_members(where: { circle_uuid: { _eq: $circleId } }) {
+    uuid
+    user_id
+    circle_uuid
+    joined_date
+  }
+}
+
+mutation LeaveCircle($circleId: uuid!, $userId: bpchar!) {
+  delete_circle_members(
+    where: { circle_uuid: { _eq: $circleId }, user_id: { _eq: $userId } }
+  ) {
+    affected_rows
+  }
+}
+
+mutation CreateCircle($input: CreateCircleInput!) {
+  create_circle(input: $input) {
+    id
+    name
+    description
+    owner_id
+  }
+}
+
+mutation AddCircleMember($input: AddCircleMemberInput!) {
+  add_circle_member(input: $input)
+}
+
+mutation ChangeCircleName($input: ChangeCircleNameInput!) {
+  change_circle_name(input: $input) {
+    id
+    name
+    description
+    owner_id
+  }
+}
+
+mutation ChangeCircleDescription($input: ChangeCircleDescriptionInput!) {
+  change_circle_description(input: $input) {
+    id
+    name
+    description
+    owner_id
+  }
+}
+
+mutation DelegateCircleOwner($input: DelegateCircleOwnerInput!) {
+  delegate_circle_owner(input: $input) {
+    id
+    name
+    description
+    owner_id
+  }
+}
+
+mutation DeleteCircle($input: DeleteCircleInput!) {
+  delete_circle(input: $input)
+}

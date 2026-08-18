@@ -1,0 +1,67 @@
+query GetCircleBoards($circleId: uuid!) {
+  boards(
+    where: { circle_uuid: { _eq: $circleId } }
+    order_by: { created_at: desc }
+  ) {
+    uuid
+    circle_uuid
+    owner_id
+    topic
+    status
+    posts_aggregate {
+      aggregate {
+        count
+      }
+    }
+  }
+}
+
+query GetBoardPosts($boardId: uuid!) {
+  posts(where: { board_uuid: { _eq: $boardId } }, order_by: { created_at: asc }) {
+    uuid
+    board_uuid
+    user_id
+    content
+    created_at
+  }
+}
+
+mutation CreateBoard($input: CreateBoardInput!) {
+  create_board(input: $input) {
+    id
+    circle_uuid
+    topic
+    status
+  }
+}
+
+mutation ChangeBoardTopic($input: ChangeBoardTopicInput!) {
+  change_board_topic(input: $input) {
+    id
+    circle_uuid
+    topic
+    status
+  }
+}
+
+mutation ChangeBoardStatus($input: ChangeBoardStatusInput!) {
+  change_board_status(input: $input) {
+    id
+    circle_uuid
+    topic
+    status
+  }
+}
+
+mutation AddBoardPost($input: AddBoardPostInput!) {
+  add_board_post(input: $input) {
+    id
+    circle_uuid
+    topic
+    status
+  }
+}
+
+mutation DeleteBoard($input: DeleteBoardInput!) {
+  delete_board(input: $input)
+}

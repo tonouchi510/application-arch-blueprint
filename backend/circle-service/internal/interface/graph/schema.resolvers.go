@@ -185,6 +185,20 @@ func (r *queryResolver) Healthz(ctx context.Context) (string, error) {
 	return "ok", nil
 }
 
+// Users is the resolver for the users field.
+func (r *queryResolver) Users(ctx context.Context, ids []string) ([]*model.UserModel, error) {
+	data, err := r.userApp.GetUsers(ctx, ids)
+	if err != nil {
+		return nil, err
+	}
+
+	result := make([]*model.UserModel, len(data))
+	for i, d := range data {
+		result[i] = toUserModel(d)
+	}
+	return result, nil
+}
+
 // Mutation returns MutationResolver implementation.
 func (r *Resolver) Mutation() MutationResolver { return &mutationResolver{r} }
 

@@ -1,0 +1,2779 @@
+schema {
+  query: query_root
+  mutation: mutation_root
+  subscription: subscription_root
+}
+
+"""whether this query should be cached (Hasura Cloud only)"""
+directive @cached(
+  """measured in seconds"""
+  ttl: Int! = 60
+
+  """refresh the cache entry"""
+  refresh: Boolean! = false
+) on QUERY
+
+input AddBoardPostInput {
+  board_id: UUID!
+  circle_id: UUID!
+  content: String!
+  user_id: ID!
+}
+
+input AddCircleMemberInput {
+  circle_id: UUID!
+  new_member_id: ID!
+}
+
+type BoardModel {
+  circle_uuid: UUID!
+  id: UUID!
+  status: String!
+  topic: String!
+}
+
+"""
+Boolean expression to compare columns of type "Boolean". All fields are combined with logical 'AND'.
+"""
+input Boolean_comparison_exp {
+  _eq: Boolean
+  _gt: Boolean
+  _gte: Boolean
+  _in: [Boolean!]
+  _is_null: Boolean
+  _lt: Boolean
+  _lte: Boolean
+  _neq: Boolean
+  _nin: [Boolean!]
+}
+
+input ChangeBoardCreationPermissionInput {
+  allowed: Boolean!
+  circle_id: UUID!
+}
+
+input ChangeBoardStatusInput {
+  board_id: UUID!
+  circle_id: UUID!
+  new_status: Int!
+}
+
+input ChangeBoardTopicInput {
+  board_id: UUID!
+  circle_id: UUID!
+  new_topic: String!
+}
+
+input ChangeCircleDescriptionInput {
+  circle_id: UUID!
+  new_description: String!
+}
+
+input ChangeCircleNameInput {
+  circle_id: UUID!
+  new_name: String!
+}
+
+type CircleModel {
+  description: String!
+  id: UUID!
+  name: String!
+  owner_id: ID!
+}
+
+input CreateBoardInput {
+  circle_id: UUID!
+  topic: String!
+}
+
+input CreateCircleInput {
+  description: String!
+  name: String!
+}
+
+input DelegateCircleOwnerInput {
+  circle_id: UUID!
+  new_owner_id: ID!
+}
+
+input DeleteBoardInput {
+  board_id: UUID!
+  circle_id: UUID!
+}
+
+input DeleteCircleInput {
+  circle_id: UUID!
+}
+
+input DeleteUserInput {
+  uid: ID!
+}
+
+"""
+Boolean expression to compare columns of type "Int". All fields are combined with logical 'AND'.
+"""
+input Int_comparison_exp {
+  _eq: Int
+  _gt: Int
+  _gte: Int
+  _in: [Int!]
+  _is_null: Boolean
+  _lt: Int
+  _lte: Int
+  _neq: Int
+  _nin: [Int!]
+}
+
+"""
+Boolean expression to compare columns of type "String". All fields are combined with logical 'AND'.
+"""
+input String_comparison_exp {
+  _eq: String
+  _gt: String
+  _gte: String
+
+  """does the column match the given case-insensitive pattern"""
+  _ilike: String
+  _in: [String!]
+
+  """
+  does the column match the given POSIX regular expression, case insensitive
+  """
+  _iregex: String
+  _is_null: Boolean
+
+  """does the column match the given pattern"""
+  _like: String
+  _lt: String
+  _lte: String
+  _neq: String
+
+  """does the column NOT match the given case-insensitive pattern"""
+  _nilike: String
+  _nin: [String!]
+
+  """
+  does the column NOT match the given POSIX regular expression, case insensitive
+  """
+  _niregex: String
+
+  """does the column NOT match the given pattern"""
+  _nlike: String
+
+  """
+  does the column NOT match the given POSIX regular expression, case sensitive
+  """
+  _nregex: String
+
+  """does the column NOT match the given SQL regular expression"""
+  _nsimilar: String
+
+  """
+  does the column match the given POSIX regular expression, case sensitive
+  """
+  _regex: String
+
+  """does the column match the given SQL regular expression"""
+  _similar: String
+}
+
+scalar UUID
+
+input UpdateUserAttributesInput {
+  email: String
+  name: String
+  phone_number: String
+  photo_url: String
+}
+
+type UserModel {
+  email: String!
+  email_verified: Boolean!
+  id: ID!
+  name: String!
+  phone_number: String
+  photo_url: String
+}
+
+"""
+columns and relationships of "boards"
+"""
+type boards {
+  """An object relationship"""
+  circle: circles!
+  circle_uuid: uuid!
+  created_at: timestamptz!
+  owner_id: bpchar!
+
+  """An array relationship"""
+  posts(
+    """distinct select on columns"""
+    distinct_on: [posts_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [posts_order_by!]
+
+    """filter the rows returned"""
+    where: posts_bool_exp
+  ): [posts!]!
+
+  """An aggregate relationship"""
+  posts_aggregate(
+    """distinct select on columns"""
+    distinct_on: [posts_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [posts_order_by!]
+
+    """filter the rows returned"""
+    where: posts_bool_exp
+  ): posts_aggregate!
+  status: smallint!
+  topic: String!
+  updated_at: timestamptz!
+  uuid: uuid!
+}
+
+"""
+aggregated selection of "boards"
+"""
+type boards_aggregate {
+  aggregate: boards_aggregate_fields
+  nodes: [boards!]!
+}
+
+input boards_aggregate_bool_exp {
+  count: boards_aggregate_bool_exp_count
+}
+
+input boards_aggregate_bool_exp_count {
+  arguments: [boards_select_column!]
+  distinct: Boolean
+  filter: boards_bool_exp
+  predicate: Int_comparison_exp!
+}
+
+"""
+aggregate fields of "boards"
+"""
+type boards_aggregate_fields {
+  avg: boards_avg_fields
+  count(columns: [boards_select_column!], distinct: Boolean): Int!
+  max: boards_max_fields
+  min: boards_min_fields
+  stddev: boards_stddev_fields
+  stddev_pop: boards_stddev_pop_fields
+  stddev_samp: boards_stddev_samp_fields
+  sum: boards_sum_fields
+  var_pop: boards_var_pop_fields
+  var_samp: boards_var_samp_fields
+  variance: boards_variance_fields
+}
+
+"""
+order by aggregate values of table "boards"
+"""
+input boards_aggregate_order_by {
+  avg: boards_avg_order_by
+  count: order_by
+  max: boards_max_order_by
+  min: boards_min_order_by
+  stddev: boards_stddev_order_by
+  stddev_pop: boards_stddev_pop_order_by
+  stddev_samp: boards_stddev_samp_order_by
+  sum: boards_sum_order_by
+  var_pop: boards_var_pop_order_by
+  var_samp: boards_var_samp_order_by
+  variance: boards_variance_order_by
+}
+
+"""
+input type for inserting array relation for remote table "boards"
+"""
+input boards_arr_rel_insert_input {
+  data: [boards_insert_input!]!
+
+  """upsert condition"""
+  on_conflict: boards_on_conflict
+}
+
+"""aggregate avg on columns"""
+type boards_avg_fields {
+  status: Float
+}
+
+"""
+order by avg() on columns of table "boards"
+"""
+input boards_avg_order_by {
+  status: order_by
+}
+
+"""
+Boolean expression to filter rows from the table "boards". All fields are combined with a logical 'AND'.
+"""
+input boards_bool_exp {
+  _and: [boards_bool_exp!]
+  _not: boards_bool_exp
+  _or: [boards_bool_exp!]
+  circle: circles_bool_exp
+  circle_uuid: uuid_comparison_exp
+  created_at: timestamptz_comparison_exp
+  owner_id: bpchar_comparison_exp
+  posts: posts_bool_exp
+  posts_aggregate: posts_aggregate_bool_exp
+  status: smallint_comparison_exp
+  topic: String_comparison_exp
+  updated_at: timestamptz_comparison_exp
+  uuid: uuid_comparison_exp
+}
+
+"""
+unique or primary key constraints on table "boards"
+"""
+enum boards_constraint {
+  """
+  unique or primary key constraint on columns "uuid"
+  """
+  boards_pkey
+}
+
+"""
+input type for incrementing numeric columns in table "boards"
+"""
+input boards_inc_input {
+  status: smallint
+}
+
+"""
+input type for inserting data into table "boards"
+"""
+input boards_insert_input {
+  circle: circles_obj_rel_insert_input
+  circle_uuid: uuid
+  created_at: timestamptz
+  owner_id: bpchar
+  posts: posts_arr_rel_insert_input
+  status: smallint
+  topic: String
+  updated_at: timestamptz
+  uuid: uuid
+}
+
+"""aggregate max on columns"""
+type boards_max_fields {
+  circle_uuid: uuid
+  created_at: timestamptz
+  owner_id: bpchar
+  status: smallint
+  topic: String
+  updated_at: timestamptz
+  uuid: uuid
+}
+
+"""
+order by max() on columns of table "boards"
+"""
+input boards_max_order_by {
+  circle_uuid: order_by
+  created_at: order_by
+  owner_id: order_by
+  status: order_by
+  topic: order_by
+  updated_at: order_by
+  uuid: order_by
+}
+
+"""aggregate min on columns"""
+type boards_min_fields {
+  circle_uuid: uuid
+  created_at: timestamptz
+  owner_id: bpchar
+  status: smallint
+  topic: String
+  updated_at: timestamptz
+  uuid: uuid
+}
+
+"""
+order by min() on columns of table "boards"
+"""
+input boards_min_order_by {
+  circle_uuid: order_by
+  created_at: order_by
+  owner_id: order_by
+  status: order_by
+  topic: order_by
+  updated_at: order_by
+  uuid: order_by
+}
+
+"""
+response of any mutation on the table "boards"
+"""
+type boards_mutation_response {
+  """number of rows affected by the mutation"""
+  affected_rows: Int!
+
+  """data from the rows affected by the mutation"""
+  returning: [boards!]!
+}
+
+"""
+input type for inserting object relation for remote table "boards"
+"""
+input boards_obj_rel_insert_input {
+  data: boards_insert_input!
+
+  """upsert condition"""
+  on_conflict: boards_on_conflict
+}
+
+"""
+on_conflict condition type for table "boards"
+"""
+input boards_on_conflict {
+  constraint: boards_constraint!
+  update_columns: [boards_update_column!]! = []
+  where: boards_bool_exp
+}
+
+"""Ordering options when selecting data from "boards"."""
+input boards_order_by {
+  circle: circles_order_by
+  circle_uuid: order_by
+  created_at: order_by
+  owner_id: order_by
+  posts_aggregate: posts_aggregate_order_by
+  status: order_by
+  topic: order_by
+  updated_at: order_by
+  uuid: order_by
+}
+
+"""primary key columns input for table: boards"""
+input boards_pk_columns_input {
+  uuid: uuid!
+}
+
+"""
+select columns of table "boards"
+"""
+enum boards_select_column {
+  """column name"""
+  circle_uuid
+
+  """column name"""
+  created_at
+
+  """column name"""
+  owner_id
+
+  """column name"""
+  status
+
+  """column name"""
+  topic
+
+  """column name"""
+  updated_at
+
+  """column name"""
+  uuid
+}
+
+"""
+input type for updating data in table "boards"
+"""
+input boards_set_input {
+  circle_uuid: uuid
+  created_at: timestamptz
+  owner_id: bpchar
+  status: smallint
+  topic: String
+  updated_at: timestamptz
+  uuid: uuid
+}
+
+"""aggregate stddev on columns"""
+type boards_stddev_fields {
+  status: Float
+}
+
+"""
+order by stddev() on columns of table "boards"
+"""
+input boards_stddev_order_by {
+  status: order_by
+}
+
+"""aggregate stddev_pop on columns"""
+type boards_stddev_pop_fields {
+  status: Float
+}
+
+"""
+order by stddev_pop() on columns of table "boards"
+"""
+input boards_stddev_pop_order_by {
+  status: order_by
+}
+
+"""aggregate stddev_samp on columns"""
+type boards_stddev_samp_fields {
+  status: Float
+}
+
+"""
+order by stddev_samp() on columns of table "boards"
+"""
+input boards_stddev_samp_order_by {
+  status: order_by
+}
+
+"""
+Streaming cursor of the table "boards"
+"""
+input boards_stream_cursor_input {
+  """Stream column input with initial value"""
+  initial_value: boards_stream_cursor_value_input!
+
+  """cursor ordering"""
+  ordering: cursor_ordering
+}
+
+"""Initial value of the column from where the streaming should start"""
+input boards_stream_cursor_value_input {
+  circle_uuid: uuid
+  created_at: timestamptz
+  owner_id: bpchar
+  status: smallint
+  topic: String
+  updated_at: timestamptz
+  uuid: uuid
+}
+
+"""aggregate sum on columns"""
+type boards_sum_fields {
+  status: smallint
+}
+
+"""
+order by sum() on columns of table "boards"
+"""
+input boards_sum_order_by {
+  status: order_by
+}
+
+"""
+update columns of table "boards"
+"""
+enum boards_update_column {
+  """column name"""
+  circle_uuid
+
+  """column name"""
+  created_at
+
+  """column name"""
+  owner_id
+
+  """column name"""
+  status
+
+  """column name"""
+  topic
+
+  """column name"""
+  updated_at
+
+  """column name"""
+  uuid
+}
+
+input boards_updates {
+  """increments the numeric columns with given value of the filtered values"""
+  _inc: boards_inc_input
+
+  """sets the columns of the filtered rows to the given values"""
+  _set: boards_set_input
+
+  """filter the rows which have to be updated"""
+  where: boards_bool_exp!
+}
+
+"""aggregate var_pop on columns"""
+type boards_var_pop_fields {
+  status: Float
+}
+
+"""
+order by var_pop() on columns of table "boards"
+"""
+input boards_var_pop_order_by {
+  status: order_by
+}
+
+"""aggregate var_samp on columns"""
+type boards_var_samp_fields {
+  status: Float
+}
+
+"""
+order by var_samp() on columns of table "boards"
+"""
+input boards_var_samp_order_by {
+  status: order_by
+}
+
+"""aggregate variance on columns"""
+type boards_variance_fields {
+  status: Float
+}
+
+"""
+order by variance() on columns of table "boards"
+"""
+input boards_variance_order_by {
+  status: order_by
+}
+
+scalar bpchar
+
+"""
+Boolean expression to compare columns of type "bpchar". All fields are combined with logical 'AND'.
+"""
+input bpchar_comparison_exp {
+  _eq: bpchar
+  _gt: bpchar
+  _gte: bpchar
+
+  """does the column match the given case-insensitive pattern"""
+  _ilike: bpchar
+  _in: [bpchar!]
+
+  """
+  does the column match the given POSIX regular expression, case insensitive
+  """
+  _iregex: bpchar
+  _is_null: Boolean
+
+  """does the column match the given pattern"""
+  _like: bpchar
+  _lt: bpchar
+  _lte: bpchar
+  _neq: bpchar
+
+  """does the column NOT match the given case-insensitive pattern"""
+  _nilike: bpchar
+  _nin: [bpchar!]
+
+  """
+  does the column NOT match the given POSIX regular expression, case insensitive
+  """
+  _niregex: bpchar
+
+  """does the column NOT match the given pattern"""
+  _nlike: bpchar
+
+  """
+  does the column NOT match the given POSIX regular expression, case sensitive
+  """
+  _nregex: bpchar
+
+  """does the column NOT match the given SQL regular expression"""
+  _nsimilar: bpchar
+
+  """
+  does the column match the given POSIX regular expression, case sensitive
+  """
+  _regex: bpchar
+
+  """does the column match the given SQL regular expression"""
+  _similar: bpchar
+}
+
+"""
+columns and relationships of "circle_members"
+"""
+type circle_members {
+  """An object relationship"""
+  circle: circles!
+  circle_uuid: uuid!
+  created_at: timestamptz!
+  joined_date: date!
+  updated_at: timestamptz!
+  user_id: bpchar!
+  uuid: uuid!
+}
+
+"""
+aggregated selection of "circle_members"
+"""
+type circle_members_aggregate {
+  aggregate: circle_members_aggregate_fields
+  nodes: [circle_members!]!
+}
+
+input circle_members_aggregate_bool_exp {
+  count: circle_members_aggregate_bool_exp_count
+}
+
+input circle_members_aggregate_bool_exp_count {
+  arguments: [circle_members_select_column!]
+  distinct: Boolean
+  filter: circle_members_bool_exp
+  predicate: Int_comparison_exp!
+}
+
+"""
+aggregate fields of "circle_members"
+"""
+type circle_members_aggregate_fields {
+  count(columns: [circle_members_select_column!], distinct: Boolean): Int!
+  max: circle_members_max_fields
+  min: circle_members_min_fields
+}
+
+"""
+order by aggregate values of table "circle_members"
+"""
+input circle_members_aggregate_order_by {
+  count: order_by
+  max: circle_members_max_order_by
+  min: circle_members_min_order_by
+}
+
+"""
+input type for inserting array relation for remote table "circle_members"
+"""
+input circle_members_arr_rel_insert_input {
+  data: [circle_members_insert_input!]!
+
+  """upsert condition"""
+  on_conflict: circle_members_on_conflict
+}
+
+"""
+Boolean expression to filter rows from the table "circle_members". All fields are combined with a logical 'AND'.
+"""
+input circle_members_bool_exp {
+  _and: [circle_members_bool_exp!]
+  _not: circle_members_bool_exp
+  _or: [circle_members_bool_exp!]
+  circle: circles_bool_exp
+  circle_uuid: uuid_comparison_exp
+  created_at: timestamptz_comparison_exp
+  joined_date: date_comparison_exp
+  updated_at: timestamptz_comparison_exp
+  user_id: bpchar_comparison_exp
+  uuid: uuid_comparison_exp
+}
+
+"""
+unique or primary key constraints on table "circle_members"
+"""
+enum circle_members_constraint {
+  """
+  unique or primary key constraint on columns "user_id", "circle_uuid"
+  """
+  circle_members_circle_uuid_user_id_key
+
+  """
+  unique or primary key constraint on columns "uuid"
+  """
+  circle_members_pkey
+}
+
+"""
+input type for inserting data into table "circle_members"
+"""
+input circle_members_insert_input {
+  circle: circles_obj_rel_insert_input
+  circle_uuid: uuid
+  created_at: timestamptz
+  joined_date: date
+  updated_at: timestamptz
+  user_id: bpchar
+  uuid: uuid
+}
+
+"""aggregate max on columns"""
+type circle_members_max_fields {
+  circle_uuid: uuid
+  created_at: timestamptz
+  joined_date: date
+  updated_at: timestamptz
+  user_id: bpchar
+  uuid: uuid
+}
+
+"""
+order by max() on columns of table "circle_members"
+"""
+input circle_members_max_order_by {
+  circle_uuid: order_by
+  created_at: order_by
+  joined_date: order_by
+  updated_at: order_by
+  user_id: order_by
+  uuid: order_by
+}
+
+"""aggregate min on columns"""
+type circle_members_min_fields {
+  circle_uuid: uuid
+  created_at: timestamptz
+  joined_date: date
+  updated_at: timestamptz
+  user_id: bpchar
+  uuid: uuid
+}
+
+"""
+order by min() on columns of table "circle_members"
+"""
+input circle_members_min_order_by {
+  circle_uuid: order_by
+  created_at: order_by
+  joined_date: order_by
+  updated_at: order_by
+  user_id: order_by
+  uuid: order_by
+}
+
+"""
+response of any mutation on the table "circle_members"
+"""
+type circle_members_mutation_response {
+  """number of rows affected by the mutation"""
+  affected_rows: Int!
+
+  """data from the rows affected by the mutation"""
+  returning: [circle_members!]!
+}
+
+"""
+on_conflict condition type for table "circle_members"
+"""
+input circle_members_on_conflict {
+  constraint: circle_members_constraint!
+  update_columns: [circle_members_update_column!]! = []
+  where: circle_members_bool_exp
+}
+
+"""Ordering options when selecting data from "circle_members"."""
+input circle_members_order_by {
+  circle: circles_order_by
+  circle_uuid: order_by
+  created_at: order_by
+  joined_date: order_by
+  updated_at: order_by
+  user_id: order_by
+  uuid: order_by
+}
+
+"""primary key columns input for table: circle_members"""
+input circle_members_pk_columns_input {
+  uuid: uuid!
+}
+
+"""
+select columns of table "circle_members"
+"""
+enum circle_members_select_column {
+  """column name"""
+  circle_uuid
+
+  """column name"""
+  created_at
+
+  """column name"""
+  joined_date
+
+  """column name"""
+  updated_at
+
+  """column name"""
+  user_id
+
+  """column name"""
+  uuid
+}
+
+"""
+input type for updating data in table "circle_members"
+"""
+input circle_members_set_input {
+  circle_uuid: uuid
+  created_at: timestamptz
+  joined_date: date
+  updated_at: timestamptz
+  user_id: bpchar
+  uuid: uuid
+}
+
+"""
+Streaming cursor of the table "circle_members"
+"""
+input circle_members_stream_cursor_input {
+  """Stream column input with initial value"""
+  initial_value: circle_members_stream_cursor_value_input!
+
+  """cursor ordering"""
+  ordering: cursor_ordering
+}
+
+"""Initial value of the column from where the streaming should start"""
+input circle_members_stream_cursor_value_input {
+  circle_uuid: uuid
+  created_at: timestamptz
+  joined_date: date
+  updated_at: timestamptz
+  user_id: bpchar
+  uuid: uuid
+}
+
+"""
+update columns of table "circle_members"
+"""
+enum circle_members_update_column {
+  """column name"""
+  circle_uuid
+
+  """column name"""
+  created_at
+
+  """column name"""
+  joined_date
+
+  """column name"""
+  updated_at
+
+  """column name"""
+  user_id
+
+  """column name"""
+  uuid
+}
+
+input circle_members_updates {
+  """sets the columns of the filtered rows to the given values"""
+  _set: circle_members_set_input
+
+  """filter the rows which have to be updated"""
+  where: circle_members_bool_exp!
+}
+
+"""
+columns and relationships of "circle_permissions"
+"""
+type circle_permissions {
+  """An object relationship"""
+  circle: circles!
+  circle_uuid: uuid!
+  created_at: timestamptz!
+  permission_board_creation: Boolean!
+  permission_self_join: Boolean!
+  updated_at: timestamptz!
+}
+
+"""
+aggregated selection of "circle_permissions"
+"""
+type circle_permissions_aggregate {
+  aggregate: circle_permissions_aggregate_fields
+  nodes: [circle_permissions!]!
+}
+
+input circle_permissions_aggregate_bool_exp {
+  bool_and: circle_permissions_aggregate_bool_exp_bool_and
+  bool_or: circle_permissions_aggregate_bool_exp_bool_or
+  count: circle_permissions_aggregate_bool_exp_count
+}
+
+input circle_permissions_aggregate_bool_exp_bool_and {
+  arguments: circle_permissions_select_column_circle_permissions_aggregate_bool_exp_bool_and_arguments_columns!
+  distinct: Boolean
+  filter: circle_permissions_bool_exp
+  predicate: Boolean_comparison_exp!
+}
+
+input circle_permissions_aggregate_bool_exp_bool_or {
+  arguments: circle_permissions_select_column_circle_permissions_aggregate_bool_exp_bool_or_arguments_columns!
+  distinct: Boolean
+  filter: circle_permissions_bool_exp
+  predicate: Boolean_comparison_exp!
+}
+
+input circle_permissions_aggregate_bool_exp_count {
+  arguments: [circle_permissions_select_column!]
+  distinct: Boolean
+  filter: circle_permissions_bool_exp
+  predicate: Int_comparison_exp!
+}
+
+"""
+aggregate fields of "circle_permissions"
+"""
+type circle_permissions_aggregate_fields {
+  count(columns: [circle_permissions_select_column!], distinct: Boolean): Int!
+  max: circle_permissions_max_fields
+  min: circle_permissions_min_fields
+}
+
+"""
+order by aggregate values of table "circle_permissions"
+"""
+input circle_permissions_aggregate_order_by {
+  count: order_by
+  max: circle_permissions_max_order_by
+  min: circle_permissions_min_order_by
+}
+
+"""
+input type for inserting array relation for remote table "circle_permissions"
+"""
+input circle_permissions_arr_rel_insert_input {
+  data: [circle_permissions_insert_input!]!
+
+  """upsert condition"""
+  on_conflict: circle_permissions_on_conflict
+}
+
+"""
+Boolean expression to filter rows from the table "circle_permissions". All fields are combined with a logical 'AND'.
+"""
+input circle_permissions_bool_exp {
+  _and: [circle_permissions_bool_exp!]
+  _not: circle_permissions_bool_exp
+  _or: [circle_permissions_bool_exp!]
+  circle: circles_bool_exp
+  circle_uuid: uuid_comparison_exp
+  created_at: timestamptz_comparison_exp
+  permission_board_creation: Boolean_comparison_exp
+  permission_self_join: Boolean_comparison_exp
+  updated_at: timestamptz_comparison_exp
+}
+
+"""
+unique or primary key constraints on table "circle_permissions"
+"""
+enum circle_permissions_constraint {
+  """
+  unique or primary key constraint on columns "circle_uuid"
+  """
+  circle_permissions_pkey
+}
+
+"""
+input type for inserting data into table "circle_permissions"
+"""
+input circle_permissions_insert_input {
+  circle: circles_obj_rel_insert_input
+  circle_uuid: uuid
+  created_at: timestamptz
+  permission_board_creation: Boolean
+  permission_self_join: Boolean
+  updated_at: timestamptz
+}
+
+"""aggregate max on columns"""
+type circle_permissions_max_fields {
+  circle_uuid: uuid
+  created_at: timestamptz
+  updated_at: timestamptz
+}
+
+"""
+order by max() on columns of table "circle_permissions"
+"""
+input circle_permissions_max_order_by {
+  circle_uuid: order_by
+  created_at: order_by
+  updated_at: order_by
+}
+
+"""aggregate min on columns"""
+type circle_permissions_min_fields {
+  circle_uuid: uuid
+  created_at: timestamptz
+  updated_at: timestamptz
+}
+
+"""
+order by min() on columns of table "circle_permissions"
+"""
+input circle_permissions_min_order_by {
+  circle_uuid: order_by
+  created_at: order_by
+  updated_at: order_by
+}
+
+"""
+response of any mutation on the table "circle_permissions"
+"""
+type circle_permissions_mutation_response {
+  """number of rows affected by the mutation"""
+  affected_rows: Int!
+
+  """data from the rows affected by the mutation"""
+  returning: [circle_permissions!]!
+}
+
+"""
+on_conflict condition type for table "circle_permissions"
+"""
+input circle_permissions_on_conflict {
+  constraint: circle_permissions_constraint!
+  update_columns: [circle_permissions_update_column!]! = []
+  where: circle_permissions_bool_exp
+}
+
+"""Ordering options when selecting data from "circle_permissions"."""
+input circle_permissions_order_by {
+  circle: circles_order_by
+  circle_uuid: order_by
+  created_at: order_by
+  permission_board_creation: order_by
+  permission_self_join: order_by
+  updated_at: order_by
+}
+
+"""primary key columns input for table: circle_permissions"""
+input circle_permissions_pk_columns_input {
+  circle_uuid: uuid!
+}
+
+"""
+select columns of table "circle_permissions"
+"""
+enum circle_permissions_select_column {
+  """column name"""
+  circle_uuid
+
+  """column name"""
+  created_at
+
+  """column name"""
+  permission_board_creation
+
+  """column name"""
+  permission_self_join
+
+  """column name"""
+  updated_at
+}
+
+"""
+select "circle_permissions_aggregate_bool_exp_bool_and_arguments_columns" columns of table "circle_permissions"
+"""
+enum circle_permissions_select_column_circle_permissions_aggregate_bool_exp_bool_and_arguments_columns {
+  """column name"""
+  permission_board_creation
+
+  """column name"""
+  permission_self_join
+}
+
+"""
+select "circle_permissions_aggregate_bool_exp_bool_or_arguments_columns" columns of table "circle_permissions"
+"""
+enum circle_permissions_select_column_circle_permissions_aggregate_bool_exp_bool_or_arguments_columns {
+  """column name"""
+  permission_board_creation
+
+  """column name"""
+  permission_self_join
+}
+
+"""
+input type for updating data in table "circle_permissions"
+"""
+input circle_permissions_set_input {
+  circle_uuid: uuid
+  created_at: timestamptz
+  permission_board_creation: Boolean
+  permission_self_join: Boolean
+  updated_at: timestamptz
+}
+
+"""
+Streaming cursor of the table "circle_permissions"
+"""
+input circle_permissions_stream_cursor_input {
+  """Stream column input with initial value"""
+  initial_value: circle_permissions_stream_cursor_value_input!
+
+  """cursor ordering"""
+  ordering: cursor_ordering
+}
+
+"""Initial value of the column from where the streaming should start"""
+input circle_permissions_stream_cursor_value_input {
+  circle_uuid: uuid
+  created_at: timestamptz
+  permission_board_creation: Boolean
+  permission_self_join: Boolean
+  updated_at: timestamptz
+}
+
+"""
+update columns of table "circle_permissions"
+"""
+enum circle_permissions_update_column {
+  """column name"""
+  circle_uuid
+
+  """column name"""
+  created_at
+
+  """column name"""
+  permission_board_creation
+
+  """column name"""
+  permission_self_join
+
+  """column name"""
+  updated_at
+}
+
+input circle_permissions_updates {
+  """sets the columns of the filtered rows to the given values"""
+  _set: circle_permissions_set_input
+
+  """filter the rows which have to be updated"""
+  where: circle_permissions_bool_exp!
+}
+
+"""
+columns and relationships of "circles"
+"""
+type circles {
+  """An array relationship"""
+  boards(
+    """distinct select on columns"""
+    distinct_on: [boards_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [boards_order_by!]
+
+    """filter the rows returned"""
+    where: boards_bool_exp
+  ): [boards!]!
+
+  """An aggregate relationship"""
+  boards_aggregate(
+    """distinct select on columns"""
+    distinct_on: [boards_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [boards_order_by!]
+
+    """filter the rows returned"""
+    where: boards_bool_exp
+  ): boards_aggregate!
+
+  """An array relationship"""
+  circle_members(
+    """distinct select on columns"""
+    distinct_on: [circle_members_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [circle_members_order_by!]
+
+    """filter the rows returned"""
+    where: circle_members_bool_exp
+  ): [circle_members!]!
+
+  """An aggregate relationship"""
+  circle_members_aggregate(
+    """distinct select on columns"""
+    distinct_on: [circle_members_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [circle_members_order_by!]
+
+    """filter the rows returned"""
+    where: circle_members_bool_exp
+  ): circle_members_aggregate!
+
+  """An array relationship"""
+  circle_permissions(
+    """distinct select on columns"""
+    distinct_on: [circle_permissions_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [circle_permissions_order_by!]
+
+    """filter the rows returned"""
+    where: circle_permissions_bool_exp
+  ): [circle_permissions!]!
+
+  """An aggregate relationship"""
+  circle_permissions_aggregate(
+    """distinct select on columns"""
+    distinct_on: [circle_permissions_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [circle_permissions_order_by!]
+
+    """filter the rows returned"""
+    where: circle_permissions_bool_exp
+  ): circle_permissions_aggregate!
+  created_at: timestamptz!
+  description: String!
+  name: String!
+  owner_id: bpchar!
+  updated_at: timestamptz!
+  uuid: uuid!
+}
+
+"""
+aggregated selection of "circles"
+"""
+type circles_aggregate {
+  aggregate: circles_aggregate_fields
+  nodes: [circles!]!
+}
+
+"""
+aggregate fields of "circles"
+"""
+type circles_aggregate_fields {
+  count(columns: [circles_select_column!], distinct: Boolean): Int!
+  max: circles_max_fields
+  min: circles_min_fields
+}
+
+"""
+Boolean expression to filter rows from the table "circles". All fields are combined with a logical 'AND'.
+"""
+input circles_bool_exp {
+  _and: [circles_bool_exp!]
+  _not: circles_bool_exp
+  _or: [circles_bool_exp!]
+  boards: boards_bool_exp
+  boards_aggregate: boards_aggregate_bool_exp
+  circle_members: circle_members_bool_exp
+  circle_members_aggregate: circle_members_aggregate_bool_exp
+  circle_permissions: circle_permissions_bool_exp
+  circle_permissions_aggregate: circle_permissions_aggregate_bool_exp
+  created_at: timestamptz_comparison_exp
+  description: String_comparison_exp
+  name: String_comparison_exp
+  owner_id: bpchar_comparison_exp
+  updated_at: timestamptz_comparison_exp
+  uuid: uuid_comparison_exp
+}
+
+"""
+unique or primary key constraints on table "circles"
+"""
+enum circles_constraint {
+  """
+  unique or primary key constraint on columns "uuid"
+  """
+  circles_pkey
+}
+
+"""
+input type for inserting data into table "circles"
+"""
+input circles_insert_input {
+  boards: boards_arr_rel_insert_input
+  circle_members: circle_members_arr_rel_insert_input
+  circle_permissions: circle_permissions_arr_rel_insert_input
+  created_at: timestamptz
+  description: String
+  name: String
+  owner_id: bpchar
+  updated_at: timestamptz
+  uuid: uuid
+}
+
+"""aggregate max on columns"""
+type circles_max_fields {
+  created_at: timestamptz
+  description: String
+  name: String
+  owner_id: bpchar
+  updated_at: timestamptz
+  uuid: uuid
+}
+
+"""aggregate min on columns"""
+type circles_min_fields {
+  created_at: timestamptz
+  description: String
+  name: String
+  owner_id: bpchar
+  updated_at: timestamptz
+  uuid: uuid
+}
+
+"""
+response of any mutation on the table "circles"
+"""
+type circles_mutation_response {
+  """number of rows affected by the mutation"""
+  affected_rows: Int!
+
+  """data from the rows affected by the mutation"""
+  returning: [circles!]!
+}
+
+"""
+input type for inserting object relation for remote table "circles"
+"""
+input circles_obj_rel_insert_input {
+  data: circles_insert_input!
+
+  """upsert condition"""
+  on_conflict: circles_on_conflict
+}
+
+"""
+on_conflict condition type for table "circles"
+"""
+input circles_on_conflict {
+  constraint: circles_constraint!
+  update_columns: [circles_update_column!]! = []
+  where: circles_bool_exp
+}
+
+"""Ordering options when selecting data from "circles"."""
+input circles_order_by {
+  boards_aggregate: boards_aggregate_order_by
+  circle_members_aggregate: circle_members_aggregate_order_by
+  circle_permissions_aggregate: circle_permissions_aggregate_order_by
+  created_at: order_by
+  description: order_by
+  name: order_by
+  owner_id: order_by
+  updated_at: order_by
+  uuid: order_by
+}
+
+"""primary key columns input for table: circles"""
+input circles_pk_columns_input {
+  uuid: uuid!
+}
+
+"""
+select columns of table "circles"
+"""
+enum circles_select_column {
+  """column name"""
+  created_at
+
+  """column name"""
+  description
+
+  """column name"""
+  name
+
+  """column name"""
+  owner_id
+
+  """column name"""
+  updated_at
+
+  """column name"""
+  uuid
+}
+
+"""
+input type for updating data in table "circles"
+"""
+input circles_set_input {
+  created_at: timestamptz
+  description: String
+  name: String
+  owner_id: bpchar
+  updated_at: timestamptz
+  uuid: uuid
+}
+
+"""
+Streaming cursor of the table "circles"
+"""
+input circles_stream_cursor_input {
+  """Stream column input with initial value"""
+  initial_value: circles_stream_cursor_value_input!
+
+  """cursor ordering"""
+  ordering: cursor_ordering
+}
+
+"""Initial value of the column from where the streaming should start"""
+input circles_stream_cursor_value_input {
+  created_at: timestamptz
+  description: String
+  name: String
+  owner_id: bpchar
+  updated_at: timestamptz
+  uuid: uuid
+}
+
+"""
+update columns of table "circles"
+"""
+enum circles_update_column {
+  """column name"""
+  created_at
+
+  """column name"""
+  description
+
+  """column name"""
+  name
+
+  """column name"""
+  owner_id
+
+  """column name"""
+  updated_at
+
+  """column name"""
+  uuid
+}
+
+input circles_updates {
+  """sets the columns of the filtered rows to the given values"""
+  _set: circles_set_input
+
+  """filter the rows which have to be updated"""
+  where: circles_bool_exp!
+}
+
+"""ordering argument of a cursor"""
+enum cursor_ordering {
+  """ascending ordering of the cursor"""
+  ASC
+
+  """descending ordering of the cursor"""
+  DESC
+}
+
+scalar date
+
+"""
+Boolean expression to compare columns of type "date". All fields are combined with logical 'AND'.
+"""
+input date_comparison_exp {
+  _eq: date
+  _gt: date
+  _gte: date
+  _in: [date!]
+  _is_null: Boolean
+  _lt: date
+  _lte: date
+  _neq: date
+  _nin: [date!]
+}
+
+"""mutation root"""
+type mutation_root {
+  add_board_post(input: AddBoardPostInput!): BoardModel!
+  add_circle_member(input: AddCircleMemberInput!): Boolean!
+  change_board_creation_permission(input: ChangeBoardCreationPermissionInput!): Boolean!
+  change_board_status(input: ChangeBoardStatusInput!): BoardModel!
+  change_board_topic(input: ChangeBoardTopicInput!): BoardModel!
+  change_circle_description(input: ChangeCircleDescriptionInput!): CircleModel!
+  change_circle_name(input: ChangeCircleNameInput!): CircleModel!
+  create_board(input: CreateBoardInput!): BoardModel!
+  create_circle(input: CreateCircleInput!): CircleModel!
+  delegate_circle_owner(input: DelegateCircleOwnerInput!): CircleModel!
+  delete_board(input: DeleteBoardInput!): Boolean!
+
+  """
+  delete data from the table: "boards"
+  """
+  delete_boards(
+    """filter the rows which have to be deleted"""
+    where: boards_bool_exp!
+  ): boards_mutation_response
+
+  """
+  delete single row from the table: "boards"
+  """
+  delete_boards_by_pk(uuid: uuid!): boards
+  delete_circle(input: DeleteCircleInput!): Boolean!
+
+  """
+  delete data from the table: "circle_members"
+  """
+  delete_circle_members(
+    """filter the rows which have to be deleted"""
+    where: circle_members_bool_exp!
+  ): circle_members_mutation_response
+
+  """
+  delete single row from the table: "circle_members"
+  """
+  delete_circle_members_by_pk(uuid: uuid!): circle_members
+
+  """
+  delete data from the table: "circle_permissions"
+  """
+  delete_circle_permissions(
+    """filter the rows which have to be deleted"""
+    where: circle_permissions_bool_exp!
+  ): circle_permissions_mutation_response
+
+  """
+  delete single row from the table: "circle_permissions"
+  """
+  delete_circle_permissions_by_pk(circle_uuid: uuid!): circle_permissions
+
+  """
+  delete data from the table: "circles"
+  """
+  delete_circles(
+    """filter the rows which have to be deleted"""
+    where: circles_bool_exp!
+  ): circles_mutation_response
+
+  """
+  delete single row from the table: "circles"
+  """
+  delete_circles_by_pk(uuid: uuid!): circles
+
+  """
+  delete data from the table: "posts"
+  """
+  delete_posts(
+    """filter the rows which have to be deleted"""
+    where: posts_bool_exp!
+  ): posts_mutation_response
+
+  """
+  delete single row from the table: "posts"
+  """
+  delete_posts_by_pk(uuid: uuid!): posts
+  delete_user(input: DeleteUserInput!): Boolean!
+
+  """
+  insert data into the table: "boards"
+  """
+  insert_boards(
+    """the rows to be inserted"""
+    objects: [boards_insert_input!]!
+
+    """upsert condition"""
+    on_conflict: boards_on_conflict
+  ): boards_mutation_response
+
+  """
+  insert a single row into the table: "boards"
+  """
+  insert_boards_one(
+    """the row to be inserted"""
+    object: boards_insert_input!
+
+    """upsert condition"""
+    on_conflict: boards_on_conflict
+  ): boards
+
+  """
+  insert data into the table: "circle_members"
+  """
+  insert_circle_members(
+    """the rows to be inserted"""
+    objects: [circle_members_insert_input!]!
+
+    """upsert condition"""
+    on_conflict: circle_members_on_conflict
+  ): circle_members_mutation_response
+
+  """
+  insert a single row into the table: "circle_members"
+  """
+  insert_circle_members_one(
+    """the row to be inserted"""
+    object: circle_members_insert_input!
+
+    """upsert condition"""
+    on_conflict: circle_members_on_conflict
+  ): circle_members
+
+  """
+  insert data into the table: "circle_permissions"
+  """
+  insert_circle_permissions(
+    """the rows to be inserted"""
+    objects: [circle_permissions_insert_input!]!
+
+    """upsert condition"""
+    on_conflict: circle_permissions_on_conflict
+  ): circle_permissions_mutation_response
+
+  """
+  insert a single row into the table: "circle_permissions"
+  """
+  insert_circle_permissions_one(
+    """the row to be inserted"""
+    object: circle_permissions_insert_input!
+
+    """upsert condition"""
+    on_conflict: circle_permissions_on_conflict
+  ): circle_permissions
+
+  """
+  insert data into the table: "circles"
+  """
+  insert_circles(
+    """the rows to be inserted"""
+    objects: [circles_insert_input!]!
+
+    """upsert condition"""
+    on_conflict: circles_on_conflict
+  ): circles_mutation_response
+
+  """
+  insert a single row into the table: "circles"
+  """
+  insert_circles_one(
+    """the row to be inserted"""
+    object: circles_insert_input!
+
+    """upsert condition"""
+    on_conflict: circles_on_conflict
+  ): circles
+
+  """
+  insert data into the table: "posts"
+  """
+  insert_posts(
+    """the rows to be inserted"""
+    objects: [posts_insert_input!]!
+
+    """upsert condition"""
+    on_conflict: posts_on_conflict
+  ): posts_mutation_response
+
+  """
+  insert a single row into the table: "posts"
+  """
+  insert_posts_one(
+    """the row to be inserted"""
+    object: posts_insert_input!
+
+    """upsert condition"""
+    on_conflict: posts_on_conflict
+  ): posts
+
+  """
+  update data of the table: "boards"
+  """
+  update_boards(
+    """increments the numeric columns with given value of the filtered values"""
+    _inc: boards_inc_input
+
+    """sets the columns of the filtered rows to the given values"""
+    _set: boards_set_input
+
+    """filter the rows which have to be updated"""
+    where: boards_bool_exp!
+  ): boards_mutation_response
+
+  """
+  update single row of the table: "boards"
+  """
+  update_boards_by_pk(
+    """increments the numeric columns with given value of the filtered values"""
+    _inc: boards_inc_input
+
+    """sets the columns of the filtered rows to the given values"""
+    _set: boards_set_input
+    pk_columns: boards_pk_columns_input!
+  ): boards
+
+  """
+  update multiples rows of table: "boards"
+  """
+  update_boards_many(
+    """updates to execute, in order"""
+    updates: [boards_updates!]!
+  ): [boards_mutation_response]
+
+  """
+  update data of the table: "circle_members"
+  """
+  update_circle_members(
+    """sets the columns of the filtered rows to the given values"""
+    _set: circle_members_set_input
+
+    """filter the rows which have to be updated"""
+    where: circle_members_bool_exp!
+  ): circle_members_mutation_response
+
+  """
+  update single row of the table: "circle_members"
+  """
+  update_circle_members_by_pk(
+    """sets the columns of the filtered rows to the given values"""
+    _set: circle_members_set_input
+    pk_columns: circle_members_pk_columns_input!
+  ): circle_members
+
+  """
+  update multiples rows of table: "circle_members"
+  """
+  update_circle_members_many(
+    """updates to execute, in order"""
+    updates: [circle_members_updates!]!
+  ): [circle_members_mutation_response]
+
+  """
+  update data of the table: "circle_permissions"
+  """
+  update_circle_permissions(
+    """sets the columns of the filtered rows to the given values"""
+    _set: circle_permissions_set_input
+
+    """filter the rows which have to be updated"""
+    where: circle_permissions_bool_exp!
+  ): circle_permissions_mutation_response
+
+  """
+  update single row of the table: "circle_permissions"
+  """
+  update_circle_permissions_by_pk(
+    """sets the columns of the filtered rows to the given values"""
+    _set: circle_permissions_set_input
+    pk_columns: circle_permissions_pk_columns_input!
+  ): circle_permissions
+
+  """
+  update multiples rows of table: "circle_permissions"
+  """
+  update_circle_permissions_many(
+    """updates to execute, in order"""
+    updates: [circle_permissions_updates!]!
+  ): [circle_permissions_mutation_response]
+
+  """
+  update data of the table: "circles"
+  """
+  update_circles(
+    """sets the columns of the filtered rows to the given values"""
+    _set: circles_set_input
+
+    """filter the rows which have to be updated"""
+    where: circles_bool_exp!
+  ): circles_mutation_response
+
+  """
+  update single row of the table: "circles"
+  """
+  update_circles_by_pk(
+    """sets the columns of the filtered rows to the given values"""
+    _set: circles_set_input
+    pk_columns: circles_pk_columns_input!
+  ): circles
+
+  """
+  update multiples rows of table: "circles"
+  """
+  update_circles_many(
+    """updates to execute, in order"""
+    updates: [circles_updates!]!
+  ): [circles_mutation_response]
+
+  """
+  update data of the table: "posts"
+  """
+  update_posts(
+    """sets the columns of the filtered rows to the given values"""
+    _set: posts_set_input
+
+    """filter the rows which have to be updated"""
+    where: posts_bool_exp!
+  ): posts_mutation_response
+
+  """
+  update single row of the table: "posts"
+  """
+  update_posts_by_pk(
+    """sets the columns of the filtered rows to the given values"""
+    _set: posts_set_input
+    pk_columns: posts_pk_columns_input!
+  ): posts
+
+  """
+  update multiples rows of table: "posts"
+  """
+  update_posts_many(
+    """updates to execute, in order"""
+    updates: [posts_updates!]!
+  ): [posts_mutation_response]
+  update_user_attributes(input: UpdateUserAttributesInput!): UserModel!
+}
+
+"""column ordering options"""
+enum order_by {
+  """in ascending order, nulls last"""
+  asc
+
+  """in ascending order, nulls first"""
+  asc_nulls_first
+
+  """in ascending order, nulls last"""
+  asc_nulls_last
+
+  """in descending order, nulls first"""
+  desc
+
+  """in descending order, nulls first"""
+  desc_nulls_first
+
+  """in descending order, nulls last"""
+  desc_nulls_last
+}
+
+"""
+columns and relationships of "posts"
+"""
+type posts {
+  """An object relationship"""
+  board: boards!
+  board_uuid: uuid!
+  content: String!
+  created_at: timestamptz!
+  updated_at: timestamptz!
+  user_id: bpchar!
+  uuid: uuid!
+}
+
+"""
+aggregated selection of "posts"
+"""
+type posts_aggregate {
+  aggregate: posts_aggregate_fields
+  nodes: [posts!]!
+}
+
+input posts_aggregate_bool_exp {
+  count: posts_aggregate_bool_exp_count
+}
+
+input posts_aggregate_bool_exp_count {
+  arguments: [posts_select_column!]
+  distinct: Boolean
+  filter: posts_bool_exp
+  predicate: Int_comparison_exp!
+}
+
+"""
+aggregate fields of "posts"
+"""
+type posts_aggregate_fields {
+  count(columns: [posts_select_column!], distinct: Boolean): Int!
+  max: posts_max_fields
+  min: posts_min_fields
+}
+
+"""
+order by aggregate values of table "posts"
+"""
+input posts_aggregate_order_by {
+  count: order_by
+  max: posts_max_order_by
+  min: posts_min_order_by
+}
+
+"""
+input type for inserting array relation for remote table "posts"
+"""
+input posts_arr_rel_insert_input {
+  data: [posts_insert_input!]!
+
+  """upsert condition"""
+  on_conflict: posts_on_conflict
+}
+
+"""
+Boolean expression to filter rows from the table "posts". All fields are combined with a logical 'AND'.
+"""
+input posts_bool_exp {
+  _and: [posts_bool_exp!]
+  _not: posts_bool_exp
+  _or: [posts_bool_exp!]
+  board: boards_bool_exp
+  board_uuid: uuid_comparison_exp
+  content: String_comparison_exp
+  created_at: timestamptz_comparison_exp
+  updated_at: timestamptz_comparison_exp
+  user_id: bpchar_comparison_exp
+  uuid: uuid_comparison_exp
+}
+
+"""
+unique or primary key constraints on table "posts"
+"""
+enum posts_constraint {
+  """
+  unique or primary key constraint on columns "uuid"
+  """
+  posts_pkey
+}
+
+"""
+input type for inserting data into table "posts"
+"""
+input posts_insert_input {
+  board: boards_obj_rel_insert_input
+  board_uuid: uuid
+  content: String
+  created_at: timestamptz
+  updated_at: timestamptz
+  user_id: bpchar
+  uuid: uuid
+}
+
+"""aggregate max on columns"""
+type posts_max_fields {
+  board_uuid: uuid
+  content: String
+  created_at: timestamptz
+  updated_at: timestamptz
+  user_id: bpchar
+  uuid: uuid
+}
+
+"""
+order by max() on columns of table "posts"
+"""
+input posts_max_order_by {
+  board_uuid: order_by
+  content: order_by
+  created_at: order_by
+  updated_at: order_by
+  user_id: order_by
+  uuid: order_by
+}
+
+"""aggregate min on columns"""
+type posts_min_fields {
+  board_uuid: uuid
+  content: String
+  created_at: timestamptz
+  updated_at: timestamptz
+  user_id: bpchar
+  uuid: uuid
+}
+
+"""
+order by min() on columns of table "posts"
+"""
+input posts_min_order_by {
+  board_uuid: order_by
+  content: order_by
+  created_at: order_by
+  updated_at: order_by
+  user_id: order_by
+  uuid: order_by
+}
+
+"""
+response of any mutation on the table "posts"
+"""
+type posts_mutation_response {
+  """number of rows affected by the mutation"""
+  affected_rows: Int!
+
+  """data from the rows affected by the mutation"""
+  returning: [posts!]!
+}
+
+"""
+on_conflict condition type for table "posts"
+"""
+input posts_on_conflict {
+  constraint: posts_constraint!
+  update_columns: [posts_update_column!]! = []
+  where: posts_bool_exp
+}
+
+"""Ordering options when selecting data from "posts"."""
+input posts_order_by {
+  board: boards_order_by
+  board_uuid: order_by
+  content: order_by
+  created_at: order_by
+  updated_at: order_by
+  user_id: order_by
+  uuid: order_by
+}
+
+"""primary key columns input for table: posts"""
+input posts_pk_columns_input {
+  uuid: uuid!
+}
+
+"""
+select columns of table "posts"
+"""
+enum posts_select_column {
+  """column name"""
+  board_uuid
+
+  """column name"""
+  content
+
+  """column name"""
+  created_at
+
+  """column name"""
+  updated_at
+
+  """column name"""
+  user_id
+
+  """column name"""
+  uuid
+}
+
+"""
+input type for updating data in table "posts"
+"""
+input posts_set_input {
+  board_uuid: uuid
+  content: String
+  created_at: timestamptz
+  updated_at: timestamptz
+  user_id: bpchar
+  uuid: uuid
+}
+
+"""
+Streaming cursor of the table "posts"
+"""
+input posts_stream_cursor_input {
+  """Stream column input with initial value"""
+  initial_value: posts_stream_cursor_value_input!
+
+  """cursor ordering"""
+  ordering: cursor_ordering
+}
+
+"""Initial value of the column from where the streaming should start"""
+input posts_stream_cursor_value_input {
+  board_uuid: uuid
+  content: String
+  created_at: timestamptz
+  updated_at: timestamptz
+  user_id: bpchar
+  uuid: uuid
+}
+
+"""
+update columns of table "posts"
+"""
+enum posts_update_column {
+  """column name"""
+  board_uuid
+
+  """column name"""
+  content
+
+  """column name"""
+  created_at
+
+  """column name"""
+  updated_at
+
+  """column name"""
+  user_id
+
+  """column name"""
+  uuid
+}
+
+input posts_updates {
+  """sets the columns of the filtered rows to the given values"""
+  _set: posts_set_input
+
+  """filter the rows which have to be updated"""
+  where: posts_bool_exp!
+}
+
+type query_root {
+  """An array relationship"""
+  boards(
+    """distinct select on columns"""
+    distinct_on: [boards_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [boards_order_by!]
+
+    """filter the rows returned"""
+    where: boards_bool_exp
+  ): [boards!]!
+
+  """An aggregate relationship"""
+  boards_aggregate(
+    """distinct select on columns"""
+    distinct_on: [boards_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [boards_order_by!]
+
+    """filter the rows returned"""
+    where: boards_bool_exp
+  ): boards_aggregate!
+
+  """fetch data from the table: "boards" using primary key columns"""
+  boards_by_pk(uuid: uuid!): boards
+
+  """An array relationship"""
+  circle_members(
+    """distinct select on columns"""
+    distinct_on: [circle_members_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [circle_members_order_by!]
+
+    """filter the rows returned"""
+    where: circle_members_bool_exp
+  ): [circle_members!]!
+
+  """An aggregate relationship"""
+  circle_members_aggregate(
+    """distinct select on columns"""
+    distinct_on: [circle_members_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [circle_members_order_by!]
+
+    """filter the rows returned"""
+    where: circle_members_bool_exp
+  ): circle_members_aggregate!
+
+  """fetch data from the table: "circle_members" using primary key columns"""
+  circle_members_by_pk(uuid: uuid!): circle_members
+
+  """An array relationship"""
+  circle_permissions(
+    """distinct select on columns"""
+    distinct_on: [circle_permissions_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [circle_permissions_order_by!]
+
+    """filter the rows returned"""
+    where: circle_permissions_bool_exp
+  ): [circle_permissions!]!
+
+  """An aggregate relationship"""
+  circle_permissions_aggregate(
+    """distinct select on columns"""
+    distinct_on: [circle_permissions_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [circle_permissions_order_by!]
+
+    """filter the rows returned"""
+    where: circle_permissions_bool_exp
+  ): circle_permissions_aggregate!
+
+  """
+  fetch data from the table: "circle_permissions" using primary key columns
+  """
+  circle_permissions_by_pk(circle_uuid: uuid!): circle_permissions
+
+  """
+  fetch data from the table: "circles"
+  """
+  circles(
+    """distinct select on columns"""
+    distinct_on: [circles_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [circles_order_by!]
+
+    """filter the rows returned"""
+    where: circles_bool_exp
+  ): [circles!]!
+
+  """
+  fetch aggregated fields from the table: "circles"
+  """
+  circles_aggregate(
+    """distinct select on columns"""
+    distinct_on: [circles_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [circles_order_by!]
+
+    """filter the rows returned"""
+    where: circles_bool_exp
+  ): circles_aggregate!
+
+  """fetch data from the table: "circles" using primary key columns"""
+  circles_by_pk(uuid: uuid!): circles
+  healthz: String!
+  users(ids: [ID!]!): [UserModel!]!
+
+  """An array relationship"""
+  posts(
+    """distinct select on columns"""
+    distinct_on: [posts_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [posts_order_by!]
+
+    """filter the rows returned"""
+    where: posts_bool_exp
+  ): [posts!]!
+
+  """An aggregate relationship"""
+  posts_aggregate(
+    """distinct select on columns"""
+    distinct_on: [posts_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [posts_order_by!]
+
+    """filter the rows returned"""
+    where: posts_bool_exp
+  ): posts_aggregate!
+
+  """fetch data from the table: "posts" using primary key columns"""
+  posts_by_pk(uuid: uuid!): posts
+}
+
+scalar smallint
+
+"""
+Boolean expression to compare columns of type "smallint". All fields are combined with logical 'AND'.
+"""
+input smallint_comparison_exp {
+  _eq: smallint
+  _gt: smallint
+  _gte: smallint
+  _in: [smallint!]
+  _is_null: Boolean
+  _lt: smallint
+  _lte: smallint
+  _neq: smallint
+  _nin: [smallint!]
+}
+
+type subscription_root {
+  """An array relationship"""
+  boards(
+    """distinct select on columns"""
+    distinct_on: [boards_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [boards_order_by!]
+
+    """filter the rows returned"""
+    where: boards_bool_exp
+  ): [boards!]!
+
+  """An aggregate relationship"""
+  boards_aggregate(
+    """distinct select on columns"""
+    distinct_on: [boards_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [boards_order_by!]
+
+    """filter the rows returned"""
+    where: boards_bool_exp
+  ): boards_aggregate!
+
+  """fetch data from the table: "boards" using primary key columns"""
+  boards_by_pk(uuid: uuid!): boards
+
+  """
+  fetch data from the table in a streaming manner: "boards"
+  """
+  boards_stream(
+    """maximum number of rows returned in a single batch"""
+    batch_size: Int!
+
+    """cursor to stream the results returned by the query"""
+    cursor: [boards_stream_cursor_input]!
+
+    """filter the rows returned"""
+    where: boards_bool_exp
+  ): [boards!]!
+
+  """An array relationship"""
+  circle_members(
+    """distinct select on columns"""
+    distinct_on: [circle_members_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [circle_members_order_by!]
+
+    """filter the rows returned"""
+    where: circle_members_bool_exp
+  ): [circle_members!]!
+
+  """An aggregate relationship"""
+  circle_members_aggregate(
+    """distinct select on columns"""
+    distinct_on: [circle_members_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [circle_members_order_by!]
+
+    """filter the rows returned"""
+    where: circle_members_bool_exp
+  ): circle_members_aggregate!
+
+  """fetch data from the table: "circle_members" using primary key columns"""
+  circle_members_by_pk(uuid: uuid!): circle_members
+
+  """
+  fetch data from the table in a streaming manner: "circle_members"
+  """
+  circle_members_stream(
+    """maximum number of rows returned in a single batch"""
+    batch_size: Int!
+
+    """cursor to stream the results returned by the query"""
+    cursor: [circle_members_stream_cursor_input]!
+
+    """filter the rows returned"""
+    where: circle_members_bool_exp
+  ): [circle_members!]!
+
+  """An array relationship"""
+  circle_permissions(
+    """distinct select on columns"""
+    distinct_on: [circle_permissions_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [circle_permissions_order_by!]
+
+    """filter the rows returned"""
+    where: circle_permissions_bool_exp
+  ): [circle_permissions!]!
+
+  """An aggregate relationship"""
+  circle_permissions_aggregate(
+    """distinct select on columns"""
+    distinct_on: [circle_permissions_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [circle_permissions_order_by!]
+
+    """filter the rows returned"""
+    where: circle_permissions_bool_exp
+  ): circle_permissions_aggregate!
+
+  """
+  fetch data from the table: "circle_permissions" using primary key columns
+  """
+  circle_permissions_by_pk(circle_uuid: uuid!): circle_permissions
+
+  """
+  fetch data from the table in a streaming manner: "circle_permissions"
+  """
+  circle_permissions_stream(
+    """maximum number of rows returned in a single batch"""
+    batch_size: Int!
+
+    """cursor to stream the results returned by the query"""
+    cursor: [circle_permissions_stream_cursor_input]!
+
+    """filter the rows returned"""
+    where: circle_permissions_bool_exp
+  ): [circle_permissions!]!
+
+  """
+  fetch data from the table: "circles"
+  """
+  circles(
+    """distinct select on columns"""
+    distinct_on: [circles_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [circles_order_by!]
+
+    """filter the rows returned"""
+    where: circles_bool_exp
+  ): [circles!]!
+
+  """
+  fetch aggregated fields from the table: "circles"
+  """
+  circles_aggregate(
+    """distinct select on columns"""
+    distinct_on: [circles_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [circles_order_by!]
+
+    """filter the rows returned"""
+    where: circles_bool_exp
+  ): circles_aggregate!
+
+  """fetch data from the table: "circles" using primary key columns"""
+  circles_by_pk(uuid: uuid!): circles
+
+  """
+  fetch data from the table in a streaming manner: "circles"
+  """
+  circles_stream(
+    """maximum number of rows returned in a single batch"""
+    batch_size: Int!
+
+    """cursor to stream the results returned by the query"""
+    cursor: [circles_stream_cursor_input]!
+
+    """filter the rows returned"""
+    where: circles_bool_exp
+  ): [circles!]!
+
+  """An array relationship"""
+  posts(
+    """distinct select on columns"""
+    distinct_on: [posts_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [posts_order_by!]
+
+    """filter the rows returned"""
+    where: posts_bool_exp
+  ): [posts!]!
+
+  """An aggregate relationship"""
+  posts_aggregate(
+    """distinct select on columns"""
+    distinct_on: [posts_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [posts_order_by!]
+
+    """filter the rows returned"""
+    where: posts_bool_exp
+  ): posts_aggregate!
+
+  """fetch data from the table: "posts" using primary key columns"""
+  posts_by_pk(uuid: uuid!): posts
+
+  """
+  fetch data from the table in a streaming manner: "posts"
+  """
+  posts_stream(
+    """maximum number of rows returned in a single batch"""
+    batch_size: Int!
+
+    """cursor to stream the results returned by the query"""
+    cursor: [posts_stream_cursor_input]!
+
+    """filter the rows returned"""
+    where: posts_bool_exp
+  ): [posts!]!
+}
+
+scalar timestamptz
+
+"""
+Boolean expression to compare columns of type "timestamptz". All fields are combined with logical 'AND'.
+"""
+input timestamptz_comparison_exp {
+  _eq: timestamptz
+  _gt: timestamptz
+  _gte: timestamptz
+  _in: [timestamptz!]
+  _is_null: Boolean
+  _lt: timestamptz
+  _lte: timestamptz
+  _neq: timestamptz
+  _nin: [timestamptz!]
+}
+
+scalar uuid
+
+"""
+Boolean expression to compare columns of type "uuid". All fields are combined with logical 'AND'.
+"""
+input uuid_comparison_exp {
+  _eq: uuid
+  _gt: uuid
+  _gte: uuid
+  _in: [uuid!]
+  _is_null: Boolean
+  _lt: uuid
+  _lte: uuid
+  _neq: uuid
+  _nin: [uuid!]
+}
+

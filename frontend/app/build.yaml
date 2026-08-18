@@ -1,0 +1,47 @@
+targets:
+  $default:
+    builders:
+      ferry_generator|graphql_builder:
+        enabled: true
+        options:
+          schema: app|lib/data/graphql/schema.graphql
+          type_overrides:
+            smallint:
+              name: int
+            float8:
+              name: double
+            numeric:
+              name: double
+            bpchar:
+              name: String
+            bigint:
+              name: int
+            timestamptz:
+              name: String
+            DateTime:
+              name: DateTime
+            uuid:
+              name: String
+            UUID:
+              name: String
+            UInt8:
+              name: int
+      ferry_generator|serializer_builder:
+        enabled: true
+        options:
+          type_overrides:
+            bigint:
+              name: int
+            numeric:
+              name: double
+            bpchar:
+              name: String
+            timestamptz:
+              name: String
+            DateTime:
+              name: DateTime
+            uuid:
+              name: String
+            UInt8:
+              name: int
+          schema: app|lib/data/graphql/schema.graphql

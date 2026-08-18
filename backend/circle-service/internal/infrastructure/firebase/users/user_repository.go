@@ -44,6 +44,35 @@ func (r *userRepository) FindByEmail(ctx context.Context, email domainModel.Emai
 	return toModel(record)
 }
 
+// FindMany retrieves multiple users from Firebase Auth by UID in a single batch call.
+// Ids that don't correspond to an existing user are silently omitted from the result.
+// The executor parameter is unused; it exists to satisfy the IUserRepository interface.
+func (r *userRepository) FindMany(ctx context.Context, ids []domainModel.UserId, _ db.DbExecutor) ([]*domainModel.User, error) {
+	if len(ids) == 0 {
+		return []*domainModel.User{}, nil
+	}
+
+	identifiers := make([]auth.UserIdentifier, len(ids))
+	for i, id := range ids {
+		identifiers[i] = auth.UIDIdentifier{UID: string(id)}
+	}
+
+	result, err := r.client.GetUsers(ctx, identifiers)
+	if err != nil {
+		return nil, err
+	}
+
+	users := make([]*domainModel.User, 0, len(result.Users))
+	for _, record := range result.Users {
+		user, err := toModel(record)
+		if err != nil {
+			return nil, err
+		}
+		users = append(users, user)
+	}
+	return users, nil
+}
+
 // Save updates the user's profile in Firebase Auth.
 // The executor parameter is unused; it exists to satisfy the IUserRepository interface.
 func (r *userRepository) Save(ctx context.Context, user domainModel.User, _ db.DbExecutor) error {

@@ -5,6 +5,9 @@ scalar Int64
 
 type Query {
     healthz: String!
+    # 複数ユーザーの表示名などをまとめて取得する(サークルメンバー一覧などの表示用)。
+    # 存在しないidは結果から黙って除外される。
+    users(ids: [ID!]!): [UserModel!]!
 }
 
 type Mutation {
