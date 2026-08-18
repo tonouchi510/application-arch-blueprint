@@ -9,6 +9,7 @@ setup:
 	@npm i -g firebase-tools
 	@brew install hasura-cli
 	@cd backend/circle-service && make setup
+	@$(MAKE) setup-website
 
 # docker compose
 docker-compose-build:
@@ -32,6 +33,21 @@ run-local:
 
 
 # WebSite
+.PHONY: setup-website
+setup-website:
+	cd frontend/website && npm install
+
+.PHONY: run-website
+run-website:
+	cd frontend/website && npm run dev
+
+.PHONY: build-website
+build-website:
+	cd frontend/website && npm run build
+
+.PHONY: lint-website
+lint-website:
+	cd frontend/website && npm run lint
 
 # hasura
 hasura-console:
