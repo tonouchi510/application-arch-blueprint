@@ -1,3 +1,5 @@
+import 'package:flutter/foundation.dart'
+    show kIsWeb, defaultTargetPlatform, TargetPlatform;
 import 'package:flutter/material.dart';
 
 enum Flavor { local, development, production }
@@ -37,10 +39,20 @@ class Constants {
   }
 
   factory Constants._local() {
-    return const Constants._(
-      endpoint: 'http://localhost:8080/v1/graphql',
+    // ホストマシン上で動いているcircle-service/Auth Emulatorへの接続先。
+    // Web・iOSシミュレータ・macOSはホストと同じネットワーク名前空間なので
+    // `localhost`で届くが、AndroidエミュレータはゲストOS扱いのため`localhost`が
+    // 自分自身を指してしまう。Android SDKが用意する特殊アドレス`10.0.2.2`で
+    // ホストマシンのlocalhostに転送する。
+    // (実機のAndroid/iOSから繋ぐ場合はどちらも成立しないため、ホストマシンの
+    //  LAN IPに読み替えること)
+    final host = (!kIsWeb && defaultTargetPlatform == TargetPlatform.android)
+        ? '10.0.2.2'
+        : 'localhost';
+    return Constants._(
+      endpoint: 'http://$host:8080/v1/graphql',
       appVersion: '0.1',
-      authEmulatorHost: 'localhost',
+      authEmulatorHost: host,
       authEmulatorPort: 9099,
     );
   }

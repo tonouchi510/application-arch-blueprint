@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:app/foundation/responsive.dart';
 import 'package:app/foundation/riverpod_compat.dart';
 import 'package:app/data/provider/auth_controller.dart';
 import 'package:app/data/provider/user.dart';
@@ -22,7 +23,9 @@ class UserSettingsPage extends HookConsumerWidget {
     final state = ref.watch(userSettingsViewModelProvider);
     final viewModel = ref.read(userSettingsViewModelProvider.notifier);
 
-    final nameController = useTextEditingController(text: user?.displayName ?? '');
+    final nameController = useTextEditingController(
+      text: user?.displayName ?? '',
+    );
     final phoneController = useTextEditingController(
       text: user?.phoneNumber ?? '',
     );
@@ -38,52 +41,57 @@ class UserSettingsPage extends HookConsumerWidget {
       ),
       body: LoadingOverlay(
         isLoading: state.isLoading,
-        child: ListView(
-          padding: const EdgeInsets.all(16),
-          children: [
-            TextField(
-              controller: nameController,
-              decoration: const InputDecoration(labelText: '表示名'),
-            ),
-            const SizedBox(height: 12),
-            TextField(
-              controller: phoneController,
-              decoration: const InputDecoration(labelText: '電話番号'),
-            ),
-            const SizedBox(height: 12),
-            TextField(
-              controller: photoUrlController,
-              decoration: const InputDecoration(labelText: 'プロフィール画像URL'),
-            ),
-            const SizedBox(height: 12),
-            Text('プラン: ${role ?? '-'}（読み取り専用）'),
-            const SizedBox(height: 24),
-            FilledButton(
-              onPressed: () async {
-                try {
-                  await viewModel.saveProfile(
-                    name: nameController.text.trim(),
-                    phoneNumber: phoneController.text.trim(),
-                    photoUrl: photoUrlController.text.trim(),
-                  );
-                  if (context.mounted) {
-                    ScaffoldMessenger.of(
-                      context,
-                    ).showSnackBar(const SnackBar(content: Text('保存しました')));
+        child: ResponsiveBody(
+          maxWidth: 480,
+          child: ListView(
+            padding: const EdgeInsets.all(16),
+            children: [
+              TextField(
+                controller: nameController,
+                decoration: const InputDecoration(labelText: '表示名'),
+              ),
+              const SizedBox(height: 12),
+              TextField(
+                controller: phoneController,
+                decoration: const InputDecoration(labelText: '電話番号'),
+              ),
+              const SizedBox(height: 12),
+              TextField(
+                controller: photoUrlController,
+                decoration: const InputDecoration(labelText: 'プロフィール画像URL'),
+              ),
+              const SizedBox(height: 12),
+              Text('プラン: ${role ?? '-'}（読み取り専用）'),
+              const SizedBox(height: 24),
+              FilledButton(
+                onPressed: () async {
+                  try {
+                    await viewModel.saveProfile(
+                      name: nameController.text.trim(),
+                      phoneNumber: phoneController.text.trim(),
+                      photoUrl: photoUrlController.text.trim(),
+                    );
+                    if (context.mounted) {
+                      ScaffoldMessenger.of(
+                        context,
+                      ).showSnackBar(const SnackBar(content: Text('保存しました')));
+                    }
+                  } catch (e) {
+                    if (context.mounted) {
+                      await showErrorDialog(context, e.toString());
+                    }
                   }
-                } catch (e) {
-                  if (context.mounted) await showErrorDialog(context, e.toString());
-                }
-              },
-              child: const Text('保存'),
-            ),
-            const Divider(height: 48),
-            OutlinedButton(
-              style: OutlinedButton.styleFrom(foregroundColor: Colors.red),
-              onPressed: () => _confirmDeleteAccount(context, ref, viewModel),
-              child: const Text('退会する（アカウントを削除します）'),
-            ),
-          ],
+                },
+                child: const Text('保存'),
+              ),
+              const Divider(height: 48),
+              OutlinedButton(
+                style: OutlinedButton.styleFrom(foregroundColor: Colors.red),
+                onPressed: () => _confirmDeleteAccount(context, ref, viewModel),
+                child: const Text('退会する（アカウントを削除します）'),
+              ),
+            ],
+          ),
         ),
       ),
     );
@@ -96,9 +104,8 @@ class UserSettingsPage extends HookConsumerWidget {
   ) async {
     final confirmed = await showDialog<bool>(
       context: context,
-      builder: (_) => const ConfirmationDialog(
-        message: '本当に退会しますか？この操作は取り消せません。',
-      ),
+      builder: (_) =>
+          const ConfirmationDialog(message: '本当に退会しますか？この操作は取り消せません。'),
     );
     if (confirmed != true) return;
 

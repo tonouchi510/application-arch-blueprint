@@ -27,9 +27,22 @@ firebase-emulator:
 
 
 # App
-.PHONY: run-local
-run-local:
-	cd frontend/app && flutter run --flavor local --dart-define=FLAVOR=local -d chrome --web-port 8888
+.PHONY: run-web
+run-web:
+	cd frontend/app && flutter run --dart-define=FLAVOR=local -d chrome --web-port 8888
+
+# あらかじめ起動済みのiOSシミュレータを使う(`open -a Simulator`や`flutter emulators --launch <id>`で起動)
+.PHONY: run-ios
+run-ios:
+	cd frontend/app && flutter run --dart-define=FLAVOR=local \
+		-d $$(flutter devices 2>/dev/null | awk -F'•' '$$3 ~ /ios/ { gsub(/ /,"",$$2); print $$2; exit }')
+
+# あらかじめ起動済みのAndroidエミュレータを使う(`flutter emulators --launch <id>`で起動)。
+# ホストマシンのlocalhostへは`10.0.2.2`でアクセスする(lib/foundation/constants.dartで対応済み)
+.PHONY: run-android
+run-android:
+	cd frontend/app && flutter run --dart-define=FLAVOR=local \
+		-d $$(flutter devices 2>/dev/null | awk -F'•' '$$3 ~ /android/ { gsub(/ /,"",$$2); print $$2; exit }')
 
 
 # WebSite

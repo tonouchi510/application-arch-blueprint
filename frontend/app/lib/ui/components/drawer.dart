@@ -20,7 +20,9 @@ class AppDrawer extends HookConsumerWidget {
           DrawerHeader(
             decoration: BoxDecoration(color: theme.data.colorScheme.primary),
             child: Text(
-              'Circle Management',
+              'サークル管理',
+              overflow: TextOverflow.ellipsis,
+              maxLines: 1,
               style: TextStyle(
                 color: theme.data.colorScheme.onPrimary,
                 fontSize: 20,

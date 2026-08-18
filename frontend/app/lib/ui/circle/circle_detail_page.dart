@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:app/foundation/responsive.dart';
 import 'package:app/foundation/riverpod_compat.dart';
 import 'package:app/data/provider/user.dart';
 import 'package:app/ui/circle/circle_boards_tab.dart';
@@ -44,17 +45,23 @@ class CircleDetailPage extends HookConsumerWidget {
           child: Scaffold(
             backgroundColor: theme.data.colorScheme.surface,
             appBar: AppBar(
-              title: Text(circle.name),
+              title: Text(
+                circle.name,
+                overflow: TextOverflow.ellipsis,
+                maxLines: 1,
+              ),
               backgroundColor: theme.data.colorScheme.surface,
-              bottom: TabBar(tabs: tabs),
+              bottom: TabBar(tabs: tabs, isScrollable: context.isMobileWidth),
             ),
-            body: TabBarView(
-              children: [
-                CircleOverviewTab(circle: circle),
-                CircleMembersTab(circle: circle),
-                if (isOwner) CirclePermissionTab(circleId: circle.id),
-                CircleBoardsTab(circle: circle),
-              ],
+            body: ResponsiveBody(
+              child: TabBarView(
+                children: [
+                  CircleOverviewTab(circle: circle),
+                  CircleMembersTab(circle: circle),
+                  if (isOwner) CirclePermissionTab(circleId: circle.id),
+                  CircleBoardsTab(circle: circle),
+                ],
+              ),
             ),
           ),
         );

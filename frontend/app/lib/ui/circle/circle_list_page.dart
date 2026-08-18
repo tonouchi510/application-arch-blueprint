@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:app/foundation/responsive.dart';
 import 'package:app/foundation/riverpod_compat.dart';
 import 'package:app/data/model/circle.dart';
 import 'package:app/data/provider/user.dart';
@@ -23,23 +24,28 @@ class CircleListPage extends HookConsumerWidget {
 
     return Scaffold(
       backgroundColor: Colors.transparent,
-      body: Column(
-        children: [
-          TabBar(
-            controller: tabController,
-            tabs: const [Tab(text: '参加中のサークル'), Tab(text: 'サークルを探す')],
-          ),
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-            child: _CircleSearchField(),
-          ),
-          Expanded(
-            child: TabBarView(
+      body: ResponsiveBody(
+        child: Column(
+          children: [
+            TabBar(
               controller: tabController,
-              children: const [_MyCirclesTab(), _AllCirclesTab()],
+              tabs: const [
+                Tab(text: '参加中のサークル'),
+                Tab(text: 'サークルを探す'),
+              ],
             ),
-          ),
-        ],
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+              child: _CircleSearchField(),
+            ),
+            Expanded(
+              child: TabBarView(
+                controller: tabController,
+                children: const [_MyCirclesTab(), _AllCirclesTab()],
+              ),
+            ),
+          ],
+        ),
       ),
       floatingActionButton: canCreateCircle
           ? FloatingActionButton(
@@ -143,7 +149,9 @@ class _MyCirclesTab extends HookConsumerWidget {
       data: (circles) {
         final filtered = _filterBySearch(circles, query);
         if (circles.isEmpty) {
-          return const _EmptyMessage('参加しているサークルがありません。\n「サークルを探す」タブから探してみましょう');
+          return const _EmptyMessage(
+            '参加しているサークルがありません。\n「サークルを探す」タブから探してみましょう',
+          );
         }
         if (filtered.isEmpty) {
           return const _EmptyMessage('該当するサークルが見つかりません');
@@ -188,8 +196,9 @@ class _MyCirclesTab extends HookConsumerWidget {
                         ),
                     ],
                   ),
-                  onTap: () =>
-                      context.router.push(CircleDetailRoute(circleId: circle.id)),
+                  onTap: () => context.router.push(
+                    CircleDetailRoute(circleId: circle.id),
+                  ),
                 );
               },
             ),
@@ -242,7 +251,10 @@ class _AllCirclesTab extends HookConsumerWidget {
                                   await viewModel.joinCircle(circle.id);
                                 } catch (e) {
                                   if (context.mounted) {
-                                    await showErrorDialog(context, e.toString());
+                                    await showErrorDialog(
+                                      context,
+                                      e.toString(),
+                                    );
                                   }
                                 }
                               },
