@@ -4,4 +4,7 @@
          to allow setting breakpoints, to provide hot reload, etc.
     -->
     <uses-permission android:name="android.permission.INTERNET"/>
+    <!-- ローカル開発時、エミュレータからホストのHasura/Auth Emulator(http)へ
+         アクセスするためdebugビルドのみ平文HTTP通信を許可する -->
+    <application android:usesCleartextTraffic="true" />
 </manifest>

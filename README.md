@@ -53,7 +53,10 @@ $ make docker-compose-up
 $ make hasura-seed-apply
 
 # Webアプリ起動
-$ make run-local
+$ make run-web
+# iOSシミュレータ / Androidエミュレータで起動する場合
+$ make run-ios
+$ make run-android
 ```
 
 ### 動作確認用アカウント

@@ -19,7 +19,9 @@ class AppAppBar extends ConsumerWidget implements PreferredSizeWidget {
 
     return AppBar(
       title: Text(
-        'Circle Management',
+        'サークル管理',
+        overflow: TextOverflow.ellipsis,
+        maxLines: 1,
         style: TextStyle(
           color: theme.data.colorScheme.primary,
           fontSize: 20,

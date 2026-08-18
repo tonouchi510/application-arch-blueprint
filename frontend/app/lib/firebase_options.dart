@@ -53,32 +53,34 @@ class DefaultFirebaseOptions {
     storageBucket: 'application-arch-blueprint.firebasestorage.app',
   );
 
+  // Android/iOS/macOSはFirebaseコンソールに実アプリ登録していないため、
+  // apiKey/appIdはローカル開発(Auth Emulator接続)専用のダミー値。
+  // Auth EmulatorはこれらをAPIキーとして検証しないため動作するが、実機配布や
+  // 本番Firebaseに繋ぐ場合は`flutterfire configure`で実際の値に置き換えること。
+  // projectIdだけはトークンのaud/iss検証に使われるため実プロジェクトIDに合わせている。
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'YOUR_ANDROID_API_KEY',
-    appId: 'YOUR_ANDROID_APP_ID',
-    messagingSenderId: 'YOUR_ANDROID_MESSAGING_SENDER_ID',
-    projectId: 'YOUR_PROJECT_ID',
-    databaseURL: 'YOUR_DATABASE_URL',
-    storageBucket: 'YOUR_STORAGE_BUCKET',
+    apiKey: 'local-dev-only-android-api-key',
+    appId: '1:415491777381:android:0000000000000000000000',
+    messagingSenderId: '415491777381',
+    projectId: 'application-arch-blueprint',
+    storageBucket: 'application-arch-blueprint.firebasestorage.app',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'YOUR_iOS_API_KEY',
-    appId: 'YOUR_iOS_APP_ID',
-    messagingSenderId: 'YOUR_iOS_MESSAGING_SENDER_ID',
-    projectId: 'YOUR_PROJECT_ID',
-    databaseURL: 'YOUR_DATABASE_URL',
+    apiKey: 'local-dev-only-ios-api-key',
+    appId: '1:415491777381:ios:0000000000000000000000',
+    messagingSenderId: '415491777381',
+    projectId: 'application-arch-blueprint',
+    storageBucket: 'application-arch-blueprint.firebasestorage.app',
     iosBundleId: 'com.example.app',
-    storageBucket: 'YOUR_STORAGE_BUCKET',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'YOUR_macOS_API_KEY',
-    appId: 'YOUR_macOS_APP_ID',
-    messagingSenderId: 'YOUR_macOS_MESSAGING_SENDER_ID',
-    projectId: 'YOUR_PROJECT_ID',
-    databaseURL: 'YOUR_DATABASE_URL',
+    apiKey: 'local-dev-only-macos-api-key',
+    appId: '1:415491777381:ios:0000000000000000000001',
+    messagingSenderId: '415491777381',
+    projectId: 'application-arch-blueprint',
+    storageBucket: 'application-arch-blueprint.firebasestorage.app',
     iosBundleId: 'com.example.app',
-    storageBucket: 'YOUR_STORAGE_BUCKET',
   );
 }

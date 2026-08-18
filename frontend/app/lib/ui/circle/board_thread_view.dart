@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:app/foundation/responsive.dart';
 import 'package:app/foundation/riverpod_compat.dart';
 import 'package:app/data/model/board.dart';
 import 'package:app/data/provider/user.dart';
@@ -25,8 +26,11 @@ class BoardThreadView extends HookConsumerWidget {
     final isBoardOwner = board.ownerId == uid;
     final textController = useTextEditingController();
 
+    // スマホ幅では画面の半分程度、それ以外では最大480に収める。
+    final maxHeight = context.isMobileWidth ? context.screenHeight * 0.5 : 480.0;
+
     return Container(
-      constraints: const BoxConstraints(maxHeight: 480),
+      constraints: BoxConstraints(maxHeight: maxHeight),
       decoration: BoxDecoration(
         border: Border.all(color: Theme.of(context).dividerColor),
         borderRadius: BorderRadius.circular(8),
